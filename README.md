@@ -1,6 +1,7 @@
-This is an example of how to use [codeclub_lesson_builder](https://github.com/arve0/codeclub_lesson_builder).
+This is a recipe of how you can create your own code club lesson
+pages with [codeclub_lesson_builder](https://github.com/arve0/codeclub_lesson_builder).
 
-See the result [here](http://arve0.github.io/example_lessons/)
+See the result [here](http://arve0.github.io/example_lessons/).
 
 This repo has been bootstrapped like this:
 ```shell
