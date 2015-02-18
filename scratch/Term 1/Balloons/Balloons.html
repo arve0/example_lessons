@@ -1,0 +1,247 @@
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Balloons | YourCodeClubName</title><link href="../../../assets/style.min.css" rel="stylesheet"/></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Home</a></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">Balloons</h1></header></div><div class="col-xs-12"><div class="content"><section id="introduction" class="level1 intro">
+<h1>Introduction</h1>
+<p>You are going to make a balloon-popping game!</p>
+<div class="scratch-preview">
+<pre><code>&lt;iframe allowtransparency=&quot;true&quot; width=&quot;485&quot; height=&quot;402&quot; src=&quot;http://scratch.mit.edu/projects/embed/26745384/?autostart=true&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
+&lt;img src=&quot;balloons-final.png&quot;&gt;</code></pre>
+</div>
+</section>
+<section id="step-1-animating-a-balloon" class="level1 activity">
+<h1>Step 1: Animating a balloon</h1>
+<section id="activity-checklist" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>Start a new Scratch project, and delete the cat sprite so that your project is empty. You can find the online Scratch editor at <a href="http://jumpto.cc/scratch-new">jumpto.cc/scratch-new</a>.</p></li>
+<li><p>Add in a new balloon sprite, and a suitable stage backdrop.</p>
+<figure>
+<img src="balloons-balloon.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Add this code to your balloon, so that it bounces around the screen:</p>
+<pre class="blocks"><code>    when flag clicked
+    go to x:(0) y:(0)
+    point in direction (45 v)
+    forever
+        move (1) steps
+        if on edge, bounce
+    end</code></pre></li>
+<li><p>Test out your balloon. Does it move too slowly? Change the numbers in your code if you want to speed it up a bit.</p></li>
+<li><p>Did you also notice that your balloon flips as it moves around the screen?</p>
+<figure>
+<img src="balloons-flip.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+<p>Balloons don’t move like this! To fix this, click on the balloon sprite icon, and then click the blue <code class="blockmotion">i</code> information icon.</p>
+<p><img src="balloons-info.png" alt="screenshot" /> In the ‘rotation style’ section, click the dot to stop the balloon rotating.</p>
+<figure>
+<img src="balloons-lock.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Test your program again to see if the problem is fixed.</p></li>
+</ul>
+</section>
+<section id="save-your-project" class="level2 save">
+<h2>Save your project</h2>
+</section>
+</section>
+<section id="step-2-random-balloons" class="level1 activity">
+<h1>Step 2: Random balloons</h1>
+<section id="activity-checklist-1" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>With the code you have now, your balloon will always start in the same place and move in the same path. Click the flag a few times to start your program, and you’ll see it’s the same every time.</p></li>
+<li><p>Instead of using the same x and y position each time, you can let Scratch choose a random number instead. Change your balloon’s code, so that it looks like this:</p>
+<pre class="blocks"><code>    when flag clicked
+    go to x:(pick random (-150) to (150)) y:(pick random (-150) to (150))
+    point in direction (45 v)
+    forever
+        move (1) steps
+        if on edge, bounce
+    end</code></pre></li>
+<li><p>If you click the green flag a few times, you should notice that your balloon starts in a different place each time.</p></li>
+<li><p>You could even use a random number to choose a random balloon colour each time:</p>
+<pre class="blocks"><code>    change [colour v] effect by (pick random (0) to (200))</code></pre>
+<figure>
+<img src="balloons-colour.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+<p>What happens if this code is put at the start of your program? Does anything different happen if you put this code <em>inside</em> the <code class="blockcontrol">forever</code> loop? Which do you prefer?</p></li>
+</ul>
+</section>
+<section id="save-your-project-1" class="level2 save">
+<h2>Save your project</h2>
+</section>
+<section id="challenge-more-randomness" class="level2 challenge">
+<h2>Challenge: More randomness</h2>
+<p>Can you make your balloon start by pointing in a random direction (between -90 and 180)?</p>
+</section>
+<section id="save-your-project-2" class="level2 save">
+<h2>Save your project</h2>
+</section>
+</section>
+<section id="step-3-popping-balloons" class="level1 activity">
+<h1>Step 3: Popping balloons</h1>
+<p>Lets allow the player to pop the balloons!</p>
+<section id="activity-checklist-2" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>Click on your balloon sprite, and then click the ‘Costumes’ tab. You can delete all of the other costumes, just leaving 1 balloon costume. Add a new costume, by clicking ‘Paint new costume’ and create a new costume called ‘burst’.</p>
+<figure>
+<img src="balloons-costume.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Make sure that your balloon switches to the right costume when the game starts. Your code should now look like this:</p>
+<pre class="blocks"><code>    when flag clicked
+    switch costume to [balloon1-a v]
+    point in direction (pick random (-90) to (180))
+    go to x:(pick random (-150) to (150)) y:(pick random (-150) to (150))
+    change [color v] effect by (pick random (0) to (200))
+    forever
+        move (1) steps
+        if on edge, bounce
+    end</code></pre></li>
+<li><p>To allow the player to burst a balloon, add this code:</p>
+<pre class="blocks"><code>    when this sprite clicked
+    switch costume to [burst v]
+    play sound [pop v]</code></pre></li>
+<li><p>Test out your project. Can you pop the balloon? Does it work as you expected? You’ll need to improve this code, so that when the balloon is clicked, it shows the ‘burst’ costume for a short time, and is then hidden. You can make all of this happen by changing your balloon <code class="blockevents">when sprite clicked</code> code to this:</p>
+<pre class="blocks"><code>    when this sprite clicked
+    switch costume to [burst v]
+    play sound [pop v]
+    wait (0.3) secs
+    hide</code></pre></li>
+<li><p>Now that you’re deleting the balloon when it’s clicked, you’ll also need to add a <code class="blocklooks">show</code> block to the start of the <code class="blockevents">when flag clicked</code> code.</p></li>
+<li><p>Try popping a balloon again, to check that it works properly. If you find it difficult to pop the balloon without dragging it around, you can play the game in fullscreen mode by clicking this button:</p>
+<figure>
+<img src="balloons-fullscreen.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+</ul>
+</section>
+<section id="save-your-project-3" class="level2 save">
+<h2>Save your project</h2>
+</section>
+</section>
+<section id="step-4-adding-a-score" class="level1 activity new-page">
+<h1>Step 4: Adding a score</h1>
+<p>Let’s make things more interesting by keeping score.</p>
+<section id="activity-checklist-3" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>To keep the player’s score, you need a place to put it. A <em>variable</em> is a place to store data that can change, like a score.</p>
+<p>To create a new variable, click on the ‘Scripts’ tab, select <code class="blockdata">Data</code> and then click ‘Make a Variable’.</p>
+<figure>
+<img src="balloons-score.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+<p>Type ‘score’ as the name of the variable, make sure that it is available for all sprites, and click ‘OK’ to create it. You’ll then see lots of code blocks that can be used with your <code class="blockdata">score</code> variable.</p>
+<figure>
+<img src="balloons-variable.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+<p>You’ll also see the score in the top-left of the stage.</p>
+<figure>
+<img src="balloons-stage-score.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>When a new game is started (by clicking the flag), you want to set the player’s score to 0. Add this code to the top of the balloon’s <code class="blockevents">when flag clicked</code> code:</p>
+<pre class="blocks"><code>set [score v] to [0]</code></pre></li>
+<li><p>Whenever a balloon is popped, you need to add 1 to the score:</p>
+<pre class="blocks"><code>    when this sprite clicked
+    switch costume to [burst v]
+    play sound [pop v]
+    wait (0.3) secs
+    change [score v] by (1)
+    hide</code></pre></li>
+<li><p>Run your program again and click the balloon. Does your score change?</p></li>
+</ul>
+</section>
+<section id="save-your-project-4" class="level2 save">
+<h2>Save your project</h2>
+</section>
+</section>
+<section id="step-5-lots-of-balloons" class="level1 activity">
+<h1>Step 5: Lots of balloons</h1>
+<p>Popping 1 balloon isn’t much of a game, so let’s add lots more!</p>
+<p>One simple way to get lots of balloons is just to right-click on the balloon sprite and click ‘duplicate’. This is OK if you only want a few, but what if you need 20? or 100? Are you really going to click ‘duplicate’ that many times?</p>
+<section id="activity-checklist-4" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>A much better way of getting lots of balloons is to <em>clone</em> the balloon sprite.</p>
+<p>Drag your balloon <code class="blockevents">when flag clicked</code> code (except the <code class="blockdata">score</code> block) off of the event (don’t delete it), and instead add code to create 20 balloon clones.</p>
+<p>You can now attach the code you’ve just removed to the <code class="blockevents">when I start as a clone</code> event. You should also replace the <code class="blocklooks">hide</code> block in the balloon-clicking script with a <code class="blockcontrol">delete this clone</code> block.</p>
+<p>Your balloon code should now look like this:</p>
+<figure>
+<img src="balloons-clone.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Test your project! Now when the flag is clicked, your main balloon sprite will hide and then clone itself 20 times. When each of these 20 clones is started, they will each bounce around the screen randomly, just as they did before. See if you can pop the 20 balloons!</p></li>
+</ul>
+</section>
+<section id="save-your-project-5" class="level2 save">
+<h2>Save your project</h2>
+</section>
+</section>
+<section id="step-6-adding-a-timer" class="level1 activity">
+<h1>Step 6: Adding a timer</h1>
+<p>You can make your game more interesting, by only giving your player 10 seconds to pop as many balloons as possible.</p>
+<section id="activity-checklist-5" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>You can use another variable to store the remaining time left. Click on the stage, and create a new variable called ‘time’:</p>
+<figure>
+<img src="balloons-time.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>This is how the timer should work:</p>
+<ul>
+<li>The timer should start at 10 seconds;</li>
+<li>The timer should count down every second;</li>
+<li>The game should stop when the timer gets to 0.</li>
+</ul>
+<p>Here’s the code to do this, which you can add to your <em>stage</em>:</p>
+<pre class="blocks"><code>    when flag clicked
+    set [time v] to [10]
+    repeat until &lt;(time) = [0]&gt;
+        wait (1) secs
+        change [time v] by (-1)
+    end
+    stop [all v]</code></pre>
+<p>To add the <code class="blockcontrol">repeat until</code><code class="blockdata">time</code><code class="blockoperators">= 0</code> code, first you’ll need to drag a green <code class="blockoperators">=</code> block, onto your <code class="blockcontrol">repeat until</code> block:</p>
+<figure>
+<img src="balloons-timer-1.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+<p>You can then drag your <code class="blockdata">time</code> variable onto the <code class="blockoperators">=</code> block:</p>
+<figure>
+<img src="balloons-timer-2.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Drag your ‘time’ variable display to the right side of the stage. You can also right-click on the variable display and choose ‘large readout’ to change how the time is displayed.</p>
+<figure>
+<img src="balloons-readout.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Test your game. How many points can you score? If your game is too easy, you can:</p>
+<ul>
+<li>Give the player less time;</li>
+<li>Have more balloons;</li>
+<li>Make the balloons move faster;</li>
+<li>Make the balloons smaller.</li>
+</ul>
+<p>Test your game a few times until you’re happy that it’s the right level of difficulty.</p></li>
+</ul>
+</section>
+<section id="save-your-project-6" class="level2 save">
+<h2>Save your project</h2>
+</section>
+<section id="challenge-more-objects" class="level2 challenge">
+<h2>Challenge: More objects</h2>
+<p>Can you add in other objects to your game? You can add good objects, like donuts, that give you lots of points, or bad objects, like bats, that take points away.</p>
+<figure>
+<img src="balloons-objects.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+<p>You’ll need to think about the objects you’re adding. Think about:</p>
+<ul>
+<li>How many will there be?</li>
+<li>How big is it? How does it move?</li>
+<li>How many points will you score (or lose) for clicking it?</li>
+<li>Will it move faster or slower than the balloons?</li>
+<li>What will it look/sound like when it’s been clicked?</li>
+</ul>
+<p>If you need help adding another object, you can reuse the steps above!</p>
+</section>
+<section id="save-your-project-7" class="level2 save">
+<h2>Save your project</h2>
+</section>
+</section>
+</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><script src="../../../assets/script.min.js"></script><script>$(document).ready(function(){
+  scratchblocks2.load_language(scratchblocks2._translations['nb']);
+  scratchblocks2.parse("pre.blocks");
+});</script></body></html>

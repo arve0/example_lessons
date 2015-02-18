@@ -1,0 +1,232 @@
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Brain Game | YourCodeClubName</title><link href="../../../assets/style.min.css" rel="stylesheet"/></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Home</a></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">Brain Game</h1></header></div><div class="col-xs-12"><div class="content"><section id="introduction" class="level1 intro">
+<h1>Introduction</h1>
+<p>In this project you’ll learn how to create a times table quiz, in which you have to get as many answers correct as you can in 30 seconds.</p>
+<div class="scratch-preview">
+<pre><code>&lt;iframe allowtransparency=&quot;true&quot; width=&quot;485&quot; height=&quot;402&quot; src=&quot;http://scratch.mit.edu/projects/embed/42225768/?autostart=false&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
+&lt;img src=&quot;brain-final.png&quot;&gt;</code></pre>
+</div>
+</section>
+<section id="step-1-creating-questions" class="level1 activity">
+<h1>Step 1: Creating questions</h1>
+<p>Let’s start by creating random questions for the player to answer.</p>
+<section id="activity-checklist" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>Start a new Scratch project, and delete the cat sprite so that your project is empty. You can find the online Scratch editor at <a href="http://jumpto.cc/scratch-new">jumpto.cc/scratch-new</a>.</p></li>
+<li><p>Choose a character and a backdrop for your game. You can choose any you like! Here’s an example:</p>
+<figure>
+<img src="brain-setting.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Create 2 new variables called <code class="blockdata">number 1</code> and <code class="blockdata">number 2</code>. These variables will store the 2 numbers that will be multiplied together.</p>
+<figure>
+<img src="brain-variables.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Add code to your character, to set both of these variables to a <code class="blockoperators">random</code> number between 2 and 12.</p>
+<pre class="blocks"><code>    when flag clicked
+    set [number 1 v] to (pick random (2) to (12))
+    set [number 2 v] to (pick random (2) to (12))</code></pre></li>
+<li><p>You can then ask the player for the answer, and let them know if they were right or wrong.</p>
+<pre class="blocks"><code>    when flag clicked
+    set [number 1 v] to (pick random (2) to (12))
+    set [number 2 v] to (pick random (2) to (12))
+    ask (join (number 1)(join [ x ] (number 2))) and wait
+    if &lt;(answer) = ((number 1)*(number 2))&gt; then
+        say [yes! :)] for (2) secs
+    else
+        say [nope :(] for (2) secs
+    end</code></pre></li>
+<li><p>Test your project fully, by answering one question correctly and one with the wrong answer.</p></li>
+<li><p>Add a <code class="blockcontrol">forever</code> loop around this code, so that the player is asked lots of questions.</p></li>
+<li><p>Create a countdown timer on the stage, using a variable called <code class="blockdata">time</code>. The ‘Balloons’ project has instructions for making a timer (in step 6) if you need help!</p></li>
+<li><p>Test your project again - you should be able to continue asking questions until the time runs out.</p></li>
+</ul>
+</section>
+<section id="save-your-project" class="level2 save">
+<h2>Save your project</h2>
+</section>
+<section id="challenge-changing-costumes" class="level2 challenge">
+<h2>Challenge: Changing costumes</h2>
+<p>Can you change your character’s costumes, so that they respond to the player’s answer?</p>
+<figure>
+<img src="brain-costume.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+</section>
+<section id="challenge-adding-a-score" class="level2 challenge">
+<h2>Challenge: Adding a score</h2>
+<p>Can you add a score to your game? You can add a point for every correct answer. If you’re feeling mean, you could even reset the player’s score to 0 if they get a question wrong!</p>
+</section>
+<section id="save-your-project-1" class="level2 save">
+<h2>Save your project</h2>
+</section>
+</section>
+<section id="step-2-multiple-games" class="level1 activity new-page">
+<h1>Step 2: Multiple games</h1>
+<p>Let’s add a ‘play’ button to your game, so that you can play lots of times.</p>
+<section id="activity-checklist-1" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>Create a new ‘Play’ button sprite, which your player will click to start a new game. You can draw it yourself, or edit a sprite from the Scratch library.</p>
+<figure>
+<img src="brain-play.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Add this code to your new button.</p>
+<pre class="blocks"><code>    when flag clicked
+    show
+
+    when this sprite clicked
+    hide
+    broadcast [start v]</code></pre>
+<p>This code shows the play button when your project is started. When the button is clicked, it is hidden and then broadcasts a message that will start the game.</p></li>
+<li><p>You’ll need to edit your character’s code, so that the game starts when they receive the <code class="blockevents">start</code> message, and not when the flag is clicked.</p>
+<p>Replace the <code class="blockevents">when flag clicked</code> code with <code class="blockevents">when I receive start</code>.</p>
+<figure>
+<img src="brain-start.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Click the green flag and then click your new play button to test it. You should see that the game doesn’t start until the button is clicked.</p></li>
+<li><p>Did you notice that the timer starts when the green flag is clicked, and not when the game starts?</p>
+<figure>
+<img src="brain-timer-bug.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+<p>Can you fix this problem?</p></li>
+<li><p>Click on the stage, and replace the <code class="blockcontrol">stop all</code> block with an <code class="blockevents">end</code> message.</p>
+<figure>
+<img src="brain-end.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>You can now add code to your button, to show it again at the end of each game.</p>
+<pre class="blocks"><code>    when I receive [end v]
+    show</code></pre></li>
+<li><p>You’ll also need to stop your character asking questions at the end of each game:</p>
+<pre class="blocks"><code>    when I receive [end v]
+    stop [other scripts in sprite v]</code></pre></li>
+<li><p>Test your play button by playing a couple of games. You should notice that the play button shows after each game. To make testing easier, you can shorten each game, so that it only lasts a few seconds.</p>
+<pre class="blocks"><code>    set [time v] to [10]</code></pre></li>
+<li><p>You can even change how the button looks when the mouse hovers over it.</p>
+<pre class="blocks"><code>    when flag clicked
+    show
+    forever
+    if &lt;touching [mouse-pointer v]?&gt; then
+        set [fisheye v] effect to (30)
+    else
+        set [fisheye v] effect to (0)
+    end
+    end</code></pre>
+<figure>
+<img src="brain-fisheye.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+</ul>
+</section>
+<section id="save-your-project-2" class="level2 save">
+<h2>Save your project</h2>
+</section>
+<section id="challenge-start-screen" class="level2 challenge">
+<h2>Challenge: Start screen</h2>
+<p>Can you add another backdrop to your stage, which will become your game’s start screen? You can use the <code class="blockevents">when I receive start</code> and <code class="blockevents">when I receive end</code> blocks to switch between backdrops.</p>
+<p>You can also show and hide your character, and even show and hide your timer by using these blocks:</p>
+<pre class="blocks"><code>show variable [time v]</code></pre>
+<pre class="blocks"><code>hide variable [time v]</code></pre>
+<figure>
+<img src="brain-startscreen.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+</section>
+<section id="save-your-project-3" class="level2 save">
+<h2>Save your project</h2>
+</section>
+</section>
+<section id="step-3-adding-graphics" class="level1 activity new-page">
+<h1>Step 3: Adding graphics</h1>
+<p>Instead of your character just saying <code>yes! :)</code> or <code>nope :(</code> to the player, let’s add some graphics that will let the player know how they are doing.</p>
+<ul>
+<li><p>Create a new sprite called ‘Result’, containing both a ‘tick’ and a ‘cross’ costume.</p>
+<figure>
+<img src="brain-result.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Change your character’s code, so that instead of telling the player how they did, it broadcasts <code class="blockevents">correct</code> and <code class="blockevents">wrong</code> messages instead.</p>
+<figure>
+<img src="brain-broadcast-answer.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>You can now use these messages to show the ‘tick’ or ‘cross’ costume. Add this code to your new ‘Result’ sprite:</p>
+<figure>
+<img src="brain-show-answer.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Test out your game again. You should see a tick whenever you get a question correct, and a cross whenever you get one wrong!</p>
+<figure>
+<img src="brain-test-answer.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Have you noticed that the code for <code class="blockevents">when I receive correct</code> and <code class="blockevents">when I receive wrong</code> is nearly identical? Let’s create a function to make it easier for you to make changes to your code.</p>
+<p>On your ‘Result’ sprite, click <code class="blockmoreblocks">More Blocks</code>, and then ‘Make a Block’. Create a new function called <code class="blockmoreblocks">animate</code>.</p>
+<figure>
+<img src="brain-animate-function.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>You can then add the animation code into your new animation function, and then just use the function twice:</p>
+<figure>
+<img src="brain-use-function.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Now, if you want to show the tick and the cross for a longer or shorter time, you only need to make one change to your code. Try it!</p></li>
+<li><p>Instead of just showing and hiding the tick and the cross, you could change your animation function, so that the graphics fade in.</p>
+<pre class="blocks"><code>    define [animate]
+    set [ghost v] effect to (100)       
+    show
+    repeat (25)
+        change [ghost v] effect by (-4)
+    end
+    hide</code></pre></li>
+</ul>
+<section id="save-your-project-4" class="level2 save">
+<h2>Save your project</h2>
+</section>
+<section id="challenge-improved-animation" class="level2 challenge">
+<h2>Challenge: Improved animation</h2>
+<p>Can you improve the animation of your graphics? You could code the tick and cross so that they fade out as well as fade in. Or, you could use other cool effects:</p>
+<figure>
+<img src="brain-effects.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+</section>
+<section id="save-your-project-5" class="level2 save">
+<h2>Save your project</h2>
+</section>
+<section id="challenge-sound-and-music" class="level2 challenge">
+<h2>Challenge: Sound and music</h2>
+<p>Can you add sound effects and music to your game? For example:</p>
+<ul>
+<li>Playing a sound when the player gets an answer right or wrong;</li>
+<li>Adding a ticking sound to your countdown timer;</li>
+<li><p>Playing a sound when the time is up;</p>
+<pre class="blocks"><code>    play drum (10 v) for (0.1) beats</code></pre></li>
+<li><p>You could also constantly play music on a loop (if you’re not sure how to do this, step 4 of the ‘Rock Band’ project will help you).</p></li>
+</ul>
+</section>
+<section id="save-your-project-6" class="level2 save">
+<h2>Save your project</h2>
+</section>
+<section id="challenge-race-to-10-points" class="level2 challenge">
+<h2>Challenge: Race to 10 points</h2>
+<p>Can you change your game, so that instead of answering as many questions as they can in 30 seconds, the player has to see how quickly they can get 10 questions correct?</p>
+<p>To do this, you’ll only need to change your timer code. Can you see what needs to be changed?</p>
+<pre class="blocks"><code>    when I receive [start v]
+    set [time v] to (30)
+    repeat until &lt;(time) = [0]&gt;
+        wait (1) secs
+        change [time v] by (-1)
+    end
+    broadcast [end v]</code></pre>
+</section>
+<section id="save-your-project-7" class="level2 save">
+<h2>Save your project</h2>
+</section>
+<section id="challenge-instruction-screen" class="level2 challenge">
+<h2>Challenge: Instruction screen</h2>
+<p>Can you add an instructions screen to your game, telling your player how to play the game? You’ll need an ‘Instructions’ button, and another stage background.</p>
+<figure>
+<img src="brain-instructions.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+<p>You may also need a ‘Back’ button to take you to the main menu.</p>
+<pre class="blocks"><code>    broadcast [main menu v]</code></pre>
+</section>
+<section id="save-your-project-8" class="level2 save">
+<h2>Save your project</h2>
+</section>
+</section>
+</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><script src="../../../assets/script.min.js"></script><script>$(document).ready(function(){
+  scratchblocks2.load_language(scratchblocks2._translations['nb']);
+  scratchblocks2.parse("pre.blocks");
+});</script></body></html>

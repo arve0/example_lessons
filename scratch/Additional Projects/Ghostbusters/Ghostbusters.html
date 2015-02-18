@@ -1,0 +1,197 @@
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Ghostbusters | YourCodeClubName</title><link href="../../../assets/style.min.css" rel="stylesheet"/></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Home</a></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">Ghostbusters</h1></header></div><div class="col-xs-12"><div class="content"><section id="introduction" class="level1 intro">
+<h1>Introduction</h1>
+<p>This project is like the game <strong>Whack-a-Mole</strong>. You get points for hitting the ghosts that appear on the screen. The aim is to get as many points as possible in 30 seconds!</p>
+<figure>
+<img src="ghostbsuters_screenshot.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+</section>
+<section id="step-1-create-a-flying-ghost" class="level1 activity">
+<h1>Step 1: Create a flying ghost</h1>
+<section id="activity-checklist" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li>Start a new scratch project.</li>
+<li>Remove the cat sprite and replace the background with the <strong>nature/woods</strong> background.</li>
+<li>Use the <code>Choose sprite from library</code> button to add a new ghoul sprite to the project (use the <strong>fantasy/ghost1</strong> costume).</li>
+<li>Now we want to make our ghost move. Add a <code>Variable</code> for this sprite only called <code class="blockorange">speed</code>.</li>
+<li>On the <strong>Stage view</strong>, the stage monitor for this variable should say “<strong>Ghost1: speed</strong>”. If it just says “speed”, delete the variable and create it again, for this sprite only. Uncheck the box next to the speed block in the <strong>Data palette</strong> so it does not show on the Stage. The speed variable will control how fast this ghost moves. We use a variable so that we can change how fast the ghost moves as the game progresses.</li>
+<li><p>We want the ghost to start moving when the game starts, <strong>so make a script like this</strong>:</p>
+<pre class="blocks"><code>when FLAG clicked
+    set [speed v] to [5]
+    forever
+        move (speed) steps</code></pre></li>
+</ul>
+</section>
+<section id="test-your-project" class="level2 flag">
+<h2>Test Your Project</h2>
+<p>Click the green flag and see what your ghost does.</p>
+<p>Why does it get stuck on the edge of the screen?</p>
+</section>
+<section id="save-your-project" class="level2 save">
+<h2>Save your project</h2>
+</section>
+<section id="activity-checklist-1" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>To stop the ghost getting stuck we need to make her go back the other way when she touches the edge of the screen. Edit your existing script by adding an <code class="blockblue">if on edge, bounce</code> block below your <code class="blockblue">move</code><code class="blockorange">speed</code><code class="blockblue">steps</code> block.</p>
+<pre class="blocks"><code>when FLAG clicked
+    set [speed v] to [5]
+    forever
+        move (speed) steps
+        if on edge, bounce</code></pre></li>
+<li><p>To stop the ghost flipping upside down, click on the <code>rotation style: left-right</code> button in the (i) section of the Sprite Summary area for the ghost sprite.</p></li>
+</ul>
+</section>
+<section id="test-your-project-1" class="level2 flag">
+<h2>Test Your Project</h2>
+<p>Click the green flag.</p>
+<ul>
+<li>Does the ghost move from side to side across the screen?</li>
+</ul>
+</section>
+<section id="save-your-project-1" class="level2 save">
+<h2>Save your project</h2>
+</section>
+<section id="things-to-try" class="level2 try">
+<h2>Things to try</h2>
+<ul>
+<li>Try changing the value of the speed variable to make the ghost fly faster or slower.</li>
+<li>How would you make the ghost get faster the longer it’s flying? (This is a tricky one, so don’t worry if you can’t see how to do it. You’ll get more clues as you work through the project.)</li>
+</ul>
+</section>
+</section>
+<section id="step-2-make-the-ghost-appear-vanish-randomly" class="level1 activity new-page">
+<h1>Step 2: Make the ghost appear &amp; vanish randomly</h1>
+<p>To make the game more fun, we want the ghost to appear and vanish randomly. We’ll do that with another script that runs at the same time as the one that moves the ghost. This new script needs to hide the ghost for a random time, then show it for a random time, and repeat that forever (or until the game finishes).</p>
+<section id="activity-checklist-2" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>Create this script for the ghost:</p>
+<pre class="blocks"><code>when FLAG clicked
+forever
+    hide
+    wait (pick random (2) to (5)) secs
+    show
+    wait (pick random (3) to (5)) secs</code></pre></li>
+</ul>
+</section>
+<section id="test-your-project-2" class="level2 flag">
+<h2>Test Your Project</h2>
+<p>Click the green flag.</p>
+<ul>
+<li>Does the ghost move from side to side across the screen and vanish and appear again randomly?</li>
+</ul>
+</section>
+<section id="save-your-project-2" class="level2 save">
+<h2>Save your project</h2>
+</section>
+<section id="things-to-try-1" class="level2 try">
+<h2>Things to try</h2>
+<ul>
+<li>Try changing the range of the random numbers. What happens if you pick very big numbers or very small numbers? (Does this give you any more clues for how to make the ghost speed up the longer the game is played?)</li>
+</ul>
+</section>
+</section>
+<section id="step-3-make-the-ghost-disappear-when-its-clicked" class="level1 activity">
+<h1>Step 3: Make the ghost disappear when it’s clicked</h1>
+<p>To turn this into a game, we need to give the player something to do. They need to click on the ghost to make it disappear. When the ghost is clicked, we want it to disappear and play a sound.</p>
+<section id="activity-checklist-3" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li>In the <strong>Sounds</strong> tab, add a new sound <strong>Electronic/fairydust</strong>, using the <code>Choose sound from library</code> button.</li>
+<li><p>Add this script to the ghost:</p>
+<pre class="blocks"><code>when this sprite clicked
+    hide
+    play sound [Fairydust v]</code></pre></li>
+</ul>
+</section>
+<section id="test-your-project-3" class="level2 flag">
+<h2>Test Your Project</h2>
+<p>Click the green flag.</p>
+<ul>
+<li>Does the ghost disappear and play the sound when you click it?</li>
+</ul>
+</section>
+<section id="save-your-project-3" class="level2 save">
+<h2>Save your project</h2>
+</section>
+<section id="things-to-try-2" class="level2 try">
+<h2>Things to try</h2>
+<ul>
+<li>Ask your volunteer if you can record your own sound to play.</li>
+</ul>
+</section>
+</section>
+<section id="step-4-add-a-score-and-timer" class="level1 activity new-page">
+<h1>Step 4: Add a score and timer</h1>
+<p>We’ve got a ghost, but now we want to make a game! We want to score points every time we click on the ghost but we also want to have a time limit on the game. We can use a variable for the score and the timer.</p>
+<section id="activity-checklist-4" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>Create a new <code>Variable</code> for all sprites called <strong>score</strong>, and alter the script for the ghost to increase this variable by one when it is clicked.</p>
+<pre class="blocks"><code>when this sprite clicked
+    hide
+   play sound [Fairydust v]
+   change [score v] by (1)</code></pre></li>
+<li>Switch to the <strong>Stage</strong> and create a <strong>new variable</strong> called <strong>time_left</strong>.</li>
+<li><p>Add a new script that occurs when the green flag is clicked to set <code class="blockorange">time_left</code> to <strong>30</strong> and reset the score to <strong>0</strong>. Then use a <code class="blockyellow">repeat until</code> block to wait a second and then reduce <code class="blockorange">time_left</code> by one. This should repeat until <code>time_left</code> is 0, at which point use <code class="blockyellow">stop all</code> to stop the game.</p>
+<pre class="blocks"><code>when FLAG clicked
+    set [time_left v] to (30)
+    set [score v] to (0)
+    repeat until &lt;(time_left) = [0]&gt;
+        wait (1) secs
+        change [time_left v] by (-1)
+    end
+    stop [all v]</code></pre></li>
+</ul>
+</section>
+<section id="test-your-project-4" class="level2 flag">
+<h2>Test Your Project</h2>
+<p>Click the green flag.</p>
+</section>
+<section id="save-your-project-4" class="level2 save">
+<h2>Save your project</h2>
+</section>
+<section id="things-to-try-3" class="level2 try">
+<h2>Things to try</h2>
+<ul>
+<li>How might you make the ghost speed up as the game goes on?</li>
+</ul>
+<p>Well done you’ve finished the basic game. There are more things you can do to your game though. Have a go at this challenge!</p>
+</section>
+<section id="challenge-add-more-ghosts" class="level2 challenge">
+<h2>Challenge: add more ghosts</h2>
+<p>If one ghost is good, more must be better! Let’s have three ghosts flying around.</p>
+<ol type="1">
+<li>Duplicate the ghost by <strong>right-clicking</strong> it in the sprite list.</li>
+<li>For each ghost <strong>adjust the size of the sprite</strong> so the ghosts are different sizes.</li>
+<li>For each ghost change the <strong>speed variable</strong> so that they fly at different speeds.</li>
+<li>Move the ghosts around the canvas so that they are not all together.</li>
+</ol>
+</section>
+<section id="test-your-project-5" class="level2 flag">
+<h2>Test Your Project</h2>
+<p>Click the green flag.</p>
+<ul>
+<li>Do you have three ghosts that move from side to side across the screen, randomly appear and disappear, and disappear when you click on them?</li>
+</ul>
+</section>
+<section id="save-your-project-5" class="level2 save">
+<h2>Save your project</h2>
+</section>
+<section id="things-to-try-4" class="level2 try">
+<h2>Things to try</h2>
+<ul>
+<li>How many ghosts is a good number for the game?</li>
+<li>Can you make the ghosts look different? You could either edit their costumes, or use some blocks from the Looks palette to change them.</li>
+<li>Can you make the ghosts be worth different points?</li>
+<li>How about making the fastest (and smallest) ghost worth 10 points?</li>
+</ul>
+<p>Well done, you’ve finished! Now you can enjoy your game!</p>
+<p>Don’t forget you can share your game with all your friends and family by clicking on <strong>Share</strong> on the menu bar!</p>
+</section>
+</section>
+</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><script src="../../../assets/script.min.js"></script><script>$(document).ready(function(){
+  scratchblocks2.load_language(scratchblocks2._translations['nb']);
+  scratchblocks2.parse("pre.blocks");
+});</script></body></html>

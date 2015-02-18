@@ -1,0 +1,92 @@
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title> | YourCodeClubName</title><link href="../../../assets/style.min.css" rel="stylesheet"/></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Home</a></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title"></h1></header></div><div class="col-xs-12"><div class="content"><section id="interactive-role-play---coordinates" class="level1">
+<h1>Interactive Role Play - Coordinates</h1>
+<section id="introduction" class="level2">
+<h2>Introduction</h2>
+<p>The idea of this role play is to help the children understand the coordinate system used by scratch. With a strong understanding of <code>x</code> and <code>y</code> coordinates as well as an understanding the concept of the direction the sprite is pointing in children can commend great control over the movement of sprites.</p>
+<p>When the class reaches the exercises in term one’s fireworks project might provide a nice opportunity to run this role play.</p>
+<p>This requires a solid understanding of negative numbers and for the children to remember that x is left and right, and y is up and down.</p>
+</section>
+<section id="basic-premise" class="level2">
+<h2>Basic Premise</h2>
+<p>Layout a stage onto the floor and give the children paper motions scripts getting them to move around the stage.</p>
+</section>
+<section id="concepts-covered" class="level2">
+<h2>Concepts Covered</h2>
+<p>This role play should help with the understanding of</p>
+<ol type="1">
+<li>What a sprite is</li>
+<li>What the stage is</li>
+<li>How to control sprite position using absolute coordinates (goto x,y, or glide to x,y)</li>
+<li>How to control spite position using change (change x by 10, change y by -20)</li>
+<li>An understanding of how this relates to “Move 10 steps”</li>
+<li>The difference between goto and glide to</li>
+</ol>
+</section>
+<section id="what-to-do." class="level2">
+<h2>What to do.</h2>
+<p>On paper no smaller than A4 print in large the letters 5 co-ordinate locations for the 4 corners of the stage and the centre:</p>
+<ul>
+<li><code>0 x 0</code></li>
+<li><code>-240 x 180</code></li>
+<li><code>240 x 180</code></li>
+<li><code>240 x -180</code></li>
+<li><code>-240 x -180</code></li>
+</ul>
+<p>Lay these out on the floor.</p>
+<p>Either print out, or write out, lots of goto commands onto separate pieces of paper. If you print them out so they look like scratch I think it’s easier to relate back to scratch.</p>
+<p>Arrange the children into a queue of children, and “deal” out pieces of paper one by one, starting with a few concepts and building up. Ask them to hand the pieces of paper back as they go round.</p>
+<p>You can use the great <a href="http://blob8108.github.io/scratchblocks2">http://blob8108.github.io/scratchblocks2</a> web page to render scratch blocks for you.</p>
+<p><img src="goto_blocks.png" alt="Goto Blocks" /> <img src="change_blocks.png" alt="Change Blocks" /> <img src="glide_blocks.png" alt="Glide Blocks" /> <img src="turn_blocks.png" alt="Turn Blocks" /> <img src="move_blocks.png" alt="Move Blocks" /></p>
+<pre><code>go to x:(0) y:(0)
+
+go to x:(-240) y:(0)
+
+go to x:(240) y:(0)
+
+go to x:(100) y:(-100)
+
+go to x:(0) y:(180)
+
+go to x:(240) y:(-180)
+
+go to x:(-240) y:(180)
+
+change x by: (20)
+
+change x by: (-20)
+
+change x by: (-100)
+
+change x by: (200)
+
+change y by: (200)
+
+change y by: (-10)
+
+change y by: (-100)
+
+glide (5) secs to x:(0) y:(0)
+
+glide (10) secs to x:(240) y:(180)
+
+glide (5) secs to x:(-100) y:(-180)
+
+turn cw (45) degrees
+
+turn cw (45) degrees
+
+turn ccw (45) degrees
+
+move (10) steps
+
+move (100) steps
+
+move (-10) steps
+
+move (-100) steps</code></pre>
+</section>
+</section>
+</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><script src="../../../assets/script.min.js"></script><script>$(document).ready(function(){
+  scratchblocks2.load_language(scratchblocks2._translations['nb']);
+  scratchblocks2.parse("pre.blocks");
+});</script></body></html>

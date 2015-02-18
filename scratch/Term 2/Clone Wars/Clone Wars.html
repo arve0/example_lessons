@@ -1,0 +1,262 @@
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Clone Wars | YourCodeClubName</title><link href="../../../assets/style.min.css" rel="stylesheet"/></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Home</a></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">Clone Wars</h1></header></div><div class="col-xs-12"><div class="content"><section id="community-contributed-project" class="level2 challenge pdf-hidden">
+<h2>Community Contributed Project</h2>
+<p>This project was created with Erik. If you’d like to contribute a project of your own, then <a href="https://github.com/CodeClub">get in touch with us on Github</a>.</p>
+</section>
+<section id="introduction" class="level1 intro">
+<h1>Introduction</h1>
+<p>In this project you’ll learn how to create a game, in which you have to save the Earth from space-monsters.</p>
+<div class="scratch-preview">
+<pre><code>&lt;iframe allowtransparency=&quot;true&quot; width=&quot;485&quot; height=&quot;402&quot; src=&quot;http://scratch.mit.edu/projects/embed/46018140/?autostart=false&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
+&lt;img src=&quot;invaders-final.png&quot;&gt;</code></pre>
+</div>
+</section>
+<section id="step-1-making-a-spaceship" class="level1 activity">
+<h1>Step 1: Making a Spaceship</h1>
+<p>Let’s make a spaceship, that will defend the Earth!</p>
+<section id="activity-checklist" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>Start a new Scratch project, and delete the cat sprite so that your project is empty. You can find the online Scratch editor at <a href="http://jumpto.cc/scratch-new">jumpto.cc/scratch-new</a>.</p></li>
+<li><p>Add the ‘stars’ backdrop and the ‘spaceship’ sprite to your project. Shrink the spaceship and move it near the bottom of the screen.</p>
+<figure>
+<img src="invaders-sprites.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Add code to move your spaceship to the left when the left arrow key is pressed. You’ll need to use these blocks:</p>
+<pre class="blocks"><code>    forever
+        if &lt;key [left arrow v] pressed?&gt; then
+            change x by (-4)
+        end
+    end</code></pre></li>
+<li><p>Add code to move your spaceship to the right when the right arrow key is pressed.</p></li>
+<li><p>Test your project to see whether you can control your spaceship with the arrow keys.</p></li>
+</ul>
+</section>
+<section id="save-your-project" class="level2 save">
+<h2>Save your project</h2>
+</section>
+</section>
+<section id="step-2-lightning-bolts" class="level1 activity">
+<h1>Step 2: Lightning bolts</h1>
+<p>Let’s give the spaceship the ability to fire lightning bolts!</p>
+<section id="activity-checklist-1" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>Add the ‘Lightning’ sprite from the Scratch library. Click the sprite’s costume and turn the lightning upside-down.</p>
+<figure>
+<img src="invaders-lightning.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>When the game is started, the lightning should be hidden until the spaceship fires its laser cannons.</p>
+<pre class="blocks"><code>    when flag clicked
+    hide</code></pre></li>
+<li><p>Add the following code <strong>to the spaceship</strong> to create a new lightning bolt whenever the space key is pressed.</p>
+<pre class="blocks"><code>    when flag clicked
+    forever
+        if &lt;key [space v] pressed?&gt; then
+            create clone of [Lightning v]
+        end
+    end</code></pre></li>
+<li><p>Whenever a new clone is created, it should start in the same place as the spaceship, and then move up the stage until it touches the edge. Add the following code <strong>to the Lightning sprite</strong>:</p>
+<pre class="blocks"><code>    when I start as a clone
+    go to [Spaceship v]
+    show
+    repeat until &lt;touching [edge v] ?&gt;
+        change y by (10)
+    end
+    delete this clone</code></pre></li>
+</ul>
+<p>Note: We move the new clone to the spaceship while it is still hidden, before then showing it. This just looks nicer.</p>
+<ul>
+<li>Test your lightning, by pressing the space key.</li>
+</ul>
+</section>
+<section id="save-your-project-1" class="level2 save">
+<h2>Save your project</h2>
+</section>
+<section id="challenge-fixing-the-lightning" class="level2 challenge">
+<h2>Challenge: Fixing the lightning</h2>
+<p>What happens if you keep the space key held down? Can you use a <code class="blockcontrol">wait</code> block to fix this?</p>
+</section>
+<section id="save-your-project-2" class="level2 save">
+<h2>Save your project</h2>
+</section>
+</section>
+<section id="step-3-flying-space-hippos" class="level1 activity">
+<h1>Step 3: Flying Space-hippos</h1>
+<p>Let’s add lots of flying hippos that are trying to destroy your spaceship.</p>
+<section id="activity-checklist-2" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>Create a new sprite from the ‘Hippo1’ image in the Scratch library.</p>
+<figure>
+<img src="invaders-hippo.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Set its rotation style to be left-right only, and add the following code to hide the sprite when the game starts:</p>
+<pre class="blocks"><code>    when flag clicked
+    hide</code></pre></li>
+<li><p>Create a new variable called <code class="blockdata">speed</code>, that is for the hippo sprite only.</p>
+<figure>
+<img src="invaders-var.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+<p>You’ll know if you’ve done this correctly because the variable will have the name of the sprite next to it, like this:</p>
+<figure>
+<img src="invaders-var-test.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>The following code will create a new hippo every few seconds. <strong>The Stage</strong> is a good place for this code to live:</p>
+<pre class="blocks"><code>    when flag clicked
+    forever
+        wait (pick random (2) to (4)) secs
+        create clone of [Hippo1 v]
+    end</code></pre></li>
+<li><p>When each hippo clone starts, make it move around the stage (at a random speed) until it gets hit by the lightning. Add this code <strong>to the hippo</strong> sprite:</p>
+<pre class="blocks"><code>    when I start as a clone
+    set [speed v] to (pick random (2) to (4))
+    go to x: (pick random (-220) to (220)) y: (150)
+    show
+    repeat until &lt;touching [lightning v] ?&gt;
+        move (speed) steps
+        turn right (pick random (-10) to (10)) degrees
+        if on edge, bounce
+    end
+    delete this clone</code></pre></li>
+<li><p>Test out your hippo code. You should see a new hippo clone appear every few seconds, each moving at its own speed.</p>
+<figure>
+<img src="invaders-hippo-test.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Test your laser cannon. If you hit a hippo, does it vanish?</p></li>
+<li><p>When a hippo touches your spaceship, we need to make the spaceship explode! To do this, first make sure that your spaceship has 2 costumes called ‘normal’ and ‘hit’.</p>
+<figure>
+<img src="invaders-spaceship-costumes.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+<p>The spaceship’s ‘hit’ costume can be made by importing the ‘Sun’ image from the Scratch library, and using the ‘Color a shape’ tool to change its colour.</p>
+<figure>
+<img src="invaders-sun.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Add this code to your spaceship, so that it switches costume whenever it collides with a flying hippo:</p>
+<pre class="blocks"><code>    when flag clicked
+    forever
+        switch costume to [normal v]
+        wait until &lt;touching [Hippo1 v]&gt;?
+        switch costume to [hit v]
+        broadcast [hit v]
+        wait (1) secs
+    end</code></pre></li>
+<li><p>Did you notice that you have broadcast a ‘hit’ message in the code above? You can use this message to make all of the hippos disappear when the spaceship is hit.</p>
+<p>Add this code to your hippo:</p>
+<pre class="blocks"><code>    when I receive [hit v]
+    delete this clone</code></pre></li>
+<li><p>Test out this code by starting a new game and colliding with a hippo.</p>
+<figure>
+<img src="invaders-hippo-collide.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+</ul>
+</section>
+<section id="save-your-project-3" class="level2 save">
+<h2>Save your project</h2>
+</section>
+<section id="challenge-lives-and-score" class="level2 challenge">
+<h2>Challenge: Lives and Score</h2>
+<p>Can you add a <code class="blockdata">lives</code>, <code class="blockdata">score</code> or even a <code class="blockdata">highscore</code> to your game? You can use the ‘Catch the Dots’ project to help you.</p>
+</section>
+<section id="save-your-project-4" class="level2 save">
+<h2>Save your project</h2>
+</section>
+</section>
+<section id="step-4-fruit-bats" class="level1 activity">
+<h1>Step 4: Fruit Bats!</h1>
+<p>Let’s make a fruit bat, that throws oranges at your spaceship.</p>
+<section id="activity-checklist-3" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>Firstly, make a new bat sprite that will <code class="blockmotion">move</code> across the top of the stage <code class="blockcontrol">forever</code>. Remember to test out your code.</p>
+<figure>
+<img src="invaders-bat.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>If you look at the bat’s costumes, you’ll see that it already has 2:</p>
+<figure>
+<img src="invaders-bat-costume.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+<p>Use the <code class="blocklooks">next costume</code> block to make the bat flap its wings as it moves.</p></li>
+<li><p>Create a new ‘Orange’ sprite from the Scratch library</p>
+<figure>
+<img src="invaders-orange.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Add code to your bat, so that it creates a new orange clone every few seconds.</p>
+<pre class="blocks"><code>    when flag clicked
+    forever
+        wait (pick random (5) to (10)) secs
+        create clone of [Orange v]
+    end</code></pre></li>
+<li><p>Click on your orange sprite, and add this code to make each orange clone drop down the stage from the bat towards the spaceship:</p>
+<pre class="blocks"><code>    when flag clicked
+    hide
+
+    when I start as a clone
+    go to [Bat1 v]
+    show
+    repeat until &lt;touching [edge v]?
+        change y by (-4)
+    end
+    delete this clone
+
+    when I receive [hit v]
+    delete this clone</code></pre></li>
+<li><p>In your spaceship sprite, you’ll need to modify your code so that you are hit if you touch a hippo or an orange:</p>
+<pre class="blocks"><code>    wait until &lt; &lt;touching [Hippo1 v]?&gt; or &lt;touching [Orange v]?&gt;&gt;</code></pre></li>
+<li><p>Test your game. What happens if you get hit by a falling orange?</p></li>
+</ul>
+</section>
+<section id="save-your-project-5" class="level2 save">
+<h2>Save your project</h2>
+</section>
+</section>
+<section id="step-5-game-over" class="level1 activity">
+<h1>Step 5: Game over</h1>
+<p>Let’s add a ‘game over’ message at the end of the game.</p>
+<section id="activity-checklist-4" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>If you haven’t already, create a new variable called <code class="blockdata">lives</code>. Your spaceship should start with 3 lives, and lose a life whenever it collides with an enemy. Your game should also stop when you run out of lives. If you need help, you can use the ‘Catch the Dots’ project to help you.</p></li>
+<li><p>Draw a new sprite called ‘Game Over’, using the text tool.</p>
+<figure>
+<img src="invaders-game-over.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>On your stage, broadcast a <code class="blockevents">game over</code> message just before the game ends.</p>
+<pre class="blocks"><code>    broadcast [game over v] and wait</code></pre></li>
+<li><p>Add this code to your ‘Game Over’ sprite, so that the message shows at the end of the game:</p>
+<pre class="blocks"><code>    when flag clicked
+    hide
+
+    when I receive [game over v]
+    show</code></pre>
+<p>Because you’ve used a <code class="blockevents">broadcast [game over] and wait</code> block on your stage, it will wait for the ‘Game Over’ sprite to be displayed before ending the game.</p></li>
+<li><p>Test your game. How many points can you score? Can you think of ways to improve your game if it is too easy or too hard?</p></li>
+</ul>
+</section>
+<section id="save-your-project-6" class="level2 save">
+<h2>Save your project</h2>
+</section>
+<section id="challenge-improve-your-game" class="level2 challenge">
+<h2>Challenge: Improve your game</h2>
+<p>What improvements can you make to your game? Here are some ideas: + Add health packs that you can collect to gain extra lives;</p>
+<figure>
+<img src="invaders-aid.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+<ul>
+<li>Add floating rocks that your spaceship must avoid;</li>
+</ul>
+<figure>
+<img src="invaders-rocks.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+<ul>
+<li>Make more enemies appear when your score gets to 100.</li>
+</ul>
+<pre class="blocks"><code>    wait until &lt;(score) = [100]&gt;</code></pre>
+</section>
+<section id="save-your-project-7" class="level2 save">
+<h2>Save your project</h2>
+</section>
+</section>
+</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><script src="../../../assets/script.min.js"></script><script>$(document).ready(function(){
+  scratchblocks2.load_language(scratchblocks2._translations['nb']);
+  scratchblocks2.parse("pre.blocks");
+});</script></body></html>

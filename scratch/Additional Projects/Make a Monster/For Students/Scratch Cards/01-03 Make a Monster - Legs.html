@@ -1,0 +1,46 @@
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Scratch Card - Legs | YourCodeClubName</title><link href="../../../../../assets/style.min.css" rel="stylesheet"/></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../../../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Home</a></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../../../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">Scratch Card - Legs</h1></header></div><div class="col-xs-12"><div class="content"><section id="activity-checklist" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li>Using two <strong>leg sprites</strong> we can make our monsters appear to walk. To do this we need to set up a <strong>variable</strong> that switches between two states, one for our leg swinging forward and another for backwards (we’ll reverse these states for the other leg).</li>
+</ul>
+<p>To do this we need to first set up a <code class="blockorange">step</code> variable, then every time our moving broadcast is received, <strong>increase the variable by one</strong>. If the variable goes higher than one (we can test this with the greater than operator <code class="blockgreen">&gt;</code>) we reset it back to <strong>zero</strong>.</p>
+<pre class="blocks"><code>    when FLAG clicked
+        set [move speed v] to [5]
+        set [step v] to [0]
+
+    when I receive [moved left v]
+        change [step v] by [1]
+        if &lt; (step) &gt; [1] &gt; then
+            set [step v] to [0]
+        end
+
+    when I receive [moved right v]
+    change [step v] by [1]
+    if &lt; (step) &gt; [1] &gt; then
+        set [step v] to [0]
+    end</code></pre>
+<ul>
+<li>Now we can set our legs to swing by checking against our <code class="blockorange">step</code> variable. <strong>When the variable is set to zero</strong> we can change the direction of our leg (here we’ve used a fixed <code class="blockblue">direction</code> to stop our legs going mad if our variable and angle don’t match up, but maybe you want your monster to do that!).</li>
+</ul>
+<p>Don’t forget to move you legs along with your body using your <code class="blockorange">move speed</code> variable.</p>
+<pre class="blocks"><code>    when I receive [moved right v]
+        change x by (move speed)
+        if &lt; (step) = [0] &gt; then
+            point in direction (180 v)
+        else
+            point in direction (165 v)
+        end
+
+    when I receive [moved left v]
+    change x by ((move speed) * [-1])
+    if &lt; (step) = [1] &gt; then
+        point in direction (165 v)
+    else
+        point in direction (180 v)
+    end</code></pre>
+<p><strong>You could use the same sort of actions to make simple waving arms or even flapping bird wings.</strong></p>
+</section>
+</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><script src="../../../../../assets/script.min.js"></script><script>$(document).ready(function(){
+  scratchblocks2.load_language(scratchblocks2._translations['nb']);
+  scratchblocks2.parse("pre.blocks");
+});</script></body></html>

@@ -1,0 +1,119 @@
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Styling web pages | YourCodeClubName</title><link href="../../assets/style.min.css" rel="stylesheet"/></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Home</a></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">Styling web pages</h1></header></div><div class="col-xs-12"><div class="content"><section id="introduction" class="level2 intro">
+<h2>Introduction</h2>
+<p>Let’s make our website look nicer with some styles. In this lesson and the next we are going to learn how to change colour, text, sizes and more!</p>
+<p>We style HTML pages using a language called <strong>CSS</strong> (which stands for <strong>Cascading Style Sheets</strong>). It is a very simple language to learn. Let’s get started.</p>
+</section>
+<section id="step-1-setting-up-to-write-some-style" class="level1 activity">
+<h1>Step 1: Setting up to write some style</h1>
+<p>There are many ways to add styles to your HTML: inline, in the head, or as a separate .css document that we link to from the head. But today, we’ll be using styles in the <code>head</code> element of our html page so we don’t have to worry about handling multiple files.</p>
+<section id="activity-checklist" class="level2 check">
+<h2>Activity checklist</h2>
+<ul>
+<li>Open the index.html from the Felix folder we did last session.</li>
+<li><p>In the head section, we need a <strong>style tag</strong>.</p>
+<pre class="language-markup"><code>&lt;style&gt;
+&lt;/style&gt;</code></pre>
+<p>All our styles will go between these two elements. Simplez. In general, css code looks like this:</p></li>
+</ul>
+<pre class="language-css"><code>selector {
+    property: value;
+}</code></pre>
+<ul>
+<li>Can you find the ‘{‘ and ‘}’ keys on your keyboard?</li>
+<li>How about ‘:’ and ‘;’?</li>
+</ul>
+<p>Selectors can be html elements like <code>h1</code>, <code>p</code>, <code>img</code>, <code>a</code>. But they can also be other things which we will learn later.</p>
+</section>
+</section>
+<section id="step-2-adding-colours" class="level1 activity">
+<h1>Step 2: Adding Colours</h1>
+<p>Let’s add some colour with the color property! It’s color without the u. Yes we think it’s confusing too. It’s because it’s using the American spelling of the word, despite the fact that CSS was invented by a Norwegian person. You’ll get used to it soon enough, just don’t forget the English spelling in your English lessons!</p>
+<p>Let’s change the <code>h1</code> to be red instead of black.</p>
+<pre class="language-css"><code>h1 {
+    color: red;
+}</code></pre>
+<section id="save-your-file-and-view-it-in-your-browser" class="level2 save">
+<h2><strong>SAVE</strong> your file and <strong>VIEW</strong> it in your browser</h2>
+<p>The text is now red, w00t! There are different ways of saying the values for the color. There are 16 basic color names, they are aqua, black, blue, fuchsia, gray, green, lime, maroon, navy, olive, purple, red, silver, teal, white, and yellow.</p>
+<ul>
+<li><p>Try changing the color to something else! Most browsers support an additional 130 color names, a full alphabetical list of which is found at <a href="http://www.w3.org/TR/css3-color/#svg-color">http://www.w3.org/TR/css3-color/#svg-color</a> - is your favourite colour in the list?</p></li>
+<li>But we can use even more colors by using <strong>hexidecimal code</strong> instead of color name. A hexcode is a # followed by 6 digits, the digits can be 0-9 or the letters A, B, C, D, E, F. Using hexcode we can use more than 16 million colours!</li>
+<li><p>At Code Club, our favourite colour is <code>#58AB57</code>. Can you guess what colour it is? Why don’t you try changing some text to that colour and view it in a browser to see.</p></li>
+</ul>
+</section>
+<section id="save-your-file-and-view-it-in-your-browser-1" class="level2 save">
+<h2><strong>SAVE</strong> your file and <strong>VIEW</strong> it in your browser</h2>
+</section>
+</section>
+<section id="step-3-colouring-specific-elements" class="level1 activity">
+<h1>Step 3: Colouring specific elements</h1>
+<p>What if we wanted to make the word ‘orange’ in ‘his fur is orange’ orange? Not the whole paragraph, just that word.</p>
+<p>One way of doing that is putting <code>&lt;span&gt;</code> tags around the word, like so:</p>
+<p><code>&lt;span&gt;orange&lt;/span&gt;</code></p>
+<p>Then in the head, we can style the span.</p>
+<pre class="language-css"><code>span {
+    color: orange;
+}</code></pre>
+<section id="save-your-file-and-view-it-in-your-browser-2" class="level2 save">
+<h2><strong>SAVE</strong> your file and <strong>VIEW</strong> it in your browser</h2>
+</section>
+</section>
+<section id="step-4-background" class="level1 activity">
+<h1>Step 4: Background</h1>
+<p>We can add colours to the background too, not just text. For instance:</p>
+<pre class="language-css"><code>body {
+    background-color: #D2FAFC;
+}</code></pre>
+<p>This will make the entire background light blue. You can choose any colour you like from a list at <a href="http://www.colourpicker.com">www.colourpicker.com</a> which generates the number you need which you can copy and paste into your code.</p>
+<p>Now try:</p>
+<pre class="language-css"><code>h1 {
+    background-color: black;
+}</code></pre>
+<p>Since we already had a <code>h1</code> declaration in there, we could just put in the background-color with the color, no need to write it all out again.</p>
+<pre class="language-css"><code>h1 {
+    background-color: black;
+    color: red;
+}</code></pre>
+<section id="now-save-your-file-and-see-what-it-looks-like." class="level2 save">
+<h2>Now <strong>SAVE</strong> your file and see what it looks like.</h2>
+</section>
+<section id="fun-with-text" class="level2">
+<h2>Fun with text</h2>
+<p>Maybe the ‘Missing’ header should be <strong>bigger</strong> and also all capital letters. We can specify the size of the text using <code>font-size</code>. The values can be many things, but the most common are 12, 14, 16, 32, 48 and 72 pixels. For now lets try 72px. (px means pixel).</p>
+<pre class="language-css"><code>h1 {
+    background-color: black;
+    color: red;
+    font-size: 72px;
+}</code></pre>
+<p>Now try making the heading capital letters only by using <code>text-transform:uppercase;</code> We can also make it underlined by using <code>text-decoration:underline;</code></p>
+</section>
+<section id="now-save-your-file-and-see-what-it-looks-like.-1" class="level2 save">
+<h2>Now <strong>SAVE</strong> your file and see what it looks like.</h2>
+<p>It’s much more noticeable now right?</p>
+</section>
+</section>
+<section id="step-6.-centering-text-and-images-horizontally" class="level1 activity">
+<h1>Step 6. Centering text (and images) horizontally</h1>
+<p>All our text is all the way over on the left. We can change that using <code>text-align:center</code> (it also takes ‘right’, ‘left’ is the default).</p>
+<ul>
+<li>We want all our text to be centered for this particular webpage, so we can write: Note the American spelling of the word centre is center.</li>
+</ul>
+<pre class="language-css"><code>body {
+    background-color: #F8FAF4;
+    text-align: center;
+}</code></pre>
+<p>Did you notice that everything in the page went to the centre when we put ‘text-align: center’ in the body section? That’s because everything inside the body element inherits the style. This happens whenever one element is inside another, like here:</p>
+<pre class="language-markup"><code>&lt;p&gt;Have you seen Felix? &lt;em&gt;Please&lt;/em&gt; contact his owner&lt;/p&gt;</code></pre>
+<p>The ‘Please’ will have the style of the <code>&lt;p&gt;</code> element with the style of the <code>&lt;em&gt;</code> element added on. This is why the stylesheets are called <strong>cascading</strong> - the styles cascade from elements into all the ones inside them. Be careful, though, because some styles are not <em>inherited</em>. We will find out about these later.</p>
+<section id="now-save-your-file-and-view-it-in-a-browser" class="level2 save">
+<h2>Now <strong>SAVE</strong> your file and view it in a browser</h2>
+</section>
+<section id="further-study" class="level2 try">
+<h2>Further study</h2>
+<ul>
+<li>How would you change the page to make it look better? Why not try using all your favourite colours? Do they have colour names or do you need to use hexcode?</li>
+<li>If you finish early you can go back and add styles to the html we made in previous lessons.</li>
+</ul>
+</section>
+</section>
+</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><script src="../../assets/script.min.js"></script></body></html>

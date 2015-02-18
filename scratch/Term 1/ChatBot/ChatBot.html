@@ -1,0 +1,204 @@
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>ChatBot | YourCodeClubName</title><link href="../../../assets/style.min.css" rel="stylesheet"/></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Home</a></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">ChatBot</h1></header></div><div class="col-xs-12"><div class="content"><section id="introduction" class="level1 intro">
+<h1>Introduction</h1>
+<p>You are going to learn how to program your own talking robot!</p>
+<div class="scratch-preview">
+<pre><code>&lt;iframe allowtransparency=&quot;true&quot; width=&quot;485&quot; height=&quot;402&quot; src=&quot;http://scratch.mit.edu/projects/embed/26762091/?autostart=true&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
+&lt;img src=&quot;chatbot-final.png&quot;&gt;</code></pre>
+</div>
+</section>
+<section id="step-1-your-chatbot" class="level1 activity">
+<h1>Step 1: Your chatbot</h1>
+<section id="activity-checklist" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li>Before you start making your chatbot, you need to decide on their personality.
+<ul>
+<li>What is their name?</li>
+<li>Where do they live?</li>
+<li>Are they happy? serious? funny? shy? friendly?</li>
+</ul></li>
+<li><p>Start a new Scratch project, and delete the cat sprite so that your project is empty. You can find the online Scratch editor at <a href="http://jumpto.cc/scratch-new">jumpto.cc/scratch-new</a>.</p></li>
+<li><p>Choose one of these character sprites, and add them to your project:</p>
+<figure>
+<img src="chatbot-characters.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Choose a backdrop that fits your chatbot’s personality. Here’s an example, although yours doesn’t have to look like this:</p>
+<figure>
+<img src="chatbot-sprite.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+</ul>
+</section>
+<section id="save-your-project" class="level2 save">
+<h2>Save your project</h2>
+</section>
+</section>
+<section id="step-2-a-talking-chatbot" class="level1 activity">
+<h1>Step 2: A talking chatbot</h1>
+<p>Now that you have a chatbot with a personality, let’s program it to talk to us.</p>
+<section id="activity-checklist-1" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>Click on your chatbot character, and add this code:</p>
+<pre class="blocks"><code>    when this sprite clicked
+    ask [Hey! What&#39;s your name?] and wait
+    say [What a lovely name!] for (2) secs</code></pre></li>
+<li><p>Click your chatbot to test it out. After you are asked your name, type it into the box along the bottom of the stage, and click the tick (or press return).</p>
+<figure>
+<img src="chatbot-text.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Your chatbot simply replies “What a lovely name!” every time. You can personalise your chatbot’s reply, by making use of the user’s answer. Change the chatbot’s code, so that it looks like this:</p>
+<pre class="blocks"><code>    when this sprite clicked
+    ask [Hey! What&#39;s your name?] and wait
+    say &lt;join [Hi] (answer)&gt; for (2) secs</code></pre>
+<p>To create the last block, you’ll need to first drag on a green <code class="blockoperators">join</code> block, and drag it on to the <code class="blocklooks">say</code> block.</p>
+<figure>
+<img src="chatbot-join.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+<p>You can then change the text “hello” to say “Hi”, and drag the light blue <code class="blocksensing">answer</code> block (from the ‘Sensing’ section) onto the text “world”.</p>
+<figure>
+<img src="chatbot-answer.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Test out this new program. Does it work as you expected? Can you fix any problems that you can see? (Hint: you can try adding in a space somewhere!)</p></li>
+<li><p>It may be that you want to store the user’s name in a variable, so that you can use it again later. Create a new variable called ‘name’. If you’ve forgotten how to do this, the previous ‘Balloons’ project will help you.</p></li>
+<li><p>Once you’ve created your new variable, make sure that your chatbot’s code looks like this:</p>
+<pre class="blocks"><code>    when this sprite clicked
+    ask [Hey! What&#39;s your name?] and wait
+    set [name v] to (answer)
+    say &lt;join [Hi ] (name)&gt; for (2) secs</code></pre></li>
+<li><p>If you test your program again, you’ll notice that the answer is stored in the ‘name’ variable, and is shown in the top-left of the stage.</p>
+<figure>
+<img src="chatbot-variable.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+<p>If you’d rather not see the variable on your stage, you can click the tick next to the variable name in the ‘Scripts’ tab to hide it.</p></li>
+</ul>
+</section>
+<section id="save-your-project-1" class="level2 save">
+<h2>Save your project</h2>
+</section>
+<section id="challenge-more-questions" class="level2 challenge">
+<h2>Challenge: More questions</h2>
+<p>Program your chatbot to ask another question. Can you store their answer in a variable?</p>
+<figure>
+<img src="chatbot-question.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+</section>
+<section id="save-your-project-2" class="level2 save">
+<h2>Save your project</h2>
+</section>
+</section>
+<section id="step-3-making-decisions" class="level1 activity">
+<h1>Step 3: Making decisions</h1>
+<p>You can program your chatbot to decide what to do, based on the user’s responses.</p>
+<section id="activity-checklist-2" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>Let’s get your chatbot to ask the user a question which has a ‘yes’ or ‘no’ answer. Here’s an example, but you can change the question if you like:</p>
+<pre class="blocks"><code>    when this sprite clicked
+    ask [Hey! What&#39;s your name?] and wait
+    set [name v] to (answer)
+    say &lt;join [Hi ] (name)&gt; for (2) secs
+    ask &lt;join [Are you OK ] (name)&gt; and wait
+    if ((answer)=[yes]) then
+        say [That&#39;s great to hear!] for (2) secs
+    end</code></pre>
+<p>Notice that now you’ve stored the user’s name in a variable, you can use it as much as you like.</p></li>
+<li><p>To test this program properly, you’ll need to test it twice - once typing ‘no’ as your answer, and once typing ‘yes’. You should only get a response from your chatbot <code class="blockcontrol">if</code> you answer ‘yes’.</p></li>
+<li><p>The trouble with your chatbot is that it doesn’t give a reply if the user answers ‘no’. You can fix this, by changing the <code class="blockcontrol">if</code> block to an <code class="blockcontrol">if/else</code> block, so that your code now looks like this:</p>
+<pre class="blocks"><code>    when this sprite clicked
+    ask [Hey! What&#39;s your name?] and wait
+    set [name v] to (answer)
+    say &lt;join [Hi ] (name)&gt; for (2) secs
+    ask &lt;join [Are you OK ] (name)&gt; and wait
+    if ((answer)=[yes]) then
+        say [That&#39;s great to hear!] for (2) secs
+    else
+        say [Oh no!] for (2) secs
+    end</code></pre></li>
+<li><p>If you test your code, you’ll now see that you get a response when you answer ‘yes’ or ‘no’. Your chatbot should reply with “That’s great to hear!” when you answer ‘yes’, but will reply with “Oh no!” if you type anything other than yes (<code class="blockcontrol">else</code> means ‘otherwise’).</p>
+<figure>
+<img src="chatbot-else.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>You can put any code inside an <code class="blockcontrol">if</code> or <code class="blockcontrol">else</code> block, not just code to make your chatbot speak. For example, you can change the chatbot’s costume to match the response.</p>
+<p>If you have a look at your chatbot’s costumes, you may see that there is more than one. (If not, you can always add more yourself!)</p>
+<figure>
+<img src="chatbot-costumes.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+<p>You can use these costumes as part of your chatbot’s response, by using this code:</p>
+<pre class="blocks"><code>    when this sprite clicked
+    switch costume to [nano-a v]
+    ask [Hey! What&#39;s your name?] and wait
+    set [name v] to (answer)
+    say &lt;join [Hi ] (name)&gt; for (2) secs
+    ask &lt;join [Are you OK ] (name)&gt; and wait
+    if ((answer)=[yes]) then
+        switch costume to [nano-c v]
+        say [That&#39;s great to hear!] for (2) secs
+    else
+        switch costume to [nano-d v]
+        say [Oh no!] for (2) secs
+    end</code></pre></li>
+<li><p>Test out your program, and you should see your chatbot’s face change depending on the answer you give.</p>
+<figure>
+<img src="chatbot-face.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+</ul>
+</section>
+<section id="save-your-project-3" class="level2 save">
+<h2>Save your project</h2>
+</section>
+<section id="challenge-more-decisions" class="level2 challenge">
+<h2>Challenge: More decisions</h2>
+<p>Program your chatbot to ask another question - something with a ‘yes’ or ‘no’ answer. Can you make your chatbot respond to the answer?</p>
+<figure>
+<img src="chatbot-joke.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+</section>
+<section id="save-your-project-4" class="level2 save">
+<h2>Save your project</h2>
+</section>
+</section>
+<section id="step-4-changing-location" class="level1 activity">
+<h1>Step 4: Changing location</h1>
+<p>You can also program your chatbot to change its location.</p>
+<section id="activity-checklist-3" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>Add another backdrop to your stage, and make sure that it has a useful name (for example ‘bedroom2’).</p>
+<figure>
+<img src="chatbot-bedroom.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>You can now program your chatbot to change location, by adding this code to your chatbot:</p>
+<pre class="blocks"><code>    ask [I&#39;m going home, do you want to come with me?] and wait
+    if ((answer) = [yes]) then
+        switch backdrop to [bedroom2 v]
+    end</code></pre></li>
+<li><p>You also need to make sure that your chatbot is outside when you start talking to it. Add this block to the top of your chatbot code:</p>
+<figure>
+<img src="chatbot-outside.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Test your program, and answer ‘yes’ when asked if you want to go home. You should see that the chatbot’s location has changed.</p>
+<figure>
+<img src="chatbot-backdrop.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Does your chatbot change location if you type ‘no’? What about if you type ‘I’m not sure’?</p></li>
+</ul>
+</section>
+<section id="save-your-project-5" class="level2 save">
+<h2>Save your project</h2>
+</section>
+<section id="challenge-make-your-own-chatbot" class="level2 challenge">
+<h2>Challenge: Make your own chatbot</h2>
+<p>Use what you’ve learnt to finish creating your interactive chatbot. Here are some ideas:</p>
+<figure>
+<img src="chatbot-ideas.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+<p>Once you’ve finished making your chatbot, get your friends to have a conversation with it! Do they like your character? Did they spot any problems?</p>
+</section>
+<section id="save-your-project-6" class="level2 save">
+<h2>Save your project</h2>
+</section>
+</section>
+</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><script src="../../../assets/script.min.js"></script><script>$(document).ready(function(){
+  scratchblocks2.load_language(scratchblocks2._translations['nb']);
+  scratchblocks2.parse("pre.blocks");
+});</script></body></html>

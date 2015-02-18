@@ -1,0 +1,247 @@
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>RPG | YourCodeClubName</title><link href="../../../assets/style.min.css" rel="stylesheet"/></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Home</a></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">RPG</h1></header></div><div class="col-xs-12"><div class="content"><section id="introduction" class="level1 intro">
+<h1>Introduction:</h1>
+<p>In this challenge, you’ll design and code your own RPG maze game. The aim of the game will be to collect objects and escape from a house, making sure to avoid all the monsters!</p>
+</section>
+<section id="step-1-adding-new-rooms" class="level1 activity">
+<h1>Step 1: Adding new rooms</h1>
+<section id="activity-checklist" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li>If you run the RPG.py file, you’ll be able to play a very basic RPG game that only has 2 rooms. Here’s a map of the game:</li>
+</ul>
+<figure>
+<img src="rpg-map1.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+<p>You can type <code>go south</code> to move from the hall to the kitchen, and then <code>go north</code> to go back to the hall again!</p>
+<figure>
+<img src="rpg-controls.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+<ul>
+<li>You can also see what happens when you type in a direction that you cannot go. For example, there is no room to the west of the hall, so if you type <code>go west</code>, you’ll get a friendly error message.</li>
+</ul>
+<figure>
+<img src="rpg-error.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+<ul>
+<li>If you edit the RPG.py file, you can see that the map is coded as a dictionary of rooms:</li>
+</ul>
+<pre class="language-python"><code>    #a dictionary linking a room to other room positions
+    rooms = {
+
+                1 : {  &quot;name&quot;  : &quot;Hall&quot; ,
+                       &quot;south&quot; : 2
+                    } ,        
+
+                2 : {  &quot;name&quot;  : &quot;Kitchen&quot; ,
+                       &quot;north&quot; : 1
+                    }
+
+             }</code></pre>
+<p>Actually, this is a dictionary that links a room number to another dictionary, containing all of the information about the room. For example, room 1 in the code above is the hall. The hall is linked to room 2 (the kitchen) to the south. Room 2 (the kitchen) also links to room 1 (the hall) to the north.</p>
+<ul>
+<li>Let’s add another room to your map (a dining room), to make it a bit more interesting!</li>
+</ul>
+<figure>
+<img src="rpg-dining.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+<p>This new dining room is linked to the hall (to the west). Let’s add this new room into the code:</p>
+<pre class="language-python"><code>#a dictionary linking a room to other room positions
+rooms = {
+
+            1 : {  &quot;name&quot;  : &quot;Hall&quot; ,
+                   &quot;south&quot; : 2 ,
+                   &quot;east&quot;  : 3
+                } ,        
+
+            2 : {  &quot;name&quot;  : &quot;Kitchen&quot; ,
+                   &quot;north&quot; : 1
+                } ,
+
+            3 : {  &quot;name&quot;  : &quot;Dining Room&quot;,
+                   &quot;west&quot;  : 1
+                }
+
+         }</code></pre>
+<p>To add this room to the game, notice that you need to add the new room (room number 3), and give it a name. You also need to link to room 1 (the hall) to the west of the new room. You need to add information to the dictionary for the hall, to allow you to enter the dining room to the east. Remember to add a comma after the second room in the dictionary, or your code won’t run!</p>
+<ul>
+<li>Try out the game with the new dining room:</li>
+</ul>
+<figure>
+<img src="rpg-new-room.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+<p>If you can’t move in and out of the dining room, just check that you added all of the code above (including the extra commas to the lines above).</p>
+</section>
+<section id="save-your-project" class="level2 save">
+<h2>Save Your Project</h2>
+</section>
+<section id="challenge-add-new-rooms" class="level2 challenge">
+<h2>Challenge: Add new rooms</h2>
+<p>Add more rooms to your game. For example, you could create a living room to the south of the dining room. Remember to add a door to/from one of the other rooms!</p>
+</section>
+<section id="save-your-project-1" class="level2 save">
+<h2>Save Your Project</h2>
+</section>
+</section>
+<section id="step-2-adding-items-to-collect" class="level1 activity">
+<h1>Step 2: Adding items to collect</h1>
+<p>Now that you have lots of rooms, let’s leave items in the rooms for the player to collect as they move through the maze.</p>
+<section id="activity-checklist-1" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li>Adding an item into a room is easy. You can just add it to the dictionary of a room. For example, let’s put a key in the hall.</li>
+</ul>
+<pre class="language-python"><code>#a dictionary linking a room to other room positions
+rooms = {
+
+            1 : {  &quot;name&quot;  : &quot;Hall&quot; ,
+                   &quot;south&quot; : 2 ,
+                   &quot;east&quot;  : 3 ,
+                   &quot;item&quot;  : &quot;key&quot;
+                } ,        
+
+            2 : {  &quot;name&quot;  : &quot;Kitchen&quot; ,
+                   &quot;north&quot; : 1
+                } ,
+
+            3 : {  &quot;name&quot;  : &quot;Dining Room&quot;,
+                   &quot;west&quot;  : 1
+                }
+
+         }</code></pre>
+<p>Remember to put a comma after the line above the new item, or your program won’t run!</p>
+<ul>
+<li>If you run your game after adding the code above, you can now see a key in the hall, and you can even pick it up (by typing <code>get key</code>) and add it to your inventory!</li>
+</ul>
+<figure>
+<img src="rpg-key.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+</section>
+<section id="save-your-project-2" class="level2 save">
+<h2>Save Your Project</h2>
+</section>
+<section id="challenge-add-new-items" class="level2 challenge">
+<h2>Challenge: Add new items</h2>
+<p>Add an item to some of the rooms in your game. You can add anything that you think would be helpful in trying to escape the house! For example, a shield or a magic potion.</p>
+</section>
+<section id="save-your-project-3" class="level2 save">
+<h2>Save Your Project</h2>
+</section>
+</section>
+<section id="step-3-adding-enemies" class="level1 activity">
+<h1>Step 3: Adding enemies</h1>
+<p>This game is too easy! Let’s add enemies to some rooms that the player must avoid.</p>
+<section id="activity-checklist-2" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li>Adding an enemy to a room is as easy as adding any other item. Let’s add a hungry monster to the kitchen:</li>
+</ul>
+<pre class="language-python"><code>#a dictionary linking a room to other room positions
+rooms = {
+
+            1 : {  &quot;name&quot;  : &quot;Hall&quot; ,
+                   &quot;south&quot; : 2 ,
+                   &quot;east&quot;  : 3 ,
+                   &quot;item&quot;  : &quot;key&quot;
+                } ,        
+
+            2 : {  &quot;name&quot;  : &quot;Kitchen&quot; ,
+                   &quot;north&quot; : 1 ,
+                   &quot;item&quot;  : &quot;monster&quot;
+                } ,
+
+            3 : {  &quot;name&quot;  : &quot;Dining Room&quot;,
+                   &quot;west&quot;  : 1
+                }
+
+         }</code></pre>
+<ul>
+<li>You also want to make sure that the game ends if the player enters a room with a monster in. You can do this with the following code, which you should add to the end of the game.</li>
+</ul>
+<pre class="language-python"><code>    #player loses if they enter a room with a monster
+    if &quot;item&quot; in rooms[currentRoom] and &quot;monster&quot; in rooms[currentRoom][&quot;item&quot;]:
+        print(&quot;A monster has got you... GAME OVER!&quot;)
+        print(&quot;Press any key to quit&quot;)
+        input()
+        break</code></pre>
+<p>This code checks whether there is an item in the room, and if so, whether that item is a monster. Notice that this code is indented, putting it in line with the code above it. This means that the game will check for a monster every time the player moves into a new room.</p>
+<ul>
+<li>Test out your code by going into the kitchen, which now contains a monster.</li>
+</ul>
+<figure>
+<img src="rpg-monster.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+</section>
+<section id="save-your-project-4" class="level2 save">
+<h2>Save Your Project</h2>
+</section>
+<section id="challenge-adding-more-monsters" class="level2 challenge">
+<h2>Challenge: Adding more monsters</h2>
+<p>Add more monsters to your game, to make it harder to escape the house!</p>
+</section>
+<section id="save-your-project-5" class="level2 save">
+<h2>Save Your Project</h2>
+</section>
+</section>
+<section id="step-4-winning-the-game" class="level1 activity">
+<h1>Step 4: Winning the game</h1>
+<p>Let’s give your player a mission, which needs to completed to win the game.</p>
+<section id="activity-checklist-3" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li>In this game, the player wins by getting to the garden and escaping the house. They also need to have the key with them, and the magic potion. Here’s a map of the game.</li>
+</ul>
+<figure>
+<img src="rpg-final-map.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+<p>Notice that there’s another fourth room (the garden) that links to the dining room (to the north).</p>
+<ul>
+<li><p>Use the guidance in step 1 above to add a garden to your game. Remember to add doors, to link to other rooms in the house.</p></li>
+<li><p>Use the guidance in step 2 above to add a potion to the dining room (or another room in your house).</p></li>
+<li><p>To allow the player to win the game when they get to the garden with the key and the potion, add this code to the end of your game:</p></li>
+</ul>
+<pre class="language-python"><code>    #player wins if they get to the garden with a key and a shield
+    if currentRoom == 4 and &#39;key&#39; in inventory and &#39;potion&#39; in inventory:
+        print(&quot;You escaped the house... YOU WIN!&quot;)
+        print(&quot;Press any key to quit&quot;)
+        input()
+        break</code></pre>
+<p>Again, make sure this code is indented, and in line with the code above it. This code means that the message <code>...YOU WIN!</code> is displayed if the player is in room 4 (the garden) and if the key and the potion are in the inventory. If you have more than 4 rooms, you may have to use a different room number for your garden in the code above.</p>
+<ul>
+<li>Test your game to make sure the player can win!</li>
+</ul>
+<figure>
+<img src="rpg-win.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+<ul>
+<li>Finally, let’s add some instructions to your game, so that the player knows what they have to do. Edit the <code>showInstructions()</code> function to include more information.</li>
+</ul>
+<pre class="language-python"><code>def showInstructions():
+    #print a main menu, the commands and instructions
+    print(&#39;&#39;&#39;
+RPG Game
+========
+Instructions:
+  Get to the garden
+  ...
+========
+Commands:
+  go [direction]
+  get [item]
+&#39;&#39;&#39;)</code></pre>
+<p>You will need to add instructions to tell the user what items they need to collect, and what they need to avoid!</p>
+<figure>
+<img src="rpg-instructions.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+</section>
+<section id="save-your-project-6" class="level2 save">
+<h2>Save Your Project</h2>
+</section>
+<section id="challenge-develop-your-own-game" class="level2 challenge">
+<h2>Challenge: Develop your own game</h2>
+<p>Use what you’ve learnt to create your own game. Add lots of rooms, monsters ot avoid and items to collect. Remember to modify the code so that the player wins when they get to a certain room with some of the objects in their inventory. It may help you to sketch a map before you start coding! You could even add stairs to your map and have more than one level of rooms, by typing <code>go up</code> and <code>go down</code>.</p>
+</section>
+<section id="save-your-project-7" class="level2 save">
+<h2>Save Your Project</h2>
+</section>
+</section>
+</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><script src="../../../assets/script.min.js"></script></body></html>

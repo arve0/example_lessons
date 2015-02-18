@@ -1,0 +1,226 @@
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Catch the Dots | YourCodeClubName</title><link href="../../../assets/style.min.css" rel="stylesheet"/></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Home</a></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">Catch the Dots</h1></header></div><div class="col-xs-12"><div class="content"><section id="introduction" class="level1 intro">
+<h1>Introduction</h1>
+<p>In this project you’ll learn how to create a game, in which you have to match up coloured dots with the correct part of the controller.</p>
+<div class="scratch-preview">
+<pre><code>&lt;iframe allowtransparency=&quot;true&quot; width=&quot;485&quot; height=&quot;402&quot; src=&quot;http://scratch.mit.edu/projects/embed/44942820/?autostart=false&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
+&lt;img src=&quot;dots-final.png&quot;&gt;</code></pre>
+</div>
+</section>
+<section id="step-1-creating-a-controller" class="level1 activity">
+<h1>Step 1: Creating a controller</h1>
+<p>Let’s start by creating a controller, that will be used to collect dots.</p>
+<section id="activity-checklist" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>Start a new Scratch project, and delete the cat sprite so that your project is empty. You can find the online Scratch editor at <a href="http://jumpto.cc/scratch-new">jumpto.cc/scratch-new</a>.</p></li>
+<li><p>For this project, you should have a ‘Project Resources’ folder, containing the controller image you can use. Make sure that you can find this folder, and ask your club leader if you can’t find it.</p>
+<figure>
+<img src="dots-resources.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>From this ‘Project Resources’ folder, import ‘controller.png’ as a new sprite. If you don’t have this image you can draw it yourself! You should also make the stage black. Here’s how your stage should look:</p>
+<figure>
+<img src="dots-controller.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>You can move your controller really easily, by turning it left or right when the arrows are pressed:</p>
+<pre class="blocks"><code>    when flag clicked
+    forever
+        if &lt;key [left arrow v] pressed?&gt; then
+            turn left (2) degrees
+        end
+        if &lt;key [right arrow v] pressed?&gt; then
+            turn right (2) degrees
+        end
+    end</code></pre></li>
+<li><p>Test out your controller – it should spin left and right.</p></li>
+<li><p>Although this code works, it would be much better if the controller sped up and slowed down gradually. To do this, delete the code you just created for your controller, and create a new variable called <code class="blockdata">controller speed</code>.</p></li>
+<li><p>Add this code to your controller, to make it repeatedly use the <code class="blockdata">controller speed</code> to move:</p>
+<pre class="blocks"><code>    when flag clicked
+    set [controller speed v] to [0]
+    forever
+        turn right (controller speed) degrees
+    end</code></pre></li>
+<li><p>At the moment, this code won’t move the controller, as the speed has been set to 0! Create a separate script in your controller that increases the speed when the right arrow is pressed.</p>
+<pre class="blocks"><code>    when flag clicked
+    forever
+        if &lt;key [right arrow v] pressed?&gt; then
+            change [controller speed v] by (0.2)
+        else
+
+        end
+    end</code></pre></li>
+<li><p>Have you noticed that there’s a gap in the code above? You will need to add some code to slow down the controller if the right arrow key isn’t pressed. However, you only want to slow down the controller until the speed gets back down to 0, otherwise it’ll start spinning backwards.</p>
+<p>Here’s the code you should add:</p>
+<pre class="blocks"><code>if &lt;(controller speed) &gt; [0.1]&gt; then
+    change [controller speed v] by (-0.2)
+end</code></pre>
+<p>Here’s how your controller code should look:</p>
+<figure>
+<img src="dots-right.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Test your project again. If you hold down the right arrow key your controller should speed up. Let go of the key and your controller should gradually slow down.</p></li>
+</ul>
+</section>
+<section id="save-your-project" class="level2 save">
+<h2>Save your project</h2>
+</section>
+<section id="challenge-spinning-left" class="level2 challenge">
+<h2>Challenge: Spinning left</h2>
+<p>Duplicate the entire controller script for spinning to the right. Can you modify this duplicated code so that your controller spins to the left when the left arrow key is held down?</p>
+<p>You’ll need to change some of the numbers in the code! (Hint: the controller will spin to the left if the <code class="blockdata">controller speed</code> variable has a negative value.)</p>
+</section>
+<section id="save-your-project-1" class="level2 save">
+<h2>Save your project</h2>
+</section>
+</section>
+<section id="step-2-collecting-dots" class="level1 activity">
+<h1>Step 2: Collecting dots</h1>
+<p>Let’s add dots to the game that the player will collect with their controller.</p>
+<section id="activity-checklist-1" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>Create a new sprite called ‘red’. This sprite should be a small red dot.</p>
+<figure>
+<img src="dots-red.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Add this script to your ‘red’ dot sprite, to create a new dot clone every few seconds:</p>
+<pre class="blocks"><code>    when flag clicked
+    wait (2) secs
+    forever
+        create clone of [myself v]
+        wait (pick random (5) to (10)) secs
+    end</code></pre></li>
+<li><p>When each clone is created, you want it to appear in one of the 4 corners of the stage.</p>
+<figure>
+<img src="dots-start.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+<p>To do this, first create a new list variable called <code class="blockdata">start positions</code> and click the <code>(+)</code> to add in the values <code>-180</code> and <code>180</code>.</p>
+<figure>
+<img src="dots-list.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>You can use these 2 list items to pick a random corner of the stage. Add this code to the ‘dot’ sprite, so that each new clone moves to a random corner and then slowly moves towards the controller.</p>
+<pre class="blocks"><code>    when I start as a clone
+    go to x: (item (random v) of [start positions v]) y: (item (random v) of [start positions v])
+    point towards [controller v]
+    show
+    repeat until &lt;touching [controller v]?&gt;
+        move (1) steps
+    end</code></pre>
+<p>The code above chooses either <code>-180</code> or <code>180</code> for the x <em>and</em> y positions, meaning that each clone starts in one corner of the stage.</p></li>
+<li><p>Test your project. You should see lots of red dots appear in each corner of the screen, and move slowly towards the controller.</p>
+<figure>
+<img src="dots-red-test.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Create 2 new variables called <code class="blockdata">lives</code> and <code class="blockdata">score</code>.</p></li>
+<li><p>Add code to your stage to set the <code class="blockdata">lives</code> to 3 and the <code class="blockdata">score</code> to 0 at the start of the game.</p></li>
+<li><p>You need to add code to the end of your red dot’s <code class="blockcontrol">when I start as a clone</code> code, so that either 1 is added to the player’s <code class="blockdata">score</code> if the colours match, or 1 is taken from the player’s <code class="blockdata">lives</code> if the colours don’t match.</p>
+<pre class="blocks"><code>    move (5) steps
+    if &lt;touching color [#FF0000]?&gt; then
+        change [score v] by (1)
+        play sound [pop v]
+    else
+        change [lives v] by (-1)
+        play sound [laser1 v]
+    end
+    delete this clone</code></pre></li>
+<li><p>Add this code to the end of your stage’s script, so that the game ends when the player loses all of their lives:</p>
+<pre class="blocks"><code>    wait until &lt;(lives) &lt; [1]&gt;
+    stop [all v]</code></pre></li>
+<li><p>Test your game to make sure this code works as expected.</p></li>
+</ul>
+</section>
+<section id="save-your-project-2" class="level2 save">
+<h2>Save your project</h2>
+</section>
+<section id="challenge-more-dots" class="level2 challenge">
+<h2>Challenge: More dots</h2>
+<p>Duplicate your ‘red’ dot sprite twice, and name the two new sprites ‘yellow’ and ‘blue’.</p>
+<figure>
+<img src="dots-more-dots.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+<p>Edit these sprites (including their code), so that each coloured dot has to match the correct colour on the controller. Remember to test your project, making sure you gain points and lose lives at the right times, and that your game isn’t too easy or too hard!</p>
+<figure>
+<img src="dots-all-test.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+</section>
+<section id="save-your-project-3" class="level2 save">
+<h2>Save your project</h2>
+</section>
+</section>
+<section id="step-3-increasing-the-difficulty" class="level1 activity new-page">
+<h1>Step 3: Increasing the difficulty</h1>
+<p>Let’s make the game get more difficult the longer the player survives, by slowly reducing the delay between dots appearing.</p>
+<section id="activity-checklist-2" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>Create a new variable called <code class="blockdata">delay</code>.</p></li>
+<li><p>On your stage, create a new script that sets the delay to a high number, and then slowly reduces the delay time.</p>
+<pre class="blocks"><code>    when flag clicked
+    set [delay v] to (8)
+    repeat until &lt; (delay) = (2)&gt;
+        wait (10) secs
+        change [delay v] by (-0.5)
+    end</code></pre>
+<p>Notice that this is very similar to how a game timer works!</p></li>
+<li><p>Finally, you can use this <code class="blockdata">delay</code> variable in your red, yellow and blue dots’ scripts. Remove the code that waits a random number of seconds between creating clones, and replace it with your new <code class="blockdata">delay</code> variable:</p>
+<pre class="blocks"><code>    wait (delay) secs</code></pre></li>
+<li><p>Test your new <code class="blockdata">delay</code> variable, and see whether the delay between dots reduces slowly. Does this work for all 3 coloured dots? Can you see the value of the <code class="blockdata">delay</code> variable reducing?</p></li>
+</ul>
+</section>
+<section id="save-your-project-4" class="level2 save">
+<h2>Save your project</h2>
+</section>
+<section id="challenge-faster-moving-dots" class="level2 challenge">
+<h2>Challenge: Faster moving dots</h2>
+<p>Can you improve your game by adding a <code class="blockdata">speed</code> variable, so that the dots start off moving 1 step at a time, and steadily get faster and faster? This will work in a very similar way to the <code class="blockdata">delay</code> variable used above, and you can use this code to help you.</p>
+</section>
+<section id="save-your-project-5" class="level2 save">
+<h2>Save your project</h2>
+</section>
+</section>
+<section id="step-4-high-score" class="level1 activity">
+<h1>Step 4: High score</h1>
+<p>Let’s save the high score, so that players can see how well they’re doing.</p>
+<section id="activity-checklist-3" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>Create a new variable called <code class="blockdata">high score</code>.</p></li>
+<li><p>Click on your stage, and create a new custom block called <code class="blockmoreblocks">check high score</code>.</p>
+<figure>
+<img src="dots-custom-1.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Just before the end of the game, add in your new custom block.</p>
+<figure>
+<img src="dots-custom-2.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Add code to your custom block to store the current <code class="blockdata">score</code> as the <code class="blockdata">high score</code> <code class="blockcontrol">if</code> it’s the highest score so far:</p>
+<pre class="blocks"><code>    define [check high score]
+    if &lt;(score) &gt; (high score)&gt; then
+        set [high score v] to (score)
+    end</code></pre></li>
+<li><p>Test the code you’ve added. Play your game to check whether the <code class="blockdata">high score</code> is updated correctly.</p></li>
+</ul>
+</section>
+<section id="save-your-project-6" class="level2 save">
+<h2>Save your project</h2>
+</section>
+<section id="challenge-improve-your-game" class="level2 challenge">
+<h2>Challenge: Improve your game!</h2>
+<p>Can you think of ways to improve your game? For example, you could create special dots that:</p>
+<ul>
+<li>double your score;</li>
+<li>slow down the dots;</li>
+<li>hide all the other dots on the screen!</li>
+</ul>
+</section>
+<section id="save-your-project-7" class="level2 save">
+<h2>Save your project</h2>
+</section>
+<section id="challenge-game-menu" class="level2 challenge">
+<h2>Challenge: Game menu</h2>
+<p>Can you add a menu (with buttons) to your game? You could add an instructions screen, or a separate screen for showing the high score. If you need help with this, the ‘Brain Game’ project will help you.</p>
+</section>
+</section>
+</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><script src="../../../assets/script.min.js"></script><script>$(document).ready(function(){
+  scratchblocks2.load_language(scratchblocks2._translations['nb']);
+  scratchblocks2.parse("pre.blocks");
+});</script></body></html>

@@ -1,0 +1,366 @@
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Turtles All The Way Down | YourCodeClubName</title><link href="../../../assets/style.min.css" rel="stylesheet"/></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Home</a></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">Turtles All The Way Down</h1></header></div><div class="col-xs-12"><div class="content"><section id="step-1-drawing-a-mountain" class="level1 activity">
+<h1>Step 1: Drawing a Mountain</h1>
+<p>Pick up your turtles, open IDLE, it’s time to draw again. But first, look at the following three shapes: How would we draw them in python?</p>
+<pre><code>_________________________
+
+            /\
+           /  \
+          /    \
+_________/      \________
+
+            /\
+         __/  \__
+         \      /
+____/\___/      \___/\___
+</code></pre>
+<section id="activity-checklist" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li>Drawing The first is easy. Like we always do, the first line of the file is always <code>from turtle import *</code> so Python knows we want to draw. Copy the program into a new file.</li>
+</ul>
+<pre class="language-python"><code>from turtle import *
+
+    def first():
+        forward(30)
+
+    first()</code></pre>
+<p>We’re going to put all the shapes in functions. The second one looks easy too, let’s add it to the file we’re writing.</p>
+<ul>
+<li>Edit your code so it looks like the following:</li>
+</ul>
+<pre class="language-python"><code>from turtle import *
+
+    def first():
+        forward(30)
+
+    def second():
+        forward(30)
+        left(60)
+        forward(30)
+        right(120)
+        forward(30)
+        left(60)
+        forward(30)
+
+    second()</code></pre>
+<ul>
+<li><p>Run the code and see what it does, does it draw the right shape?. It should look like this</p>
+<pre><code>            /\
+           /  \
+          /    \
+_________/      \________</code></pre></li>
+</ul>
+</section>
+</section>
+<section id="step-2-a-mountain-from-mountains" class="level1 activity">
+<h1>Step 2: A mountain from mountains</h1>
+<p>But how about the third shape? Although it’s rather involved if we wrote out all the steps, it’s actually drawing the second mountain, four times.</p>
+<pre><code>            /\
+         __/  \__
+         \      /
+____/\___/      \___/\___
+</code></pre>
+<p>You can see we draw the second shape, turn, draw it again, turn, draw it again, turn and draw it one last time.</p>
+<section id="activity-checklist-1" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>Instead of writing all of the smaller movements, let’s draw it by calling <code>second</code></p>
+<pre><code>from turtle import *
+
+def second():
+    forward(30)
+    left(60)
+    forward(30)
+    right(120)
+    forward(30)
+    left(60)
+    forward(30)
+
+def third():
+    second()
+    left(60)
+    second()
+    right(120)
+    second()
+    left(60)
+    second()
+
+third()</code></pre></li>
+</ul>
+<p><code>third</code> looks very much like <code>second</code>, but instead of calling <code>forward</code>, we’re calling <code>second</code>. If we wanted to, we could even write the fourth one, and call <code>third</code> instead. This seems like an awful lot of work still, surely we can get the computer to understand what we’re doing.</p>
+<p>This shape is a special shape, which you draw by drawing it over and over: The third is made up of the second, the second is made up of the first. What we really want to do is tell the computer to keep drawing it over and over again until it is done.</p>
+</section>
+</section>
+<section id="step-3-over-and-over" class="level1 activity">
+<h1>Step 3: Over and over</h1>
+<p>We do this by splitting up the problem into two: The simple case, and the special case. The simple case is easy: it’s just <code>forward(100)</code>. The special case is a little harder, it needs to say ‘Do the special case, but one less, until you get to the simple case’. It’s easier to look at the code.</p>
+<section id="activity-checklist-2" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>Open a new file and write in the following code:</p>
+<pre><code>from turtle import *
+
+def mountain(depth):
+    if depth == 1:
+           forward(10)
+    else:
+        newdepth = depth -1
+        mountain(newdepth)
+        left(60)
+        mountain(newdepth)
+        right(120)
+        mountain(newdepth)
+        left(60)
+        mountain(newdepth)
+
+mountain(3)</code></pre></li>
+</ul>
+<p>We can see that we’ve used code very similar to <code>first</code>, <code>second</code> and <code>third</code>. We use an <code>if</code> to work out if we should draw the simple case, or the special one. In the special case, we ask to draw a mountain, like how <code>third</code> called <code>second</code>, but we ask it to draw a simpler one each time, at a new depth, one less than what we started with.</p>
+<ul>
+<li>Run it and see what happens. What happens if you try <code>mountain(1)</code>, <code>mountain(2)</code>, or <code>mountain(4)</code>?</li>
+</ul>
+</section>
+</section>
+<section id="step-4-drawing-a-snowflake-from-three-mountains" class="level1 activity">
+<h1>Step 4: Drawing A snowflake from Three Mountains</h1>
+<section id="activity-checklist-3" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>Let’s just add one last thing to the mountain file, change it to look like the following, adding a new function <code>snowflake</code>:</p>
+<pre class="language-python"><code>
+from turtle import *
+
+def mountain(depth, length):
+    if depth == 1:
+           forward(length)
+    else:
+        newdepth = depth -1
+        mountain(newdepth, length)
+        left(60)
+        mountain(newdepth, length)
+        right(120)
+        mountain(newdepth, length)
+        left(60)
+        mountain(newdepth, length)
+
+def snowflake(depth, length):
+    mountain(depth, length)
+    right(120)
+    mountain(depth, length)
+    right(120)
+    mountain(depth, length)
+    right(120)
+
+snowflake(4,5)</code></pre></li>
+</ul>
+<p>This picture is known as the Koch Snowflake. If you like, try playing with the angles and seeing what happens.</p>
+<p>This is called a fractal, because the larger picture is made up of smaller versions of itself.</p>
+<ul>
+<li>Try running <code>snowflake(1, 50)</code>, <code>snowflake(2, 25)</code>, <code>snowflake(3, 20)</code>. The more depth, the longer it takes to draw, so remember to put <code>speed(11)</code> in to make the turtle rush!</li>
+</ul>
+</section>
+</section>
+<section id="step-5-boxes-more-boxes-even-more-boxes" class="level1 activity">
+<h1>Step 5: Boxes, More Boxes, Even More Boxes</h1>
+<p>Let’s look at another shape, that is very much like the snowflake, but with boxes instead of mountains.</p>
+<pre><code>
+
+___________________________
+
+        ___________
+        |         |
+        |         |
+        |         |
+        |         |
+________|         |________
+
+             _
+        ____| |____
+        |         |
+       _|         |_
+      |_           _|
+    _   |         |   _
+___| |__|         |__| |___
+
+</code></pre>
+<p>Like before with the mountain, we have a simple case: a straight line, and a special case: draw a line with a square bump in it. We can see the third one is just like before, drawing the second one a few times.</p>
+<section id="activity-checklist-4" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>Let’s open a new file and try to draw the second picture, which is what we’ll be repeating:</p>
+<pre class="language-python"><code>from turtle import *
+
+forward(30)
+left(90)
+forward(30)
+right(90)
+forward(30)
+right(90)
+forward(30)
+left(90)
+forward(30)</code></pre></li>
+<li><p>Run it, and you should get this:</p>
+<pre><code>
+        ___________
+        |         |
+        |         |
+        |         |
+        |         |
+________|         |________</code></pre></li>
+</ul>
+<p>We have the simple case <code>forward(100)</code>, and we know how to draw the bumpy line, so let’s skip straight to the drawing!</p>
+</section>
+</section>
+<section id="step-6-bumpy-boxes" class="level1 activity">
+<h1>Step 6: Bumpy Boxes</h1>
+<section id="activity-checklist-5" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>Open up a new file in IDLE and copy the following code into it:</p>
+<pre class="language-python"><code>from turtle import *
+
+def box(depth, length):
+    if depth == 1:
+           forward(length)
+    else:
+        newdepth = depth -1
+
+        # What should go here?
+        # Copy the bumpy line code here, but
+        # use box(newdepth, length) instead of forward(100)
+        # Ask for help if you are unsure
+
+def xcurve(depth, length):
+    box(depth, length)
+    left(90)
+    box(depth, length)
+    left(90)
+    box(depth, length)
+    left(90)
+    box(depth, length)
+    left(90)
+
+xcurve(4,5)</code></pre></li>
+<li><p>We’ve left the special case out for you to fill in; it should be trying to draw the bumpy line, but calling <code>box(newdepth, length)</code> to do it. Your code should look very much like the mountain and snowflake.</p></li>
+</ul>
+</section>
+</section>
+<section id="step-7-a-sacred-relic" class="level1 activity">
+<h1>Step 7: A sacred relic</h1>
+<p>Let’s draw one last fractal, and like before we have a simple case and a special case. The first three versions look like this. We Draw a triangle, then draw it as three triangles together.</p>
+<pre><code>       /\
+      /  \
+     /    \
+    /      \
+   /        \
+  /          \
+ /            \
+----------------
+
+       /\
+      /  \
+     /    \
+    --------
+   /\      /\
+  /  \    /  \
+ /    \  /    \
+----------------
+
+
+       /\
+      ----
+     /\  /\
+    --------
+   /\      /\
+  ----    ----
+ /\  /\  /\  /\
+----------------</code></pre>
+<section id="activity-checklist-6" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>Let’s open a new file and try it out.</p>
+<pre class="language-python"><code>from turtle import *
+
+def triforce(depth, length):
+
+    if depth == 0:
+        pendown()
+        forward(length)
+        left(120)
+        forward(length)
+        left(120)
+        forward(length)
+        left(120)
+        penup()
+    else:
+        penup()
+        newlength = length/2
+        newdepth = depth - 1
+
+        triforce(newdepth, newlength)
+        forward(newlength)
+        triforce(newdepth, newlength)
+
+        left(120)
+        forward(newlength)
+        right(120)
+        triforce(newdepth, newlength)
+
+        right(120)
+        forward(newlength)
+        left(120)
+
+
+speed(11)
+penup()
+setpos(-255,-255)
+triforce(7, 512)</code></pre></li>
+</ul>
+<p>You might have noticed, we’re using a new command <code>setpos</code> to move the turtle robot to the corner of the screen.</p>
+<ul>
+<li>Run it and see what happens. We can see the simple case is just drawing a triangle, but the special case is drawing three little triangles.</li>
+</ul>
+</section>
+<section id="try" class="level2 try">
+<h2>try</h2>
+<p>Try changing the values passed into <code>triforce()</code>, change the last line in the file to <code>triforce(5, 300)</code>, what does it do?</p>
+</section>
+</section>
+<section id="step-8-a-bubbly-relic" class="level1 activity">
+<h1>Step 8: A bubbly relic</h1>
+<section id="activity-checklist-7" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>If you like, instead of triangles we can draw it with circles! Open up a new file and try the following code:</p>
+<pre class="language-python"><code>from turtle import *
+
+def bubble(depth, length):
+    if depth == 0:
+        pendown()
+        circle(length/2)
+        penup()
+    else:
+        penup()
+        newlength = length/2
+        newdepth = depth - 1
+        bubble(newdepth, newlength)
+        forward(newlength)
+        bubble(newdepth, newlength)
+        left(120)
+        forward(newlength)
+        right(120)
+        bubble(newdepth, newlength)
+        right(120)
+        forward(newlength)
+        left(120)
+
+speed(11)
+penup()
+setpos(-255,-255)
+bubble(6, 512)</code></pre></li>
+<li>What happens? What does it look like? We’ve used the <code>circle</code> command to draw a circle on the screen, which takes a radius.</li>
+<li><p>Try changing the circle’s radius, replace <code>circle(length/2)</code> with <code>circle(length)</code>, this will draw a bigger circle instead.</p></li>
+</ul>
+</section>
+</section>
+</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><script src="../../../assets/script.min.js"></script></body></html>

@@ -1,0 +1,110 @@
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>The Year 2025 | YourCodeClubName</title><link href="../../../assets/style.min.css" rel="stylesheet"/></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Home</a></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">The Year 2025</h1></header></div><div class="col-xs-12"><div class="content"><section id="introduction" class="level1 intro">
+<h1>Introduction:</h1>
+<p>You can use Python to do calculations, and make your programs more useful by using variables to store data.</p>
+</section>
+<section id="step-1-how-much" class="level1 activity">
+<h1>Step 1: How much?</h1>
+<section id="activity-checklist" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>It’s not just text that you can print in Python, you can also print numbers to the screen. For example, if 8 of your friends each gave you £2 for a sponsored silence, you can use this program to see how much money you raised:</p>
+<pre class="language-python"><code>print(8*2)</code></pre>
+<p>The star <code>*</code> in the program above is a multiply sign, so the program should print the answer to 8 x 2.</p></li>
+<li><p>Run the program above, and you should see the answer:</p>
+<figure>
+<img src="2025-calc.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+</ul>
+</section>
+<section id="save-your-project" class="level2 save">
+<h2>Save Your Project</h2>
+</section>
+<section id="challenge-pocket-money" class="level2 challenge">
+<h2>Challenge: Pocket money</h2>
+<p>Write a Python program to calculate how much money you’d make if you washed 12 cars, and charged £2.50 for each car.</p>
+</section>
+<section id="save-your-project-1" class="level2 save">
+<h2>Save Your Project</h2>
+</section>
+</section>
+<section id="step-2-how-old" class="level1 activity">
+<h1>Step 2: How old?</h1>
+<section id="activity-checklist-1" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>With everything you’ve learnt so far, you should be able to write a program to calculate how old you’ll be in the year 2025. The Python program to calculate your age should work like this:</p>
+<figure>
+<img src="2025-age.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+<p>As you can see, if you were born in 2004, you can calculate your age in the year 2025 by the calculation <code>2025 - 2004</code>. So someone born in 2004 will be 21 years old in the year 2025! If you weren’t born in 2004 you can change the number in the program.</p></li>
+</ul>
+</section>
+<section id="save-your-project-2" class="level2 save">
+<h2>Save Your Project</h2>
+</section>
+<section id="challenge-changing-dates" class="level2 challenge">
+<h2>Challenge: Changing dates</h2>
+<p>Change your program to find out how old someone born in 1998 would be in the year 2025. How old will someone born this year be in the year 2050?</p>
+</section>
+<section id="save-your-project-3" class="level2 save">
+<h2>Save Your Project</h2>
+</section>
+</section>
+<section id="step-3-variables" class="level1 activity">
+<h1>Step 3: Variables</h1>
+<p>When completing the challenges above, you had to keep changing the numbers in the program for people of different ages, and for different years in the future. It would be much easier if you could ask someone what year they were born, and use the answer in your calculation. That’s what variables are for!</p>
+<section id="activity-checklist-2" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>Run this Python program:</p>
+<pre class="language-python"><code>print(&quot;What year were you born?&quot;)
+born = input()
+born = int(born)
+print( 2025 - born )</code></pre>
+<p>This program waits for you to type in the year you were born, and press enter. You should then see how old you’ll be in the year 2025:</p>
+<figure>
+<img src="2025-varProg.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+<p>This program uses the <code>input()</code> function to get the user’s input from the keyboard, and store it in a variable called ‘born’, so that it can be used later. You can think of a variable as a box, which can be used to store important data.</p>
+<figure>
+<img src="2025-var.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+<p>Notice that the variable (the box) has been named “born”, as it helps you remember what you’re storing inside it!</p>
+<p>The line…</p>
+<pre class="language-python"><code>print( 2025 - born )</code></pre>
+<p>…takes whatever number has been stored in the <code>born</code> variable away from 2025.</p>
+<p>Anything that is typed in from the keyboard is always stored as text, so you also have to use the <code>int()</code> function to turn the user’s input into a whole number (which in programming is called an <em>integer</em>).</p></li>
+<li><p>You can make your program much easier to understand, by adding a helpful message for the user, so they know what you’re showing them. Change the last line of your program to:</p>
+<pre class="language-python"><code>print( &quot;In 2025 you will be&quot; , 2025 - born , &quot;years old!&quot; )</code></pre></li>
+<li><p>Try running your program again, to see how this change looks.</p>
+<figure>
+<img src="2025-print.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>But why stop there? You could also use another variable to store the answer before printing it for the user. Try this program out:</p>
+<figure>
+<img src="2025-2vars.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+</ul>
+</section>
+<section id="save-your-project-4" class="level2 save">
+<h2>Save Your Project</h2>
+</section>
+<section id="challenge-the-year-3000" class="level2 challenge">
+<h2>Challenge: The year 3000!</h2>
+<p>Your program only tells people what their age will be in the year 2025. What if someone wants to know their age in the year 2050? Or the year 3000? Add another variable to your program, so that the user can find out how old they’ll be in any year they choose.</p>
+<figure>
+<img src="2025-3000.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+</section>
+<section id="save-your-project-5" class="level2 save">
+<h2>Save Your Project</h2>
+</section>
+<section id="challenge-your-age-in-dog-years" class="level2 challenge">
+<h2>Challenge: Your age in dog years</h2>
+<p>Write a program to ask the user their age, and then tell them their age in dog years! You can calculate a person’s age in dog years by multiplying their age by 7.</p>
+<figure>
+<img src="2025-dogYears.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+</section>
+</section>
+</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><script src="../../../assets/script.min.js"></script></body></html>

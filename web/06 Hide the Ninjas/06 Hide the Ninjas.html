@@ -1,0 +1,52 @@
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Hide the ninjas | YourCodeClubName</title><link href="../../assets/style.min.css" rel="stylesheet"/></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Home</a></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">Hide the ninjas</h1></header></div><div class="col-xs-12"><div class="content"><section id="introduction" class="level2 intro">
+<h2>Introduction</h2>
+<p>This project will build on your knowledge of CSS-fu.</p>
+<p>Five ninjas arrived in town and need to hide before anyone notices them. Using your own ninja-like CSS skills to get them into a safe spot. You can move the ninjas themselves, and some of the objects in the street too. Quick! There is no time!</p>
+<figure>
+<img src="ninjas.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+</section>
+<section id="step-1-meet-the-ninjas" class="level1 activity">
+<h1>Step 1: Meet the ninjas</h1>
+<ul>
+<li>Open up the file called <code>ninjas.html</code> in the code editor. Open it up in the browser as well.</li>
+<li>Read through the code. Can you guess which parts correspond to what objects in the street? Notice that we are using two languages: HTML to add all elements to the page, and CSS placed between the <code>style</code> tags.</li>
+<li>The elements we will be playing with are the images (<code>&lt;img&gt;</code> tags). We can control their position using CSS.</li>
+</ul>
+<p><strong>Let’s move a ninja</strong></p>
+<ul>
+<li>Each one of the ninjas is named using the <code>id</code> attribute. Let’s move Alex The Ninja first. Find Alex’s corresponding CSS rule.</li>
+<li>Change the value of <code>left</code> to <code>100px</code> and <code>top</code> to <code>320px</code>. When <code>position</code> property is set to <code>absolute</code> it means we will be describing the position in relation to ninja’s parent element - in this case the <code>&lt;div&gt;</code> with <code>id</code> <code>street_corner</code>. <code>px</code> means <code>pixel</code>. <code>left</code> describes how far to move the ninja from the left edge (by how many pixels), and <code>top</code> tells the browser how far to move it down from the top edge.</li>
+<li>Change <code>left</code> to <code>right</code> and <code>top</code> to <code>bottom</code>. Now your code tells the browser to put the ninja a <code>100px</code> to the left of the right edge, and <code>320px</code> up from the bottom edge.</li>
+</ul>
+<p>Pixels describe the smallest physical point your monitor can display. They are often used to describe the screen dimensions.</p>
+</section>
+<section id="step-2-lets-try-to-describe-it-differently" class="level1 activity">
+<h1>Step 2: Let’s try to describe it differently</h1>
+<p>Now you know how to use pixel positioning. This isn’t the only way we can describe the positions on the screen, so let’s look at some other options we have.</p>
+<ul>
+<li>Find the <code>wheelie_bin</code> element in the CSS.</li>
+</ul>
+<p>100% describes the full width of the available screen space. As we are positioning ninjas and other object in relation to the <code>street_corner</code>, which is 600 pixels wide, in our case 100% will equal <code>600px</code>. If we were to draw a bigger street corner, for example <code>800px</code> wide, then 100% would mean <code>800px</code>. Depending on context, sizes described in percentages will have different meanings.</p>
+</section>
+<section id="step-3-one-more-unit-type" class="level1 activity">
+<h1>Step 3: One more unit type</h1>
+<p>As if we didn’t already have enough unit types, we will try another one! You know how to use pixels and percentages, so now let’s try <code>ems</code>.</p>
+<p><code>Em</code> is a measurement type borrowed from the field of typography , which concerns itself with the appearance of letters and text. One em is equal to the current font size. Notice that at the top of the CSS we set <code>font-size</code> on the <code>body</code> element to 20px, so one <code>em</code> will appear as 20 pixels.</p>
+<ul>
+<li>Find the <code>bicycle</code> in the CSS. Apart from the <code>em</code> bit it should be familiar to you. See if you can move the bicycle to hide Sam The Ninja.</li>
+<li>We’ve mentioned that the size of the <code>em</code> is based on the font size. To see it in practice, find <code>body</code> in the CSS. Change the <code>font-size</code> value to 30px. What happened? Because now each <code>em</code> is 30 pixels wide and 30 pixels tall all elements using this measurement have shifted their position!</li>
+</ul>
+</section>
+<section id="step-4-quick-hide-the-ninjas" class="level1 activity">
+<h1>Step 4: Quick, hide the ninjas!</h1>
+<p>Now that you know how to move the elements on the screen it’s time to help the ninjas. Use different ways of describing their position. Remember, you can also move some of the objects. Which unit do you feel most comfortable using? Find the best way to provide the best hiding. Good luck!</p>
+<section id="things-to-try" class="level2 try">
+<h2>Things to try</h2>
+<ul>
+<li>Can you figure out how to make ninjas appear in front of some of the street objects? What would happen if you copied the <code>&lt;img&gt;</code> tag for the ninja after the <code>&lt;img&gt;</code> tag that displays the object?</li>
+<li>Can you add some more objects to the scene? You could add images from your computer or ones you find on the internet.</li>
+</ul>
+</section>
+</section>
+</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><script src="../../assets/script.min.js"></script></body></html>

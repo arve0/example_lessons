@@ -1,0 +1,336 @@
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Create Your Own World | YourCodeClubName</title><link href="../../../assets/style.min.css" rel="stylesheet"/></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Home</a></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">Create Your Own World</h1></header></div><div class="col-xs-12"><div class="content"><section id="introduction" class="level1 intro">
+<h1>Introduction</h1>
+<p>In this project you’ll learn how to create your own open-world adventure game.</p>
+<div class="scratch-preview">
+<pre><code>&lt;iframe allowtransparency=&quot;true&quot; width=&quot;485&quot; height=&quot;402&quot; src=&quot;http://scratch.mit.edu/projects/embed/34248822/?autostart=true&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
+&lt;img src=&quot;world-final.png&quot;&gt;</code></pre>
+</div>
+</section>
+<section id="step-1-coding-your-player" class="level1 activity">
+<h1>Step 1: Coding your player</h1>
+<p>Let’s start by creating a player, that can move around your world.</p>
+<section id="activity-checklist" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>Start a new Scratch project, and delete the cat sprite so that your project is empty. You can find the online Scratch editor at <a href="http://jumpto.cc/scratch-new">jumpto.cc/scratch-new</a>.</p></li>
+<li><p>For this project, you should have a ‘Project Resources’ folder, containing all of the images you’ll need. Make sure that you can find this folder, and ask your club leader if you can’t find it.</p>
+<figure>
+<img src="world-resources.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Add the image ‘room1.png’ as a new stage backdrop, and the image ‘player.png’ as a new sprite. If you don’t have these images you can draw them yourself! Here’s how your project should look:</p>
+<figure>
+<img src="world-player.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Let’s use the arrow keys to move the player around. When the player presses the up arrow, you want the player to move up, by changing it’s y-coordinate. Add this code to the player sprite:</p>
+<pre class="blocks"><code>    when flag clicked
+    forever
+        if &lt;key [up arrow v] pressed? &gt; then
+            change y by (2)
+        end
+    end</code></pre></li>
+<li><p>Test out your player by clicking the flag and then holding down the up arrow. Does your player move up?</p>
+<figure>
+<img src="world-up.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>To move the player to the left, you need to add another <code class="blockcontrol">if</code> block to your player, which changes the x-coordinate:</p>
+<pre class="blocks"><code>    when flag clicked
+    forever
+        if &lt;key [up arrow v] pressed? &gt; then
+            change y by (2)
+        end
+        if &lt;key [left arrow v] pressed? &gt; then
+            change x by (-2)
+        end
+    end</code></pre></li>
+</ul>
+</section>
+<section id="challenge-moving-in-all-four-directions" class="level2 challenge">
+<h2>Challenge: Moving in all four directions</h2>
+<p>Can you add more code to your player, so that they can move up, down, left and right. Use the code you already have to help you!</p>
+</section>
+<section id="save-your-project" class="level2 save">
+<h2>Save your project</h2>
+<ul>
+<li><p>Test out your player again, and you’ll see they have the ability to walk through the light-grey walls.</p>
+<figure>
+<img src="world-walls.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>To fix this, you need to move the player, but then move them back if they’re touching a light-grey wall. Here’s the code you’ll need:</p>
+<pre class="blocks"><code>    when flag clicked
+    forever
+        if &lt;key [up arrow v] pressed? &gt; then
+            change y by (2)
+            if &lt; touching color [#BABABA]? &gt; then
+                change y by (-2)
+            end
+        end
+    end</code></pre>
+<p>Notice that the new <code class="blockcontrol">if</code><code class="blocksensing">touching color</code> block is <em>inside</em> the <code class="blockcontrol">if</code><code class="blocksensing">key [up arrow]</code> block.</p></li>
+<li><p>Test this new code, by moving below the wall - you shouldn’t be able to move up into it.</p>
+<figure>
+<img src="world-walls-test.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Let’s do the same for the left arrow, moving back if the player is touching a wall. This is how your player code should look so far:</p>
+<figure>
+<img src="world-wall-code.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+</ul>
+</section>
+<section id="challenge-fixing-your-players-movement" class="level2 challenge">
+<h2>Challenge: Fixing your player’s movement</h2>
+<p>Add code to your player, so that you can’t walk through walls in any direction. Use the code you already have to help you!</p>
+</section>
+<section id="save-your-project-1" class="level2 save">
+<h2>Save your project</h2>
+</section>
+</section>
+<section id="step-2-coding-your-world" class="level1 activity">
+<h1>Step 2: Coding your world</h1>
+<p>Let’s allow the player to walk through doors into other rooms!</p>
+<section id="activity-checklist-1" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>Add 2 more backdrops to your stage (‘room2.png’ and ‘room3.png’), so that you have 3 backdrops in total. Make sure that they are in the right order - this will help you later.</p>
+<figure>
+<img src="world-backdrops.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>You’ll need a new variable called <code class="blockdata">room</code>, to keep track of what room the player is in.</p>
+<figure>
+<img src="world-room.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>When the player touches the orange door in the first room, the next backdrop should be displayed, and the player should move back to the left side of the stage. Here’s the code you’ll need - it should go inside the player’s <code class="blockcontrol">forever</code> loop:</p>
+<pre class="blocks"><code>    if &lt; touching color [#F2A24A] &gt; then
+        switch backdrop to [next backdrop v]
+        go to x: (-200) y: (0)
+        change [room v] by (1)
+    end</code></pre></li>
+<li><p>Add this code to the <em>start</em> of your player code (before the <code class="blockcontrol">forever</code> loop, to make sure that everything is reset when the flag is clicked:</p>
+<pre class="blocks"><code>    set [room v] to (1)
+    go to x: (-200) y: (0)
+    switch backdrop to [room1 v]</code></pre></li>
+<li><p>Click the flag and move your player over the orange door. Does your player move to the next screen? Does the <code class="blockdata">room</code> variable change to 2?</p>
+<figure>
+<img src="world-room-test.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+</ul>
+</section>
+<section id="challenge-moving-to-the-previous-room" class="level2 challenge">
+<h2>Challenge: Moving to the previous room</h2>
+<p>Can you make your player move to the previous room when they touch a yellow door? Remember that this code will be <em>very</em> similar to the code you’ve already added for moving to the next room.</p>
+</section>
+<section id="save-your-project-2" class="level2 save">
+<h2>Save your project</h2>
+</section>
+</section>
+<section id="step-3-signs" class="level1 activity">
+<h1>Step 3: Signs</h1>
+<p>Let’s add signs to your world, to guide your player on their journey.</p>
+<section id="activity-checklist-2" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>Upload the image ‘sign.png’ as a new sprite, and rename the sprite ‘welcome sign’.</p>
+<figure>
+<img src="world-sign.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>This sign will only be visible in room 1, so let’s add some code to the sign to make sure that this happens:</p>
+<pre class="blocks"><code>    when flag clicked
+    forever
+        if &lt; (room) = [1] &gt; then
+            show
+        else
+            hide
+        end
+    end</code></pre></li>
+<li><p>Test your sign by moving between rooms. Your sign should only be visible in room 1.</p>
+<figure>
+<img src="world-sign-test.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>A sign isn’t much good if it doesn’t say anything! Let’s add some more code (in another separate block) to display a message if the sign is touching the player:</p>
+<pre class="blocks"><code>    when flag clicked
+    forever
+        if &lt; touching [player v]? &gt; then
+            say [Welcome! Can you get to the treasure?]
+        else
+            say []
+        end
+    end</code></pre></li>
+<li><p>Test out your sign, and you should see a message when the player touches it.</p>
+<figure>
+<img src="world-sign-test2.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+</ul>
+</section>
+<section id="save-your-project-3" class="level2 save">
+<h2>Save your project</h2>
+</section>
+<section id="challenge-treasure" class="level2 challenge">
+<h2>Challenge: Treasure!</h2>
+<p>Can you add a new treasure chest sprite, using the image ‘chest.png’. This treasure chest should be placed in room 3, and should say ‘Well done!’ when the player touches it.</p>
+<figure>
+<img src="world-treasure.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+</section>
+<section id="save-your-project-4" class="level2 save">
+<h2>Save your project</h2>
+</section>
+</section>
+<section id="step-4-people" class="level1 activity">
+<h1>Step 4: People</h1>
+<p>Let’s add other people to your world, that your player can interact with.</p>
+<section id="activity-checklist-3" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>Add in a new person sprite, using the image ‘person.png’.</p>
+<figure>
+<img src="world-person.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Add in this code, so that the person talks to your player. This code is very similar to the code you added to your sign:</p>
+<pre class="blocks"><code>    when flag clicked
+    go to x: (-200) y: (0)
+    forever
+        if &lt; touching [player v]? &gt; then
+            say [Did you know that you can go through orange and yellow doors?]
+        else
+            say []
+        end
+    end</code></pre></li>
+<li><p>You could also allow your player to move, by using these two blocks:</p>
+<pre class="blocks"><code>    move (1) steps
+    if on edge, bounce</code></pre>
+<p>Your player will act differently, depending on whether you place this code inside the <code class="blockcontrol">forever</code> loop or the <code class="blockcontrol">if</code> block. Try both and see which you prefer.</p>
+<figure>
+<img src="world-person-test.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Have you noticed that your person flips upside-down. To stop this, click the sprite’s information icon (<code class="blockmotion">i</code>), and click the dot to fix to rotation style.</p>
+<figure>
+<img src="world-person-rotate.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+</ul>
+</section>
+<section id="challenge-improving-your-person" class="level2 challenge">
+<h2>Challenge: Improving your person</h2>
+<p>Can you add code to your new person, so that they only appear in room 1? Make sure you test out your new code!</p>
+</section>
+<section id="save-your-project-5" class="level2 save">
+<h2>Save your project</h2>
+<ul>
+<li><p>You can also add in patrolling enemies, who end the game if the player touches them. Add in a new enemy sprite, and change the rotation style, just like you did with the ‘person’ sprite.</p></li>
+<li><p>Add code to your enemy, so that they only appear in room 2.</p></li>
+<li><p>You’ll also need to add code to move the enemy, and to end the game if the enemy touches the player. It’s easier to do this in separate code blocks. Here’s how your enemy code should look:</p>
+<figure>
+<img src="world-enemy-code.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li>Test out your enemy, to make sure that:
+<ul>
+<li>It’s only visible in room 2;</li>
+<li>It patrols the room;</li>
+<li>The game ends if the player touches it.</li>
+</ul></li>
+</ul>
+</section>
+<section id="save-your-project-6" class="level2 save">
+<h2>Save your project</h2>
+</section>
+<section id="challenge-more-enemies" class="level2 challenge">
+<h2>Challenge: More enemies</h2>
+<p>Can you create another enemy in room 3, that patrols up and down through the gap in the wall?</p>
+<figure>
+<img src="world-enemy2.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+</section>
+<section id="save-your-project-7" class="level2 save">
+<h2>Save your project</h2>
+</section>
+</section>
+<section id="step-5-collecting-coins" class="level1 activity">
+<h1>Step 5: Collecting coins</h1>
+<section id="activity-checklist-4" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>Add a new variable valled <code class="blockdata">coins</code> to your project.</p></li>
+<li><p>Add a new ‘coin’ sprite to your project.</p></li>
+</ul>
+<figure>
+<img src="world-coins.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+<ul>
+<li><p>Add code to your coins, so that they only appear in room 1.</p></li>
+<li><p>Add code to your coin sprite, to add 3 to your <code class="blockdata">coins</code> once they’ve been picked up:</p>
+<pre class="blocks"><code>    when flag clicked
+    wait until &lt;touching [player v]?&gt;
+    change [coins v] by (3)
+    stop [other scripts in sprite v]
+    hide</code></pre>
+<p>The code <code class="blockcontrol">stop other scripts in sprite</code> is needed so that the coins stop being displayed in room 1 once they’ve been collected.</p></li>
+<li><p>You’ll also need to add code to set your <code class="blockdata">coins</code> variable to 0 at the start of your game.</p></li>
+<li><p>Test your project - collecting your coins should change your score to 3</p></li>
+</ul>
+</section>
+<section id="challenge-more-coins" class="level2 challenge">
+<h2>Challenge: More coins</h2>
+<p>Can you add more coins to your game? They can be in different rooms, and some coins could even be guarded by patroling enemies.</p>
+</section>
+</section>
+<section id="step-6-doors-and-keys" class="level1 activity">
+<h1>Step 6: Doors and keys</h1>
+<section id="activity-checklist-5" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>Create a new sprite from your ‘key-blue.png’ image. Switch your stage to backdrop 3, and place the key somewhere difficult to reach!</p>
+<figure>
+<img src="world-key.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Make sure that your key is only visible in room 3.</p></li>
+<li><p>Create a new list variable called <code class="blockdata">inventory</code>. This will be where you store all of the items your player collects.</p></li>
+<li><p>The code for collecting the key is very similar to the code for collecting coins. The difference is that you add the key to your inventory.</p>
+<pre class="blocks"><code>    when flag clicked
+    wait until &lt;touching [player v]?&gt;
+    add [blue key] to [inventory v]
+    stop [other scripts in sprite v]
+    hide</code></pre></li>
+<li><p>Test out your key, to see if you can collect it, and add it to your inventory. Remember to add code to your stage to empty your inventory at the start.</p>
+<pre class="blocks"><code>    delete (all v) of [inventory v]</code></pre></li>
+<li><p>Create a new sprite from your ‘door-blue.png’ image, and place your blue door across the gap in the 2 walls.</p>
+<figure>
+<img src="world-door.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Add code to your door, so that it is only visible in room 3.</p></li>
+<li><p>You’ll need to hide your blue door to allow your player to pass once you have the blue key in your inventory.</p>
+<pre class="blocks"><code>    when flag clicked
+    wait until &lt;[inventory v] contains [blue key]&gt;
+    stop [other scripts in sprite v]
+    hide</code></pre></li>
+<li><p>Test out your project, and see if you can collect the blue key to open the door!</p></li>
+</ul>
+</section>
+<section id="save-your-project-8" class="level2 save">
+<h2>Save your project</h2>
+</section>
+<section id="challenge-create-your-own-world" class="level2 challenge">
+<h2>Challenge: Create your own world</h2>
+<p>You can now continue creating your own world. Here are some ideas:</p>
+<ul>
+<li>Change the setting of your game, and your game graphics;</li>
+<li>Add sound and music to your game;</li>
+<li>Add more people, enemies, signs and coins;</li>
+<li>Add red and yellow doors, that need their own keys to open them;</li>
+<li>Add more rooms to your world;</li>
+<li><p>Add other useful items to your game;</p></li>
+<li><p>Use coins to get information from other people;</p>
+<figure>
+<img src="world-bribe.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>You could even add north and south doors, so that the player can move between rooms in all 4 directions. For example, if you had 9 rooms, you could think of them as being in a 3x3 grid. You can then add 3 to the room number to move down 1 level.</p>
+<figure>
+<img src="world-north-south.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+</ul>
+</section>
+<section id="save-your-project-9" class="level2 save">
+<h2>Save your project</h2>
+</section>
+</section>
+</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><script src="../../../assets/script.min.js"></script><script>$(document).ready(function(){
+  scratchblocks2.load_language(scratchblocks2._translations['nb']);
+  scratchblocks2.parse("pre.blocks");
+});</script></body></html>

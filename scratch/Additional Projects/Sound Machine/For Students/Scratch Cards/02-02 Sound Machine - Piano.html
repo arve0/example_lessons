@@ -1,0 +1,55 @@
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Scratch Card - Piano | YourCodeClubName</title><link href="../../../../../assets/style.min.css" rel="stylesheet"/></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../../../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Home</a></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../../../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">Scratch Card - Piano</h1></header></div><div class="col-xs-12"><div class="content"><section id="activity-checklist" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li>Draw a piano by creating black and white rectangles. <img src="piano-costume-1.png" alt="costume1" /></li>
+<li><p>Now create a script which plays a note when the “a” key is pressed.</p>
+<pre class="blocks"><code>when [a v] key pressed
+    broadcast [piano-1 v]
+
+when I receive [piano-1 v]
+    play note (60 v) for (0.5) beats</code></pre></li>
+<li><p>Create two more notes when you press “s” and “d” on the keyboard.</p>
+<pre class="blocks"><code>when [a v] key pressed
+    broadcast [piano-1 v]
+
+when [s v] key pressed
+    broadcast [piano-2 v]
+
+when [d v] key pressed
+    broadcast [piano-3 v]
+
+when I receive [piano-1 v]
+    play note (60 v) for (0.5) beats
+
+when I receive [piano-2 v]
+    play note (64 v) for (0.5) beats
+
+when I receive [piano-3 v]
+    play note (67 v) for (0.5) beats</code></pre></li>
+<li>Copy the costume 3 times. Fill in a different key on each one. <img src="piano-costume-3.png" alt="costume3" /> <img src="piano-costumes.png" alt="all costumes" /></li>
+<li><p>Make each note switch to a different costume and then switch back to <code class="blockblue">costume1</code>.</p>
+<pre class="blocks"><code>when I receive [piano-1 v]
+    switch costume to [costume2 v]
+    play note (60 v) for (0.5) beats
+    switch costume to [costume1 v]
+
+when I receive [piano-2 v]
+    switch costume to [costume3 v]
+    play note (64 v) for (0.5) beats
+    switch costume to [costume1 v]
+
+when I receive [piano-3 v]
+    switch costume to [costume4 v]
+    play note (67 v) for (0.5) beats
+    switch costume to [costume1 v]</code></pre></li>
+</ul>
+</section>
+<section id="challenge-create-a-way-to-change-the-instrument." class="level1">
+<h1>Challenge: Create a way to change the instrument.</h1>
+<pre class="blocks"><code>    when [up-arrow v] key pressed
+        set instrument to (pick random (1) to (99))</code></pre>
+</section>
+</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><script src="../../../../../assets/script.min.js"></script><script>$(document).ready(function(){
+  scratchblocks2.load_language(scratchblocks2._translations['nb']);
+  scratchblocks2.parse("pre.blocks");
+});</script></body></html>

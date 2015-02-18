@@ -1,0 +1,198 @@
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Turtle Power | YourCodeClubName</title><link href="../../../assets/style.min.css" rel="stylesheet"/></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Home</a></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">Turtle Power</h1></header></div><div class="col-xs-12"><div class="content"><section id="introduction" class="level1 intro">
+<h1>Introduction:</h1>
+<p>In this project, you’ll learn to use <em>loops</em> to easily repeat parts of your programs.</p>
+</section>
+<section id="step-1-hello-turtle" class="level1 activity">
+<h1>Step 1: Hello, turtle!</h1>
+<p>We’re going to have some fun programming turtles. A turtle is a tiny robot that draws on your screen, and can be controlled using Python commands.</p>
+<section id="activity-checklist" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>Let’s make a turtle move around the screen, by running this short Python program:</p>
+<pre class="language-python"><code>from turtle import *
+shape(&quot;turtle&quot;)
+speed(5)
+
+forward(100)
+right(90)
+forward(100)
+
+done()</code></pre>
+<figure>
+<img src="turtle.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>The turtle has a pen attached, and draws a line as it moves around the screen. Here’s what the program does:</p>
+<ul>
+<li><p><code>from turtle import *</code> tells Python that you want to use the turtle library, a collection of code you can use to draw on the screen. The <code>*</code> means ‘import everything’.</p></li>
+<li><p><code>shape(&quot;turtle&quot;)</code> makes the drawing robot look like a turtle. As well as turtle, you can also use “arrow”, “circle”, “square”, “triangle” or “classic”.</p></li>
+<li><p><code>speed(5)</code> tells the turtle how fast to draw. You can use a number between 1 and 11. 11 is the fastest, 1 is the slowest.</p></li>
+<li><p><code>forward(100)</code> and <code>backward(100)</code> tells the turtle to move forward or backward 100 pixels.</p></li>
+<li><p><code>left(45)</code> and <code>right(90)</code> turn the turtle left or right by a number of degrees. Here are some examples:</p>
+<figure>
+<img src="turtle_degrees.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p><code>done()</code> tells Python that we’ve finished programming the turtle.</p></li>
+</ul></li>
+<li><p>What’s your favourite colour? To make your drawings more interesting, you can also change the colour and the size of the pen drawing the line. Here’s a simple example to try:</p>
+<pre class="language-python"><code>from turtle import *
+shape(&quot;turtle&quot;)
+speed(8)
+
+color(&quot;Purple&quot;)
+pensize(7)
+right(90)
+forward(100)
+left(90)
+forward(50)
+
+color(&quot;Orange&quot;)
+pensize(3)
+penup()
+forward(50)
+pendown()
+forward(50)
+
+done()</code></pre>
+<figure>
+<img src="turtle_colour.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>The code above contains a couple of new commands:</p>
+<ul>
+<li><p><code>color(&quot;Purple&quot;)</code> turns the turtle and the line purple. Notice the American spelling of the word colour, which doesn’t have a ‘u’ in it. You can also specify colours in <em>hex</em>, like you did in CSS. Instead of using <code>pencolor(&quot;Red&quot;)</code> you could use <code>pencolor(&quot;#FF0000&quot;)</code>.</p></li>
+<li><p><code>penup()</code> lifts the pen from the screen, and <code>pendown()</code> lowers it again. This means that you can move the turtle without leaving a trail!</p></li>
+</ul></li>
+</ul>
+</section>
+<section id="save-your-project" class="level2 save">
+<h2>Save Your Project</h2>
+</section>
+<section id="challenge-drawing-shapes" class="level2 challenge">
+<h2>Challenge: Drawing shapes</h2>
+<ul>
+<li>Can you use the turtle instructions above to draw:
+<ul>
+<li>A square?</li>
+<li>A triangle?</li>
+</ul></li>
+<li>Can you draw a house? What else can you draw?</li>
+</ul>
+</section>
+<section id="save-your-project-1" class="level2 save">
+<h2>Save Your Project</h2>
+</section>
+</section>
+<section id="step-2-repeating-yourself" class="level1 activity">
+<h1>Step 2: Repeating yourself</h1>
+<p>When drawing a square and a triangle, your program repeated the same commands over and over again. Let’s get Python to repeat them for us!</p>
+<section id="activity-checklist-1" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>Open up a new file, and run the following program:</p>
+<pre class="language-python"><code>from turtle import *
+
+speed(11)
+shape(&quot;turtle&quot;)
+
+for count in range(4):
+    forward(100)
+    right(90)
+
+done()</code></pre>
+<p>This program uses a <code>for</code> loop. You can use a <code>for</code> loop in Python whenever you want to repeat some code a set number of times.</p>
+<p>In the program above, the commands <code>forward(100)</code> and <code>right(90)</code> are repeated 4 times, drawing a square. Turning 90 degrees for each corner means we turn 360 degrees in total.</p></li>
+<li><p>Just like with an <code>if</code> statement, you should use the Tab key to indent the code that you want to repeat. Try changing the code, so that the line <code>forward(100)</code> is indented but the line <code>right(50)</code> isn’t, like this:</p>
+<pre class="language-python"><code>from turtle import *
+
+speed(11)
+shape(&quot;turtle&quot;)
+
+for count in range(4):
+    forward(100)
+right(90)
+
+done()</code></pre>
+<p>What happens when you run this program? Did you get a straight line? In this program, Python will repeat <code>forward(100)</code> four times, and <em>then</em> turn <code>right(90)</code>.</p></li>
+<li><p>Now that you know how to repeat commands, you can create complicated shapes and patterns really easily. Run this program:</p>
+<pre class="language-python"><code>from turtle import *
+
+speed(11)
+shape(&quot;turtle&quot;)
+
+for count in range(8):
+    forward(100)
+    right(45)
+
+done()</code></pre>
+<figure>
+<img src="turtle_octagon.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+<p>This program works in the same way as the square drawing program, except that it repeats 8 times, and only turns 45 degrees for each corner. This means that the code draws an 8-sided shape (an octagon), as the corners for each of the 8 sides add up to 360 degrees (360 divided by 8 is 45).</p></li>
+<li><p>Here’s another example of what can be created using a <code>for</code> loop. What does this program draw?</p>
+<pre class="language-python"><code>from turtle import *
+
+speed(11)
+shape(&quot;turtle&quot;)
+
+for count in range(30):
+    forward(5)
+    penup()
+    forward(5)
+    pendown()
+
+done()</code></pre></li>
+</ul>
+</section>
+<section id="save-your-project-2" class="level2 save">
+<h2>Save Your Project</h2>
+</section>
+<section id="challenge-loopy-shapes" class="level2 challenge">
+<h2>Challenge: Loopy shapes</h2>
+<ul>
+<li>Can you use a <code>for</code> loop to draw:
+<ul>
+<li>A pentagon? (five sides)</li>
+<li>A hexagon? (six sides) Remember that the angles of all the corners always add up to 360 degrees!</li>
+</ul></li>
+<li>Can you draw a circle? You can move forward 1 pixel and turn 1 degree each time. How many times would you need to repeat these commands?</li>
+</ul>
+</section>
+<section id="save-your-project-3" class="level2 save">
+<h2>Save Your Project</h2>
+</section>
+<section id="challenge-drawing-patterns" class="level2 challenge">
+<h2>Challenge: Drawing patterns</h2>
+<p>Can you use what you’ve learnt to draw awesome patterns? Here’s an example:</p>
+<pre class="language-python"><code>from turtle import *
+
+speed(11)
+shape(&quot;turtle&quot;)
+pensize(6)
+color(&quot;Red&quot;)
+
+for count in range(36):
+    forward(100)
+    right(100)
+
+done()</code></pre>
+<figure>
+<img src="turtle_loopy.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+</section>
+<section id="save-your-project-4" class="level2 save">
+<h2>Save Your Project</h2>
+</section>
+<section id="challenge-variables-and-loops" class="level2 challenge">
+<h2>Challenge: Variables and loops</h2>
+<p>When drawing different shapes, you had to calculate how many degrees to turn for each corner yourself.</p>
+<p>Can you use a calculation, so that the computer works this out for you? To work out the number of degrees to turn, you can divide 360 by the number of sides in the shape:</p>
+<pre class="language-python"><code>sides = 4
+angle = 360 / sides</code></pre>
+<p><code>/</code> is the Python symbol for divide. Notice that the answer is stored in a variable called <code>angle</code>, which you can then use to draw your shape:</p>
+<pre class="language-python"><code>left(angle)</code></pre>
+<p>You can then change the number stored in the <code>sides</code> variable and test that it works for any shape!</p>
+</section>
+<section id="save-your-project-5" class="level2 save">
+<h2>Save Your Project</h2>
+</section>
+</section>
+</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><script src="../../../assets/script.min.js"></script></body></html>

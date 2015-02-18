@@ -1,0 +1,244 @@
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Lost in Space | YourCodeClubName</title><link href="../../../assets/style.min.css" rel="stylesheet"/></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Home</a></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">Lost in Space</h1></header></div><div class="col-xs-12"><div class="content"><section id="introduction" class="level1 intro">
+<h1>Introduction</h1>
+<p>You are going to learn how to program your own animation!</p>
+<div class="scratch-preview">
+<pre><code>&lt;iframe allowtransparency=&quot;true&quot; width=&quot;485&quot; height=&quot;402&quot; src=&quot;http://scratch.mit.edu/projects/embed/26818098/?autostart=true&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
+&lt;img src=&quot;space-final.png&quot;&gt;</code></pre>
+</div>
+</section>
+<section id="step-1-sprites" class="level1 activity">
+<h1>Step 1: Sprites</h1>
+<section id="activity-checklist" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>First, make sure that you have opened up the Scratch editor. You can find the online Scratch editor at <a href="http://jumpto.cc/scratch-new">jumpto.cc/scratch-new</a>. It should look something like this:</p>
+<figure>
+<img src="space-scratch.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Before you can start animating, you’ll need to add in a ‘thing’ to animate. In Scratch, these ‘things’ are called ‘sprites’. The cat that you can see is a sprite called Felix, who is the Scratch mascot. Let’s get rid of him for now, by right-clicking on him, and clicking ‘delete’.</p>
+<figure>
+<img src="space-delete.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Next, click ‘Choose sprite from library’ to open up a list of all the available Scratch sprites.</p>
+<figure>
+<img src="space-sprite-library.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Scroll down until you see a spaceship sprite. Click on the spaceship, and click ‘OK’ to add it to your animation.</p>
+<figure>
+<img src="space-sprite-spaceship.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Click on your new spaceship sprite, and click the ‘Costumes’ tab.</p>
+<figure>
+<img src="space-costume.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Use the arrow tool to select the image. Then click on the circular rotate handle, and rotate the image until it is on its side.</p>
+<figure>
+<img src="space-rotate.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>You should now have a big spaceship on your ‘stage’. The ‘stage’ is the area on the left, and is where your animation will happen. Think of it as a performance area, just like a real stage! You can drag the spaceship around the stage to move it.</p>
+<p>At the moment, the stage is white, and looks pretty boring! Let’s add a backdrop to the stage, by clicking on the ‘Stage’ icon, and then clicking ‘Choose backdrop from library’.</p>
+<figure>
+<img src="space-stage.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Click ‘Space’ on the left, and then click the ‘Stars’ backdrop and click ‘OK’ to add it to the stage.</p>
+<figure>
+<img src="space-backdrop.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+<p>Your stage should now look like this:</p>
+<figure>
+<img src="space-step1.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+</ul>
+</section>
+<section id="challenge-adding-another-sprite" class="level2 challenge">
+<h2>Challenge: Adding another sprite</h2>
+<p>Can you add another sprite (the Earth) to your stage, so that it looks like this:</p>
+<figure>
+<img src="space-earth.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+</section>
+<section id="save-your-project" class="level2 save">
+<h2>Save your project</h2>
+<p>You should save your work regularly, so that you don’t lose it. First, give your program a name, by typing one into the text box above the stage. You can then click ‘File’ and then ‘Save now’ to save your project.</p>
+<figure>
+<img src="space-save.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+<p>If you’re using Scratch online, clicking ‘Save’ adds your program to your ‘stuff’, which is an online folder that you can access from anywhere, even from home. You can access your stuff by clicking ‘File’, and then clicking ‘Go to My Stuff’.</p>
+<figure>
+<img src="space-stuff.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+<p>This shows you a list of all your projects. Click ‘See inside’ to continue programming your animation.</p>
+<p>If you’re using Scratch online and don’t have a username, you can click ‘Download to your computer’ to save your project.</p>
+</section>
+</section>
+<section id="step-2-animating-your-sprites" class="level1 activity new-page">
+<h1>Step 2: Animating your sprites</h1>
+<p>Now that you have some sprites, let’s add code to animate them!</p>
+<section id="activity-checklist-1" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>Let’s create a script for the spaceship, by using code blocks. You can find the blocks in the ‘Scripts’ tab, and they are all colour-coded! Drag these 2 blocks into the code area to the right, making sure that they are connected together (like Lego blocks).</p>
+<figure>
+<img src="space-animate.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+<p>Change the numbers in the code blocks, so that the code is exactly the same as in the image above. Here is the code that you should add:</p>
+<pre class="blocks"><code>    point towards [Earth v]
+    glide (1) secs to x:(0) y: (0)</code></pre>
+<p>To make the <code class="blockmotion">point towards Earth</code> block, you’ll have to drag on the block, and then click the down arrow to select your ‘Earth’ sprite.</p>
+<figure>
+<img src="space-select.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>If you click on the code blocks to run the code, you should see the spaceship turn and move towards the centre of the stage.</p>
+<figure>
+<img src="space-animate-stage.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+<p>The screen position <code class="blockmotion">x:(0) y:(0)</code> is the center of the stage. A position like <code class="blockmotion">x:(-150) y:(-150)</code> is towards the bottom-left of the stage, and a position like <code class="blockmotion">x:(150) y:(150)</code> is near the top-right.</p>
+<figure>
+<img src="space-xy.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+<p>If you need to know the coordinates of a position on the stage, move the mouse to the position you want and make a note of the coordinates, which are displayed below the stage.</p>
+<figure>
+<img src="space-coordinates.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>If you try to click the code again, to run it a second time, nothing happens! That’s because the spaceship is already at the position it’s been told to glide to. Let’s improve your animation, by telling the spaceship to start at the bottom-left of the stage, and point upwards to begin with.</p></li>
+<li><p>Add some more blocks to your animation, adding them on top of the blocks you already have. Your code should now look like this:</p>
+<pre class="blocks"><code>    point in direction (0 v)
+    go to x:(-150) y:(-150)
+    wait (1) secs
+    point towards [Earth v]
+    glide (1) secs to x:(0) y: (0)</code></pre>
+<p>You’ll find the <code class="blockcontrol">wait (1) secs</code> block by clicking on the orange <code class="blockcontrol">Control</code> blocks section.</p></li>
+<li><p>Your spaceship now moves <em>every</em> time you run your code. Try it!</p></li>
+<li><p>You can also attach your animation code to an ‘event’. This means that the code will run when something happens, such as when the green flag is clicked, a key is pressed or a sprite is clicked.</p>
+<figure>
+<img src="space-events.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+<p>Drag an event onto the start of your code, so that your animation starts when the green flag is clicked. This is how your code should look:</p>
+<pre class="blocks"><code>    when FLAG clicked
+    point in direction (0 v)
+    go to x:(-150) y:(-150)
+    wait (1) secs
+    point towards [Earth v]
+    glide (1) secs to x:(0) y: (0)</code></pre></li>
+<li><p>Try out your animation a few times, by clicking on the green flag just above the stage.</p>
+<figure>
+<img src="space-flag.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+</ul>
+</section>
+<section id="challenge-improving-your-animation" class="level2 challenge">
+<h2>Challenge: Improving your animation</h2>
+<p>Can you change the numbers in your animation code, so that: + The spaceship moves until it touches the Earth? + The spaceship moves more slowly towards the Earth?</p>
+<p>You’ll need to change the numbers in this block:</p>
+<pre class="blocks"><code>    glide (1) secs to x:(0) y:(0)</code></pre>
+</section>
+<section id="save-your-project-1" class="level2 save">
+<h2>Save your project</h2>
+</section>
+</section>
+<section id="step-3-animating-using-loops" class="level1 activity">
+<h1>Step 3: Animating using loops</h1>
+<section id="activity-checklist-2" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>Another way of animating the spaceship is to tell it to move a small amount (say 4 steps), lots of times. Delete the <code class="blockmotion">glide</code> block from your code, by right-clicking on the block and clicking ‘delete’. You can also delete code by dragging it off the script area, back into the code blocks area.</p></li>
+<li><p>Once you’ve removed your code, add this code instead:</p>
+<pre class="blocks"><code>    when FLAG clicked
+    point in direction (0 v)
+    go to x:(-150) y:(-150)
+    wait (1) secs
+    point towards [Earth v]
+    repeat (100)
+        move (4) steps
+    end</code></pre></li>
+<li><p>The <code class="blockcontrol">repeat</code> block is used to repeat something lots of times, and is also known as a ‘loop’. If you click the flag to try out this new code, you’ll see that it does pretty much the same thing as before.</p></li>
+<li><p>Using a loop to move the spaceship means that you can add more code inside the <code class="blockcontrol">repeat (100)</code> loop to do interesting things. Add the <code class="blocklooks">change color effect by 25</code> block into the loop (from the ‘Looks’ section), to repeatedly change the colour of the spaceship as it moves:</p>
+<pre class="blocks"><code>    when FLAG clicked
+    point in direction (0 v)
+    go to x:(-150) y:(-150)
+    wait (1) secs
+    point towards [Earth v]
+    repeat (100)
+        move (4) steps
+        change [color v] effect by (25)
+    end</code></pre></li>
+<li><p>Click the flag to see your new animation.</p></li>
+<li><p>You can also improve your animation, by making the spaceship get smaller as it moves towards the Earth. Remember to also add code to the top of your animation, to make your spaceship full size to start with.</p>
+<pre class="blocks"><code>    when FLAG clicked
+    set size to (100)%
+    point in direction (0 v)
+    go to x:(-150) y:(-150)
+    wait (1) secs
+    point towards [Earth v]
+    repeat (100)
+        move (4) steps
+        change [color v] effect by (25)
+        change size by (-1)
+    end</code></pre></li>
+<li><p>If you try out your animation now, you’ll see that it looks much better than before!</p></li>
+</ul>
+</section>
+<section id="save-your-project-2" class="level2 save">
+<h2>Save your project</h2>
+</section>
+</section>
+<section id="step-4-more-loops" class="level1 activity">
+<h1>Step 4: More loops</h1>
+<section id="activity-checklist-3" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>Let’s add monkey to your animation, who’s lost in space! Start by adding in the monkey sprite from the library.</p>
+<figure>
+<img src="space-monkey.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>If you click on your new monkey sprite and then click ‘Costumes’, you can edit how the monkey looks. Click the ‘Ellipse’ tool, and draw a white space helmet around the monkey’s head.</p>
+<figure>
+<img src="space-monkey-edit.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Now click ‘Scripts’, and add this code to the monkey, so that it spins slowly in a circle forever:</p>
+<pre class="blocks"><code>    when FLAG clicked
+    forever
+        turn right (1) degrees
+    end</code></pre>
+<figure>
+<img src="space-monkey-loop.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+<p>The <code class="blockcontrol">forever</code> block is another loop, but this time one that never ends. You’ll have to click the stop button (next to the flag) to end this animation.</p></li>
+<li><p>You can also combine loops. Add a ‘star’ sprite to your animation, and add this code to it:</p>
+<pre class="blocks"><code>    when FLAG clicked
+    forever
+      repeat(20)
+        change size by (2)
+      end
+      repeat(20)
+        change size by (-2)
+      end
+    end</code></pre>
+<figure>
+<img src="space-star.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Click the flag to test out this star animation. What does this code do? Well, the star is made slightly bigger 20 times, and then made slightly smaller 20 times, back to it’s original size. These 2 loops are inside a <code class="blockcontrol">forever</code> loop, so the animation keeps repeating.</p></li>
+</ul>
+</section>
+<section id="save-your-project-3" class="level2 save">
+<h2>Save your project</h2>
+</section>
+<section id="challenge-make-your-own-animation" class="level2 challenge">
+<h2>Challenge: Make your own animation</h2>
+<p>Stop your space animation, and click ‘File’ and then ‘New’, to start a new project. Use what you’ve learnt in this project to make your own animation. It can be anything you like, but try to make your animation match the setting. Here are some examples:</p>
+<figure>
+<img src="space-egs.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+</section>
+<section id="save-your-project-4" class="level2 save">
+<h2>Save your project</h2>
+<p>Well done! You’ve now completed your first Scratch project. If you are using the online editor, you can let others see your animation by clicking ‘Share’ in the top-right of the Scratch editor!</p>
+<figure>
+<img src="space-share.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+</section>
+</section>
+</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><script src="../../../assets/script.min.js"></script><script>$(document).ready(function(){
+  scratchblocks2.load_language(scratchblocks2._translations['nb']);
+  scratchblocks2.parse("pre.blocks");
+});</script></body></html>

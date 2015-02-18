@@ -1,0 +1,21 @@
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Scratch Card - Eyes | YourCodeClubName</title><link href="../../../../../assets/style.min.css" rel="stylesheet"/></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../../../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Home</a></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../../../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">Scratch Card - Eyes</h1></header></div><div class="col-xs-12"><div class="content"><section id="activity-checklist" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>You can give your monster eyes that follow your mouse pointer all over the screen. Your monster can have as many eyes as you like, even eight like a spider! Because we always want our monster eyes to follow our mouse pointer we need to use the <code class="blockyellow">forever</code> block. Once <strong>green flag</strong> scripts have started we <code class="blockyellow">forever</code> want our eyes to point in the direction of the mouse and re-adjust every fraction of a second.</p>
+<pre class="blocks"><code>when FLAG clicked
+    forever
+        point towards [mouse pointer v]
+        wait (0.2) secs
+
+when I receive [moved right v]
+    change x by (move speed)
+
+when I receive [moved left v]
+    change x by ((move speed) * (-1))</code></pre></li>
+</ul>
+<p>Notice we also use broadcast to move our eyes along with our body and other parts. What else can you make the eyes do? If you move your mouse cursor between your monster’s eyes, it will go cross eyed!</p>
+</section>
+</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><script src="../../../../../assets/script.min.js"></script><script>$(document).ready(function(){
+  scratchblocks2.load_language(scratchblocks2._translations['nb']);
+  scratchblocks2.parse("pre.blocks");
+});</script></body></html>

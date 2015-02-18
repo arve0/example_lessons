@@ -1,0 +1,63 @@
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Quiz — Notes for Club Leaders | YourCodeClubName</title><link href="../../../assets/style.min.css" rel="stylesheet"/></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Home</a></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">Quiz — Notes for Club Leaders</h1></header></div><div class="col-xs-12"><div class="content"><section id="introduction" class="level1">
+<h1>Introduction:</h1>
+<p>This project teaches children how to use selection (<code>if</code>, <code>else</code> and <code>elif</code> statements) in their programs, to alter program flow in response to data. This is achieved through writing and testing a simple quiz program, which includes written text and multiple choice responses.</p>
+</section>
+<section id="resources" class="level1">
+<h1>Resources</h1>
+<p>For this project, Python will need to be installed. It is recommended that version 3.2 of Python is installed.</p>
+<p>Children can also make use of the materials which accompany this project. Files included in the ‘Project Resources’ folder (found under the ‘Download Project Materials’ link):</p>
+<ul>
+<li>Quiz.py</li>
+</ul>
+<p>Make sure that each child has read and write access to their own copy of these resources.</p>
+</section>
+<section id="learning-objectives" class="level1">
+<h1>Learning Objectives</h1>
+<ul>
+<li>Selection, using:
+<ul>
+<li><code>if</code>;</li>
+<li><code>else</code>;</li>
+<li><code>elif</code>.</li>
+</ul></li>
+<li>Program testing and problem solving.</li>
+</ul>
+</section>
+<section id="challenges" class="level1">
+<h1>Challenges</h1>
+<ul>
+<li>Question time - using <code>if</code> and <code>else</code> to give quiz answer feedback;</li>
+<li>Fixing your quiz - use of the <code>.lower()</code> method to reduce errors in answer feedback;</li>
+<li>Multiple choice quiz - using <code>elif</code> to add multiple choice quiz questions;</li>
+<li>Keeping score - addition of a <code>score</code> variable to track progress;</li>
+<li>How did I do? - further use of <code>if</code> and <code>else</code> statements to provide an end of quiz message, based on their score.</li>
+</ul>
+</section>
+<section id="frequently-asked-questions" class="level1">
+<h1>Frequently Asked Questions</h1>
+<ul>
+<li>As the player’s input is stored as text, any questions with a numerical answer should also be represented as text. For example:</li>
+</ul>
+<pre class="language-python"><code>if answer == &quot;4&quot;:
+    ...</code></pre>
+<p>and <em>not</em>:</p>
+<pre class="language-python"><code>if answer == 4:
+    ...</code></pre>
+<p>As an alternative, it is also possible to cast the player’s answer to a number, and then compare the two numbers:</p>
+<pre class="language-python"><code>answer = int(answer)
+if answer == 4:
+    ...</code></pre>
+<ul>
+<li><p>Each <code>if</code>/<code>else</code>/<code>elif</code> statement should end with a colon.</p></li>
+<li><p>The body of each <code>if</code>/<code>else</code>/<code>elif</code> statement should be uniformly indented. It is recommended that the Tab key is used for this, as it makes indentation mistakes easier to spot. For example, the following program will not run:</p></li>
+</ul>
+<pre class="language-python"><code>if answer == &quot;variable&quot;:
+   print(&quot;Well done&quot;)
+  print(&quot;---------&quot;)
+    print(&quot; :) &quot;)
+ )</code></pre>
+<ul>
+<li>Children should remember the difference between <code>=</code> (used for variable assignment) and <code>==</code> (used for checking equality).</li>
+</ul>
+</section>
+</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><script src="../../../assets/script.min.js"></script></body></html>

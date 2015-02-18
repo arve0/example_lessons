@@ -1,0 +1,260 @@
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Pokedex | YourCodeClubName</title><link href="../../../assets/style.min.css" rel="stylesheet"/></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Home</a></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">Pokedex</h1></header></div><div class="col-xs-12"><div class="content"><section id="introduction" class="level1 intro">
+<h1>Introduction:</h1>
+<p>In this project you’ll learn how to create a graphical user interface (GUI), by making a Pokedex (which is a program for looking up information on Pokemon).</p>
+<p>This is what your Pokedex GUI will look like:</p>
+<figure>
+<img src="gui-command.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+<section id="pokemon-data" class="level2 challenge">
+<h2>Pokemon data</h2>
+<p>The Pokemon data used in this project is accessed through the <a href="http://pokeapi.co/">pokeAPI</a>, created by Paul Hallett.</p>
+</section>
+</section>
+<section id="step-1-widgets" class="level1 activity">
+<h1>Step 1: Widgets!</h1>
+<section id="activity-checklist" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>Graphical user interfaces (GUIs) can be easily created by using the ‘tkinter’ module. A GUI contains lots of different “things”, called <em>widgets</em>. Here’s an example:</p>
+<pre class="language-python"><code>from tkinter import *
+
+#create a new GUI window
+window = Tk()
+window.title(&quot;A Window&quot;)
+
+#a label
+lbl = Label(window,text=&quot;A Label&quot;)
+lbl.pack()
+
+#an &#39;entry&#39; textbox
+txt = Entry(window)
+txt.pack()
+
+#a button
+btn = Button(window,text=&quot;A Button&quot;)
+btn.pack()
+
+window.mainloop()</code></pre>
+<p>If you run this program, you can see a main window, which has a text label, a text entry box and a button inside.</p>
+<figure>
+<img src="gui-widgets.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+<p>Each widget is created and stored in a variable, and then packed into the main window. Notice that when creating a widget, you have to say which window it should appear in, and can also say what text is displayed, like this:</p>
+<pre class="language-python"><code>#a label
+lbl = Label(window,text=&quot;A Label&quot;)</code></pre></li>
+<li><p>You can now add some more widgets for your Pokedex:</p>
+<pre class="language-python"><code>from tkinter import *
+
+#create a new GUI window
+window = Tk()
+window.title(&quot;Pokedex&quot;)
+
+#a label containing the instructions
+lblInstructions = Label(window,text=&quot;Enter a number between 1 and 718:&quot;)
+lblInstructions.pack()
+
+#an &#39;entry&#39; textbox for typing in the pokemon number
+txtPokemonNo = Entry(window)
+txtPokemonNo.pack()
+
+#a button that will get the info for a pokemon
+btnGetInfo = Button(window,text=&quot;Get Data!&quot;)
+btnGetInfo.pack()
+
+#labels for the pokemon name
+lblNameText = Label(window,text=&quot;Name:&quot;)
+lblNameText.pack()
+lblNameValue = Label(window,text=&quot;???&quot;)
+lblNameValue.pack()
+
+window.mainloop()</code></pre>
+<figure>
+<img src="gui-more-widgets.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+<p>Notice that lots of useful comments have been added, to remind you of what each label is used for. Variable names of the widgets have also been changed, to make the program easier to understand.</p></li>
+</ul>
+</section>
+<section id="save-your-project" class="level2 save">
+<h2>Save Your Project</h2>
+</section>
+<section id="challenge-more-widgets" class="level2 challenge">
+<h2>Challenge: More widgets</h2>
+<p>Can you finish creating the GUI for displaying details of Pokemon, so that it looks like this:</p>
+<figure>
+<img src="gui-pokedex-widgets.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+<p>Your GUI will need: + A text entry box for typing in which Pokemon you want to see; + A button to get the Pokemon information; + Lots of labels for showing Pokemon information: + Name; + Hit Points (HP); + Attack; + Defence; + Speed.</p>
+<p>Remember that adding comments, and using sensible variable names will really help you later!</p>
+</section>
+<section id="save-your-project-1" class="level2 save">
+<h2>Save Your Project</h2>
+</section>
+</section>
+<section id="step-2-customising-your-widgets" class="level1 activity">
+<h1>Step 2: Customising your widgets</h1>
+<p>Now that you have lots of different widgets in your GUI window, you can change how they look.</p>
+<section id="activity-checklist-1" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>First, let’s change some of the colours, to make your widgets look a bit more interesting. Change the code for displaying the main window to:</p>
+<pre class="language-python"><code>#create a new GUI window
+window = Tk()
+window.config(bg=&quot;#e0e0ff&quot;)
+window.title(&quot;Pokedex&quot;)</code></pre>
+<figure>
+<img src="gui-window-bg.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+<p>Using <code>.config()</code> allows you to <em>configure</em> the way things look. As you may have guessed, <code>bg</code> means “background”, and <code>&quot;#e0e0ff&quot;</code> is the hex code for light purple. You can also configure the way that widgets look, for example the labels for displaying the Pokemon’s name:</p>
+<pre class="language-python"><code>#labels for the pokemon name
+lblNameText = Label(window,text=&quot;Name:&quot;)
+lblNameText.config(bg=&quot;#e0e0ff&quot;, fg=&quot;#111111&quot;)
+lblNameText.pack()
+lblNameValue = Label(window,text=&quot;???&quot;)
+lblNameValue.config(bg=&quot;#e0e0ff&quot;, fg=&quot;#111111&quot;)
+lblNameValue.pack()</code></pre>
+<figure>
+<img src="gui-colour.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+<p><code>fg</code> means foreground, and sets the label’s text colour.</p></li>
+<li><p>Next, you can change the font of each of the widgets. You can do this by first creating variables to store information for different fonts. Add this code to your program, after the line to import the <code>tkinter</code> module:</p>
+<pre class="language-python"><code>smallFont = [&quot;Helvetica&quot; , 14]
+mediumFont = [&quot;Helvetica&quot; , 18]
+bigFont = [&quot;Helvetica&quot; , 30]</code></pre>
+<p>You can now choose the font of each widget, like this:</p>
+<pre class="language-python"><code>#labels for the pokemon name
+lblNameText = Label(window,text=&quot;Name:&quot;)
+lblNameText.config(bg=&quot;#e0e0ff&quot;, fg=&quot;#111111&quot;, font=mediumFont)
+lblNameText.pack()
+lblNameValue = Label(window,text=&quot;???&quot;)
+lblNameValue.config(bg=&quot;#e0e0ff&quot;, fg=&quot;#111111&quot;, font=bigFont)
+lblNameValue.pack()</code></pre>
+<p>All that’s been added to the <code>.config()</code> is the <code>font=mediumFont</code> and <code>font=bigFont</code> bits.</p>
+<figure>
+<img src="gui-font.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+</ul>
+</section>
+<section id="save-your-project-2" class="level2 save">
+<h2>Save Your Project</h2>
+</section>
+<section id="challenge-making-widgets-look-nice" class="level2 challenge">
+<h2>Challenge: Making widgets look nice</h2>
+<p>Can you add fonts and colour to improve the look of your Pokedex GUI. Here’s an example of how it could look:</p>
+<figure>
+<img src="gui-pokedex-style.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+<p>Your Pokedex can look different to this. You can use different fonts, for example <code>Times</code>, <code>Courier</code>, or any other font you have installed on your computer. You can also choose your own <a href="https://www.tcl.tk/man/tcl8.6/TkCmd/colors.htm">colours</a> (including <a href="http://www.colorpicker.com/">hex colours</a>).</p>
+</section>
+<section id="save-your-project-3" class="level2 save">
+<h2>Save Your Project</h2>
+</section>
+</section>
+<section id="step-3-adding-commands" class="level1 activity">
+<h1>Step 3: Adding commands</h1>
+<p>Now that you have a great looking GUI, let’s make the button actually display Pokemon data!</p>
+<section id="activity-checklist-2" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>First, make sure that you have a file called <code>pokeapi.py</code> saved in the same place as your Pokedex GUI program. Ask your club leader if you can’t find the file. This file contains a function called <code>getPokemonData()</code>, that gets all data for a particular Pokemon. To use this function, you just have to import it from the <code>pokeapi.py</code> file, by adding this code to the top of your program:</p>
+<pre class="language-python"><code>from pokeapi import *</code></pre></li>
+<li><p>Let’s create a new function called <code>showPokemonData()</code>, that will use the <code>getPokemonData()</code> function you’ve just imported. This function will get data for a chosen Pokemon number, and put the data into the GUI labels. Put this code near the top of your program:</p>
+<pre class="language-python"><code>#function to display data for a pokemon number
+def showPokemonData():
+    #get the number typed into the entry box
+    pokemonNumber = txtPokemonNo.get()
+
+    #use the function in the &#39;pokeapi.py&#39; file to get pokemon data
+    pokemonDictionary = getPokemonData(pokemonNumber)
+
+    #get the data from the dictionary and add it to the labels
+    lblNameValue.configure(text = pokemonDictionary[&quot;name&quot;])
+    lblHPValue.configure(text = pokemonDictionary[&quot;hp&quot;])</code></pre>
+<p>Don’t worry about how the <code>getPokemonData()</code> function works. All you need to know is that the function <em>returns</em> (gives you) a dictionary. It’s then used within the <code>showPokemonData()</code> function to display the data in the <code>name</code> and <code>hp</code> labels.</p></li>
+<li><p>Now that you have the functions you need, you can add the command to the button:</p>
+<pre class="language-python"><code>#a button that will get the info for a pokemon
+btnGetInfo = Button(window,text=&quot;Get Data!&quot;, command=showPokemonData)</code></pre>
+<p>Now try typing a number into the text entry box and see what happens:</p>
+<figure>
+<img src="gui-command.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>You could even make a Pokemon Top Trumps game, by removing the text entry widget, and instead getting a random Pokemon to show each time. Just change the <code>showPokemonData()</code> function to:</p>
+<pre class="language-python"><code>#function to display data for a pokemon number
+def showPokemonData():
+    #get a random pokemon number
+    pokemonNumber = randint(1,718)
+
+    #(the rest of the function stays the same...)</code></pre>
+<p>Remember to import the <code>random</code> module at the top of your program (<code>from random import *</code>). You can then score points against a friend, by seeing who has the highest number for a particular skill.</p></li>
+</ul>
+</section>
+<section id="save-your-project-4" class="level2 save">
+<h2>Save Your Project</h2>
+</section>
+<section id="challenge-finishing-your-pokedex" class="level2 challenge">
+<h2>Challenge: Finishing your Pokedex</h2>
+<ul>
+<li>Add code to your <code>showPokemonData()</code> function to display the attack, defence and speed of a Pokemon. You’ll need to know that the dictionary keys are:
+<ul>
+<li>Attack - <code>pokemonDictionary[&quot;attack&quot;])</code></li>
+<li>Defence - <code>pokemonDictionary[&quot;defense&quot;])</code> (notice the American spelling!)</li>
+<li>Speed - <code>pokemonDictionary[&quot;speed&quot;])</code></li>
+</ul></li>
+<li>If you prefer, you can even change (or add to) the data that’s displayed for each Pokemon. You can also display <code>&quot;happiness&quot;</code>, <code>&quot;height&quot;</code>, <code>&quot;weight&quot;</code> and lots of other stuff. You can use <a href="http://pokeapi.co/">this website</a> to see all the Pokemon data.</li>
+</ul>
+<figure>
+<img src="gui-pokedex-finished.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+</section>
+<section id="save-your-project-5" class="level2 save">
+<h2>Save Your Project</h2>
+</section>
+</section>
+<section id="step-4-optional-adding-an-image" class="level1 activity">
+<h1>Step 4: (Optional) Adding an image</h1>
+<p>It’s also possible to display the picture of a chosen Pokemon in your Pokedex!</p>
+<figure>
+<img src="67.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+<section id="note" class="level2 challenge">
+<h2>Note</h2>
+<p>You can only complete this step if you have the ‘pillow’ module installed on your computer. If you’re not sure, ask your club leader.</p>
+</section>
+<section id="activity-checklist-3" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>It’s quite hard to display a Pokemon image in your Pokedex, but don’t worry - there’s a <code>getPokemonImage()</code> function in the <code>pokeapi.py</code> file to do the hard work for you! This function gets the Pokemon image, which can be displayed in a label. First, let’s create a label to display the image in. Add this code somewhere in your main program, with the other labels:</p>
+<pre class="language-python"><code>#label for the pokemon image
+lblImage = tkinter.Label(window)
+lblImage.config(bg=&quot;#e0e0ff&quot;, fg=&quot;#111111&quot;)
+lblImage.pack()</code></pre></li>
+<li><p>You can now modify the <code>showPokemonData()</code> function to also show the image:</p>
+<pre class="language-python"><code>#function to display data for a pokemon number
+def showPokemonData():
+    #get the number typed into the entry box
+    pokemonNumber = randint(1,178)
+
+    #use the function above to get the pokemon data and the image
+    pokemonDictionary = getPokemonData(pokemonNumber)
+    pokemonImage = getPokemonImage(pokemonNumber)
+
+    #get the data from the dictionary and add it to the labels
+    lblNameValue.configure(text = pokemonDictionary[&quot;name&quot;])
+    lblHPValue.configure(text = pokemonDictionary[&quot;hp&quot;])
+    lblAttackValue.configure(text = pokemonDictionary[&quot;attack&quot;])
+    lblDefenceValue.configure(text = pokemonDictionary[&quot;defense&quot;])
+    lblSpeedValue.configure(text = pokemonDictionary[&quot;speed&quot;])
+
+    #add the image and add it to a label
+    lblImage.configure(image=pokemonImage)
+    lblImage.image = pokemonImage</code></pre></li>
+<li><p>When you run your program and click “Get Pokemon!” you should also see an image!</p>
+<figure>
+<img src="gui-pokedex-image.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+</ul>
+</section>
+<section id="save-your-project-6" class="level2 save">
+<h2>Save Your Project</h2>
+</section>
+</section>
+</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><script src="../../../assets/script.min.js"></script></body></html>

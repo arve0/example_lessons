@@ -1,0 +1,72 @@
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title> | YourCodeClubName</title><link href="../../../assets/style.min.css" rel="stylesheet"/></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Home</a></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title"></h1></header></div><div class="col-xs-12"><div class="content"><section id="interactive-role-play---variables" class="level1">
+<h1>Interactive Role Play - Variables</h1>
+<section id="introduction" class="level2">
+<h2>Introduction</h2>
+<p>The idea of this role play is to try and help the kids understand the concept of what a variable is and how they can be used.</p>
+<p>By getting the kids to participate in a real world activity, they can hopefully make the connection between what they are doing and what they are coding.</p>
+</section>
+<section id="basic-premise" class="level2">
+<h2>Basic Premise</h2>
+<p>The basic idea is that the volunteer will attempt to “program” the children. This is done by firstly selecting a volunteer to stand in the front of the class on the <code>stage</code> and act as the <code>sprite</code>. The volunteer then writes a <code>script</code> on the board and selects another volunteer to “run” the code by reading out each command, slowly, allowing time for the <code>sprite</code> to perform the command.</p>
+<p>The commands can become more complex and start to include variables.</p>
+</section>
+<section id="concepts-covered" class="level2">
+<h2>Concepts covered</h2>
+<p>This role play should help the kids understand:</p>
+<ol type="1">
+<li>The <code>stage</code></li>
+<li>What a <code>sprite</code> is</li>
+<li>What a <code>script</code> is</li>
+<li>What a <code>variable</code> is</li>
+<li>Why a <code>variable</code> is used</li>
+<li>The difference between <code>variables</code> for ‘all sprites’ and for ‘this sprite only’</li>
+</ol>
+</section>
+<section id="example-script" class="level2">
+<h2>Example script</h2>
+<p>First start with a simple <code>script</code>:</p>
+<p><code>- When Aaron claps his hands - Walk to Sally - Say 'Hello Sally'</code></p>
+<p>The <code>sprite</code> will probably be a bit confused for the first one, so encourage the person “running” the <code>script</code> to read each command slowly, and encourage the <code>sprite</code> to execute the command.</p>
+<p>Now pick a new name:</p>
+<p><code>- When Aaron claps his hands - Walk to Sam - Say 'Hello Sam'</code></p>
+<p>Again, have someone “run” the <code>script</code>.</p>
+<p>Now try and illustrate to the kids how, when you want to change the name, you have to do so in multiple places. Ask them how we might be able to save ourselves from changing the name in multiple places. If they don’t think of it already, suggest that maybe we could put a placeholder in there. Maybe a <code>variable</code>.</p>
+<p>Change the <code>script</code> as follows:</p>
+<p>`` - When Aaron claps his hands - Walk to <name> - Say ‘Hello <name>’</p>
+<hr />
+<p>variable <name> = Jenny ``</p>
+<p>Ask a child to ‘execute’ the program. They will more than likely read out &lt;name&gt; instead of substituting the real name in for the <code>variable</code>. Guide them through this.</p>
+<p>Then ask the children to change the name <code>variable</code> and “see what the program does”.</p>
+<p>`` - When Aaron claps his hands - Walk to <name> - Say ‘Hello <name>’</p>
+<hr />
+<p>variable <name> = James ``</p>
+<p>By now, the kids should be getting a hang of how changing a <code>variable</code> changes the way the <code>script</code> executes. Time to step it up a notch.</p>
+<p>Now ask for 3 more volunteers. We are about to run a program with 3 <code>sprite</code>s at once.</p>
+<p>Once again choose a new value for the &lt;name&gt; <code>variable</code>:</p>
+<p>`` - When Aaron claps his hands - Walk to <name> - Say ‘Hello <name>’</p>
+<hr />
+<p>variable <name> = Sarah ``</p>
+<p>Ask the class what they think will happen when they execute the program. Have the class to execute the program that now has 3 <code>sprite</code>s and ask them why all 3 <code>sprite</code>s went to the same person. By now they should be able to allude to the fact that all 3 <code>sprite</code>s were sharing the same &lt;name&gt; <code>variable</code>.</p>
+<p>Now for the kicker. Ask the kids how we might be able to get the 3 <code>sprite</code>s to each go to a different person. You may well find that they suggest you give each <code>sprite</code> their own <code>variable</code>.</p>
+<p>So do that:</p>
+<p>`` - When Aaron claps his hands - Walk to <name> - Say ‘Hello <name>’</p>
+<hr />
+<p>variable for sprite1: <name> = Melissa variable for sprite2: <name> = Mark variable for sprite3: <name> = Matthew ``</p>
+<p>Execute the <code>script</code> and the <code>sprite</code>s should end up at their designated people.</p>
+<p>Now try to get the class to reiterate why the <code>sprite</code>s went to the different people this time as opposed to the time before.</p>
+<p>BOOM, you’re done. Your kids now understand the basic concept of <code>variable</code>s..</p>
+</section>
+<section id="ideas-for-commands" class="level2">
+<h2>Ideas for “commands”</h2>
+<ul>
+<li>Highfive &lt;name&gt;</li>
+<li>Walk &lt;number_of_steps&gt; steps forward</li>
+<li>Turn &lt;direction&gt;</li>
+<li>Perform some action: &lt;action&gt;</li>
+</ul>
+</section>
+</section>
+</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><script src="../../../assets/script.min.js"></script><script>$(document).ready(function(){
+  scratchblocks2.load_language(scratchblocks2._translations['nb']);
+  scratchblocks2.parse("pre.blocks");
+});</script></body></html>

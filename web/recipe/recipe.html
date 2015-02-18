@@ -1,0 +1,276 @@
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Coding a recipe | YourCodeClubName</title><link href="../../assets/style.min.css" rel="stylesheet"/></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Home</a></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">Coding a recipe</h1></header></div><div class="col-xs-12"><div class="content"><section id="introduction" class="level1 intro">
+<h1>Introduction</h1>
+<p>Hey, what’s <strong>your favourite dish</strong>?</p>
+<p>Can you <strong>write down your recipe</strong> for it in HTML<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> so that anyone on the Web can enjoy making it too?</p>
+<p><img class="border-less" src="intro.png" title="Inspirational image of someone else using this Web recipe to make a dish"></p>
+</section>
+<section id="step-1-are-you-ready" class="level1 activity">
+<h1>Step 1: Are you ready?</h1>
+<section id="activity-checklist" class="level2 check">
+<h2>Activity Checklist</h2>
+<p>Here is a list of things to check before you dig into your recipe.</p>
+<ul>
+<li><strong>Open your code editor</strong>. Do you have an app on your computer to write your code?
+<ul>
+<li>NO. Talk to your teacher or volunteer about installing a code editor: we recommend <a href="http://www.sublimetext.com/2">Sublime Text 2</a>.</li>
+<li>YES. Great, move on.</li>
+</ul></li>
+<li><p><strong>Create a new file</strong>.</p></li>
+<li><p>Here is the bare skeleton of an HTML document, <strong>copy-paste it</strong> into your new file.</p></li>
+</ul>
+<p>Does it look familiar?</p>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span>
+<span class="kw">&lt;html&gt;</span>
+    <span class="kw">&lt;head&gt;</span>
+        <span class="kw">&lt;title&gt;</span>Code Club recipe<span class="kw">&lt;/title&gt;</span>
+    <span class="kw">&lt;/head&gt;</span>
+    <span class="kw">&lt;body&gt;</span>
+        HELLO!
+    <span class="kw">&lt;/body&gt;</span>
+<span class="kw">&lt;/html&gt;</span> </code></pre>
+<ul>
+<li><strong>Save your file</strong>. You can save it as whatever you want to call it. Just remember to end your file name with <code>.html</code> so that your computer knows it’s an HTML file. For instance, you could call your file <code>recipe.html</code>. Can you think of a less boring name?</li>
+<li>Do you know where your HTML file has gone?
+<ul>
+<li>NO. Ok, it’s somewhere on your computer. Can you find it?</li>
+<li>YES. Good, let’s move on.</li>
+</ul></li>
+<li><strong>Open your browser</strong><a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>.</li>
+<li>From your browser, <strong>open your HTML file</strong> . Does it say <code>HELLO!</code>?</li>
+<li>Go <strong>back to the code editor</strong>. Can you change the <code>HELLO!</code> text to something else?</li>
+<li><strong>Save</strong> your HTML file.</li>
+<li><strong>Back to your browser</strong>, can you refresh<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> the page where you opened your HTML file?</li>
+<li>Great! Now you’ve got your <strong>tools ready</strong>: code editor to write your code, browser to <em>debug</em><a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a> your code.</li>
+</ul>
+</section>
+</section>
+<section id="step-2-how-do-you-make-a-list" class="level1 activity">
+<h1>Step 2: How do you <strong>make a list</strong>?</h1>
+<section id="activity-checklist-1" class="level2 check">
+<h2>Activity Checklist</h2>
+<p><strong>Do you make lists?</strong> For instance, a list of things to do for a party, or a playlist of your favourite videos… you know what we’re talking about.</p>
+<p>You can <strong>make lists in HTML</strong> too! Here’s a code example:</p>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;ul&gt;</span>
+    <span class="kw">&lt;li&gt;</span>this is a bullet point<span class="kw">&lt;/li&gt;</span>
+    <span class="kw">&lt;li&gt;</span>this is another point<span class="kw">&lt;/li&gt;</span>
+    <span class="kw">&lt;li&gt;</span>...you get the point<span class="kw">&lt;/li&gt;</span>
+<span class="kw">&lt;/ul&gt;</span>   </code></pre>
+<ul>
+<li><p>Copy-paste the code above in your HTML file. Where? After the <code>&lt;body&gt;</code> <em>opening tag</em>, and before the <code>&lt;/body&gt;</code> <em>closing tag</em>.</p></li>
+<li><p>Save, go to your browser and refresh the page. What do you see?</p></li>
+</ul>
+<p><img class="border-less" src="ul.png" title="This is what you should see"></p>
+</section>
+<section id="challenge" class="level2 try">
+<h2>Challenge</h2>
+<ul>
+<li>Can you <strong>make a list of ingredients for your recipe</strong>?</li>
+</ul>
+</section>
+</section>
+<section id="step-3-how-do-you-order-your-lists" class="level1 activity">
+<h1>Step 3: How do you <strong>order your lists</strong>?</h1>
+<section id="activity-checklist-2" class="level2 check">
+<h2>Activity Checklist</h2>
+<p>Not all lists are the same. In some lists, the order of things doesn’t matter.</p>
+<p>HTML calls these lists <code>&lt;ul&gt;</code> which stands for <strong>U</strong>n-ordered <strong>L</strong>ist. In these kind of lists, you put <strong>L</strong>ist <strong>I</strong>tems <code>&lt;li&gt;</code> in no particular order, a bit like in your bedroom :)</p>
+<p>Now, can you guess what <code>&lt;ol&gt;</code> stands for?</p>
+<p>Exactly.</p>
+</section>
+<section id="challenge-1" class="level2 try">
+<h2>Challenge</h2>
+<p>In a recipe, it’s quite important to list the steps in a particular order. Because you can’t bake a cake, if you haven’t prepared the mix first.</p>
+<ul>
+<li>Can you <strong>list the steps to make your favourite dish</strong>, from start to finish?</li>
+</ul>
+</section>
+</section>
+<section id="step-4-how-do-you-add-images" class="level1 activity">
+<h1>Step 4: How do you <strong>add images</strong>?</h1>
+<section id="activity-checklist-3" class="level2 check">
+<h2>Activity Checklist</h2>
+<p>So far, you have the basics for your recipe:</p>
+<ol type="1">
+<li>A <code>&lt;ul&gt;</code> list of ingredients</li>
+<li>A <code>&lt;ol&gt;</code> list of steps, to turn these ingredients into a tasty dish</li>
+</ol>
+<p>Some people like to see what a dish will look like once it’s made, to decide if they want to make it or not.</p>
+<p>Why not <strong>add an image</strong> or two to whet their appetite?</p>
+<p>HTML calls images <code>&lt;img&gt;</code> and wants you to write down exactly where to find an image’s <em>source</em>, or <code>src</code>.</p>
+<ul>
+<li>Copy-paste the <code>banana.jpg</code> image, from this project’s <em>Resources</em> folder into the folder where you saved your HTML file.</li>
+</ul>
+<!-- this may change if we use Thimble -->
+
+<ul>
+<li>Add <code>&lt;img src=&quot;banana.jpg&quot;&gt;</code> to your HTML document. Save, go to your browser and refresh your page, you should see some freshly chopped banana slices. Yummy?</li>
+</ul>
+</section>
+<section id="challenge-2" class="level2 try">
+<h2>Challenge</h2>
+<ul>
+<li>Can you make some images of your ingredients?</li>
+<li>Can you <strong>add these images to your recipe’s HTML file</strong>?</li>
+</ul>
+</section>
+</section>
+<section id="step-5-how-do-you-add-extra-info" class="level1 activity">
+<h1>Step 5: How do you add <strong>extra info</strong>?</h1>
+<section id="activity-checklist-4" class="level2 check">
+<h2>Activity Checklist</h2>
+<p>Your recipe looks much better now, don’t you think?</p>
+<p>Still, some people want to know how long it would take them to make this recipe, whether it’s an easy or difficult one, how many people it serves, what to call this recipe, and so on.</p>
+<p>For a <em>starter</em>, you could <strong>add the name of your recipe</strong> at the top of your HTML document, using a <code>&lt;h1&gt;</code>, which stands for <strong>H</strong>eading <strong>1</strong> and it’s what HTML calls the most important piece of information in a document. What is your recipe called?</p>
+</section>
+<section id="challenge-3" class="level2 try">
+<h2>Challenge</h2>
+<p>How can you <strong>help people decide</strong>? What kind of information would they want to find in your recipe?</p>
+<ul>
+<li>Think of <strong>what extra information you want to add to your recipe</strong>. Then code it!</li>
+</ul>
+</section>
+</section>
+<section id="step-6-how-do-you-make-things-look-stylish" class="level1 activity new-page">
+<h1>Step 6: How do you <strong>make things look stylish</strong>?</h1>
+<section id="activity-checklist-5" class="level2 check">
+<h2>Activity Checklist</h2>
+<p>Now your recipe contains all the information one may want.</p>
+<p>Should we try and make it look as nice as it tastes?</p>
+<p>Ok, have you heard of CSS<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a>? You can use this language to <strong>style your recipe</strong>.</p>
+<p>You can write your CSS inside a <code>&lt;style&gt;</code> tag, placed in the <code>&lt;head&gt;</code> of your HTML document, like in the code example below.</p>
+<pre class="sourceCode html"><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span>
+<span class="kw">&lt;html&gt;</span>
+    <span class="kw">&lt;head&gt;</span>
+        <span class="kw">&lt;title&gt;</span>Code Club recipe<span class="kw">&lt;/title&gt;</span>
+        <span class="kw">&lt;style&gt;</span>
+            
+            <span class="co">/* WRITE YOUR CSS UNDER HERE */</span>
+            
+            
+        <span class="kw">&lt;/style&gt;</span>
+    <span class="kw">&lt;/head&gt;</span>
+    ...
+<span class="kw">&lt;/html&gt;</span> </code></pre>
+<p>Just like HTML, CSS needs to be written in a particular way for your browser to make sense of it.</p>
+<pre class="sourceCode css"><code class="sourceCode css">body 
+<span class="kw">{</span>
+    <span class="kw">max-width:</span> <span class="dt">600px</span><span class="kw">;</span>
+    <span class="kw">margin:</span> <span class="dt">30px</span> <span class="dt">auto</span><span class="kw">;</span> 
+<span class="kw">}</span></code></pre>
+</section>
+<section id="challenge-4" class="level2 try">
+<h2>Challenge</h2>
+<ul>
+<li><p>Copy-paste the code above into your HTML document. Where? Anywhere between the <code>&lt;style&gt;</code> <em>opening tag</em> and the <code>&lt;/style&gt;</code> <em>closing tag</em>.</p></li>
+<li><p>Using your browser’s Inspector<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a>, can you work out what the <code>max-width: 600px;</code> and <code>margin: 30px auto;</code> rules do?</p></li>
+</ul>
+</section>
+</section>
+<section id="step-7-how-do-you-make-things-easier-to-read" class="level1 activity">
+<h1>Step 7: How do you <strong>make things easier to read</strong>?</h1>
+<section id="activity-checklist-6" class="level2 check">
+<h2>Activity Checklist</h2>
+<p>Now your recipe should sit in the middle of the page, instead of sticking to the left.</p>
+<p>Using CSS, you can <strong>tell your browser how to display your text</strong>, for example:</p>
+<ul>
+<li>Use <code>font-size</code> to make text <em>xx-large</em>, <em>xx-small</em> or anything in between<a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a></li>
+<li>Use <code>text-align</code> to make text stick to the <em>left</em>, <em>right</em> or <em>center</em></li>
+<li>Use <code>font-weight</code> to make text <em>bold</em>, <em>bolder</em> or <em>lighter</em></li>
+<li>Use <code>line-height</code> to squish text lines together, or to give them more room</li>
+<li>Use <code>font-family</code> to choose the font<a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a> for your text</li>
+</ul>
+</section>
+<section id="challenge-5" class="level2 try">
+<h2>Challenge</h2>
+<ul>
+<li><p>Play around with the CSS properties above.</p></li>
+<li><p>Can you <strong>make your recipe easier to read</strong>, so that even a granny can read it?</p></li>
+</ul>
+<p>You can start from this code example. Place it inside the CSS rule for <code>body</code>.</p>
+<pre class="sourceCode css"><code class="sourceCode css">font-family<span class="dv">:</span> courier, monospace;
+font-size<span class="dv">:</span> 20px;
+line-height<span class="dv">:</span> 1<span class="fl">.5</span>;</code></pre>
+<p><img class="border-less" src="centred.png" title="This is what you should see"></p>
+</section>
+</section>
+<section id="step-8-how-do-you-add-colours" class="level1 activity">
+<h1>Step 8: How do you <strong>add colours</strong>?</h1>
+<section id="activity-checklist-7" class="level2 check">
+<h2>Activity Checklist</h2>
+<p>Using CSS, you can <strong>get creative with colours</strong>. Do you want your text to look like <span style="color:tomato;">tomatoes</span> on <span style="background:peachpuff;padding:2px 4px">peachpuff</span>? No problem.</p>
+<ul>
+<li>Copy-paste the code example below into your HTML document. Place it inside the CSS rule for <code>body</code>.</li>
+</ul>
+<pre class="sourceCode css"><code class="sourceCode css">color<span class="dv">:</span> tomato;
+background-color<span class="dv">:</span> peachpuff;</code></pre>
+<ul>
+<li>Save, go to your browser and refresh your page. What do you see?</li>
+</ul>
+<p><img class="border-less" src="peachpuff.png" title="This is what you should see"></p>
+<p>Now, how many colours do you know? Your browser knows more than <strong>16 million colours</strong>. Pretty impressive, isn’t it?</p>
+<p>The good thing is that you can choose between those millions, and tell your browser exactly which colours you want.</p>
+<p>Also, there’s no need for you to remember any of those colours, because you can use your browser’s Inspector to <strong>pick the colours you like</strong>.</p>
+</section>
+<section id="challenge-6" class="level2 try">
+<h2>Challenge</h2>
+<ul>
+<li>With your HTML page open in your browser, right-click anywhere on your page.</li>
+<li>Choose <strong>Inspect Element</strong> from the menu that will pop up.</li>
+<li>Click on the <code>&lt;body&gt;</code> element on the left panel (where your HTML is) and its <em>Styles</em> will show up in the right panel.</li>
+</ul>
+<p>You should see something similar to the image below.</p>
+<p><img class="border-less" src="inspect-body.png" title="Click on the body element on the left panel and its Styles will show up in the right panel"></p>
+<ul>
+<li>Click on the red box next to the word <em>tomato</em>.</li>
+</ul>
+<p><img class="border-less" src="pick-colour.png" title="When you click on one of these coloured boxes, you can play around with 16 millions colours"></p>
+<p>When you click on one of these coloured boxes, you can play around with 16 millions colours!</p>
+<ul>
+<li>Use this <em>colour picker</em> tool to <strong>change your recipe’s colours</strong>, then copy-paste them into your HTML document.</li>
+</ul>
+</section>
+</section>
+<section id="extra-how-do-you-make-specific-styles" class="level1 activity">
+<h1>EXTRA How do you <strong>make specific styles</strong>?</h1>
+<section id="activity-checklist-8" class="level2 check">
+<h2>Activity Checklist</h2>
+<p>What if you want to make only <em>some</em> parts of your HTML a certain colour?</p>
+<p>CSS and HTML use <strong>different ways to call the same things</strong>. In HTML you say <code>&lt;body&gt; ... &lt;/body&gt;</code> and in CSS you say <code>body { ... }</code></p>
+<ul>
+<li>To change the colour of your <code>&lt;h1&gt;</code> HTML element, add this CSS.</li>
+</ul>
+<pre class="sourceCode css"><code class="sourceCode css">h1 
+<span class="kw">{</span>
+    <span class="kw">color:</span> <span class="dt">maroon</span><span class="kw">;</span>
+<span class="kw">}</span></code></pre>
+<ul>
+<li>Save, go to your browser and refresh your page. What do you see?</li>
+</ul>
+<p>Now <code>&lt;h1&gt;</code> has a new <code>color</code>, while the rest of your page <em>inherits</em> the <code>color</code> you gave to the <code>&lt;body&gt;</code>.</p>
+<p>The <code>h1</code> <code>color</code> takes precedence over the <code>body</code> one, because the <em>selector</em> <code>h1</code> is <strong>more specific</strong> than <code>body</code>. CSS likes <em>specificity</em>.</p>
+</section>
+<section id="challenge-7" class="level2 try">
+<h2>Challenge</h2>
+<ul>
+<li><p>Can you make the ingredients a <strong>different colour</strong> than the steps?</p></li>
+<li><p>What else can you make, using <strong>specific CSS rules</strong>?</p></li>
+</ul>
+<!-- Footnotes -->
+
+</section>
+</section>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p><strong>HTML</strong> stands for <strong>H</strong>ow <strong>T</strong>o <strong>M</strong>ake <strong>L</strong>unch… well, no. HTML stands for <strong>H</strong>yper<strong>T</strong>ext <strong>M</strong>arkup <strong>L</strong>anguage, which is the language that every website in the World “speaks”. To make a website, you teach your computer how to “translate” your ideas into HTML.<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p><strong>What’s a browser?</strong> A web browser is a special app that knows how to interpret text files written in HTML. The most popular browsers are Internet Explorer, Google Chrome and Mozilla Firefox.<a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p><strong>How do you refresh a page in the browser?</strong> If you’re on a Windows computer, use the keyboard shortcut <strong>CTRL+R</strong> (that is, hold the <em>CTRL</em> key down and press the <em>R</em> key once). On a Mac, use <strong>⌘+R</strong>.<a href="#fnref3">↩</a></p></li>
+<li id="fn4"><p><strong>What’s debugging?</strong> Debugging means to find and correct glitches in your code. It takes both patience and speed, just like catching a flying bug. Luckily, debugging HTML code in your browser is easy: right-click anywhere on a page and choose <strong>Inspect Element</strong>. This will pop open your browser’s <strong>Inspector</strong>, where you can see every page’s <em>source code</em> and much more. When you hover over the source code with your mouse, the corresponding HTML element on the page will light up.<a href="#fnref4">↩</a></p></li>
+<li id="fn5"><p><strong>CSS</strong> deals with how we <strong>C</strong>ook, <strong>S</strong>tyle and <strong>S</strong>erve food… well, no. CSS stands for <strong>C</strong>ascading <strong>S</strong>tyle <strong>S</strong>heets and it’s the language you can use to tell your browser to change colours, sizes and many other <em>stylistic</em> aspects of your HTML documents.<a href="#fnref5">↩</a></p></li>
+<li id="fn6"><p><strong>What’s a browser’s Inspector?</strong> In your browser, right-click anywhere on a page and choose <strong>Inspect Element</strong>. This will pop open your browser’s <strong>Inspector</strong>, where you can see every page’s <em>source code</em>, <em>styles</em> and much more. When you hover over the source code with your mouse, the corresponding HTML element on the page will light up. When you click on an HTML tag in the source code (left panel), you’ll see all its CSS styles (on the right panel).<a href="#fnref6">↩</a></p></li>
+<li id="fn7"><p><strong>How can you control the size of things in CSS?</strong> Using <code>px</code>, which stands for <em>pixel</em>. Try to go really close to your computer screen: do you see little dots? Every little dot on your computer screen is a <em>pixel</em>. So, <code>20px</code> means 20 of those little dots.<a href="#fnref7">↩</a></p></li>
+<li id="fn8"><p><strong>What’s a font?</strong> You can think of a font as the “dress code” for the letters of the alphabet, numbers and punctuation. You can use fonts to “dress” the same text in many different ways, and express certain moods or feelings, for example <span style="font-family:monospace;font-size: 125%;">this</span>, <span style="font-family:Times,serif;font-size: 125%;">this</span>, <span style="font-family:Helvetica,Arial,sans-serif;font-size: 125%;">this</span>, <span style="font-family:cursive;font-size: 125%;">this</span> or <span style="font-family:Impact,Charcoal,sans-serif;font-size: 115%;">this</span>. You can explore and use hundreds of free fonts on <a href="https://www.google.com/fonts">Google Fonts</a>.<a href="#fnref8">↩</a></p></li>
+</ol>
+</section>
+</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div><div class="author"><p><strong>Author:</strong></p><p>Matteo Menapace</p>
+</div></div></div></div></div><script src="../../assets/script.min.js"></script></body></html>

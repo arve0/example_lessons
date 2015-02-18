@@ -1,0 +1,436 @@
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Coding Cups and Balls | YourCodeClubName</title><link href="../../assets/style.min.css" rel="stylesheet"/></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Home</a></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">Coding Cups and Balls</h1></header></div><div class="col-xs-12"><div class="content"><section id="introduction" class="level1 intro">
+<h1>Introduction</h1>
+<p>Under which cup is the the ball?</p>
+<p>Can you <strong>code your own Cups &amp; Balls game</strong>, so that anyone on the Web can enjoy playing it?</p>
+<p><img class="border-less" src="intro.png" title="Inspirational image, should be robots instead of 19th century chaps"></p>
+</section>
+<section id="step-1-are-you-ready" class="level1 activity">
+<h1>Step 1: Are you ready?</h1>
+<section id="activity-checklist" class="level2 check">
+<h2>Activity Checklist</h2>
+<p>Here is a list of things to check before you dig into your game.</p>
+<ul>
+<li><strong>Open your code editor</strong>. Do you have an app on your computer to write your code?
+<ul>
+<li>NO. Talk to your teacher or volunteer about installing a code editor: we recommend <a href="http://www.sublimetext.com/2">Sublime Text 2</a>.</li>
+<li>YES. Great, move on.</li>
+</ul></li>
+<li><p><strong>Create a new file</strong>.</p></li>
+<li><p>Here is the skeleton of an HTML<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> document.</p></li>
+</ul>
+<p><strong>Copy-paste it</strong> into your new file.</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Code Club Cups&lt;/title&gt;
+        &lt;style&gt;
+            
+            * { box-sizing: border-box; position: relative; }
+            html, body { height: 100%; }
+            
+            body 
+            {
+                max-width: 600px;
+                margin: 0 auto;
+            }
+            
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;HELLO!&lt;/h1&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<ul>
+<li><strong>Save your file</strong>. You can save it as whatever you want to call it. Just remember to end your file name with <code>.html</code> so that your computer knows it’s an HTML file. For instance, you could call your file <code>cups-balls-game.html</code>. Can you think of a less boring name?</li>
+<li>Do you know where your HTML file has gone?
+<ul>
+<li>NO. Ok, it’s somewhere on your computer. Can you find it?</li>
+<li>YES. Good, let’s move on.</li>
+</ul></li>
+<li><strong>Open your browser</strong><a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>.</li>
+<li>From your browser, <strong>open your HTML file</strong> . Does it say <code>HELLO!</code>?</li>
+<li>Go <strong>back to the code editor</strong>. Can you change the <code>HELLO!</code> text to the name of your game?</li>
+<li><strong>Save</strong> your HTML file.</li>
+<li><strong>Back to your browser</strong>, can you refresh<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> the page where you opened your HTML file?</li>
+<li>Great! Now you’ve got your <strong>tools ready</strong>: code editor to write your code, browser to <em>debug</em><a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a> your code.</li>
+</ul>
+</section>
+</section>
+<section id="step-2-how-do-you-make-a-ball" class="level1 activity">
+<h1>Step 2: How do you <strong>make a ball</strong>?</h1>
+<section id="activity-checklist-1" class="level2 check">
+<h2>Activity Checklist</h2>
+<!-- introduce .shortcut -->
+
+<!-- make a square -->
+
+<p>Let’s <em>throw a ball</em> into your HTML document. How?</p>
+<pre><code>&lt;div class=&quot;ball&quot;&gt;&lt;/div&gt;</code></pre>
+<ul>
+<li>Copy-paste this code inside your HTML document. Where? Anywhere between the <code>&lt;body&gt;</code> <em>opening tag</em> and the <code>&lt;/body&gt;</code> <em>closing tag</em>.</li>
+</ul>
+<p>Since there is no specific <code>&lt;ball&gt;</code> element in HTML, you can <strong>use the generic <code>&lt;div&gt;</code></strong> instead. It may be a bad word in English, but it’s a very useful <strong>building block</strong> in the HTML language.</p>
+<p>Use <code>&lt;div&gt;</code> with a meaningful <code>class</code> name. You could call it whatever you like, for example “spherical object”, “barking dog” or “tooth-brush”: <strong><code>class</code> names are entirely up to you</strong>. Since we’re making a ball, it makes sense to just call it “ball”.</p>
+<ul>
+<li>Save, go to your browser and refresh the page. Do you see a ball?</li>
+</ul>
+<p>No ball. That’s because your <code>&lt;div class=&quot;ball&quot;&gt;&lt;/div&gt;</code> has no size.</p>
+<p>You can use CSS<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a> to give the ball some dimension.</p>
+<pre><code>div.ball
+{
+    width: 60px;
+    height: 60px;
+    
+    background-color: orange;
+} </code></pre>
+<ul>
+<li>Copy-paste this code into your HTML document. Where? Anywhere between the <code>&lt;style&gt;</code> <em>opening tag</em> and the <code>&lt;/style&gt;</code> <em>closing tag</em>.</li>
+</ul>
+<p>See that <code>.ball</code>? It’s a <strong>shortcut</strong> for <code>[class=&quot;ball&quot;]</code></p>
+<p><strong>In CSS <code>.</code> stands for <code>class</code></strong></p>
+<p>For example, you can write <code>div.ball</code> instead of <code>div[class=&quot;ball&quot;]</code></p>
+<p>Do you like shortcuts?</p>
+</section>
+<section id="challenge" class="level2 try">
+<h2>Challenge</h2>
+<ul>
+<li><p>Using your browser’s Inspector<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a>, can you <strong>work out what those CSS rules do</strong>?</p></li>
+<li><p>Now that you have an orange block, can you use the <code>border-radius</code> CSS property to <strong>turn it into a circle</strong>?</p></li>
+</ul>
+<p><img class="border-less" src="ball.png" title="Using border-radius, can you turn the orange square into a circle?"></p>
+</section>
+</section>
+<section id="step-3-how-do-you-make-a-cup" class="level1 activity">
+<h1>Step 3: How do you <strong>make a cup</strong>?</h1>
+<section id="activity-checklist-2" class="level2 check">
+<h2>Activity Checklist</h2>
+<p>To make a ball, you made a square HTML block, and chiseled its corners away until it became well round.</p>
+<p>You are a <strong>Web sculptor</strong>!</p>
+<p>To make a cup, you can <strong>carve a rectangle block into a <em>trapezium</em></strong>.</p>
+<p>Do you know what a trapezium is? It’s a wonky rectangle, where only two sides are parallel.</p>
+<pre><code>&lt;div class=&quot;trapezium&quot;&gt;&lt;/div&gt;</code></pre>
+<ul>
+<li>Copy-paste this code inside your HTML document, after <code>&lt;div class=&quot;ball&quot;&gt;&lt;/div&gt;</code> and before the <code>&lt;/body&gt;</code> <em>closing tag</em>.</li>
+</ul>
+<p>As you know, just <em>classifying</em> your <code>&lt;div&gt;</code> as a trapezium won’t make it look like one.</p>
+<p>You need CSS to give your <code>&lt;div&gt;</code> that wonky shape.</p>
+<pre><code>.trapezium 
+{
+    width: 200px;
+    border-bottom: 300px solid green;
+    border-left: 30px solid transparent;
+}</code></pre>
+<ul>
+<li>Copy-paste this code into your HTML document. Where? Anywhere between the <code>&lt;style&gt;</code> <em>opening tag</em> and the <code>&lt;/style&gt;</code> <em>closing tag</em>.</li>
+</ul>
+<p>See that <code>.trapezium</code>? It’s a <strong>shortcut</strong> for <code>[class=&quot;trapezium&quot;]</code></p>
+<p>Instead of setting a <code>height</code> you can <strong>use borders</strong> to create shapes with CSS.</p>
+<ul>
+<li>Save, go to your browser and refresh the page. What do you see?</li>
+</ul>
+<p><img class="border-less" src="trapezium.png" title="This is what you should see"></p>
+</section>
+<section id="challenge-1" class="level2 try">
+<h2>Challenge</h2>
+<ul>
+<li>Right-click on your green trapezium, then choose <em>Inspect Element</em> to inspect it.</li>
+<li>Play around with <code>border-bottom</code> and <code>border-left</code> to <strong>change the shape of your trapezium</strong>.</li>
+<li>Can you add a new line for <code>border-right</code> and <strong>make your trapezium look like a cup turned upside down</strong>?</li>
+</ul>
+<p><img class="border-less" src="inspect-trapezium.png" title="Can you shape the right border to make your trapezium look like this?"></p>
+</section>
+</section>
+<section id="step-4-how-do-you-make-many-cups" class="level1 activity">
+<h1>Step 4: How do you <strong>make many cups</strong>?</h1>
+<section id="activity-checklist-3" class="level2 check">
+<h2>Activity Checklist</h2>
+<p>You just cut a really nice cup!</p>
+<!-- introduce multiple classes per element -->
+
+<p>Well, are you sure it’s a cup? At the moment, it is a <code>&lt;div&gt;</code> <em>classified</em> as <em>trapezium</em>.</p>
+<ul>
+<li>Can you add an appropriate class name to your <code>&lt;div class=&quot;trapezium&quot;&gt;&lt;/div&gt;</code> so that your browser knows it’s not just a <em>trapezium</em>, but also a <em>cup</em>?</li>
+</ul>
+<p>You see, you can <strong>add as many class names as you wish</strong> to your HTML elements. For example, you can have one class name to describe the shape of your element (<em>trapezium</em>) and another class name to describe the type of object your element represents (<em>cup</em>).</p>
+<pre><code>&lt;div class=&quot;trapezium cup&quot;&gt;&lt;/div&gt;</code></pre>
+<p>Now, a game with only one cup is not really fun to play, is it? Should we <strong>make another two cups</strong> then?</p>
+<ul>
+<li>Can you make another two <em>trapezium cup</em> elements in your HTML document?</li>
+</ul>
+<p>You can copy-paste the first one, to save yourself some typing.</p>
+<ul>
+<li>Save, go to your browser and refresh the page. What do you see?</li>
+</ul>
+<p><img class="border-less" src="stuck.png" title="This is what you should see"></p>
+</section>
+<section id="challenge-2" class="level2 try">
+<h2>Challenge</h2>
+<!-- use float: left; -->
+
+<p>The cups are stuck on top of each other. That’s because your browser likes to <strong>pile HTML blocks up</strong>.</p>
+<p>With CSS, you can tell your browser to <strong>put all cups next to each other</strong>.</p>
+<ul>
+<li><p>Can you add <code>float: left;</code> inside a new <code>.cup</code> CSS rule?</p></li>
+<li><p>Save, go to your browser and refresh the page. What do you see?</p></li>
+</ul>
+<p><img class="border-less" src="floats.png" title="Using float: left; can you put all cups on the same line?"></p>
+</section>
+</section>
+<section id="step-5-how-do-you-hide-the-ball" class="level1 activity new-page">
+<h1>Step 5: How do you <strong>hide the ball</strong>?</h1>
+<section id="activity-checklist-4" class="level2 check">
+<h2>Activity Checklist</h2>
+<!-- use position: relative; and offset from the top -->
+
+<p>Now all cups look <em>grounded</em>. According to your browser though, <strong>the cups are <em>floating</em></strong>. Bizzarre way to put it, don’t you think?</p>
+<p>And that ball, doesn’t it look like it’s about to fall? Should we <strong>move the ball</strong>?</p>
+<ul>
+<li><p>Add <code>left: 70px;</code> inside your <code>div.ball</code> CSS rule.</p></li>
+<li><p>Save, go to your browser and refresh the page. Did the ball move?</p></li>
+</ul>
+<p>Your browser <em>offset</em> the ball <code>70px</code> from the <code>left</code> where it was before.</p>
+</section>
+<section id="challenge-3" class="level2 try">
+<h2>Challenge</h2>
+<ul>
+<li>Can you <strong>move the ball down</strong> so that it’s hidden by the first cup?</li>
+</ul>
+<p><img class="border-less" src="offset.png" title="If left: 70px; offsets the ball from the left, how can you offset the ball from the top?"></p>
+</section>
+</section>
+<section id="step-6-how-do-you-show-the-ball" class="level1 activity">
+<h1>Step 6: How do you <strong>show the ball</strong>?</h1>
+<section id="activity-checklist-5" class="level2 check">
+<h2>Activity Checklist</h2>
+<p>You hid the ball. Good trick, <strong>magician</strong>!</p>
+<p>Using your CSS wizardry, can you <strong>lift the cups</strong> when you click them?</p>
+<!-- introduce :active pseudo-class -->
+
+<pre><code>.cup:active
+{
+
+}</code></pre>
+<p>When you click on an element, CSS calls it <strong><em>active</em></strong>.</p>
+<p>See that <code>:active</code> after <code>.cup</code>? It means “when any <em>cup</em> element is being clicked”.</p>
+</section>
+<section id="challenge-4" class="level2 try">
+<h2>Challenge</h2>
+<ul>
+<li>Can you <strong>offset the cup from the bottom</strong>, so that when clicked it lifts up?</li>
+</ul>
+<p><img class="border-less" src="active.png" title="If left offsets elements from the left, how can you offset the cup from the bottom?"></p>
+</section>
+</section>
+<section id="step-7-how-do-you-shuffle-the-ball" class="level1 activity">
+<h1>Step 7: How do you <strong>shuffle the ball</strong>?</h1>
+<section id="activity-checklist-6" class="level2 check">
+<h2>Activity Checklist</h2>
+<p>Now comes the <strong>tricky part</strong>, wizard!</p>
+<p>How do you shuffle the ball, so that it’s not always under the same cup?</p>
+<!-- play around with left:XX; -->
+
+<ul>
+<li>Play around with the value of <code>left</code> in the <code>div.ball</code> CSS rule.</li>
+</ul>
+<p>For example, if you set it to <code>left: 270px;</code> the ball will go under the second cup.</p>
+<ul>
+<li>Can you <strong>move the ball under the third cup</strong>?</li>
+</ul>
+<p><img class="border-less" src="left.png" title="70... 270... 470... can you see a pattern here?"></p>
+<p>Now you know how to shuffle the ball from one cup to another.</p>
+</section>
+</section>
+<section id="step-8-what-about-getting-your-browser-to-shuffle-the-ball-for-you" class="level1 activity">
+<h1>Step 8: What about <strong>getting your browser to shuffle the ball for you</strong>?</h1>
+<section id="activity-checklist-7" class="level2 check">
+<h2>Activity Checklist</h2>
+<p>Yes, you can! With JavaScript<a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a>.</p>
+<p>If you <em>speak JavaScript</em> to your browser, it will do maths for you, move things around, make them appear and disappear, and much more.</p>
+<p>There is JavaScript running on your page, right now. Should we play around with it?</p>
+<ul>
+<li>Right-click anywhere on your page, then choose <em>Inspect Element</em>.</li>
+<li>This time, when the Inspector pops up <strong>click on Console</strong>.</li>
+</ul>
+<p>The Console is like a <strong>chat with your browser</strong>: you can type something into it and your browser will answer straight back.</p>
+<ul>
+<li>Can you say <code>hello</code> to your browser?</li>
+</ul>
+<p><img class="border-less" src="hello-console.png" title="Type 'hello' into the Console and then press the `Enter` key"></p>
+<ul>
+<li>Press the <code>Enter</code><a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a> key. What does your browser reply?</li>
+</ul>
+<p><img class="border-less" src="hello-undefined.png" title="Whoops, the browser doesn't understand that"></p>
+<ul>
+<li>Can you try again, this time with <code>&quot;hello&quot;</code> wrapped in <code>&quot;</code> speech marks?</li>
+</ul>
+<p><img class="border-less" src="hello-again.png" title="Better this time"></p>
+<p>The second time your browser replied politely :)</p>
+<p>That’s because in JavaScript texts must be wrapped in <code>&quot;</code> speech marks. Your browser calls “text” a <strong>string</strong> of characters.</p>
+<ul>
+<li>Can you ask your browser to do some math, for example <code>3 + 7</code>?</li>
+</ul>
+<p><img class="border-less" src="numbers.png" title="Your browser can do maths for you"></p>
+<p>Your browser can talk <strong>numbers</strong>.</p>
+<ul>
+<li>Can you type in <code>alert( 3+7 )</code>?</li>
+</ul>
+<p>Your browser popped up the result in a new window this time. Did you click <code>OK</code>?</p>
+<p>You can use <code>alert()</code> to get your browser to <em>shout things at you</em>.</p>
+<p><code>alert()</code> is one of many <strong>functions</strong> that your browser can do.</p>
+<p>You can <strong>write your own functions</strong>, to get the browser to make complex things for you. And you can <strong>borrow code</strong> that other smart people have already made and kindly shared on the Web.</p>
+<section id="back-to-your-game" class="level4">
+<h4>Back to your game</h4>
+<p>What exactly do you need your browser to do, in order to shuffle that ball?</p>
+<p>As you noticed, the ball <code>left</code> offset can be <code>70px</code>, <code>270px</code> or <code>470px</code> to be hidden under the first, second or third cup.</p>
+<p>How can you get your browser to</p>
+<ol type="1">
+<li>pick one of those values <em>at random</em> for you</li>
+<li>then move the ball there?</li>
+</ol>
+<p>For this time, let’s <strong>borrow some code</strong> from other smart and kind people. Next time, you’ll write your own functions!</p>
+<ul>
+<li><p>Copy-paste the <code>underscore.js</code> file, from this project’s <em>Resources</em> folder into the folder where you saved your HTML file.</p></li>
+<li><p>Add <code>&lt;script src=&quot;underscore.js&quot;&gt;&lt;/script&gt;</code> to the <code>&lt;head&gt;</code> of your document. Where? Just before the <code>&lt;/head&gt;</code> <em>closing tag</em>.</p></li>
+<li><p>Save, go to your browser and refresh the page.</p></li>
+<li><p>Right-click anywhere on your page, choose <em>Inspect Element</em>. When the Inspector pops up, click on <em>Console</em>.</p></li>
+</ul>
+<p>You’ve just loaded your browser with a new helper, called <strong>Underscore</strong>, which gives you plenty of functions to play with.</p>
+<ul>
+<li>Type <code>_.</code> in the Console</li>
+</ul>
+<p><img class="border-less" src="underscore.png" title="After typing _. your browser will suggest you all the functions available from Underscore"></p>
+<p>Your browser will suggest you all the functions available from <em>Underscore</em>.</p>
+<p><code>_</code> is the nickname your browser gives to <em>Underscore</em>.</p>
+<p>In JavaScript you can use <code>.</code> to peep inside things.</p>
+<p>So <code>_.</code> tells your browser to find <em>Underscore</em> and start looking inside it</p>
+<ul>
+<li>Type in <code>_.sample( [ &quot;70px&quot;, &quot;270px&quot;, &quot;470px&quot; ] )</code> and press the <code>Enter</code> key.</li>
+</ul>
+<p><code>_.sample()</code> is a function to <strong>pick a random <em>sample</em> from a <em>list</em></strong>, a bit like picking a random card from a deck.</p>
+<p>Your browser will pick one of the three <em>strings</em> that you gave it.</p>
+<ul>
+<li>Press the <code>↑</code> arrow on your keyboard. That will bring up the last “order” you gave to your browser, so that you don’t have to type it again.</li>
+<li>Press the <code>Enter</code> key.</li>
+<li>Repeat <code>↑</code> + <code>Enter</code> a few times.</li>
+</ul>
+<p><img class="border-less" src="random.png" title="Each time your browser will pick a random string from your list"></p>
+<p>Each time your browser will pick one of the three strings, in an unpredictable way.</p>
+<p>That’s handy. How can you <strong>store that random string</strong>?</p>
+<ul>
+<li>Type in <code>var randomOffset = _.sample( [ &quot;70px&quot;, &quot;270px&quot;, &quot;470px&quot; ] )</code> and press the <code>Enter</code> key.</li>
+</ul>
+<p>This time, your browser doesn’t answer the random string back to you, but it stores it in a box, or <em>variable</em><a href="#fn9" class="footnoteRef" id="fnref9"><sup>9</sup></a> as it calls it.</p>
+<p>It’s no secret though. If you know how to ask, you browser will tell you which string it picked.</p>
+<ul>
+<li>Type in <code>randomOffset</code> and press the <code>Enter</code> key. Does your browser answer which string it picked?</li>
+</ul>
+<!-- 
+
+Math.random() or http://chancejs.com/? 
+
+Actually, Underscore provides a better solution
+http://underscorejs.org/#sample
+
+-->
+
+</section>
+</section>
+<section id="challenge-5" class="level2 try">
+<h2>Challenge</h2>
+<p>Now you know how to ask your browser to <strong>pick a random thing</strong> for you and store that in a <em>variable</em>. Can you write it down in your HTML document? This way you won’t need to type it every time in the Console.</p>
+<pre><code>&lt;script&gt;
+
+    // write your JavaScript code under this line
+    
+
+&lt;/script&gt;</code></pre>
+<ul>
+<li>Copy-paste this code in your HTML document. Where? Just before the <code>&lt;/body&gt;</code> ends.</li>
+<li>Inside that <code>&lt;script&gt;</code>, can you write (or copy-paste) the line of code that picks a random string out of the three and stores it in a variable?</li>
+<li>Can you get your browser to <code>alert()</code> the random string that it picked?</li>
+</ul>
+</section>
+</section>
+<section id="step-9-how-to-get-your-browser-to-move-the-ball" class="level1 activity">
+<h1>Step 9: How to <strong>get your browser to move the ball</strong>?</h1>
+<section id="activity-checklist-8" class="level2 check">
+<h2>Activity Checklist</h2>
+<p>Since you got your browser to pick a random string for you, why not ask it to move the ball under a random cup?</p>
+<p>For this task, you can use another JavaScript helper called <strong>jQuery</strong>.</p>
+<ul>
+<li><p>Copy-paste the <code>jquery.js</code> file, from this project’s <em>Resources</em> folder into the folder where you saved your HTML file.</p></li>
+<li><p>Add <code>&lt;script src=&quot;jquery.js&quot;&gt;&lt;/script&gt;</code> to the <code>&lt;head&gt;</code> of your document. Where? Just before the <code>&lt;/head&gt;</code> <em>closing tag</em>.</p></li>
+<li><p>Save, go to your browser and refresh the page.</p></li>
+<li><p>Right-click anywhere on your page, choose <em>Inspect Element</em>. When the Inspector pops up, click on <em>Console</em>.</p></li>
+</ul>
+<p>Now your browser has two helpers, <em>Underscore</em> nicknamed <code>_</code>, and <em>jQuery</em> nicknamed <code>$</code>.</p>
+<ul>
+<li>Type <code>$.</code> in the Console.</li>
+</ul>
+<p><img class="border-less" src="jquery.png" title="After typing $. your browser will suggest you all the functions available from jQuery"></p>
+<p>Your browser will start peeping inside the <code>$</code> helper.</p>
+<p>Now <em>jQuery</em> is useful to <strong>select</strong> and <em>manipulate</em> things that are already in your HTML document. You can select HTML elements with <em>jQuery</em> in a similar way you do it in CSS.</p>
+<p>For example, to select the <code>&lt;body&gt;</code> element, you can write <code>$(&quot;body&quot;)</code>.</p>
+<p>How can you select the ball with <em>jQuery</em>? In CSS, you can write <code>div.ball</code>, but what about <em>jQuery</em>?</p>
+<p><img class="border-less" src="select-ball.png" title="Selecting HTML elements with jQuery is similar to selecting them with CSS"></p>
+<ul>
+<li>Type <code>$(&quot;div.ball&quot;).css(&quot;top&quot;,&quot;0px&quot;)</code> in the Console and press the <code>Enter</code> key.</li>
+</ul>
+<p><img class="border-less" src="ball-top.png" title="Using jQuery you can tell your browser to change CSS rules on the fly"></p>
+<p>Can you see the ball moved back on top of the cups? Using <em>jQuery</em> you can tell your browser to change CSS rules on the fly!</p>
+<p>Let’s <strong>read that line of code</strong>.</p>
+<p><code>$(&quot;div.ball&quot;)</code> selects the <code>&lt;div&gt;</code> element <em>classified</em> as <code>ball</code></p>
+<p><code>.css()</code> is the function to <strong>change CSS rules</strong>, which asks you two questions</p>
+<ol type="1">
+<li>Which <em>property</em> should I change?</li>
+<li>What <em>value</em> should I use for such <em>property</em>?</li>
+</ol>
+<p>For example, <code>.css(&quot;top&quot;,&quot;0px&quot;)</code> answers</p>
+<ol type="1">
+<li>Change the <code>top</code> property</li>
+<li>Make it <code>0px</code></li>
+</ol>
+<p>You can use any CSS property with this <em>jQuery</em> function!</p>
+<ul>
+<li>Type <code>$(&quot;div.ball&quot;).css(&quot;background&quot;,&quot;blue&quot;)</code> and press the <code>Enter</code> key.</li>
+</ul>
+<p>Did the ball turn blue?</p>
+</section>
+<section id="challenge-6" class="level2 try">
+<h2>Challenge</h2>
+<p>Good, let’s go back to shuffling, sorcerer.</p>
+<p>You summoned your browser to pick a random string for you, and that string represents an offset that the ball can take.</p>
+<ul>
+<li>Can you <strong>make your browser use the <code>randomOffset</code> to move the ball with <em>jQuery</em></strong>?</li>
+</ul>
+<p>Every time you refresh your page, your browser will shout out the value of <code>randomOffset</code>. This is spoiling your trick isn’t it?</p>
+<p>See that <code>//</code> at the beginning of <code>// write your JavaScript code under this line</code>?</p>
+<p>That is a <em>comment</em>, which your browser will ignore.</p>
+<p>To <em>comment</em> a line in JavaScript you simply put <code>//</code> at the beginning, then your browser knows it’s not a command for it to run.</p>
+<p><em>Comments</em> are useful to make notes in your code, to leave notes or cute messages for other coders to read. You can also use them to <em>hide</em> things from the browser, without deleting them.</p>
+<ul>
+<li><p>Can you <strong><em>comment</em> the <code>alert(randomOffset)</code> line</strong>?</p></li>
+<li><p>Save, go to your browser and refresh the page.</p></li>
+</ul>
+<p>Every time you refresh the page, your browser will shuffle the ball under a random cup.</p>
+<p>Well done Web magician, now go and challenge your friends!</p>
+<!-- FOOT NOTES -->
+
+</section>
+</section>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p><strong>HTML</strong> stands for <strong>H</strong>yper<strong>T</strong>ext <strong>M</strong>arkup <strong>L</strong>anguage, which is the language that every website in the World “speaks”. To make a website, you teach your computer how to “translate” your ideas into HTML.<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p><strong>What’s a browser?</strong> A web browser is a special app that knows how to interpret text files written in HTML. The most popular browsers are Internet Explorer, Google Chrome and Mozilla Firefox.<a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p><strong>How do you refresh a page in the browser?</strong> If you’re on a Windows computer, use the keyboard shortcut <strong>CTRL+R</strong> (that is, hold the <em>CTRL</em> key down and press the <em>R</em> key once). On a Mac, use <strong>⌘+R</strong>.<a href="#fnref3">↩</a></p></li>
+<li id="fn4"><p><strong>What’s debugging?</strong> Debugging means to find and correct glitches in your code. It takes both patience and speed, just like catching a flying bug. Luckily, debugging HTML code in your browser is easy: right-click anywhere on a page and choose <strong>Inspect Element</strong>. This will pop open your browser’s <strong>Inspector</strong>, where you can see every page’s <em>source code</em>, <em>styles</em> and much more. When you hover over the source code with your mouse, the corresponding HTML element on the page will light up. When you click on an HTML tag in the source code (left panel), you’ll see all its CSS styles (on the right panel).<a href="#fnref4">↩</a></p></li>
+<li id="fn5"><p><strong>CSS</strong> stands for <strong>C</strong>ascading <strong>S</strong>tyle <strong>S</strong>heets and it’s the language you can use to tell your browser to change colours, sizes and many other <em>stylistic</em> aspects of your HTML documents.<a href="#fnref5">↩</a></p></li>
+<li id="fn6"><p><strong>What’s a browser’s Inspector?</strong> In your browser, right-click anywhere on a page and choose <strong>Inspect Element</strong>. This will pop open your browser’s <strong>Inspector</strong>, where you can see every page’s <em>source code</em>, <em>styles</em> and much more. When you hover over the source code with your mouse, the corresponding HTML element on the page will light up. When you click on an HTML tag in the source code (left panel), you’ll see all its CSS styles (on the right panel).<a href="#fnref6">↩</a></p></li>
+<li id="fn7"><p><strong>JavaScript</strong> is a <strong>programming language</strong> that you can use to <em>instruct</em> your browser to do things for you. Just as you used to control adults with screams and tears, you can control your browser with statements written in JavaScript!<a href="#fnref7">↩</a></p></li>
+<li id="fn8"><p><strong>Which one is the <code>Enter</code> key?</strong> It’s bigger than the others, usually on the right-hand side of your keyboard, with this <strong>↲</strong> arrow pointing down-left printed on it.<a href="#fnref8">↩</a></p></li>
+<li id="fn9"><p><strong>What’s a variable?</strong> The word <em>variable</em> is made by “vary” and “able” and it means “can change”. Variables can store many different things and can change these many times. They are pretty much like boxes where you store thing. You put something in a variable, and then grab it later when you need it.<a href="#fnref9">↩</a></p></li>
+</ol>
+</section>
+</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div><div class="author"><p><strong>Author:</strong></p><p>Matteo Menapace</p>
+</div></div></div></div></div><script src="../../assets/script.min.js"></script></body></html>

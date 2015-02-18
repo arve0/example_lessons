@@ -1,0 +1,279 @@
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Gameshow | YourCodeClubName</title><link href="../../../assets/style.min.css" rel="stylesheet"/></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Home</a></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">Gameshow</h1></header></div><div class="col-xs-12"><div class="content"><section id="introduction" class="level1 intro">
+<h1>Introduction:</h1>
+<p>As well as using <code>for</code> loops to repeat commands a set number of times, a <code>while</code> loop can also be used to repeat commands <em>until something happens in your program</em>.</p>
+</section>
+<section id="step-1-whats-behind-the-door" class="level1 activity">
+<h1>Step 1: What’s behind the door?</h1>
+<section id="activity-checklist" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>Imagine a gameshow, where there is an amazing prize behind one of 3 doors. If you pick the correct door, you win the prize! Pick the wrong door, and you get nothing!</p>
+<p>You can play this game by running the following program:</p>
+<pre class="language-python"><code>from random import *
+
+#print the 3 doors and the game instructions
+print(&#39;&#39;&#39;
+Gameshow!
+=========
+
+There&#39;s a prize behind one of the 3 doors!
+Guess the correct door to win the prize!
+  _____   _____   _____
+ |     | |     | |     |
+ | [1] | | [2] | | [3] |
+ |   o | |   o | |   o |
+ |_____| |_____| |_____|
+
+Choose a door (1, 2 or 3):
+&#39;&#39;&#39;)
+
+#get the chosen door and store it as an integer (whole number)
+chosenDoor = input()
+chosenDoor = int(chosenDoor)
+
+#randomly choose the winning door number (between 1 and 3)
+winningDoor = randint(1,3)
+
+#show the player the winning and chosen door numbers
+print(&quot;The chosen door is&quot;, chosenDoor)
+print(&quot;The winning door is&quot;, winningDoor)
+
+#player wins if the chosen door and winning door number are the same
+if chosenDoor == winningDoor:
+    print(&quot;Well done!&quot;)
+else:
+    print(&quot;Unlucky!&quot;)
+</code></pre>
+<figure>
+<img src="gameshow.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+<p>Here’s how the program works: first, a random number between 1 and 3 is chosen, which is the door containing the prize. <code>randint(1,3)</code> means ‘choose a random integer between 1 and 3’. The program then asks the player for their choice of door, and says “Well done!” if the two numbers are the same or “Unlucky!” if they are different.</p>
+<p>A random number is used so that the winning door is different every time. However, Python can’t generate random numbers without importing the code to do this, which is why the <code>random</code> library is imported at the top of the program.</p>
+<p>The lines starting with <code>#</code> are comments. These comments are ignored by Python, but are really useful for reminding you what your program does! Try to use comments in your code from now on, to make difficult bits of your programs easier to understand.</p></li>
+<li><p>Using what you already know about loops, you could easily improve this game to allow the player to have 3 guesses, instead of just 1. Run the following program:</p>
+<pre class="language-python"><code>from random import *
+
+#print the 3 doors and the game instructions
+print(&#39;&#39;&#39;
+Gameshow!
+=========
+
+There&#39;s a prize behind one of the 3 doors!
+Guess the correct door to win the prize!
+  _____   _____   _____
+ |     | |     | |     |
+ | [1] | | [2] | | [3] |
+ |   o | |   o | |   o |
+ |_____| |_____| |_____|
+&#39;&#39;&#39;)
+
+#allow the player 3 attempts
+for attempt in range(3):
+
+    print(&quot;\nChoose a door (1, 2 or 3):&quot;)
+
+    #get the chosen door and store it as an integer (whole number)
+    chosenDoor = input()
+    chosenDoor = int(chosenDoor)
+
+    #randomly choose the winning door number (between 1 and 3)
+    winningDoor = randint(1,3)
+
+    #show the player the winning and chosen door numbers
+    print(&quot;The chosen door is&quot;, chosenDoor)
+    print(&quot;The winning door is&quot;, winningDoor)
+
+    #player wins if the chosen door and winning door number are the same
+    if chosenDoor == winningDoor:
+        print(&quot;Well done!&quot;)
+    else:
+        print(&quot;Unlucky!&quot;)
+</code></pre>
+<figure>
+<img src="gameshow-loop3.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+<p>In this program, notice that the code for printing the 3 doors is <em>outside</em> of the loop, as they only need to be printed once. The code for generating random numbers and asking the player to pick a door is <em>inside</em> the loop, as these will each need to be done 3 times. If the code for choosing a random winning door was outside of the loop, then the winning door would be the same door for each of the 3 guesses.</p>
+<p>Also, <code>\n</code> in the line <code>print(&quot;\nChoose a door (1, 2 or 3):&quot;)</code> prints a new blank line to the screen. This is done to split up the printed text, to make it easier to read.</p></li>
+</ul>
+</section>
+<section id="save-your-project" class="level2 save">
+<h2>Save Your Project</h2>
+</section>
+<section id="challenge-keeping-score" class="level2 challenge">
+<h2>Challenge: Keeping score</h2>
+<p>Create a variable to keep track of how many times the player guesses the correct door. If you need help, remember that this will work in a similar way to the <code>score</code> variable in your quiz program! Remember to show the player their final score, at the end of the program (outside of the loop).</p>
+</section>
+<section id="save-your-project-1" class="level2 save">
+<h2>Save Your Project</h2>
+</section>
+</section>
+<section id="step-2-while-loops" class="level1 activity">
+<h1>Step 2: <code>while</code> loops</h1>
+<section id="activity-checklist-1" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>Instead of making your program loop a set number of times, it might be more interesting to let the player choose how long they want to play for. To do this, you’ll need to use a different loop, called a <code>while</code> loop. Try out this program:</p>
+<pre class="language-python"><code>from random import *
+
+#the user changes this variable to end the game
+playing = True
+
+score = 0
+
+#print the 3 doors and the game instructions
+print(&#39;&#39;&#39;
+Gameshow!
+=========
+
+There&#39;s a prize behind one of the 3 doors!
+Guess the correct door to win the prize!
+  _____   _____   _____
+ |     | |     | |     |
+ | [1] | | [2] | | [3] |
+ |   o | |   o | |   o |
+ |_____| |_____| |_____|
+&#39;&#39;&#39;)
+
+#repeat as long as the &#39;playing&#39; variable is set to &#39;True&#39;
+while playing == True:
+
+    print(&quot;\nChoose a door (1, 2 or 3):&quot;)
+
+    #get the chosen door and store it as an integer (whole number)
+    chosenDoor = input()
+    chosenDoor = int(chosenDoor)
+
+    #randomly choose the winning door number (between 1 and 3)
+    winningDoor = randint(1,3)
+
+    #show the player the winning and chosen door numbers
+    print(&quot;The chosen door is&quot;, chosenDoor)
+    print(&quot;The winning door is&quot;, winningDoor)
+
+    #player wins if the chosen door and winning door number are the same
+    if chosenDoor == winningDoor:
+        print(&quot;Well done!&quot;)
+        score = score + 1
+    else:
+        print(&quot;Unlucky!&quot;)
+
+    print(&quot;Your score is now&quot;, score)
+
+    #ask the player if they want to keep playing
+    print(&quot;\nDo you want to play again? (y/n)&quot;)
+    answer = input()
+    #end the game if the player types &#39;n&#39;
+    if answer == &#39;n&#39;:
+        playing = False
+
+print(&quot;Thanks for playing.&quot;)
+print(&quot;Your final score is&quot;, score)</code></pre>
+<figure>
+<img src="gameshow-while.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+<p>A <code>while</code> loop allows your program to repeat <em>until</em> something happens to stop it. In this program, you want to keep playing the game as long as the variable <code>playing</code> is set to <code>True</code>. If the player decides that they don’t want to play again and inputs <code>n</code>, the variable <code>playing</code> is set to <code>False</code>, and the loop stops running. The name for data that is either <code>True</code> or <code>False</code> is <em>Boolean</em> data.</p></li>
+<li><p>Get someone to test out your game, to make sure that it runs until they input <code>n</code> to end the game.</p></li>
+</ul>
+</section>
+<section id="challenge-fixing-the-input" class="level2 challenge">
+<h2>Challenge: Fixing the input</h2>
+<ul>
+<li><p>What happens if the player tries to quit by typing <code>N</code> instead of <code>n</code>? Can you use the <code>lower()</code> function to fix this problem?</p></li>
+<li><p>What happens if they type <code>no</code> instead of just <code>n</code>? Can you fix your program, so that the program ends if the user’s <code>answer == 'n' or answer == 'no'</code>?</p></li>
+</ul>
+</section>
+<section id="challenge-losing-the-game" class="level2 challenge">
+<h2>Challenge: Losing the game</h2>
+<p>Can you modify your game, so that the player’s score is set to 0 whenever they choose the wrong door? Does this change make the game more fun? Or does it make the game too hard?</p>
+</section>
+</section>
+<section id="step-3-how-lucky-are-you" class="level1 activity">
+<h1>Step 3: How lucky are you?</h1>
+<section id="activity-checklist-2" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>Instead of looping the game until the player decides to quit, you could instead loop the game until the player scores 3 points. The aim of the game could then be to score 3 points in as few attempts as possible:</p>
+<pre class="language-python"><code>from random import *
+
+#this variable stores the number of times the game is played
+attempts = 0
+
+score = 0
+
+#print the 3 doors and the game instructions
+print(&#39;&#39;&#39;
+Gameshow!
+=========
+
+There&#39;s a prize behind one of the 3 doors!
+Guess the correct door 3 times in as few attempts as possible!
+  _____   _____   _____
+ |     | |     | |     |
+ | [1] | | [2] | | [3] |
+ |   o | |   o | |   o |
+ |_____| |_____| |_____|
+&#39;&#39;&#39;)
+
+#repeat as long as the score is less than 3
+while score &lt; 3:
+
+    #add 1 to the number of attempts
+    attempts = attempts + 1
+
+    print(&quot;\nAttempt&quot;, attempts, &quot;: Choose a door (1, 2 or 3):&quot;)
+
+    #get the chosen door and store it as an integer (whole number)
+    chosenDoor = input()
+    chosenDoor = int(chosenDoor)
+
+    #randomly choose the winning door number (between 1 and 3)
+    winningDoor = randint(1,3)
+
+    #show the player the winning and chosen door numbers
+    print(&quot;The chosen door is&quot;, chosenDoor)
+    print(&quot;The winning door is&quot;, winningDoor)
+
+    #player wins if the chosen door and winning door number are the same
+    if chosenDoor == winningDoor:
+        print(&quot;Well done!&quot;)
+        score = score + 1
+    else:
+        print(&quot;Unlucky!&quot;)
+
+    print(&quot;Your score is now&quot;, score)
+
+print(&quot;\n** You did it! That look you&quot;, attempts, &quot;attempts **&quot;)</code></pre>
+<p>The <code>while</code> loop in this program continues to run as long as the score is less than 3 (<code>while score &lt; 3:</code>). Once the score gets to 3, the program ends, and the number of attempts is printed.</p></li>
+</ul>
+</section>
+<section id="save-your-project-2" class="level2 save">
+<h2>Save Your Project</h2>
+</section>
+<section id="challenge-twenty-one" class="level2 challenge">
+<h2>Challenge: Twenty-one</h2>
+<p>Can you create a game where the aim is to score exactly 21 points? The program should pick a random number between 1 and 10, which is added to the player’s score. The player can then choose to stick with the score they have, or choose to add another random number to their score. The player wins the game if they manage to get to exactly 21 points. Remember to add comments to your program!</p>
+<p>Here is an example of the game:</p>
+<figure>
+<img src="gameshow-21.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+<p>You can use (or change) parts of your gameshow program to make this new game. Here are some hints that you can use to help you:</p>
+<ul>
+<li>You can use a <code>while</code> loop to run the game as long as the player wants to keep playing:</li>
+</ul>
+<pre class="language-python"><code>while playing == True:</code></pre>
+<ul>
+<li>If the user enters <code>n</code> because they wish to stick with the score they have, you can set the <code>playing</code> variable to <code>False</code>:</li>
+</ul>
+<pre class="language-python"><code>if answer == &#39;n&#39;:
+    playing = False</code></pre>
+<ul>
+<li>At the end of the program (outside of the <code>while</code> loop), you can say “Well done!” to the player if their score is exactly 21:</li>
+</ul>
+<pre class="language-python"><code>if score == 21:
+    print(&quot;Well done!&quot;)</code></pre>
+</section>
+<section id="save-your-project-3" class="level2 save">
+<h2>Save Your Project</h2>
+</section>
+</section>
+</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><script src="../../../assets/script.min.js"></script></body></html>

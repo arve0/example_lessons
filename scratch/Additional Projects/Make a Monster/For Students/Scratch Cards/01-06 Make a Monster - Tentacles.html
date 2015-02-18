@@ -1,0 +1,18 @@
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Scratch Card - Tentacles | YourCodeClubName</title><link href="../../../../../assets/style.min.css" rel="stylesheet"/></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../../../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Home</a></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../../../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">Scratch Card - Tentacles</h1></header></div><div class="col-xs-12"><div class="content"><section id="activity-checklist" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>To make a tentacle wiggle, we could <strong>rotate</strong> it and <strong>resize</strong> it by a <code class="blockgreen">random</code> small amount using a variable, and then wait a short period before reverting back.</p>
+<pre class="blocks"><code>set [tentacleRotation v] to (pick random (1) to (10))
+set [tentacleSize v] to (pick random (1) to (10))
+change size by (tentacleSize)
+turn ccw (tentacleRotation) degrees
+wait (0.5) secs
+change size by ((tentacleSize) * (-1))
+turn cw (tentacleRotation) degrees</code></pre></li>
+</ul>
+<p><strong>(Notice how we multiply the tentacleSize by -1 to get the negative value?)</strong></p>
+</section>
+</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><script src="../../../../../assets/script.min.js"></script><script>$(document).ready(function(){
+  scratchblocks2.load_language(scratchblocks2._translations['nb']);
+  scratchblocks2.parse("pre.blocks");
+});</script></body></html>

@@ -1,0 +1,276 @@
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Dodgeball | YourCodeClubName</title><link href="../../../assets/style.min.css" rel="stylesheet"/></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Home</a></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">Dodgeball</h1></header></div><div class="col-xs-12"><div class="content"><section id="introduction" class="level1 intro">
+<h1>Introduction</h1>
+<p>In this project you’ll learn how to create a platform game, in which you have to dodge the moving balls and reach the end of the level.</p>
+<div class="scratch-preview">
+<pre><code>&lt;iframe allowtransparency=&quot;true&quot; width=&quot;485&quot; height=&quot;402&quot; src=&quot;http://scratch.mit.edu/projects/embed/39740618/?autostart=false&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
+&lt;img src=&quot;dodge-final.png&quot;&gt;</code></pre>
+</div>
+</section>
+<section id="step-1-character-movement" class="level1 activity">
+<h1>Step 1: Character movement</h1>
+<p>Let’s start by creating a character that can move left and right, as well as climb up poles.</p>
+<section id="activity-checklist" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>Start a new Scratch project, and delete the cat sprite so that your project is empty. You can find the online Scratch editor at <a href="http://jumpto.cc/scratch-new">jumpto.cc/scratch-new</a>.</p></li>
+<li><p>For this project, you should have a ‘Project Resources’ folder, containing the background image you’ll need. Make sure that you can find this folder, and ask your club leader if you can’t find it.</p>
+<figure>
+<img src="dodge-resources.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Add the image ‘background.png’ as a new stage backdrop, or draw your own! If you’re drawing your own level, just make sure that the poles and the floors are different colours, and that there’s a door (or something similar) that your player has to reach. Here’s how your project should look:</p>
+<figure>
+<img src="dodge-background.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Add a new sprite, which will be your character. It’s better if you choose a sprite with multiple costumes, so that you can make it look as though it’s walking.</p>
+<figure>
+<img src="dodge-characters.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Let’s use the arrow keys to move your character around. When the player presses the right arrow, you want your character to point right, move a few steps and change to the next costume:</p>
+<pre class="blocks"><code>    when flag clicked
+    forever
+        if &lt;key [right arrow v] pressed? &gt; then
+            point in direction (90 v)
+            move (3) steps
+            next costume
+        end
+    end</code></pre></li>
+<li><p>Test out your character by clicking the flag and then holding down the right arrow key. Does your player move to the right? Does your character look like they are walking?</p>
+<figure>
+<img src="dodge-walking.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>To move your character to the left, you’ll need to add another <code class="blockcontrol">if</code> block inside your <code class="blockcontrol">forever</code> loop, which moves your character to the left. Remember to test your new code, to make sure that it works!</p></li>
+<li><p>To climb a pole, your character should move up slightly whenever the up arrow is pressed and they’re touching the correct colour. Add this code inside your character’s <code class="blockcontrol">forever</code> loop:</p>
+<pre class="blocks"><code>    if &lt; &lt;key [up arrow v] pressed?&gt; and &lt;touching color [#FFFF00]?&gt; &gt; then
+        change y by (4)
+    end</code></pre></li>
+<li><p>Test your character - can you climb the yellow poles and get to the end of your level?</p>
+<figure>
+<img src="dodge-test-character.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+</ul>
+</section>
+<section id="save-your-project" class="level2 save">
+<h2>Save your project</h2>
+</section>
+<section id="challenge-completing-the-level" class="level2 challenge">
+<h2>Challenge: Completing the level</h2>
+<p>Can you add more code to your character, so that they say something <code class="blockcontrol">if</code> they get to the brown door?</p>
+<figure>
+<img src="dodge-win.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+</section>
+<section id="save-your-project-1" class="level2 save">
+<h2>Save your project</h2>
+</section>
+</section>
+<section id="step-2-gravity-and-jumping" class="level1 activity">
+<h1>Step 2: Gravity and jumping</h1>
+<p>Let’s make your character move more realistically, by adding gravity and allowing them to jump.</p>
+<section id="activity-checklist-1" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>You may have noticed that your character can walk off a platform into mid-air. Try to walk off of a platform and see what happens.</p>
+<figure>
+<img src="dodge-no-gravity.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>To fix this, let’s add gravity to your game. Create a new variable called <code class="blockdata">gravity</code>. You can hide this variable from your stage if you want to.</p>
+<figure>
+<img src="dodge-gravity.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Add this new code block, which sets the gravity to a negative number, and then uses this to repeatedly change your character’s y-coordinate.</p>
+<pre class="blocks"><code>    when flag clicked
+    set [gravity v] to [-4]
+    forever
+        change y by (gravity)
+    end</code></pre></li>
+<li><p>Click the flag, and then drag your character to the top of the stage. What happens? Does the gravity work as you expected?</p>
+<figure>
+<img src="dodge-gravity-drag.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Gravity shouldn’t move your character through a platform or a pole! Add an <code class="blockcontrol">if</code> block to your code, so that the gravity only works when your character is in mid-air. The gravity code should now look like this:</p>
+<pre class="blocks"><code>    when flag clicked
+    set [gravity v] to [-4]
+    forever
+        if &lt; not &lt; &lt;touching color [#0000FF]?&gt; or &lt;touching color [#FFFF00]?&gt; &gt; &gt; then
+            change y by (gravity)
+        end
+    end</code></pre></li>
+<li><p>Test the gravity again. Does your character stop when they are on a platform or a pole? Can you walk off the edge of platforms to the level below?</p>
+<figure>
+<img src="dodge-gravity-test.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Let’s also make your character jump when the player presses the space bar. One very easy way to do this is to move your character up a few times, using this code:</p>
+<pre class="blocks"><code>    when [space v] key pressed
+    repeat (10)
+        change y by (4)
+    end</code></pre>
+<p>As gravity is constantly pushing your character down by 4 pixels, you need to choose a number greated than 4 in your <code class="blockmotion">change y by (4)</code> block. Change this number until you’re happy with the height your character jumps.</p></li>
+<li><p>If you test out this code, you’ll notice that it works, but the movement isn’t very smooth. To make jumping look smoother, you’ll need to move your character by smaller and smaller amounts, until they’re not jumping anymore.</p></li>
+<li><p>To do this, create another variable called <code class="blockdata">jump height</code>. Again, you can hide this variable if you prefer.</p></li>
+<li><p>Delete the jumping code you added to your character, and replace it with this code:</p>
+<pre class="blocks"><code>    when [space v] key pressed
+    set [jump height v] to [8]
+    repeat until &lt; (jump height) = [0] &gt;
+        change y by (jump height)
+        change [jump height v] by (-0.5)
+    end</code></pre>
+<p>This code moves your character up by 8 pixels, then 7.5 pixels, then 7 pixels, and so on, until your character has finished jumping. This makes jumping look much smoother.</p></li>
+<li><p>Change the starting value of your <code class="blockdata">jump height</code> variable and test it until you’re happy with the height your character jumps.</p></li>
+</ul>
+</section>
+<section id="save-your-project-2" class="level2 save">
+<h2>Save your project</h2>
+</section>
+<section id="challenge-improved-jumping" class="level2 challenge">
+<h2>Challenge: Improved jumping</h2>
+<p>Your character is able to jump whenever the spacebar is pressed, even if they’re already in mid-air. You can test this by just holding down the spacebar. Can you fix this, so that your character can only jump <code class="blockcontrol">if</code> they’re touching a blue platform?</p>
+</section>
+<section id="save-your-project-3" class="level2 save">
+<h2>Save your project</h2>
+</section>
+</section>
+<section id="step-3-dodging-balls" class="level1 activity new-page">
+<h1>Step 3: Dodging balls</h1>
+<p>Now that you’ve got your character moving around, let’s add some balls for your character to avoid.</p>
+<section id="activity-checklist-2" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>Create a new ball sprite. You can choose any type of ball you like.</p>
+<figure>
+<img src="dodge-balls.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Resize your ball, so that your character can jump over it. Try jumping over the ball to test it.</p>
+<figure>
+<img src="dodge-ball-resize.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Add this code to your ball:</p>
+<figure>
+<img src="dodge-ball-motion.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+<p>This code creates a new ball clone every 3 seconds. Each new clone moves along the top platform.</p></li>
+<li><p>Click the flag to test this out.</p>
+<figure>
+<img src="dodge-ball-test.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Add more code to your ball sprite, so that they move across all 3 platforms.</p>
+<figure>
+<img src="dodge-ball-more-motion.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Finally, you’ll need code for when your character gets hit by a ball! Add this code to your ball sprite:</p>
+<pre class="blocks"><code>    when I start as a clone
+    forever
+        if &lt; touching [Pico walking v]? &gt; then
+            broadcast [hit v]
+        end
+    end</code></pre></li>
+<li><p>You’ll also need to add code to your character, to move back to the start when they’re hit:</p>
+<pre class="blocks"><code>    when I receive [hit v]
+    point in direction (90 v)
+    go to x: (-210) y: (-120)</code></pre></li>
+<li><p>Test out your character and see if they go back to the start when they’ve been hit by a ball.</p></li>
+</ul>
+</section>
+<section id="save-your-project-4" class="level2 save">
+<h2>Save your project</h2>
+</section>
+<section id="challenge-random-balls" class="level2 challenge">
+<h2>Challenge: Random balls</h2>
+<p>The balls your character has to dodge all look the same, and always appear every 3 seconds. Can you improve them, so that they:</p>
+<ul>
+<li>don’t all look the same?</li>
+<li>appear after a random amount of time?</li>
+<li>are a random size?</li>
+</ul>
+<figure>
+<img src="dodge-ball-random.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+</section>
+<section id="save-your-project-5" class="level2 save">
+<h2>Save your project</h2>
+</section>
+</section>
+<section id="step-4-lasers" class="level1 activity new-page">
+<h1>Step 4: Lasers!</h1>
+<p>Let’s make your game a little harder to complete, by adding lasers!</p>
+<section id="activity-checklist-3" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>Add a new sprite to your game, called ‘Laser’. It should have 2 costumes, called ‘on’ and ‘off’.</p>
+<figure>
+<img src="dodge-lasers-costume.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Place your new laser anywhere you like, between 2 platforms.</p>
+<figure>
+<img src="dodge-lasers-position.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Add code to your laser, to make it switch between the 2 costumes.</p>
+<pre class="blocks"><code>    when flag clicked
+    forever
+        switch costume to [on v]
+        wait (2) secs
+        switch costume to [off v]
+        wait (2) secs
+    end</code></pre>
+<p>If you prefer, you can <code class="blockcontrol">wait</code> a <code class="blockoperators">random</code> amount of time between costume changes.</p></li>
+<li><p>Finally, add code to your laser, so that the ‘hit’ message is broadcast when the laser touches your character. This code will be the same as the code you added to your ball sprite.</p>
+<p>You don’t need to add any more code to your character - they already know what to do when they get hit!</p></li>
+<li><p>Test out your game to see if you can get past the laser. Change the <code class="blockcontrol">wait</code> times in your code if the lasers are too easy or too hard.</p></li>
+</ul>
+</section>
+<section id="challenge-more-obstacles" class="level2 challenge">
+<h2>Challenge: More obstacles</h2>
+<p>If you think your game is still too easy, you can add more obstacles to your level. You can add anything you like, but here are some ideas:</p>
+<ul>
+<li>A flying killer butterfly;</li>
+<li>Platforms that appear and disappear;</li>
+<li>Falling tennis balls that must be avoided.</li>
+</ul>
+<figure>
+<img src="dodge-obstacles.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+<p>You could even create more than one backdrop, and move to the next level when your character reaches the brown door:</p>
+<pre class="blocks"><code>    if &lt;touching color [#714300]?&gt; then
+        switch backdrop to [next backdrop v]
+        go to x: (-210) y: (-120)
+        wait (1) secs
+    end</code></pre>
+</section>
+<section id="save-your-project-6" class="level2 save">
+<h2>Save your project</h2>
+</section>
+<section id="challenge-improved-gravity" class="level2 challenge">
+<h2>Challenge: Improved gravity</h2>
+<p>There’s one other small bug in your game: gravity doesn’t pull your character downwards if <em>any</em> part of it is touching a blue platform - even it’s head! You can test this out by climbing most of the way up a pole and then moving to the left.</p>
+<figure>
+<img src="dodge-gravity-bug.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+<p>Can you fix this bug? To do this, you need to give your character different coloured trousers (on <em>all</em> costumes)…</p>
+<figure>
+<img src="dodge-trousers.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+<p>…and then replace the code:</p>
+<pre class="blocks"><code>    &lt; touching color [#0000FF]? &gt;</code></pre>
+<p>with:</p>
+<pre class="blocks"><code>    &lt; color [#00FF00] is touching [#0000FF]? &gt;</code></pre>
+<p>Remember to test your improvements to make sure you’ve fixed the bug!</p>
+</section>
+<section id="save-your-project-7" class="level2 save">
+<h2>Save your project</h2>
+</section>
+<section id="challenge-more-lives" class="level2 challenge">
+<h2>Challenge: More lives</h2>
+<p>Can you give your player 3 <code class="blockdata">lives</code>, instead of just sending them back to the beginning each time? Here’s how your game could work:</p>
+<ul>
+<li>Your player starts with 3 lives;</li>
+<li>Whenever your player gets hit, one life is lost and they go back to the start;</li>
+<li>If there are no lives left, the game ends.</li>
+</ul>
+</section>
+<section id="save-your-project-8" class="level2 save">
+<h2>Save your project</h2>
+</section>
+</section>
+</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><script src="../../../assets/script.min.js"></script><script>$(document).ready(function(){
+  scratchblocks2.load_language(scratchblocks2._translations['nb']);
+  scratchblocks2.parse("pre.blocks");
+});</script></body></html>

@@ -1,0 +1,348 @@
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Coding a comic | YourCodeClubName</title><link href="../../assets/style.min.css" rel="stylesheet"/></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Home</a></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">Coding a comic</h1></header></div><div class="col-xs-12"><div class="content"><section id="introduction" class="level1 intro">
+<h1>Introduction</h1>
+<p>Do you <strong>like comics</strong>? Do you have a <strong>story to tell</strong>? Can you turn a bunch of images into <strong>your own Web-comic</strong>?</p>
+<p><img class="border-less" src="intro.png" title="Inspirational image, temporarily stolen from http://www.readingwithpictures.org/"></p>
+</section>
+<section id="step-1-are-you-ready" class="level1 activity">
+<h1>Step 1: Are you ready?</h1>
+<section id="activity-checklist" class="level2 check">
+<h2>Activity Checklist</h2>
+<p>Here is a list of things to check before you dig into your comic.</p>
+<ul>
+<li><strong>Open your code editor</strong>. Do you have an app on your computer to write your code?
+<ul>
+<li>NO. Talk to your teacher or volunteer about installing a code editor: we recommend <a href="http://www.sublimetext.com/2">Sublime Text 2</a>.</li>
+<li>YES. Great, move on.</li>
+</ul></li>
+<li><p><strong>Create a new file</strong>.</p></li>
+<li><p>Here is the skeleton of an HTML<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> document.</p></li>
+</ul>
+<p><strong>Copy-paste it</strong> into your new file.</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Code Club comic&lt;/title&gt;
+        &lt;style&gt;
+            
+            * { box-sizing: border-box; position: relative; }
+            html, body { height: 100%; }
+            
+            body 
+            {
+                max-width: 600px;
+                margin: 0 auto; 
+                padding-left: 10px;
+            }
+            
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;HELLO!&lt;/h1&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<ul>
+<li><strong>Save your file</strong>. You can save it as whatever you want to call it. Just remember to end your file name with <code>.html</code> so that your computer knows it’s an HTML file. For instance, you could call your file <code>comic.html</code>. Can you think of a less boring name?</li>
+<li>Do you know where your HTML file has gone?
+<ul>
+<li>NO. Ok, it’s somewhere on your computer. Can you find it?</li>
+<li>YES. Good, let’s move on.</li>
+</ul></li>
+<li><strong>Open your browser</strong><a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>.</li>
+<li>From your browser, <strong>open your HTML file</strong> . Does it say <code>HELLO!</code>?</li>
+<li>Go <strong>back to the code editor</strong>. Can you change the <code>HELLO!</code> text to the title of your comic?</li>
+<li><strong>Save</strong> your HTML file.</li>
+<li><strong>Back to your browser</strong>, can you refresh<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> the page where you opened your HTML file?</li>
+<li>Great! Now you’ve got your <strong>tools ready</strong>: code editor to write your code, browser to <em>debug</em><a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a> your code.</li>
+</ul>
+</section>
+</section>
+<section id="step-2-how-do-you-make-a-panel" class="level1 activity new-page">
+<h1>Step 2: How do you <strong>make a panel</strong>?</h1>
+<section id="activity-checklist-1" class="level2 check">
+<h2>Activity Checklist</h2>
+<p>What makes a comic, a <strong>comic</strong>?</p>
+<p><img class="border-less" src="anatomy.png" title="Panels, speech bubbles and captions."></p>
+<p>To make a comic you put a bunch of <strong>images and text in sequence</strong> and place them next to each other.</p>
+<p>You <em>frame</em> each <em>moment</em> of your comic into a <strong>panel</strong>.</p>
+<p>To make a sequence you need at least two panels.</p>
+<section id="lets-start-with-one-panel" class="level4">
+<h4>Let’s start with one panel</h4>
+<pre><code>&lt;section class=&quot;panel&quot;&gt;
+
+&lt;/section&gt;  </code></pre>
+<ul>
+<li>Copy-paste this code inside your HTML document. Where? Anywhere between the <code>&lt;body&gt;</code> <em>opening tag</em> and the <code>&lt;/body&gt;</code> <em>closing tag</em>.</li>
+</ul>
+<p>Using the <code>class</code> attribute you can <em>classify</em> your HTML elements.</p>
+<p>Here we have a particular kind of <code>&lt;section&gt;</code> which we called “panel”. You could call it whatever you like, for example “comic panel” or “cute cat”: <strong><code>class</code> names are entirely up to you</strong>. Since we’re making a comic panel, it makes sense to just call it “panel”.</p>
+<ul>
+<li>Save, go to your browser and refresh the page. Do you see a panel?</li>
+</ul>
+<p>No, indeed. That’s because your <code>&lt;section class=&quot;panel&quot;&gt;</code> is empty and can’t be seen.</p>
+<p>You can use CSS<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a> to make it visible.</p>
+<pre><code>section[class=&quot;panel&quot;]
+{
+    border-bottom: 10px solid white;
+    border-right: 10px solid white;
+
+    background-color: yellow;
+    
+    height: 300px;
+    width: 100%;
+}</code></pre>
+<ul>
+<li>Copy-paste this code into your HTML document. Where? Anywhere between the <code>&lt;style&gt;</code> <em>opening tag</em> and the <code>&lt;/style&gt;</code> <em>closing tag</em>.</li>
+</ul>
+</section>
+</section>
+<section id="challenge" class="level2 try">
+<h2>Challenge</h2>
+<ul>
+<li><p>Using your browser’s Inspector<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a>, can you <strong>work out what those CSS rules do</strong>?</p></li>
+<li><p>Now that you have one panel, can you <strong>make another panel</strong> under the first one?</p></li>
+</ul>
+<p><img class="border-less" src="panels.png" title="Can you make another panel under the first one?"></p>
+</section>
+</section>
+<section id="step-3-how-do-you-add-images" class="level1 activity new-page">
+<h1>Step 3: How do you <strong>add images</strong>?</h1>
+<section id="activity-checklist-2" class="level2 check">
+<h2>Activity Checklist</h2>
+<p>So far, you have the building block of your comic: the <em>panel</em>.</p>
+<p>No matter how many <code>&lt;section&gt;</code> elements you add to your HTML document, as long as you <em>classify</em> them with <code>class=&quot;panel&quot;</code> your browser will give them all the same “yellow box” style.</p>
+<p><code>class</code> names are useful for <strong>shared rules</strong>.</p>
+<p>Now, empty panels don’t really tell a story, do they? Why not <strong>add images</strong> to get your story off the ground?</p>
+<p>HTML calls images <code>&lt;img&gt;</code> and wants you to write down exactly where to find an image’s <em>source</em>, or <code>src</code>.</p>
+<ul>
+<li><p>Copy-paste the <code>waiter.png</code> image, from this project’s <em>Resources</em> folder into the folder where you saved your HTML file.</p></li>
+<li><p>Add <code>&lt;img src=&quot;waiter.png&quot;&gt;</code> inside one of your panels. That means the image will be <em>nested</em> between the <code>&lt;section class=&quot;panel&quot;&gt;</code> <em>opening tag</em> and the <code>&lt;/section&gt;</code> <em>closing tag</em>.</p></li>
+<li><p>Save, go to your browser and refresh your page. What do you see?</p></li>
+</ul>
+<p><img class="border-less" src="image.png" title="This is what you should see"></p>
+</section>
+<section id="challenge-1" class="level2 try">
+<h2>Challenge</h2>
+<ul>
+<li><p>Can you make (or find online) images for the first two panels of your comic?</p></li>
+<li><p>Can you <strong>add these images to your comic</strong>?</p></li>
+</ul>
+</section>
+</section>
+<section id="step-4-how-do-you-make-a-speech-bubble" class="level1 activity">
+<h1>Step 4: How do you <strong>make a speech bubble</strong>?</h1>
+<section id="activity-checklist-3" class="level2 check">
+<h2>Activity Checklist</h2>
+<p>Now that you have images, you can start writing your story.</p>
+<p>In comics, you can use <strong><em>speech bubbles</em></strong> <!--💬--> to make your characters “talk”.</p>
+<p>A speech bubble is usually a short <em>paragraph</em>, which HTML calls <code>&lt;p&gt;</code>.</p>
+<ul>
+<li><p>Can you <strong>add a <code>&lt;p&gt;</code> element</strong> inside your panel, after the <code>&lt;img&gt;</code>?</p></li>
+<li><p>Since this is a special kind of paragraph, can you think of an appropriate <code>class</code> name for it?</p></li>
+</ul>
+<p>How about this?</p>
+<pre><code>&lt;p class=&quot;bubble&quot;&gt;Hello, I am your browser. Would you like to order something to drink?&lt;/p&gt;</code></pre>
+<ul>
+<li>Save, go to your browser and refresh the page. What do you see?</li>
+</ul>
+<p>Nothing, indeed. That’s because your speech bubble appeared under the image.</p>
+</section>
+<section id="challenge-2" class="level2 try">
+<h2>Challenge</h2>
+<ul>
+<li>Can you <strong>move your speech bubble on top of the image</strong>?</li>
+</ul>
+<p>Using <code>position: absolute;</code> you can position texts and images within your panel, no matter where your browser initially puts them.</p>
+<pre><code>p[class=&quot;bubble&quot;]
+{
+    background-color: white;
+    padding: 10px;
+    margin: 0;
+    
+    position: absolute;
+}</code></pre>
+<ul>
+<li><p>Copy-paste the code above into your HTML document. Where? Anywhere between the <code>&lt;style&gt;</code> <em>opening tag</em> and the <code>&lt;/style&gt;</code> <em>closing tag</em>.</p></li>
+<li><p>Save, go to your browser and refresh the page. Where is your speech bubble now?</p></li>
+</ul>
+<p>You can use these CSS properties to move your speech bubble around:</p>
+<ul>
+<li><code>top</code></li>
+<li><code>left</code></li>
+<li><code>right</code></li>
+<li><code>bottom</code></li>
+</ul>
+<p>For example, you can try with <code>top: 30px;</code> and then tweak it.</p>
+<p><img class="border-less" src="speech-bubble.png" title="This is what you should see"></p>
+</section>
+</section>
+<section id="step-5-how-do-you-make-many-speech-bubbles" class="level1 activity new-page">
+<h1>Step 5: How do you make <strong>many speech bubbles</strong>?</h1>
+<section id="activity-checklist-4" class="level2 check">
+<h2>Activity Checklist</h2>
+<p>What if you want another speech bubble? What if you want many speech bubbles, all in <strong>different positions</strong>?</p>
+<p><code>class</code> won’t cut it this time, you need another HTML attribute.</p>
+<p>Meet <code>id</code>.</p>
+<pre><code>&lt;p id=&quot;panel1-bubble1&quot; class=&quot;bubble&quot;&gt;Hello, I am your browser. Would you like to order something to drink?&lt;/p&gt;</code></pre>
+<!-- this is where highlighting inside the code would be great, so that we can highlight the id="panel1-bubble1" part -->
+
+<p>Unlike <code>class</code>, which you can can give to as many HTML elements as you please, there can be <strong>only one</strong> element in your HTML document with a certain <code>id</code>.</p>
+<p>An <strong><code>id</code> is unique</strong>, just like you :)</p>
+<ul>
+<li>In your <code>&lt;style&gt;</code> can you add a new CSS rule, only for one speech bubble? Where? Anywhere between the <code>&lt;style&gt;</code> <em>opening tag</em> and the <code>&lt;/style&gt;</code> <em>closing tag</em>.</li>
+</ul>
+<p>For example, this rule will apply only to the one bubble <em>identified</em> as <code>panel1-bubble1</code>.</p>
+<pre><code>p[id=&quot;panel1-bubble1&quot;]
+{
+    top: 30px;
+    left: 300px;
+    width: 300px;
+}</code></pre>
+</section>
+<section id="challenge-3" class="level2 try">
+<h2>Challenge</h2>
+<p>Do you know your <em>classes</em> from your <em>ids</em>?</p>
+<ul>
+<li>Can you <strong>make many more speech bubbles</strong>, give them unique <code>id</code> names and position them inside your panels?</li>
+</ul>
+<p>You can call them whatever you like: <strong><code>id</code> names are entirely up to you</strong>.</p>
+</section>
+</section>
+<section id="step-6-how-do-you-get-many-panels-on-the-same-row" class="level1 activity new-page">
+<h1>Step 6: How do you get <strong>many panels on the same row</strong>?</h1>
+<section id="activity-checklist-5" class="level2 check">
+<h2>Activity Checklist</h2>
+<p>Your story is coming to life now. How many panels have you got?</p>
+<p>You can <strong>use <code>id</code> to make panels unique</strong> too!</p>
+<p>For example, you may want to change the <code>width</code> or <code>height</code> of your panels:</p>
+<pre><code>section[id=&quot;panel2&quot;]
+{
+    width: 300px;
+}
+
+section[id=&quot;panel3&quot;]
+{
+    width: 200px;
+}</code></pre>
+<ul>
+<li><p>Copy-paste the code above into your HTML document. Where? Anywhere between the <code>&lt;style&gt;</code> <em>opening tag</em> and the <code>&lt;/style&gt;</code> <em>closing tag</em>.</p></li>
+<li><p>Can you <strong>give the correct <code>id</code> names to two panels</strong> in your HTML document?</p></li>
+</ul>
+</section>
+<section id="challenge-4" class="level2 try">
+<h2>Challenge</h2>
+<p>What if you want to have those <strong>two panels in the same row</strong>?</p>
+<ul>
+<li><p>Can you add <code>float: left;</code> inside your <code>section[class=&quot;panel&quot;]</code> CSS rule?</p></li>
+<li><p>Save, go to your browser and refresh the page. What do you see?</p></li>
+</ul>
+<p><img class="border-less" src="floats.png" title="Using float: left; can you put more than one panel in the same row?"></p>
+</section>
+</section>
+<section id="step-7-what-if-images-are-bigger-than-panels" class="level1 activity">
+<h1>Step 7: What if <strong>images are bigger than panels</strong>?</h1>
+<section id="activity-checklist-6" class="level2 check">
+<h2>Activity Checklist</h2>
+<p>Now you know how to change the <code>width</code> or <code>height</code> of your panels.</p>
+<p>What if you have an image that is too big for its panel? So big that it <em>overflows</em> into other panels?</p>
+<p>Well, there’s a CSS property for that.</p>
+<pre><code>overflow: hidden;</code></pre>
+</section>
+<section id="challenge-5" class="level2 try">
+<h2>Challenge</h2>
+<ul>
+<li><p>Can you add <code>overflow: hidden;</code> inside your <code>section[class=&quot;panel&quot;]</code> CSS rule?</p></li>
+<li><p>Then, how about using these CSS properties to move your images inside your panels?</p></li>
+<li><code>position</code></li>
+<li><code>top</code></li>
+<li><p><code>left</code></p></li>
+</ul>
+<p><img class="border-less" src="overflow.png" title="Using overflow: hidden; can you make your images not spill over other panels?"></p>
+</section>
+<section id="extra-how-do-you-make-different-voices" class="level2 activity">
+<h2>EXTRA How do you <strong>make different voices</strong>?</h2>
+</section>
+<section id="activity-checklist-7" class="level2 check">
+<h2>Activity Checklist</h2>
+<p>While you were busy styling panels and images, your browser has taken care of styling texts inside your speech bubbles.</p>
+<p>What if you want to change the way your texts look?</p>
+<p>You can <strong>use fonts</strong> to “dress” your texts in many ways and express different voices, moods or feelings, for example <span style="font-family:Helvetica,Arial,sans-serif;font-size: 50%;">a whispering voice</span> or <span style="font-family:Impact,Charcoal,sans-serif;font-size: 150%;text-transform:uppercase;">a screaming voice</span>.</p>
+<p>Experiment with these CSS properties to make your speech bubbles more expressive:</p>
+<ul>
+<li>font-family</li>
+<li>font-size</li>
+<li>text-transform</li>
+<li>letter-spacing</li>
+</ul>
+</section>
+<section id="challenge-6" class="level2 try">
+<h2>Challenge</h2>
+<p>Your browser gives you a handful of font families, out of the box. There’s more to comics than that!</p>
+<ul>
+<li><p>Go to <a href="https://www.google.com/fonts">Google Fonts</a> and <strong>find fonts</strong> that suit your story. That page will tell you how to <em>choose</em>, <em>review</em> and <em>use</em> the fonts you like.</p></li>
+<li><p>Can you <strong>add your chosen fonts to your comic</strong>?</p></li>
+</ul>
+</section>
+<section id="extra-how-do-you-make-a-speech-bubble-arrow" class="level2 activity">
+<h2>EXTRA How do you <strong>make a speech bubble arrow</strong>?</h2>
+</section>
+<section id="activity-checklist-8" class="level2 check">
+<h2>Activity Checklist</h2>
+<p>Have you noticed that your speech bubbles are missing something?</p>
+<p>Yes, that <strong>little arrow pointing at your character</strong>, which makes it clear who’s talking.</p>
+<pre><code>p[class=&quot;bubble&quot;]:after
+{
+    content: &quot; &quot;;
+    position: absolute;
+    
+    border-width: 30px;
+    border-style: solid;
+}
+
+p[id=&quot;panel1-bubble1&quot;]:after 
+{
+    top: 100%;
+    left: 30px;
+        
+    border-top-color: white;
+    border-left-color: red;
+    border-bottom-color: green; 
+    border-right-color: blue; 
+} </code></pre>
+<ul>
+<li><p>Copy-paste the code above into your HTML document. Where? Anywhere between the <code>&lt;style&gt;</code> <em>opening tag</em> and the <code>&lt;/style&gt;</code> <em>closing tag</em>.</p></li>
+<li><p>Save, go to your browser and refresh the page. What do you see?</p></li>
+</ul>
+<p><img class="border-less" src="jewel.png" title="Right-click on your speech bubble to inspect it"></p>
+<p>A white-red-green-blue “jewel” has appeared <em>after</em> your speach bubble.</p>
+<ul>
+<li>Right-click on your speech bubble, then choose <em>Inspect Element</em> to see what is going on.</li>
+</ul>
+<p>That “jewel” is, technically speaking, an empty element with a very fat border: <code>30px</code>.</p>
+<p>The top border is <code>white</code>, just like the rest of your speech bubble. The left border is <code>red</code>, the bottom border is <code>green</code> and the right border is <code>blue</code>.</p>
+</section>
+<section id="challenge-7" class="level2 try">
+<h2>Challenge</h2>
+<ul>
+<li>Can you turn the left, right and bottom borders to <code>transparent</code>?</li>
+</ul>
+<p>That leaves you only with the top white border, which looks like an <strong>arrow pointing down</strong>!</p>
+<ul>
+<li>Now, can you add arrows to your other speech bubbles? Experiment with <code>top</code> and <code>left</code> values to move your arrows around, and switch <code>border-color</code> values on (<code>white</code>) and off (<code>transparent</code>) to make your arrows point in the directions you want.</li>
+</ul>
+<!-- FOOT NOTES -->
+
+</section>
+</section>
+<section class="footnotes">
+<hr />
+<ol>
+<li id="fn1"><p><strong>HTML</strong> stands for <em><strong>H</strong>yper<strong>T</strong>ext <strong>M</strong>arkup <strong>L</strong>anguage</em>, which is the language that every website in the World “speaks”. To make a website, you teach your computer how to “translate” your ideas into HTML.<a href="#fnref1">↩</a></p></li>
+<li id="fn2"><p><strong>What’s a browser?</strong> A web browser is a special app that knows how to interpret text files written in HTML. The most popular browsers are Internet Explorer, Google Chrome and Mozilla Firefox.<a href="#fnref2">↩</a></p></li>
+<li id="fn3"><p><strong>How do you refresh a page in the browser?</strong> If you’re on a Windows computer, use the keyboard shortcut <strong>CTRL+R</strong> (that is, hold the <em>CTRL</em> key down and press the <em>R</em> key once). On a Mac, use <strong>⌘+R</strong>.<a href="#fnref3">↩</a></p></li>
+<li id="fn4"><p><strong>What’s debugging?</strong> Debugging means to find and correct glitches in your code. It takes both patience and speed, just like catching a flying bug. Luckily, debugging HTML code in your browser is easy: right-click anywhere on a page and choose <strong>Inspect Element</strong>. This will pop open your browser’s <strong>Inspector</strong>, where you can see every page’s <em>source code</em>, <em>styles</em> and much more. When you hover over the source code with your mouse, the corresponding HTML element on the page will light up. When you click on an HTML tag in the source code (left panel), you’ll see all its CSS styles (on the right panel).<a href="#fnref4">↩</a></p></li>
+<li id="fn5"><p><strong>CSS</strong> stands for <em><strong>C</strong>ascading <strong>S</strong>tyle <strong>S</strong>heets</em> and it’s the language you can use to tell your browser to change colours, sizes and many other <em>stylistic</em> aspects of your HTML documents.<a href="#fnref5">↩</a></p></li>
+<li id="fn6"><p><strong>What’s a browser’s Inspector?</strong> In your browser, right-click anywhere on a page and choose <strong>Inspect Element</strong>. This will pop open your browser’s <strong>Inspector</strong>, where you can see every page’s <em>source code</em>, <em>styles</em> and much more. When you hover over the source code with your mouse, the corresponding HTML element on the page will light up. When you click on an HTML tag in the source code (left panel), you’ll see all its CSS styles (on the right panel).<a href="#fnref6">↩</a></p></li>
+</ol>
+</section>
+</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div><div class="author"><p><strong>Author:</strong></p><p>Matteo Menapace</p>
+</div></div></div></div></div><script src="../../assets/script.min.js"></script></body></html>

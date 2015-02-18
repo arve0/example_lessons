@@ -1,0 +1,30 @@
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Scratch Card - Record | YourCodeClubName</title><link href="../../../../../assets/style.min.css" rel="stylesheet"/></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../../../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Home</a></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../../../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">Scratch Card - Record</h1></header></div><div class="col-xs-12"><div class="content"><section id="activity-checklist" class="level2 check">
+<h2>Activity Checklist</h2>
+<ol type="1">
+<li><p>Get ready</p>
+<p>Press Make a list to make a new list.</p>
+<figure>
+<img src="variable.png" />
+</figure></li>
+<li><p>Try this code</p>
+<p>Empty the list when you start.</p>
+<pre class="scratch"><code>when flag clicked
+delete (all v) of [notes v]</code></pre></li>
+<li><p>Every time something happens, add it to the list.</p>
+<pre class="scratch"><code>when this sprite clicked
+play note (pitch) for (0.5) beats
+add (pitch) to [notes v]
+</code></pre></li>
+<li><p>If you want to record several things, use one list for each.</p>
+<pre class="scratch"><code>when [space v] key pressed
+move (10) steps
+add (x position) to [xs v]
+add (y position) to [ys v]
+</code></pre></li>
+<li><p>See the “Play back a sequence” card for how to replay what you’ve recorded.</p></li>
+</ol>
+</section>
+</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><script src="../../../../../assets/script.min.js"></script><script>$(document).ready(function(){
+  scratchblocks2.load_language(scratchblocks2._translations['nb']);
+  scratchblocks2.parse("pre.blocks");
+});</script></body></html>

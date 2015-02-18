@@ -1,0 +1,215 @@
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Christmas Capers | YourCodeClubName</title><link href="../../../assets/style.min.css" rel="stylesheet"/></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Home</a></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">Christmas Capers</h1></header></div><div class="col-xs-12"><div class="content"><section id="introduction" class="level1 intro">
+<h1>Introduction</h1>
+<p><strong>In this project we’ll create a game with scrolling backgrounds, scoring and a festive game over screen.</strong></p>
+<p>A disaster in a toy factory has sent presents flying into the sky, help Rudolph to save Christmas by catching the presents!</p>
+<figure>
+<img src="xmas-final.png" alt="screenchot" /><figcaption>screenchot</figcaption>
+</figure>
+</section>
+<section id="step-1-make-rudolph-fly" class="level1 activity">
+<h1>Step 1: Make Rudolph fly</h1>
+<section id="activity-checklist" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li>Start a new Scratch project. Delete the cat by right-clicking it and selecting Delete</li>
+<li>Replace the background with <strong>SkyBackground.png</strong>.</li>
+<li>Add the Rudolph sprite to the project (use the <strong>resources/Rudolph.png</strong> file)</li>
+<li><p>Make Rudolph follow the mouse by using the following script:</p>
+<pre class="blocks"><code>when FLAG clicked
+    go to front
+    forever
+        go to [mouse-pointer v]</code></pre></li>
+</ul>
+</section>
+<section id="test-your-project" class="level2 flag">
+<h2>Test Your Project</h2>
+<p><strong>Click the green flag and move the mouse.</strong> Does Rudolph follow the mouse?</p>
+</section>
+<section id="save-your-project" class="level2 save">
+<h2>Save your project</h2>
+<ul>
+<li>To make the game more interesting we will add some moving snowy hills to make it look like Rudolph is flying. Add the Snow sprite to the project (use the <strong>SnowHills.png</strong> file).</li>
+<li>Rename the sprite to <strong>Snow1</strong>.</li>
+<li>Create a new variable by clicking the <em>Data</em> tab and then <strong>make a variable</strong>. Call it <code class="blockorange">ScrollX</code> and make it for all sprites, then uncheck the box next to it to remove it from the stage. This will be used to control how the hills move.</li>
+<li><p>Add the following script to make the hills move:</p>
+<pre class="blocks"><code>when FLAG clicked
+    set y to (0)
+    forever
+        set x to (ScrollX)
+        change [ScrollX v] by (-1)
+        if &lt;(ScrollX) &lt; (-480)&gt; then
+            set [ScrollX v] to [0]</code></pre></li>
+</ul>
+</section>
+<section id="test-your-project-1" class="level2 flag">
+<h2>Test Your Project</h2>
+<p><strong>Click the green flag.</strong> Do the hills move? What happens as the hills move to the side of the screen?</p>
+</section>
+<section id="save-your-project-1" class="level2 save">
+<h2>Save your project</h2>
+<ul>
+<li>Let’s fix the issue with the snowy hills suddenly reappearing. Add a second set of hills to the stage. Use the <strong>new sprite from file</strong> button to add the Snow sprite to the project again (use the <strong>SnowHills.png</strong> file).</li>
+<li>Rename the sprite to <strong>Snow2</strong>.</li>
+<li><p>Add the following script to the Snow2 sprite to allow the second set of hills to follow closely behind the first:</p>
+<pre class="blocks"><code>when FLAG clicked
+    set y to (0)
+    forever
+        set x to &lt;(ScrollX) + [479]&gt;</code></pre></li>
+</ul>
+</section>
+<section id="test-your-project-2" class="level2 flag">
+<h2>Test Your Project</h2>
+<p><strong>Click the green flag.</strong> Do the hills move? Has the issue with the reappearing trees been fixed?</p>
+</section>
+<section id="save-your-project-2" class="level2 save">
+<h2>Save your project</h2>
+</section>
+</section>
+<section id="step-2-falling-presents" class="level1 activity new-page">
+<h1>Step 2: Falling Presents</h1>
+<section id="activity-checklist-1" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li>We now need to add in the presents for Rudolph to collect. Add the <strong>Present</strong> sprite to the project (use the <strong>Present.png</strong> file).</li>
+<li><strong>Create a new variable</strong> by clicking the <code class="blocklightgrey">Data</code> tab and then <strong>make a variable</strong>. Call it <code class="blockorange">Finish</code> and make it for this sprite only, then uncheck the box next to it to remove it from the stage. This will be used to control when the present should be removed from the game.</li>
+<li><strong>Create another variable</strong> and call it <code class="blockorange">Speed</code> and make it for this sprite only, then uncheck the box next to it to remove it from the stage. This will be used to control the speed that the present falls down the screen.</li>
+<li>Add the following script to the <strong>Present</strong> sprite to allow it to fall from the sky. Note that we will use <code class="blockgreen">pick random</code> to make the present appear in a different place each time.</li>
+<li><p>By using the <code class="blocklightblue">touching [ Rudolph ]</code> block we can make the present disappear when touched. We can use this later to keep a score.</p>
+<pre class="blocks"><code>when FLAG clicked
+    forever
+        set [Finish v] to [0]
+        go to x: &lt;pick random (-230) to (230)&gt; y: &lt;pick random (50) to (170)&gt;
+        set [Speed v] to [-1]
+        repeat until &lt;(Finish) = [1]&gt;
+            change y  by (Speed)
+            if &lt;(y position) &lt; [-160]&gt; then
+                set (Finish) to [1]
+            end
+            if &lt;touching [Rudolph v]?&gt; then
+                set (Finish) to [1]</code></pre></li>
+</ul>
+</section>
+<section id="test-your-project-3" class="level2 flag">
+<h2>Test Your Project</h2>
+<p><strong>Click the green flag.</strong> Do the presents fall from the sky? Do they disappear when Rudolph touches them or they hit the ground?</p>
+</section>
+<section id="save-your-project-3" class="level2 save">
+<h2>Save your project</h2>
+<ul>
+<li>Let’s make the game more interesting by changing the colour of the presents each time they fall. Do this by using the <code class="blockpurple">change colour</code> block.</li>
+<li><p>Change the speed of each present by replacing <code class="blockorange">set Speed to -1</code> with the <code class="blockgreen">pick random</code> block. Try different values such as <strong>-10</strong> to <strong>-1</strong>. Your script should now look like this.</p>
+<pre class="blocks"><code>when FLAG clicked
+    forever
+        set [Finish v] to [0]
+        go to x: &lt;pick random (-230) to (230)&gt; y: &lt;pick random (50) to (170)
+        change [color v] effect by &lt;pick random (1) to (-160)&gt;
+        set [Speed v] to &lt;pick random (-10) to (-1)
+        repeat until &lt;(Finish) = [1]&gt;
+            change y  by (Speed)
+            if &lt;(y position) &lt; [-160]&gt; then
+                set (Finish) to [1]
+            end
+            if &lt;touching [Rudolph v]?&gt; then
+                set (Finish) to [1]</code></pre></li>
+</ul>
+</section>
+<section id="test-your-project-4" class="level2 flag">
+<h2>Test Your Project</h2>
+<p><strong>Click the green flag.</strong> Do the presents fall at different speeds and colours?</p>
+</section>
+<section id="save-your-project-4" class="level2 save">
+<h2>Save your project</h2>
+</section>
+</section>
+<section id="step-3-scoring-and-sound-effects" class="level1 activity">
+<h1>Step 3: Scoring and Sound Effects</h1>
+<section id="activity-checklist-2" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><strong>Let’s change our script to keep track of a score within the game.</strong> We can then use this later to work out when the game over message should appear.</li>
+<li>Create a new variable. Call it <code class="blockorange">Score</code> and make it for all sprites. Leave this variable ticked so it appears on the screen.</li>
+<li><p>Change the script behind the <strong>Present</strong> sprite to look like this. Note we have both added sound effects with the <code class="blockpink">play drum</code> command and also <code class="blockorange">change [ score ] by 1</code> when Rudolph touches the present.</p>
+<pre class="blocks"><code>when FLAG clicked
+    forever
+        set [Finish v] to [0]
+        go to x: &lt;pick random (-230) to (230)&gt; y: &lt;pick random (50) to (170)
+        change [color v] effect by &lt;pick random (1) to (-160)&gt;
+        set [Speed v] to &lt;pick random (-10) to (-1)
+        repeat until &lt;(Finish) = [1]&gt;
+            change y  by (Speed)
+            if &lt;(y position) &lt; [-160]&gt; then
+                play drum [57 v] for (0.25) beats
+                set (Finish) to [1]
+            end
+            if &lt;touching [Rudolph v]?&gt; then
+                play drum [39 v] for (0.25) beats
+                set (Finish) to [1]
+                change [Score v] by [1]</code></pre></li>
+</ul>
+<p>Let’s add some music to the game:</p>
+<ul>
+<li><p>Import the sound file <strong>Jingle_Bells.mp3</strong> to the <strong>Stage</strong>.</p></li>
+<li><p>Add the following script to the <strong>Stage</strong>. This will <code class="blockorange">set score to 0</code> when the game is started. It will also play Jingle Bells while the game is being played.</p>
+<pre class="blocks"><code>when FLAG clicked
+    set [ScrollX v] to [0]
+    set [Score v] to [0]
+    play sound [Jingle_Bells v]</code></pre></li>
+</ul>
+<p>Note, if at first the music sounds ‘choppy’, save your project, close Scratch and then open your project again.</p>
+</section>
+<section id="test-your-project-5" class="level2 flag">
+<h2>Test Your Project</h2>
+<p><strong>Click the green flag.</strong> Does the score change when Rudolph touches a present?</p>
+</section>
+<section id="save-your-project-5" class="level2 save">
+<h2>Save your project</h2>
+</section>
+</section>
+<section id="step-4-game-over" class="level1 activity">
+<h1>Step 4: Game over</h1>
+<ul>
+<li>Let’s use our score to work out when the game over message should appear.</li>
+<li><p>Change the script on the <strong>Stage</strong> so when the <code class="blockorange">Score</code> reaches <strong>10</strong> we will <code class="blockyellow">broadcast</code> a <strong>GameOver</strong> message.</p>
+<pre class="blocks"><code>when FLAG clicked
+    set [ScrollX v] to [0]
+    set [Score v] to [0]
+    play sound [Jingle_Bells v]
+    forever
+    if &lt;(score) = [10]&gt; then
+        broadcast [GameOver v] and wait</code></pre></li>
+<li>We now need to add in our GameOver message. Add the <strong>GameOver</strong> sprite to the project (use the <strong>GameOver.png</strong> file).</li>
+<li><p><strong>Add the following script to the GameOver sprite.</strong> This will <code class="blockpurple">hide</code> the picture when the game starts and <code class="blockpurple">show</code> it when the GameOver message is received.</p>
+<pre class="blocks"><code>when FLAG clicked
+    hide
+
+    when I receive [GameOver v]
+        go to front
+        show
+        stop [all v]</code></pre></li>
+</ul>
+<section id="test-your-project-6" class="level2 flag">
+<h2>Test Your Project</h2>
+<p><strong>Click the green flag.</strong> Does the score change when Rudolph touches a present?</p>
+</section>
+<section id="save-your-project-6" class="level2 save">
+<h2>Save your project</h2>
+</section>
+<section id="challenge-make-the-game-harder" class="level2 challenge">
+<h2>Challenge: Make the game harder</h2>
+<ul>
+<li>Can you make the presents wobble on their way down the screen?</li>
+<li>Can you add more than one present to the game at the same time?</li>
+<li>Change the game over message to appear after 20 presents are collected.</li>
+<li>Can you reduce the score by 1 when a present hits the ground?</li>
+</ul>
+</section>
+<section id="save-your-project-7" class="level2 save">
+<h2>Save your project</h2>
+<p>Well done, you’ve finished! Now you can enjoy your game!</p>
+<p>Don’t forget you can share your game with all your friends and family by clicking on <strong>Share</strong> on the menu bar! Have a very Merry Christmas!</p>
+</section>
+</section>
+</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><script src="../../../assets/script.min.js"></script><script>$(document).ready(function(){
+  scratchblocks2.load_language(scratchblocks2._translations['nb']);
+  scratchblocks2.parse("pre.blocks");
+});</script></body></html>

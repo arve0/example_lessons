@@ -1,0 +1,299 @@
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Flappy Parrot | YourCodeClubName</title><link href="../../../assets/style.min.css" rel="stylesheet"/></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Home</a></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">Flappy Parrot</h1></header></div><div class="col-xs-12"><div class="content"><section id="introduction" class="level1 intro">
+<h1>Introduction</h1>
+<p><strong>In this project we’ll make our own version of the highly popular mobile game Flappy Bird. This project requires Scratch 2.0.</strong></p>
+<p>Press the space bar to flap and try to navigate through the gaps in the pipes!</p>
+<figure>
+<img src="flappy_screenshot.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+</section>
+<section id="step-1-make-flappy-fall" class="level1 activity">
+<h1><strong>Step 1:</strong> Make Flappy fall</h1>
+<section id="activity-checklist" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li>Start a new Scratch project. Delete the cat by right-clicking it and selecting Delete</li>
+<li>Replace the background with an outdoor landscape. <strong>desert</strong> is a good choice.</li>
+<li>Add the Flappy character. You’ll need a sprite with costumes for wings up and wings down. <strong>parrot</strong> is a good choice.</li>
+<li>Change the name of your sprite to <strong>Flappy</strong>.</li>
+<li><p>Give Flappy the following script:</p>
+<pre class="blocks"><code>when FLAG clicked
+    go to x: (-50) y: (0)
+    forever
+        change y by (-3)</code></pre></li>
+</ul>
+</section>
+<section id="test-your-project" class="level2 flag">
+<h2>Test Your Project</h2>
+<p><strong>Click the green flag</strong>, does Flappy start in the middle of the screen and then fall to the bottom?</p>
+</section>
+<section id="save-your-project" class="level2 save">
+<h2>Save your project</h2>
+</section>
+</section>
+<section id="step-2-make-flappy-fly" class="level1 activity">
+<h1><strong>Step 2:</strong> Make Flappy fly</h1>
+<p>Next, we want Flappy to flap upwards when you press the space bar.</p>
+<section id="activity-checklist-1" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li>Click on the <strong>Costumes</strong> tab and name the costumes <strong>wings up</strong> and <strong>wings down</strong>.</li>
+<li><p>Now switch back to the <strong>Scripts</strong> tab and add this script:</p>
+<pre class="blocks"><code>when [space v] key pressed
+    switch costume to [wings down v]
+    repeat (10)
+        change y by (6)
+    end
+    switch costume to [wings up v]
+    repeat (10)
+        change y by (6)
+    end</code></pre></li>
+</ul>
+</section>
+<section id="test-your-project-1" class="level2 flag">
+<h2>Test Your Project</h2>
+<p><strong>Click the green flag</strong>, are you able to control Flappy with the space bar? Do you notice that sometimes you press the space bar but Flappy doesn’t move? We’ll fix that next…</p>
+</section>
+<section id="save-your-project-1" class="level2 save">
+<h2>Save your project</h2>
+</section>
+</section>
+<section id="step-3-fix-the-controls" class="level1 activity new-page">
+<h1><strong>Step 3:</strong> Fix the controls</h1>
+<p>We’d like Flappy to respond every time we press the space bar. But when we push the space bar Flappy begins two loops of movements. If we push the space bar again before these loops have finished, Scratch ignores the second press. To solve this, we’ll use a variable to count up how many flaps we need to do.</p>
+<section id="activity-checklist-2" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li>Disconnect the blocks under the <code class="blockbrown">when space key pressed</code> and put them to the side (we’ll use them in a few moments.)</li>
+<li>Make a new variable <code class="blockgrey">For this sprite only</code> and call it <code class="blockorange">flaps</code>.</li>
+<li><p>Add the following script by draging in the blocks you put aside:</p>
+<pre class="blocks"><code>when FLAG clicked
+    set [flaps v] to [0]
+    switch costume to [wings up v]
+    forever
+        repeat until &lt;(flaps) = [0]&gt;
+            change [flaps v] by (-1)
+            switch costume to [wings down v]
+            repeat (10)
+                change y by (6)
+            end
+            switch costume to [wings up v]
+            repeat (10)
+                change y by (6)
+            end</code></pre></li>
+<li><p>Finally, add to your <code class="blockbrown">when space key pressed</code> event:</p>
+<pre class="blocks"><code>when [space v] key pressed
+    change [flaps v] by (1)</code></pre></li>
+</ul>
+</section>
+<section id="test-your-project-2" class="level2 flag">
+<h2>Test Your Project</h2>
+<p><strong>Click the green flag</strong>, does Flappy now flap once for each time you press the space bar?</p>
+</section>
+<section id="save-your-project-2" class="level2 save">
+<h2>Save your project</h2>
+</section>
+</section>
+<section id="step-4-add-the-pipes" class="level1 activity">
+<h1><strong>Step 4:</strong> Add the pipes</h1>
+<p>Next we’ll add some obstacles for Flappy to fly through.</p>
+<section id="activity-checklist-3" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li>Click on the <code class="blockgrey">Paint new sprite</code> button.</li>
+<li>Name your costume <strong>pipe</strong>.</li>
+<li>If the costume is in <code class="blockgrey">Bitmap Mode</code> click on the <code class="blockgrey">Convert to vector</code> button.</li>
+<li>Click on the <code class="blockgrey">Zoom -</code> so that you can see the entire drawing area.</li>
+<li>Click on the <code class="blockgrey">Rectangle</code>, pick a colour, and click on the <code class="blockgrey">Filled rectangle</code> button.</li>
+<li>Click and drag two boxes, one from the top middle and one from the bottom middle as shown:</li>
+</ul>
+<figure>
+<img src="pipe_design.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+<ul>
+<li>You can shade your pipes by clicking on the <code class="blockgrey">Color a shape</code> button and click on the <code class="blockgrey">Horizontal gradient</code> button. Choose two shades of the same colour one for the foreground and one for the background. When you click to fill the shapes, the colours will fade between your chosen colours.</li>
+<li>Name your sprite <strong>Pipe</strong>.</li>
+</ul>
+</section>
+<section id="save-your-project-3" class="level2 save">
+<h2>Save your project</h2>
+</section>
+</section>
+<section id="step-5-make-the-pipes-move" class="level1 activity">
+<h1><strong>Step 5:</strong> Make the pipes move</h1>
+<p>Next we’ll make the pipes move and arrange them randomly to provide an obstacle course for Flappy.</p>
+<section id="activity-checklist-4" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li>Click on your <strong>Pipe</strong> sprite and select the <code class="blockgrey">Scripts</code> tab.</li>
+<li><p>Add the following scripts:</p>
+<pre class="blocks"><code>when FLAG clicked
+    hide
+    set size to (200)%
+    forever
+        create clone of [myself v]
+        wait (2) secs
+
+when I start as a clone
+    go to x: (240) y: (pick random (-80) to (80))
+    show
+    repeat (120)
+        change x by (-4)
+    end
+    delete this clone</code></pre></li>
+</ul>
+</section>
+<section id="test-your-project-3" class="level2 flag">
+<h2>Test Your Project</h2>
+<p><strong>Click the green flag</strong>, do pipes appear with gaps to fly through at different heights? If you find it difficult to navigate Flappy through the pipes without touching them, you can make the gap bigger in the <strong>pipe</strong> sprite by editing the costume.</p>
+</section>
+<section id="save-your-project-4" class="level2 save">
+<h2>Save your project</h2>
+</section>
+</section>
+<section id="step-6-detect-collision-with-the-pipes" class="level1 activity">
+<h1><strong>Step 6:</strong> Detect collision with the pipes</h1>
+<p>To make the game a challenge, the player needs to guide Flappy through the gaps without touching the pipes or the edges of the screen. Now we’ll add some blocks to detect if Flappy hits something.</p>
+<section id="activity-checklist-5" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li>Let’s add a sound to play when Flappy collides. Click on the <strong>Flappy</strong> sprite then on the <code class="blockgrey">Sounds</code> tab.</li>
+<li>Click the <code class="blockgrey">Choose sound from library</code> button.</li>
+<li>Pick a collision sound for <strong>Flappy</strong>. The <strong>screech</strong> sound is good.</li>
+<li>Now click back on the <code class="blockgrey">Scripts</code> tab.</li>
+<li><p>Add the following script:</p>
+<pre class="blocks"><code>when FLAG clicked
+    wait until ((touching [edge v]?) or (touching [Pipe v]?))
+    play sound [screech v]
+    say [Game Over!]
+    broadcast [GameOver v]
+    stop [other scripts in sprite v]</code></pre></li>
+<li><p>Click on the <strong>Pipe</strong> sprite and add a script:</p>
+<pre class="blocks"><code>when I receive [GameOver v]
+    stop [other scripts in sprite v]</code></pre></li>
+</ul>
+</section>
+<section id="test-your-project-4" class="level2 flag">
+<h2>Test Your Project</h2>
+<p><strong>Click the green flag</strong>, does the game end when Flappy touches a pipe or the edge of the screen?</p>
+</section>
+<section id="save-your-project-5" class="level2 save">
+<h2>Save your project</h2>
+</section>
+</section>
+<section id="step-7-add-scoring" class="level1 activity">
+<h1><strong>Step 7:</strong> Add scoring</h1>
+<p>The player should score a point every time Flappy makes it though a pipe. Let’s add that next.</p>
+<section id="activity-checklist-6" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li>Let’s add a sound to play when Flappy scores a point. Click on the <strong>Pipe</strong> sprite add a score sound. <strong>bird</strong> is a good choice.</li>
+<li>Now click back on the <code class="blockgrey">Scripts</code> tab.</li>
+<li>Make a new variable <code class="blockgrey">For all sprites</code> and call it <code class="blockorange">score</code>.</li>
+<li>Add a block to set the score to 0 when the flag is clicked.</li>
+<li><p>Add the following block:</p>
+<pre class="blocks"><code>when I start as a clone
+    wait until &lt;(x position) &lt; ([x position v] of [Flappy v])&gt;
+    change [score v] by (1)
+    play sound [bird v]</code></pre></li>
+</ul>
+</section>
+<section id="test-your-project-5" class="level2 flag">
+<h2>Test Your Project</h2>
+<p><strong>Click the green flag</strong>, does the player score points for flying Flappy through the pipes?</p>
+</section>
+<section id="save-your-project-6" class="level2 save">
+<h2>Save your project</h2>
+</section>
+<section id="things-to-try" class="level2 try">
+<h2>Things to try</h2>
+<ul>
+<li><strong>How many ways can you make this game easier or harder?</strong></li>
+<li><strong>Well done you’ve finished the basic game. There are more things you can do to your game though. Have a go at these challenges!</strong></li>
+</ul>
+</section>
+<section id="challenge-1-add-a-high-score" class="level2 challenge">
+<h2>Challenge 1: add a high score</h2>
+<ul>
+<li>Make a new variable and tick the <code class="blockgrey">Cloud variable (stored on server)</code> box. Call the variable <code class="blockorange">hi-score</code></li>
+<li><p>when the game is over check if you need to set a new high score:</p>
+<pre class="blocks"><code>when I receive [GameOver v]
+    if &lt;(score) &gt; (hi-score)&gt; then
+        set [hi-score v] to (score)
+    end
+    stop [other scripts in sprite v]</code></pre></li>
+</ul>
+</section>
+<section id="test-your-project-6" class="level2 flag">
+<h2>Test Your Project</h2>
+<p><strong>Click the green flag</strong>, does your score update the <code>hi-score</code>?</p>
+</section>
+<section id="save-your-project-7" class="level2 save">
+<h2>Save your project</h2>
+</section>
+<section id="challenge-2-add-gravity" class="level2 challenge">
+<h2>Challenge 2: add gravity</h2>
+<p>When something falls under gravity it doesn’t usually fall at a fixed rate. For this challenge we will make Flappy fall as if under gravity.</p>
+<ul>
+<li>Add a new variable <code class="blockgrey">For this sprite only</code> to <strong>Flappy</strong> and call it <code class="blockorange">rise</code>.</li>
+<li><p>Change Flappy’s falling script:</p>
+<pre class="blocks"><code>when FLAG clicked
+    set [rise v] to [0]
+    go to x: (-50) y: (0)
+    forever
+        change y by (rise)
+        change [rise v] by (-0.4)</code></pre></li>
+<li><p>And change Flappy’s flapping script:</p>
+<pre class="blocks"><code>when FLAG clicked
+    set [flaps v] to [0]
+    switch costume to [wings up v]
+    forever
+        repeat until &lt;(flaps) = [0]&gt;
+            change [flaps v] by (-1)
+            switch costume to [wings down v]
+            change [rise v] by (8)
+            wait (0.2) secs
+            switch costume to [wings up v]
+            wait (0.2) secs</code></pre></li>
+</ul>
+</section>
+<section id="test-your-project-7" class="level2 flag">
+<h2>Test Your Project</h2>
+<p><strong>Click the green flag</strong>, does Flappy now accelerate when falling and flapping?</p>
+</section>
+<section id="save-your-project-8" class="level2 save">
+<h2>Save your project</h2>
+</section>
+<section id="challenge-3-fall-off-screen" class="level2 challenge">
+<h2>Challenge 3: fall off screen</h2>
+<p>When the player loses make Flappy fall off the bottom of the screen before ending the game.</p>
+<ul>
+<li>Replace the <code class="blockbrown">broadcast GameOver</code> block with <code class="blockbrown">broadcast Fall</code></li>
+<li><p>Now add the following scripts:</p>
+<pre class="blocks"><code>when I receive [Fall v]
+    repeat (10)
+        turn ccw (5) degrees
+
+when I receive [Fall v]
+    repeat until &lt;(y position) &lt; [-180]&gt;
+        change y by (rise)
+        change [rise v] by (-0.4)
+    end
+    hide
+    broadcast [GameOver v]</code></pre></li>
+<li><p>Don’t forget to add a <code class="blockpurple">show</code> block and reset Flappy’s direction when the game restarts.</p></li>
+</ul>
+</section>
+<section id="test-your-project-8" class="level2 flag">
+<h2>Test Your Project</h2>
+<p><strong>Click the green flag</strong>, does Flappy now fall off the screen after hitting a pipe? Does Flappy reappear in the correct orientation when restarting the game.</p>
+</section>
+<section id="save-your-project-9" class="level2 save">
+<h2>Save your project</h2>
+<p>Well done, you’ve finished! Now you can enjoy your game!</p>
+<p>Don’t forget you can share your game with all your friends and family by clicking on <strong>Share</strong> on the menu bar!</p>
+</section>
+</section>
+</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><script src="../../../assets/script.min.js"></script><script>$(document).ready(function(){
+  scratchblocks2.load_language(scratchblocks2._translations['nb']);
+  scratchblocks2.parse("pre.blocks");
+});</script></body></html>

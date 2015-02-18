@@ -1,0 +1,200 @@
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Snowball Fight | YourCodeClubName</title><link href="../../../assets/style.min.css" rel="stylesheet"/></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Home</a></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">Snowball Fight</h1></header></div><div class="col-xs-12"><div class="content"><section id="introduction" class="level1 intro">
+<h1>Introduction</h1>
+<p>In this project you’re going to make a game in which you have to throw snowballs at a target. You’ll use the mouse pointer to angle the snowball and the spacebar to choose the snowball’s power.</p>
+<div class="scratch-preview">
+<pre><code>&lt;iframe allowtransparency=&quot;true&quot; width=&quot;485&quot; height=&quot;402&quot; src=&quot;http://scratch.mit.edu/projects/embed/35172420/?autostart=true&quot; frameborder=&quot;0&quot;&gt;&lt;/iframe&gt;
+&lt;img src=&quot;snow-final.png&quot;&gt;</code></pre>
+</div>
+</section>
+<section id="step-1-making-a-snowball" class="level1 activity">
+<h1>Step 1: Making a snowball</h1>
+<p>Let’s make a snowball, that you can throw around your stage.</p>
+<section id="activity-checklist" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>Start a new project, and delete the cat sprite, so that your project is empty.</p></li>
+<li><p>For this project, you should have a ‘Resources’ folder, containing the snowball sprite that you’ll need. Make sure that you can find this folder, and ask your club leader if you can’t find it.</p>
+<figure>
+<img src="snow-resources.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Click ‘Upload sprite from file’, and select the file ‘Snowball.sprite2’ in your resources folder.</p>
+<figure>
+<img src="snow-sprite.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+<p>The sprite contains 2 costumes, a normal costume, and one that shows which direction the snowball is facing.</p>
+<figure>
+<img src="snow-costume.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>First, let’s allow the player to change the angle of the snowball. Add this code to your snowball sprite:</p>
+<pre class="blocks"><code>    when flag clicked
+    wait (0.5) secs
+    go to x:(-200) y:(-130)
+    point in direction (90 v)
+    switch costume to [snowball-aim v]
+    repeat until &lt;key [space v] pressed?&gt;
+        point towards [mouse-pointer v]
+    end</code></pre></li>
+<li><p>Test out your project by clicking the green flag. You should see that your snowball follows the mouse, until you press the space bar.</p>
+<figure>
+<img src="snow-mouse.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Let’s also allow the player to deicde on how powerful the snowball should be thrown. Create a new variable called <code class="blockdata">power</code>.</p>
+<figure>
+<img src="snow-power.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Drag your new variable display to the bottom of the stage, near the snowball. Right-click on the variable display and click ‘slider’.</p>
+<figure>
+<img src="snow-slider.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Add code to set your new <code class="blockdata">power</code> variable to 0 when the flag is clicked.</p>
+<pre class="blocks"><code>    set [power v] to (0)</code></pre></li>
+<li><p>Now that you have a <code class="blockdata">power</code> variable, you can increase the power of the snowball <em>after</em> the direction has been chosen with this code:</p>
+<pre class="blocks"><code>    repeat until &lt; not &lt;key [space v] pressed?&gt; &gt;
+        change [power v] by (1)
+        wait (0.1) secs
+    end</code></pre>
+<p>This code means that you have to <em>keep the space bar held down</em> after choosing the direction, to choose the snowball’s power.</p></li>
+<li><p>Test your snowball, to see if you can choose its angle and power.</p>
+<figure>
+<img src="snow-test.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+</ul>
+</section>
+</section>
+<section id="step-2-throwing-a-snowball" class="level1 activity">
+<h1>Step 2: Throwing a snowball</h1>
+<section id="activity-checklist-1" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>Add this code to the <em>end</em> of your snowball script, to broadcast that you’re throwing a snowball:</p>
+<pre class="blocks"><code>    broadcast [throw v] and wait</code></pre>
+<p>Here’s how your snowball code should look:</p>
+<pre class="blocks"><code>    when flag clicked
+    wait (0.5) secs
+    go to x:(-200) y:(-130)
+    point in direction (90 v)
+    switch costume to [snowball-aim v]
+    repeat until &lt;key [space v] pressed?&gt;
+        point towards [mouse-pointer v]
+    end
+    repeat until &lt; not &lt;key [space v] pressed?&gt; &gt;
+        change [power v] by (1)
+        wait (0.1) secs
+    end
+    broadcast [throw v] and wait</code></pre></li>
+<li><p>Add this script to your snowball, to move until it reaches the edge of the stage:</p>
+<pre class="blocks"><code>    when I receive [throw v]
+    switch costume to [snowball v]
+    repeat until &lt; touching [edge v]? &gt;
+        move (power) steps
+    end
+    hide</code></pre>
+<p>The script uses the <code class="blockdata">power</code> variable to decide how fast to move.</p></li>
+<li><p>Now that you’re hiding the snowball when it touches the edge, add code to <code class="blocklooks">show</code> the snowball when the flag is clicked, <em>just</em> after the snowball switches to the <code class="blocklooks">snowball-aim</code> costume.</p>
+<figure>
+<img src="snow-show.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Test out your snowball a few times. Does it move at different angles and different speeds?</p></li>
+<li><p>If you want to be able to throw your snowball lots of times, just add a <code class="blockcontrol">forever</code> loop around your snowball <code class="blockevents">when flag clicked</code> code.</p>
+<figure>
+<img src="snow-throw.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+</ul>
+</section>
+</section>
+<section id="step-3-realistic-movement" class="level1 activity">
+<h1>Step 3: Realistic movement</h1>
+<p>You now have a snowball, but let’s make it move a bit more realistically.</p>
+<section id="activity-checklist-2" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>First, let’s set a maximum power level, so that the snowball can’t be thrown too hard.</p>
+<p>In your snowball’s <code class="blockevents">when flag clicked</code> code, we need to increase the power only if it’s less than 20. Change your code to:</p>
+<pre class="blocks"><code>    repeat until&lt; not &lt;key [space v] pressed?&gt; &gt;
+        if &lt; (power) &lt; [20] &gt; then
+            change [power v] by (1)
+            wait (0.1) secs
+        end
+    end</code></pre></li>
+<li><p>Test out your snowball again, and you’ll see that the power never gets above 20.</p></li>
+<li><p>Now that your snowball’s maximum power is 20, you can set this as the maximum value for the variable’s slider too. Right-click on your power variable, and click ‘set slider min and max’.</p>
+<figure>
+<img src="snow-minmax.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>You can also slow down the snowball, by reducing the power slightly as it flies through the air. Add this code block to your snowball’s <code class="blockevents">when I receive [throw]</code> code:</p>
+<pre class="blocks"><code>    change [power v] by (-0.25)</code></pre></li>
+<li><p>Test this new code - does it work as you expected? You may notice that the power keeps reducing, and eventually the snowball moves backwards!</p>
+<p>To fix this, you can add an <code class="blockcontrol">if</code> block to your code, so that the power is only lowered if it is above 0:</p>
+<pre class="blocks"><code>    if &lt; (power) &gt; (0) &gt; then
+        change [power v] by (-0.25)
+    end</code></pre></li>
+<li><p>You’re nearly there, but you also need to add some gravity to your snowball, so that it falls to the ground. You can add gravity by just moving the snowball down continuously with this script:</p>
+<pre class="blocks"><code>    when I receive [throw v]
+    repeat until &lt;touching [edge v]?&gt;
+        change y by (-5)
+    end</code></pre></li>
+<li><p>Test out your snowball again, and you should see that your snowball moves much more realistically.</p></li>
+</ul>
+</section>
+</section>
+<section id="step-4-the-target" class="level1 activity">
+<h1>Step 4: The target</h1>
+<p>Let’s add in a target for your snowballs!</p>
+<section id="activity-checklist-3" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>Add in another sprite to your project.</p>
+<figure>
+<img src="snow-bear.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Add this code to your new sprite, so that it says “You got me!” when it gets hit:</p>
+<pre class="blocks"><code>    when flag clicked
+    forever
+        if &lt; touching [snowball v]? &gt; then
+            say [You got me!] for (1) secs
+        end
+    end</code></pre></li>
+<li><p>Test out your new code.</p>
+<figure>
+<img src="snow-hit.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Let’s do a couple of things to make the game harder. First, let’s move the bear each time the player throws the snowball.</p>
+<p>To do this, first add a <code class="blockcontrol">broadcast</code> to your snowball, near the top of your <code class="blockcontrol">forever</code> loop. This will let your bear know that a new shot is about to be taken.</p>
+<pre class="blocks"><code>    broadcast [new shot v]</code></pre></li>
+<li><p>When your bear receives this message, move it to a new random position with this code:</p>
+<pre class="blocks"><code>    when I receive [new shot v]
+    set x to (pick random (0) to (200))</code></pre></li>
+<li><p>Test your project by throwing a few snowballs. Does your bear move position each time?</p></li>
+<li><p>You can also make your game harder by adding a rock in front of your snowball.</p>
+<figure>
+<img src="snow-rock.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>You can now change your snowball code, to stop when it touches the edge of the screen <em>or</em> when it touches the rock. Here’s how your snowball code should look:</p>
+<figure>
+<img src="snow-ball.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+<li><p>Finally, you can make your game harder by making your snowball and your bear smaller.</p>
+<figure>
+<img src="snow-small.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure></li>
+</ul>
+</section>
+<section id="challenge-improve-this-game" class="level2 challenge">
+<h2>Challenge: Improve this game!</h2>
+<p>Now that you’ve made the basic game, see what you can do to improve it. Here are some ideas, but feel free to use your own ideas too.</p>
+<ul>
+<li>Change the numbers in your code, to make the snowball move faster, higher or further;</li>
+<li>Change the graphics;</li>
+<li>Add music and sound effects;</li>
+<li>Change sprite costumes when the target is hit;</li>
+<li><p>Add a score and a high score;</p></li>
+<li>The bear could move around so that it’s harder to hit;</li>
+<li><p>You could add snowflakes or birds that stop the snowball;</p></li>
+<li><p>You could add a second player, so that you could both throw snowballs at the bear… or eachother!</p></li>
+</ul>
+</section>
+</section>
+</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><script src="../../../assets/script.min.js"></script><script>$(document).ready(function(){
+  scratchblocks2.load_language(scratchblocks2._translations['nb']);
+  scratchblocks2.parse("pre.blocks");
+});</script></body></html>

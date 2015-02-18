@@ -1,0 +1,385 @@
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Noughts and Crosses | YourCodeClubName</title><link href="../../../assets/style.min.css" rel="stylesheet"/></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Home</a></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">Noughts and Crosses</h1></header></div><div class="col-xs-12"><div class="content"><section id="introduction" class="level1 intro">
+<h1>Introduction</h1>
+<p>Time for another game, and today is Noughts and Crosses, or Tic-Tac-Toe. Players take turns marking an X or an O until one player gets three in a row.</p>
+</section>
+<section id="step-1-drawing-the-grid" class="level1 activity">
+<h1>Step 1: Drawing the grid</h1>
+<p>We want to draw four lines, in a # pattern, like this:</p>
+<pre><code>_|_|_
+_|_|_
+ | |</code></pre>
+<p>We could use the turtle commands to draw it, but today we’re going to learn about the Tk Canvas.</p>
+<section id="activity-checklist" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li>Open up IDLE, create a New File, and save it as ‘xox.py’</li>
+</ul>
+<p>Write the following code:</p>
+<pre class="language-python"><code>
+from tkinter import *
+
+main = Tk()
+
+c = Canvas(main, width=600, height=600)
+c.pack()
+
+c.create_line(200, 0, 200, 600)
+c.create_line(400, 0, 400, 600)
+
+c.create_line(0, 200, 600, 200)
+c.create_line(0, 400, 600, 400)
+
+mainloop()</code></pre>
+<ul>
+<li>Save and Run your program, and it will draw a grid !</li>
+</ul>
+<section id="the-canvas" class="level3">
+<h3>The Canvas</h3>
+<p>We make a 600 by 600 pixel window with <code>c = Canvas(main, width=600, height=600)</code>, which looks like this to the computer:</p>
+<pre><code>    0       200      400      600   ...
+   0+--------+--------+--------+-----&gt; across
+    |
+    |
+    |
+    |
+ 200|        A        B
+    |
+    |
+    |
+    |
+ 400|        C        D
+    |
+    |
+    |
+    |
+ 600|
+    |
+ ...|
+    V
+  down</code></pre>
+<p>Here point <code>A</code> is at 200 across, 200 down. Point <code>B</code> is at 400 across, 200 down. Point <code>C</code> is at 200 across, 400 down. Point <code>D</code> is at 400 across, 400 down.</p>
+<p>Each of the commands <code>c.create_line(across1,down1,across2,down2)</code> draws a line across the screen, and the four numbers act as positions. If we wanted to draw a line from A to D, we would do <code>c.create_line(200, 200, 400, 400)</code>.</p>
+<pre><code>     0       200      400      600   ...
+   0 +--------A--------B--------+-----&gt; across
+     |
+     |
+     |
+     |
+ 200 M                          O
+     |
+     |
+     |
+     |
+ 400 N                          P
+     |
+     |
+     |
+     |
+ 600 |        C        D
+     |
+ ... |
+     V
+   down</code></pre>
+<p>We want to draw lines from A to C, B to D, M to O, and N to P.</p>
+<pre class="language-python"><code>c.create_line(200, 0, 200, 600) # A to C
+c.create_line(400, 0, 400, 600) # B to D
+
+c.create_line(0, 200, 600, 200) # M to O
+c.create_line(0, 400, 600, 400) # N to P
+</code></pre>
+<p>In code, across is often called <code>x</code>, and down is often called <code>y</code>. This grid system is quite like the co-ordinates you’ve learned in mathematics, but we start from the top-left hand side.</p>
+</section>
+</section>
+</section>
+<section id="step-2-drawing-a-o" class="level1 activity">
+<h1>Step 2: Drawing a O</h1>
+<section id="activity-checklist-1" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li>In the same file, let’s add a new function to draw when you click the mouse!</li>
+</ul>
+<pre class="language-python"><code>
+from tkinter import *
+
+main = Tk()
+
+c = Canvas(main, width=600, height=600)
+c.pack()
+
+c.create_line(200, 0, 200, 600)
+c.create_line(400, 0, 400, 600)
+
+c.create_line(0, 200, 600, 200)
+c.create_line(0, 400, 600, 400)
+
+def click(event):
+    c.create_oval(200,200,400,400)
+
+c.bind(&quot;&lt;Button-1&gt;&quot;, click)
+
+mainloop()
+</code></pre>
+<ul>
+<li>Run your code, and click on the grid, what happens? You should see a circle in the centre of the grid.</li>
+<li>Let’s edit the code, so it will draw where you click. For this we’ll need to take the mouse position, and work out which grid square it is in, and change the <code>click</code> function</li>
+</ul>
+<pre class="language-python"><code>
+from tkinter import *
+
+main = Tk()
+
+c = Canvas(main, width=600, height=600)
+c.pack()
+
+c.create_line(200, 0, 200, 600)
+c.create_line(400, 0, 400, 600)
+
+c.create_line(0, 200, 600, 200)
+c.create_line(0, 400, 600, 400)
+
+def click(event):
+    across = int(c.canvasx(event.x) / 200)
+    down   = int(c.canvasy(event.y) / 200)
+
+    c.create_oval(
+        across * 200, down * 200,
+        (across + 1) * 200, (down + 1) * 200
+    )
+
+c.bind(&quot;&lt;Button-1&gt;&quot;, click)
+
+mainloop()
+</code></pre>
+<p><code>int(c.canvasx(event.x)/200)</code> takes the mouse position, <code>event.x</code> turns it into the canvas position, <code>c.canvas(event.x)</code> and then divides it by 200, and rounds it down, so we get a number 0, 1 or 2 to tell us how far across the mouse is.</p>
+<ul>
+<li>Run the code, click in the grid squares, each one should fill in with a circle! The code <code>c.create_oval(across*200,down*200,(across+1)*200,(down+1)*200)</code> turns ‘Along 1, Down 2’ into positions on the grid, like Along 200, Down 400.</li>
+</ul>
+</section>
+</section>
+<section id="step-3-drawing-an-x" class="level1 activity">
+<h1>Step 3: Drawing an X</h1>
+<section id="activity-checklist-2" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li>In the same file, let’s add some code to draw an X, then an O, then an X, …</li>
+</ul>
+<pre class="language-python"><code>
+from tkinter import *
+
+main = Tk()
+
+c = Canvas(main, width=600, height=600)
+c.pack()
+
+c.create_line(200, 0, 200, 600)
+c.create_line(400, 0, 400, 600)
+
+c.create_line(0, 200, 600, 200)
+c.create_line(0, 400, 600, 400)
+
+shape = &quot;O&quot;
+
+def click(event):
+    global shape
+    across = int(c.canvasx(event.x)/200)
+    down = int(c.canvasy(event.y)/200)
+
+    if shape == &quot;O&quot;:
+        c.create_oval(
+            across*200,down*200,
+            (across+1)*200,(down+1)*200
+        )
+        shape = &quot;X&quot;   
+    else:
+        c.create_line(
+            across*200, down*200,
+            (across+1)*200, (down+1)*200
+        )
+        c.create_line(
+            across*200, (down+1)*200,
+            (across+1)*200, down*200
+        )
+        shape = &quot;O&quot;
+
+c.bind(&quot;&lt;Button-1&gt;&quot;, click)
+
+mainloop()
+</code></pre>
+<ul>
+<li>Run your program, try click on a grid, it should draw a O, click elsewhere it should draw an X We’ve used a new feature of python, <code>global</code> to let us change the variable <code>shape</code> in the function <code>click</code>. If you change variables defined outside of a function, then you have to use <code>global</code>.</li>
+<li>What happens if you click on the same square twice? This is because our code doesn’t keep track of what has been drawn, or where players have moved. We will have write some more code to fix this.</li>
+</ul>
+</section>
+</section>
+<section id="step-4-keeping-track" class="level1 activity">
+<h1>Step 4: Keeping track</h1>
+<section id="activity-checklist-3" class="level2 check">
+<h2>Activity Checklist</h2>
+<p>To stop players playing the same move twice, we’ll have to keep track of the moves they make. To do this we’ll introduce a list called <code>grid</code></p>
+<ul>
+<li>In the same file,</li>
+</ul>
+<pre class="language-python"><code>
+from tkinter import *
+
+main = Tk()
+
+c = Canvas(main, width=600, height=600)
+c.pack()
+
+c.create_line(200, 0, 200, 600)
+c.create_line(400, 0, 400, 600)
+
+c.create_line(0, 200, 600, 200)
+c.create_line(0, 400, 600, 400)
+
+shape = &quot;O&quot;
+grid = [
+    &quot;0&quot;, &quot;1&quot;, &quot;2&quot;,
+    &quot;3&quot;, &quot;4&quot;, &quot;5&quot;,
+    &quot;6&quot;, &quot;7&quot;, &quot;8&quot;,
+]
+
+def click(event):
+    global shape, grid
+    across = int(c.canvasx(event.x)/200)
+    down = int(c.canvasy(event.y)/200)
+
+    square = across + (down*3)
+
+    if grid[square] == &quot;X&quot; or grid[square] == &quot;O&quot;:
+        return
+
+    if shape == &quot;O&quot;:
+        c.create_oval(
+            cross*200,down*200,
+            (across+1)*200,(down+1)*200
+        )
+        grid[square] = &quot;O&quot;
+        shape = &quot;X&quot;
+    else:
+        c.create_line(
+            across*200, down*200,
+            (across+1)*200, (down+1)*200
+        )
+        c.create_line(
+            across*200, (down+1)*200,
+            (across+1)*200, down*200
+        )
+        grid[square] = &quot;X&quot;
+        shape = &quot;O&quot;
+
+c.bind(&quot;&lt;Button-1&gt;&quot;, click)
+
+mainloop()
+</code></pre>
+<ul>
+<li>Run your program, and try and click in the same square twice? What happens?</li>
+</ul>
+</section>
+</section>
+<section id="step-5-finding-a-winner" class="level1 activity">
+<h1>Step 5: Finding a winner</h1>
+<p>Now we have got the game working, we need to find a winner!</p>
+<section id="activity-checklist-4" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li>In the same file, we’re going to introduce a new function <code>winner</code>, and call it to check if the game has been won The completed code looks like this!</li>
+</ul>
+<pre class="language-python"><code>
+from tkinter import *
+
+main = Tk()
+
+c = Canvas(main, width=600, height=600)
+c.pack()
+
+c.create_line(200, 0, 200, 600)
+c.create_line(400, 0, 400, 600)
+
+c.create_line(0, 200, 600, 200)
+c.create_line(0, 400, 600, 400)
+
+shape = &quot;O&quot;
+grid = [
+    &quot;0&quot;, &quot;1&quot;, &quot;2&quot;,
+    &quot;3&quot;, &quot;4&quot;, &quot;5&quot;,
+    &quot;6&quot;, &quot;7&quot;, &quot;8&quot;,
+]
+
+
+def click(event):
+    global shape, grid
+    across = int(c.canvasx(event.x)/200)
+    down = int(c.canvasy(event.y)/200)
+
+    square = across + (down*3)
+
+    if grid[square] == &quot;X&quot; or grid[square] == &quot;O&quot;:
+        return
+
+    if winner():
+        return
+
+    if shape == &quot;O&quot;:
+        c.create_oval(
+            across*200,down*200,
+            (across+1)*200,(down+1)*200
+        )
+        grid[square] = &quot;O&quot;
+        shape = &quot;X&quot;
+    else:
+        c.create_line(
+            across*200, down*200,
+            (across+1)*200, (down+1)*200
+        )
+        c.create_line(
+            across*200, (down+1)*200,
+            (across+1)*200, down*200
+        )
+        grid[square] = &quot;X&quot;
+        shape = &quot;O&quot;
+
+def winner():
+    for across in range(3):
+        row = across*3
+        line = grid[row] + grid[row+1] + grid[row+2]
+        if line == &quot;XXX&quot; or line == &quot;OOO&quot;:
+            return True
+
+    for down in range(3):
+        line = grid[down] + grid[down+3] + grid[down+6]
+        if line == &quot;XXX&quot; or line == &quot;OOO&quot;:
+            return True
+
+    line = grid[0]+grid[4]+grid[8]
+
+    if line == &quot;XXX&quot; or line == &quot;OOO&quot;:
+            return True
+
+    line = grid[2]+grid[4]+grid[6]
+
+    if line == &quot;XXX&quot; or line == &quot;OOO&quot;:
+            return True
+
+
+c.bind(&quot;&lt;Button-1&gt;&quot;, click)
+
+mainloop()
+</code></pre>
+<ul>
+<li>Try playing the game and winning, can you make any more moves? We have four checks in <code>winner</code>
+<ul>
+<li>Check each row for three X’s or O’s</li>
+<li>Check each column for three X’s or O’s</li>
+<li>Check the diagonal from left to right</li>
+<li>Check the diagonal from right to left.</li>
+</ul></li>
+</ul>
+</section>
+<section id="try" class="level2 try">
+<h2>Try</h2>
+<p>You’re all done! Why not change the code to draw different shapes!</p>
+</section>
+</section>
+</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><script src="../../../assets/script.min.js"></script></body></html>

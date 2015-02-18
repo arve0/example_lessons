@@ -1,0 +1,267 @@
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Table Football | YourCodeClubName</title><link href="../../../assets/style.min.css" rel="stylesheet"/></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Home</a></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">Table Football</h1></header></div><div class="col-xs-12"><div class="content"><section id="community-contributed-project" class="level2 challenge pdf-hidden">
+<h2>Community Contributed Project</h2>
+<p>This project was generously contributed by <a href="https://twitter.com/hardistymark">Mark Hardisty</a> (idea, art, and original design) and <a href="https://twitter.com/andylolz">Andy Lulham</a> (editing and formatting as a Code Club project).</p>
+<p>If you’d like to contribute a project of your own, then <a href="https://github.com/CodeClub">get in touch with us on Github</a>.</p>
+</section>
+<section id="introduction" class="level1 intro">
+<h1>Introduction</h1>
+<p>Let’s make a world cup football game in Scratch!</p>
+<figure>
+<img src="table_football_screenshot.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+</figure>
+</section>
+<section id="step-1-get-the-pitch-ready-for-a-game" class="level1 activity">
+<h1>Step 1: Get the pitch ready for a game</h1>
+<section id="activity-checklist" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li>Start a new project in Scratch.</li>
+<li>Click on the <strong>stage</strong> next to the sprite and switch to the <code>Backdrops</code> tab, then click the <code>Upload backdrop from file</code> button and choose the <strong>resources/pitch.jpg</strong> file.</li>
+<li>Delete the original blank backdrop, and the cat sprite.</li>
+<li>Our goals need nets! Create a sprite using the <code>Upload sprite from file</code> button and select <strong>resources/net.png</strong>. Move the net into the middle of the goal on the left. Rename it <strong>blue goal</strong>.</li>
+<li>Right-click on the net sprite and click <code>duplicate</code>, then move this new sprite to the goal on the right and rename it <strong>red goal</strong>.</li>
+</ul>
+</section>
+<section id="save-your-project" class="level2 save">
+<h2>Save your project</h2>
+</section>
+</section>
+<section id="step-2-add-a-goalie" class="level1 activity">
+<h1>Step 2: Add a goalie</h1>
+<p>Okay – our pitch is looking good! Now let’s add some players and get them moving about.</p>
+<section id="activity-checklist-1" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li>Click on <code>Upload sprite from file</code> and choose <strong>resources/goalie_blue.png</strong>. Rename the sprite <strong>blue goalie</strong>, and drag it near to the left goal.</li>
+<li>Click on the <code>grow sprite</code> button, and click on the <strong>blue goalie</strong> sprite 10 times to scale up the sprite.</li>
+<li><p>Click on the <code>Scripts</code> tab, and add:</p>
+<pre class="blocks"><code>when FLAG clicked
+go to x: (-190) y: (0)
+forever
+    if &lt;&lt;key [q v] pressed?&gt; and &lt;(y position) &lt; [80]&gt;&gt; then
+        change y by (5)
+    end
+    if &lt;&lt;key [a v] pressed?&gt; and &lt;(y position) &gt; [-80]&gt;&gt; then
+        change y by (-5)
+    end
+end</code></pre>
+<p>Let’s look at the code. We position the goalie, then we loop forever listening for key presses from the player. <strong>Q</strong> moves the goalie up, <strong>A</strong> moves it down. We check the <code class="blockblue">y position</code> of the goalie to stop it moving off the screen.</p></li>
+</ul>
+</section>
+<section id="test-your-project" class="level2 flag">
+<h2>Test your project</h2>
+<p>Click the green flag.</p>
+<ul>
+<li>Can you control the goalie by pressing Q and A?</li>
+<li>What happens when it gets to the edges of the pitch?</li>
+</ul>
+</section>
+<section id="save-your-project-1" class="level2 save">
+<h2>Save your project</h2>
+</section>
+</section>
+<section id="step-3-add-some-more-players" class="level1 activity">
+<h1>Step 3: Add some more players</h1>
+<p>We can’t play a game of football with just one player! We need to add some more.</p>
+<section id="activity-checklist-2" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li>Create another sprite using the <code>Upload sprite from file</code> button and selecting <strong>resources/goalie_red.png</strong>.</li>
+<li>Change the name of the sprite to <strong>red goalie</strong>.</li>
+<li>Drag the sprite on the stage to the right-hand side just in front of the goal.</li>
+<li>Like before, grow the sprite 10 times so it is as big as the other goalie.</li>
+<li>Select the <strong>blue goalie</strong> sprite and drag the script to <strong>red goalie</strong> to duplicate it.</li>
+<li><p>Select <strong>red goalie</strong>, and modify the script so it looks like this:</p>
+<pre class="blocks"><code>when FLAG clicked
+go to x: (190) y: (0)
+forever
+    if &lt;&lt;key [p v] pressed?&gt; and &lt;(y position) &lt; [80]&gt;&gt; then
+        change y by (5)
+    end
+    if &lt;&lt;key [l v] pressed?&gt; and &lt;(y position) &gt; [-80]&gt;&gt; then
+        change y by (-5)
+    end
+end</code></pre>
+<p>You should only have to change three things: the <code class="blockblue">x position</code>, and which keys are pressed.</p></li>
+</ul>
+</section>
+<section id="test-your-project-1" class="level2 flag">
+<h2>Test your project</h2>
+<p>Click the green flag.</p>
+<ul>
+<li>Can you control the red goalie by pressing P and L?</li>
+<li>Do the controls for the blue goalie still work?</li>
+</ul>
+</section>
+<section id="save-your-project-2" class="level2 save">
+<h2>Save your project</h2>
+</section>
+</section>
+<section id="step-4-add-some-attacking-players" class="level1 activity">
+<h1>Step 4: Add some attacking players</h1>
+<section id="activity-checklist-3" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li>Create another sprite using the <code>Upload sprite from file</code> button and selecting <strong>resources/attack_blue.png</strong>. Rename the sprite <strong>blue attack</strong>.</li>
+<li>As before, grow the sprite 10 times, so the players are as big as the goalies.</li>
+<li>Move the sprite into the right-hand side of the pitch, so they are attacking the red team’s goal.</li>
+<li><p>Drag the script from <strong>blue goalie</strong> to <strong>blue attack</strong>, and modify it to match this:</p>
+<pre class="blocks"><code>when FLAG clicked
+go to x: (70) y: (0)
+forever
+    if &lt;&lt;key [w v] pressed?&gt; and &lt;(y position) &lt; [80]&gt;&gt; then
+        change y by (5)
+    end
+    if &lt;&lt;key [s v] pressed?&gt; and &lt;(y position) &gt; [-80]&gt;&gt; then
+        change y by (-5)
+    end
+end</code></pre>
+You should only have to change three things: the <code class="blockblue">x position</code>, and which keys are pressed.</li>
+<li>Create one more sprite using the <code>Upload sprite from file</code> button and selecting <strong>resources/attack_red.png</strong>. Rename sprite to <strong>red attack</strong>.</li>
+<li>As before, grow the sprite 10 times, so all the players on the pitch are the same size.</li>
+<li>Move the sprite into the left-hand side of the pitch, so they are attacking the blue team’s goal.</li>
+<li><p>Drag the script from <strong>blue attack</strong> to <strong>red attack</strong>, and modify it to match this:</p>
+<pre class="blocks"><code>when FLAG clicked
+go to x: (-70) y: (0)
+forever
+    if &lt;&lt;key [o v] pressed?&gt; and &lt;(y position) &lt; [80]&gt;&gt; then
+        change y by (5)
+    end
+    if &lt;&lt;key [k v] pressed?&gt; and &lt;(y position) &gt; [-80]&gt;&gt; then
+        change y by (-5)
+    end
+end</code></pre>
+<p>You should only have to change three things: the <code class="blockblue">x position</code>, and which keys are pressed.</p></li>
+</ul>
+</section>
+<section id="test-your-project-2" class="level2 flag">
+<h2>Test your project</h2>
+<p>Click the green flag.</p>
+<ul>
+<li>Do you have two teams of working players now? Try pressing Q, A, W and S to control the blue team, and P, L, O and K to control the red team.</li>
+</ul>
+</section>
+<section id="save-your-project-3" class="level2 save">
+<h2>Save your project</h2>
+</section>
+</section>
+<section id="step-5-add-a-bouncing-ball" class="level1 activity">
+<h1>Step 5: Add a bouncing ball</h1>
+<p>Our game of <em>football</em> has <strong>feet</strong>, but no <strong>ball!</strong> Let’s fix that.</p>
+<section id="activity-checklist-4" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li>Click <code>Upload sprite from file</code></li>
+<li>Select <strong>resources/ball.png</strong>, and rename the sprite <strong>ball</strong>.</li>
+<li><p>In the <code>Scripts</code> tab for the ball, add the following:</p>
+<pre class="blocks"><code>when FLAG clicked // bounce about
+broadcast [resetball v]
+forever
+    move (10) steps
+    if on edge, bounce
+end</code></pre></li>
+<li>Right-click on this script and click <code>add comment</code>. Add the comment <strong>“bounce about”</strong>.</li>
+<li><p>Add another script to the ball:</p>
+<pre class="blocks"><code>when I receive [resetball v] // prepare for kick-off
+go to x: (0) y: (0)
+point in direction &lt;pick random (1) to (360)&gt;</code></pre>
+This tells the ball to move to the middle of the pitch for kick-off, and then point in a random direction. Why do we use <code class="blockorange">resetball</code>?</li>
+<li><p>Don’t forget to add the <strong>“prepare for kick-off”</strong> comment, so we remember what this script does!</p></li>
+</ul>
+</section>
+<section id="test-your-project-3" class="level2 flag">
+<h2>Test your project</h2>
+<p>Click the green flag.</p>
+<ul>
+<li>Does the ball move?</li>
+<li>What happens when it hits the edges?</li>
+<li>Are you happy with the ball speed? Try changing the <code class="blockblue">move</code> block to have a smaller or larger number until you’re happy with it.</li>
+<li>What happens when the ball hits your players?</li>
+</ul>
+</section>
+<section id="save-your-project-4" class="level2 save">
+<h2>Save your project</h2>
+</section>
+</section>
+<section id="step-6-kicking-the-ball" class="level1 activity">
+<h1>Step 6: Kicking the ball</h1>
+<p>We need the ball to bounce off the players on the pitch.</p>
+<ul>
+<li><p>Modify the last code block you created (<strong>“bounce about”</strong>) to look like this:</p>
+<pre class="blocks"><code>when FLAG clicked // bounce about
+broadcast [resetball v]
+forever
+    move (10) steps
+    if on edge, bounce
+    if &lt;&lt;touching color [#0A9AF7]?&gt; or &lt;touching color [#FF0D01]?&gt;&gt; then
+        turn cw (pick random (140) to (220)) degrees
+    end
+end</code></pre>
+<p>You should select the colours by clicking on the football players. This change makes the ball sense it is touching a player, and then bounce off them by turning (with a bit of randomness).</p></li>
+</ul>
+<section id="test-your-project-4" class="level2 flag">
+<h2>Test your project</h2>
+<p>Press the green flag.</p>
+<ul>
+<li>What happens now when the ball hits your players? Is it working for both red and blue players?</li>
+</ul>
+</section>
+<section id="save-your-project-5" class="level2 save">
+<h2>Save your project</h2>
+</section>
+</section>
+<section id="step-7-gooooooaaaaaalllllllll" class="level1 activity">
+<h1>Step 7: GOOOOOOAAAAAALLLLLLLLL!!!!!!!!</h1>
+<section id="activity-checklist-5" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>Select <strong>red goal</strong> and add the following script:</p>
+<pre class="blocks"><code>when FLAG clicked // goal line technology
+forever
+    if &lt;touching [ball v]&gt; then
+        broadcast [goal v]
+    end
+end</code></pre>
+This is like goal line technology - it runs all the time, checking whether the ball is touching the goal, and broadcasting a message when it is.</li>
+<li>Drag the script to <strong>blue goal</strong> to copy it there as well.</li>
+<li>Now we need to do something when <strong>goal</strong> is broadcast. Click <code>Upload sprite from file</code>.</li>
+<li>Select <strong>resources/goal_text.png</strong>, and rename the sprite <strong>goal text</strong>.</li>
+<li><p>Add this script to <strong>goal text</strong>:</p>
+<pre class="blocks"><code>when I receive [goal v] // goal scored
+show
+wait (1) secs
+hide</code></pre></li>
+<li><p>Finally, add one more script to <strong>goal text</strong>:</p>
+<pre class="blocks"><code>when FLAG clicked
+hide</code></pre>
+<p>…to ensure the <strong>goal text</strong> begins the game hidden.</p></li>
+</ul>
+</section>
+<section id="save-your-project-6" class="level2 save">
+<h2>Save your project</h2>
+</section>
+<section id="test-your-project-5" class="level2 flag">
+<h2>Test your project</h2>
+<p>You’re ready to play a game! Press the green flag.</p>
+<ul>
+<li>What happens when the ball goes in?</li>
+<li>Try challenging a partner to a game!</li>
+</ul>
+</section>
+<section id="challenge-1-keep-score" class="level2 challenge">
+<h2>Challenge 1: Keep score</h2>
+<p>Can you add variables that will keep track of scores for the red and blue teams?</p>
+</section>
+<section id="challenge-2-tip-the-table" class="level2 challenge">
+<h2>Challenge 2: Tip the table</h2>
+<p>You might notice sometimes the ball gets stuck bouncing where the players can’t reach. Can you add a script to the ball to fix this by “tipping the table” when the spacebar is pressed?</p>
+</section>
+<section id="challenge-3-referees-whistle" class="level2 challenge">
+<h2>Challenge 3: Referee’s whistle</h2>
+<p>Can you add the sound effect <strong>resources/whistle.mp3</strong> so that the whistle sounds whenever a kick-off takes place?</p>
+</section>
+</section>
+</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><script src="../../../assets/script.min.js"></script><script>$(document).ready(function(){
+  scratchblocks2.load_language(scratchblocks2._translations['nb']);
+  scratchblocks2.parse("pre.blocks");
+});</script></body></html>

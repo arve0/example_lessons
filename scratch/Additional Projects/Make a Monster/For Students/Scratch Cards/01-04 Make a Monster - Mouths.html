@@ -1,0 +1,57 @@
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Scratch Card - Mouths and talking | YourCodeClubName</title><link href="../../../../../assets/style.min.css" rel="stylesheet"/></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../../../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Home</a></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../../../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">Scratch Card - Mouths and talking</h1></header></div><div class="col-xs-12"><div class="content"><section id="activity-checklist" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>To make your monster talk, you can just use the <code class="blockpurple">Say</code> sprite.</p>
+<pre class="blocks"><code>when [space v] key pressed
+    say [Hello!] for (2) secs</code></pre></li>
+<li><p>To make it a bit more impressive, you could make the monsters <strong>mouth open</strong> and <strong>close</strong> whilst it is talking. To do this, edit the sprite that contains the mouth - create a new <code class="blockpurple">costume</code> that has a closed mouth. By switching between the two, you can animate the mouth opening and closing.</p>
+<pre class="blocks"><code>repeat (8)
+    wait (0.1) secs
+    switch costume to [mouthClosed v]
+    wait (0.1) secs
+    switch costume to [mouthOpen v]
+end</code></pre></li>
+<li><p>To hook the two up, have the block that does the <code class="blockpurple">say</code> broadcast a message that the other block can react to.</p>
+<pre class="blocks"><code>when [space v] key pressed
+    broadcast [talk v]
+    say [Hello!] for (2) secs
+
+when I receive [talk v]
+    repeat (8)
+        wait (0.1) secs
+        switch costume to [mouthClosed v]
+        wait (0.1) secs
+        switch costume to [mouthOpen v]
+    end</code></pre></li>
+<li><p>To make this a bit more flexible, use a variable to control the <code class="blockorange">talkTime</code> the monster says something for, and also to control how many times the animation loop is repeated.</p>
+<pre class="blocks"><code>when [space v] key pressed
+    set [talkTime v] to (2)
+    broadcast [talk v ]
+    say [Hello!] for (talkTime) secs
+
+when [a v] key pressed
+    set [talkTime v] to (4)
+    broadcast [talk v]
+    say [Something a bit longer] for (talkTime) secs
+
+when I receive [talk v]
+    repeat ((talkTime) * (4))
+        wait (0.1) secs
+        switch costume to [mouthClosed v]
+        wait (0.1) secs
+        switch costume to [mouthOpen v]
+    end</code></pre></li>
+</ul>
+<p><strong>(Notice how we multiply <code>talkTime</code> by 4 to make sure the loop repeats enough times?)</strong></p>
+<ul>
+<li><p>You can also make your monster speak using sound by using one of the sound blocks. Just be sure to import the sounds first in the sounds tab.</p>
+<pre class="blocks"><code>when I receive [talking v]
+    play sound [Screech v]</code></pre></li>
+</ul>
+<p>Why not try adding sounds to other events, you could use a spooky hovering sound for a ghost drifting around the screen!</p>
+<p>If you have a microphone on your computer you can even record your own sounds, surprise your classmates by recording a loud monster ROOOAAAAARRRRR!!!</p>
+</section>
+</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><script src="../../../../../assets/script.min.js"></script><script>$(document).ready(function(){
+  scratchblocks2.load_language(scratchblocks2._translations['nb']);
+  scratchblocks2.parse("pre.blocks");
+});</script></body></html>

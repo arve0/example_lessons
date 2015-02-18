@@ -1,0 +1,25 @@
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Scratch Card - Drum | YourCodeClubName</title><link href="../../../../../assets/style.min.css" rel="stylesheet"/></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../../../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Home</a></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../../../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">Scratch Card - Drum</h1></header></div><div class="col-xs-12"><div class="content"><section id="activity-checklist" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li>Import a new sprite and choose Things -&gt; Drum. Name the sprite “Drum”.</li>
+<li><p>We want the drum to make a sound when we click it or press the <code class="blockbrown">space</code> key.</p>
+<pre class="blocks"><code>when this sprite clicked
+    broadcast [drum v]
+
+when [space v] key pressed
+    broadcast [drum v]</code></pre></li>
+<li><p>Now we need to make a sound when it receives <code class="blockbrown">drum</code>. You can change the number if you want to change the sound the drum makes.</p>
+<pre class="blocks"><code>when I receive [drum v]
+    play drum (48 v) for (0.2) beats</code></pre></li>
+<li><p>Try changing the appearance to make it obvious which instrument was played.</p>
+<pre class="blocks"><code>when I receive [drum v]
+    play drum (48 v) for (0.2) beats
+    set size to (110) %
+    wait (0.1) secs
+    set size to (100) %</code></pre></li>
+</ul>
+</section>
+</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><script src="../../../../../assets/script.min.js"></script><script>$(document).ready(function(){
+  scratchblocks2.load_language(scratchblocks2._translations['nb']);
+  scratchblocks2.parse("pre.blocks");
+});</script></body></html>

@@ -1,0 +1,215 @@
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Hangman | YourCodeClubName</title><link href="../../../assets/style.min.css" rel="stylesheet"/></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Home</a></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">Hangman</h1></header></div><div class="col-xs-12"><div class="content"><section id="introduction" class="level1 intro">
+<h1>Introduction</h1>
+<p>Let’s build a game: Hangman! The computer will pick a word, and the player can guess it letter-by-letter, but if they make too many wrong guesses, they’ll lose.</p>
+</section>
+<section id="step-1-pick-a-word" class="level1 activity">
+<h1>Step 1: Pick a word</h1>
+<p>We start by picking a random word, so let’s begin</p>
+<section id="activity-checklist" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li>Open IDLE, and open a new window.</li>
+<li><p>Write in the following code:</p>
+<pre class="language-python"><code>from random import choice
+
+word = choice([&quot;code&quot;, &quot;club&quot;])
+
+print(word)</code></pre></li>
+<li>Save your program, and run it. What word does it print?</li>
+<li><p>Run it again, does it print a different word?</p></li>
+</ul>
+<p>Each time you run this program, it picks a random word from the list <code>[&quot;code&quot;, &quot;club&quot;]</code>, using the <code>choice</code> function.</p>
+</section>
+</section>
+<section id="step-2-guess-a-letter" class="level1 activity">
+<h1>Step 2: Guess a letter</h1>
+<p>Now we’ve picked a word, let’s find out how to guess a letter.</p>
+<section id="activity-checklist-1" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>With the same file, edit the code so it looks like this</p>
+<pre class="language-python"><code>from random import choice
+
+word = choice([&quot;code&quot;, &quot;club&quot;])
+
+out = &quot;&quot;
+
+for letter in word:
+    out = out + &quot;_&quot;
+
+print(&quot;Guess a letter in the word:&quot;, out)</code></pre></li>
+<li>Save and run the program.</li>
+<li>You should see “Guess a letter in the word: ____”, in the output window (the other window, not the one you’ve written your program in.) We use a for loop to build up some text with an underscore <code>_</code> for each letter in the word. The word “code” put in, will write out <code>____</code> to the screen.</li>
+<li><p>Let’s guess a letter! Change the code to look like this:</p>
+<pre class="language-python"><code>from random import choice
+
+word = choice([&quot;code&quot;, &quot;club&quot;])
+
+out = &quot;&quot;
+
+for letter in word:
+    out = out + &quot;_&quot;
+
+print(&quot;Guess a letter in the word, then press enter:&quot;, out)
+
+guess = input()
+
+if guess in word:
+    print(&quot;Yay&quot;)
+else:
+    print(&quot;Nope&quot;)</code></pre></li>
+</ul>
+<p>We use a new function <code>input()</code> to find out what the player typed. We use <code>if</code> to find out if the letter was in the word. We’ve got the essentials down, so let’s continue onward.</p>
+<p>(Python 2 Note: Use <code>raw_input</code> if you’re on an old version of python)</p>
+</section>
+</section>
+<section id="step-3-track-the-guesses" class="level1 activity">
+<h1>Step 3: Track the guesses</h1>
+<p>Now we’re going to use two features of python, lists and the <code>while</code> loop.</p>
+<section id="activity-checklist-2" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>In the same file, edit the code to look like this:</p>
+<pre class="language-python"><code>from random import choice
+
+word = choice([&quot;code&quot;, &quot;club&quot;])
+
+guessed = []
+
+while True:
+
+    out = &quot;&quot;
+    for letter in word:
+        if letter in guessed:
+            out = out + letter
+        else:
+            out = out + &quot;_&quot;
+
+    if out == word:
+        print(&quot;You guessed&quot;, word)
+        break
+
+
+    print(&quot;Guess the word:&quot;, out)
+    guess = input()
+
+    if guess in guessed:
+        print(&quot;Already guessed&quot;, guess)
+    elif guess in word:
+        print(&quot;Yay&quot;)
+        guessed.append(guess)
+    else:
+        print(&quot;Nope&quot;)
+
+    print()</code></pre></li>
+<li><p>Run the code, try guessing the letters. What we’ve done is put a loop, like <code>forever</code> in scratch, that will keep asking for letters from the player, until they guess the word. We also use a list, <code>guessed</code>, which we add the letters to when they’re right. This program will loop forever until all the letters are guessed.</p></li>
+</ul>
+</section>
+</section>
+<section id="step-4-track-the-mistakes" class="level1 activity">
+<h1>Step 4: Track the mistakes</h1>
+<p>Hangman should only give you a few chances to guess, rather than trying every letter in turn</p>
+<section id="activity-checklist-3" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>Edit the existing file, and change it to look like the following: ```{.language-python} from random import choice</p>
+<p>word = choice([“code”, “club”])</p>
+<p>guessed = [] wrong = []</p>
+<p>while True:</p>
+<pre><code>out = &quot;&quot;
+for letter in word:
+    if letter in guessed:
+        out = out + letter
+    else:
+        out = out + &quot;_&quot;
+
+if out == word:
+    print(&quot;You guessed&quot;, word)
+    break
+
+print(&quot;Guess the word:&quot;, out)
+
+guess = input()
+
+if guess in guessed or guess in wrong:
+    print(&quot;Already guessed&quot;, guess)
+elif guess in word:
+    print(&quot;Yay&quot;)
+    guessed.append(guess)
+else:
+    print(&quot;Nope&quot;)
+    wrong.append(guess)
+
+print()</code></pre></li>
+</ul>
+<p>```</p>
+<p>We’re using a new list, <code>wrong</code>, to store all the guesses that weren’t right</p>
+<p>Only one last thing before the game is complete, which is to only have a few chances to guess.</p>
+</section>
+</section>
+<section id="step-5-only-a-few-chances" class="level1 activity">
+<h1>Step 5: Only a few chances</h1>
+<section id="activity-checklist-4" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>Edit the file, to introduce a new variable, <code>tries</code>:</p>
+<pre class="language-python"><code>from random import choice
+
+word = choice([&quot;code&quot;, &quot;club&quot;])
+
+guessed = []
+wrong = []
+
+tries = 7
+
+while tries &gt; 0:
+
+    out = &quot;&quot;
+    for letter in word:
+        if letter in guessed:
+            out = out + letter
+        else:
+            out = out + &quot;_&quot;
+
+    if out == word:
+        break
+
+    print(&quot;Guess the word:&quot;, out)
+    print(tries, &quot;chances left&quot;)
+
+    guess = input()
+
+    if guess in guessed or guess in wrong:
+        print(&quot;Already guessed&quot;, guess)
+    elif guess in word:
+        print(&quot;Yay&quot;)
+        guessed.append(guess)
+    else:
+        print(&quot;Nope&quot;)
+        tries = tries - 1
+        wrong.append(guess)
+
+    print()
+
+if tries:
+    print(&quot;You guessed&quot;, word)
+else:
+    print(&quot;You didn&#39;t get&quot;, word)</code></pre></li>
+<li><p>Run the file, and see what happens when you guess wrong letters</p></li>
+</ul>
+</section>
+</section>
+<section id="step-6-add-some-new-words-in" class="level1 activity">
+<h1>Step 6: Add some new words in</h1>
+<section id="activity-checklist-5" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li><p>Find the line in the source code:</p>
+<pre class="language-python"><code>word = choice([&quot;code&quot;, &quot;club&quot;])</code></pre></li>
+<li><p>Edit it to add more words, why not try</p>
+<pre class="language-python"><code>word = choice([&quot;code&quot;, &quot;club&quot;, &quot;robot&quot;, &quot;party&quot;])</code></pre></li>
+</ul>
+<p>Remember to put the words in quotes, and put a comma between them to make a list of words.</p>
+</section>
+</section>
+</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><script src="../../../assets/script.min.js"></script></body></html>

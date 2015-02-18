@@ -1,0 +1,104 @@
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Audio and video on web pages | YourCodeClubName</title><link href="../../assets/style.min.css" rel="stylesheet"/></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Home</a></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">Audio and video on web pages</h1></header></div><div class="col-xs-12"><div class="content"><section id="introduction" class="level1 intro">
+<h1>Introduction</h1>
+<p>There are a few ways to add videos or audio to your pages. Let’s have a closer look at them together.</p>
+</section>
+<section id="add-a-video-from-youtube" class="level1 activity">
+<h1>Add a video from YouTube</h1>
+<p>Adding videos from YouTube is really simple.</p>
+<ul>
+<li>Go to the video page on YouTube.</li>
+<li>Under the video player you can find the <code>Share</code> button. Click that.</li>
+<li>To get the code you can use on your web page, click <code>Embed</code>.</li>
+</ul>
+<p>It will look something like this:</p>
+<pre class="langauge-markup"><code>&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;http://www.youtube.com/embed/FxhGIajRsq4&quot;
+   frameborder=&quot;0&quot; allowfullscreen&gt;&lt;/iframe&gt;</code></pre>
+<p>This specific code fragment would add a CodeClub video to your page. Just copy and past it where you would like the video to appear.</p>
+<p>Notice the <code>width</code> and <code>height</code> attributes. They allow you to control how big will the video be on the page, so feel free to change them.</p>
+</section>
+<section id="add-a-video-from-vimeo." class="level1 activity">
+<h1>Add a video from Vimeo.</h1>
+<ul>
+<li>Go to the video page on Vimeo.</li>
+<li>Click the <code>Share</code> button on the video player.</li>
+<li>On the right hand side there is an Embed box. Click it to select the code and copy it. It will look a bit like this:</li>
+</ul>
+<pre class="langauge-markup"><code>&lt;iframe src=&quot;http://player.vimeo.com/video/44738167&quot; width=&quot;600&quot; height=&quot;338&quot;
+   frameborder=&quot;0&quot; webkitAllowFullScreen mozallowfullscreen allowFullScreen&gt;&lt;/iframe&gt;</code></pre>
+<ul>
+<li>Paste the code where you would like the video to appear on the page. Notice the <code>width</code> and <code>height</code> attributes. They allow you to control how big will the video be on the page, so feel free to change them.</li>
+</ul>
+</section>
+<section id="add-a-video-file-from-your-computer" class="level1 activity">
+<h1>Add a video file from your computer</h1>
+<p>If you have a video you have created you can put it on your page without having to upload it to YouTube or Vimeo.</p>
+<ul>
+<li>To place a video on your page you will need to add a <code>video</code> tag. Just like the <code>&lt;img&gt;</code> tag is has the <code>src</code> attribute pointing to the file:</li>
+</ul>
+<pre class="langauge-markup"><code>    &lt;video src=&quot;spaceship_landing.mp4&quot;&gt;
+    &lt;/video&gt;</code></pre>
+<p>Sadly the annoying thing about adding video that was is that not every browser can play all of the video formats. You will have to save it in at least <code>.mp4</code> and <code>.ogv</code> formats, which will work in most browsers.</p>
+<p>To let the browser know we have more than one format of video ready, write it like this:</p>
+<pre class="langauge-markup"><code>    &lt;video&gt;
+        &lt;source src=&quot;spaceship_landing.ogv&quot; type=&quot;video/ogg&quot;&gt;
+        &lt;source src=&quot;spaceship_landing.mp4&quot; type=&quot;video/mp4&quot;&gt;
+    &lt;/video&gt;</code></pre>
+<ul>
+<li>To add a picture that will be seen before the video plays, you can use a <code>poster</code> attribute:</li>
+</ul>
+<pre class="langauge-markup"><code>    &lt;video poster=&quot;spaceship_landing.jpg&quot;&gt;
+        &lt;source src=&quot;spaceship_landing.ogv&quot; type=&quot;video/ogg&quot;&gt;
+        &lt;source src=&quot;spaceship_landing.mp4&quot; type=&quot;video/mp4&quot;&gt;
+    &lt;/video&gt;</code></pre>
+<ul>
+<li>If you want to automatically play the video, you can add the <code>autoplay</code> keyword, like this:</li>
+</ul>
+<pre class="langauge-markup"><code>    &lt;video poster=&quot;spaceship_landing.jpg&quot; autoplay&gt;
+        &lt;source src=&quot;spaceship_landing.ogv&quot; type=&quot;video/ogg&quot;&gt;
+        &lt;source src=&quot;spaceship_landing.mp4&quot; type=&quot;video/mp4&quot;&gt;
+    &lt;/video&gt;</code></pre>
+<ul>
+<li>To display video controls, such as the play button, the volume and so on you can add the <code>controls</code> keyword:</li>
+</ul>
+<pre class="langauge-markup"><code>    &lt;video poster=&quot;spaceship_landing.jpg&quot; controls&gt;
+        &lt;source src=&quot;spaceship_landing.ogv&quot; type=&quot;video/ogg&quot;&gt;
+        &lt;source src=&quot;spaceship_landing.mp4&quot; type=&quot;video/mp4&quot;&gt;
+    &lt;/video&gt;</code></pre>
+<ul>
+<li>You can also control the size of the video using the <code>width</code> and <code>height</code> attributes. Write this:</li>
+</ul>
+<pre class="langauge-markup"><code>    &lt;video poster=&quot;spaceship_landing.jpg&quot; width=&quot;600&quot; height=&quot;400&quot;&gt;
+        &lt;source src=&quot;spaceship_landing.ogv&quot; type=&quot;video/ogg&quot;&gt;
+        &lt;source src=&quot;spaceship_landing.mp4&quot; type=&quot;video/mp4&quot;&gt;
+    &lt;/video&gt;</code></pre>
+</section>
+<section id="adding-an-audio-file-from-your-computer" class="level1 activity">
+<h1>Adding an audio file from your computer</h1>
+<p>The way to add audio files to your page from your computer is similar to adding video file.</p>
+<ul>
+<li>To place the audio on page write this:</li>
+</ul>
+<pre class="langauge-markup"><code>    &lt;audio src=&quot;spaceship.mp3&quot;&gt;
+    &lt;/audio&gt;</code></pre>
+<p>Notice the <code>src</code> attribute which points to the file.</p>
+<p>Just like with video, not every browser can play every type of audio file, so to make sure as many people as possible can hear the audio you have to add the file in more than one format, at least in <code>.mp3</code> and <code>.oga</code>.</p>
+<pre class="langauge-markup"><code>    &lt;audio&gt;
+        &lt;source src=&quot;spaceship.mp3&quot; type=&#39;audio/mp3&#39;&gt;
+        &lt;source src=&quot;spaceship.ogg&quot; type=&#39;audio/ogg; codecs=vorbis&#39;&gt;
+    &lt;/audio&gt;</code></pre>
+<ul>
+<li>To add the controls you need to add the <code>controls</code> keyword:</li>
+</ul>
+<pre class="langauge-markup"><code>    &lt;audio controls&gt;
+        &lt;source src=&quot;spaceship.mp3&quot; type=&#39;audio/mp3&#39;&gt;
+        &lt;source src=&quot;spaceship.ogg&quot; type=&#39;audio/ogg; codecs=vorbis&#39;&gt;
+    &lt;/audio&gt;</code></pre>
+<ul>
+<li>If you want the audio to play as soon as the page loads, you can add the <code>autoplay</code> keyword, like this:</li>
+</ul>
+<pre class="langauge-markup"><code>    &lt;audio controls autoplay&gt;
+        &lt;source src=&quot;spaceship.mp3&quot; type=&#39;audio/mp3&#39;&gt;
+        &lt;source src=&quot;spaceship.ogg&quot; type=&#39;audio/ogg; codecs=vorbis&#39;&gt;
+    &lt;/audio&gt;</code></pre>
+</section>
+</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><script src="../../assets/script.min.js"></script></body></html>

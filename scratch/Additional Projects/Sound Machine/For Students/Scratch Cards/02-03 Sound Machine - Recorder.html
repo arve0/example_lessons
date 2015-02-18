@@ -1,0 +1,55 @@
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Scratch Card - Recorder | YourCodeClubName</title><link href="../../../../../assets/style.min.css" rel="stylesheet"/></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../../../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Home</a></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../../../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">Scratch Card - Recorder</h1></header></div><div class="col-xs-12"><div class="content"><section id="activity-checklist" class="level2 check">
+<h2>Activity Checklist</h2>
+<ul>
+<li>Create two new lists (for all sprites). Call one of them <code class="blockred">instrument</code> and the other <code class="blockred">timing</code>.</li>
+<li>Create a new variable (for all sprites) called <code class="blockorange">recording</code></li>
+<li><p>For each of your instruments (drum, piano, each sound sample etc.), you will need to add the following items to the <code class="blockbrown">when I receive</code> block.</p>
+<pre class="blocks"><code>if &lt;(recording) = (1)&gt; then
+    add (timer) to [timing v]
+    add (cat) to [instrument v]</code></pre></li>
+<li><p>Change the word “cat” in <code class="blockred">add [cat] to [instrument v]</code> to match the name of the message used to play this sound.</p>
+<pre class="blocks"><code>when I receive [drum v]
+    play drum (48 v) for (0.2) beats
+    if &lt;(recording) = (1)&gt; then
+        add (timer) to [timing v]
+        add (cat) to [instrument v]
+    end
+    set size to (110) %
+    wait (0.1) secs
+    set size to (100) %</code></pre></li>
+<li>Draw a new sprite and give it a red circle costume. Name this sprite “Record”. <img src="record-costume.png" alt="record costume" /></li>
+<li><p>Create a script that sets <code class="blockorange">recording</code> to 1 and deletes all of <code class="blockred">instrument</code> and <code class="blockred">timing</code> when clicked.</p></li>
+</ul>
+</section>
+<section id="test-your-project" class="level2 flag">
+<h2>Test your project</h2>
+<p>Try clicking the record button. What happens when you play instruments?</p>
+<ul>
+<li>Create another sprite and give it a costume in the shape of a green arrow. Call this “Play”. <img src="play-costume.png" alt="play costume" /></li>
+<li>Create a new variable called <code class="blockorange">index</code> for Play only.</li>
+<li><p>Now we need to make the playback actually do something. Add this script to “Play”</p>
+<pre class="blocks"><code>when Play clicked
+    set [recording v] to (0)
+    set [index v] to (1)
+    reset timer
+    forever
+        if &lt;(item (index) of [timing v]) &lt; (timer)&gt; then
+            broadcast (item (index) of [instrument v])
+            change [index v] by (1)
+            if &lt;(index) &gt; (length of [timing v])&gt; then
+                stop script
+            end
+        end
+    end</code></pre></li>
+</ul>
+</section>
+<section id="test-your-project-1" class="level2 flag">
+<h2>Test your project</h2>
+<p>Press the green play button. what happens?</p>
+<p>Now click the red record button and play some instruments. When you’re done, press the green play button again. What happens?</p>
+<p>Play some more instruments without pressing record. Then play the green play button again. What happens?</p>
+</section>
+</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><script src="../../../../../assets/script.min.js"></script><script>$(document).ready(function(){
+  scratchblocks2.load_language(scratchblocks2._translations['nb']);
+  scratchblocks2.parse("pre.blocks");
+});</script></body></html>
