@@ -1,6 +1,6 @@
 #!/bin/bash
 cd codeclub_lesson_builder
-git checkout master
+git checkout pdf_err
 git pull # blindly pull latest master, as this is a test repo
 npm install
 if [ $? -ne 0 ]; then # try again
