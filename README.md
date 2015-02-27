@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/arve0/codeclub_lesson_builder.svg?branch=nb-NO)](https://travis-ci.org/arve0/codeclub_lesson_builder)
+
 This is a recipe of how you can create your own code club lesson
 pages with [codeclub_lesson_builder](https://github.com/arve0/codeclub_lesson_builder).
 
