@@ -1,4 +1,12 @@
-<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Styling and formatting text | YourCodeClubName</title><link href="../../assets/style.min.css" rel="stylesheet"/></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Home</a></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">Styling and formatting text</h1></header></div><div class="col-xs-12"><div class="content"><section id="introduction" class="level2 intro">
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Styling and formatting text | YourCodeClubName</title><link href="../../assets/style.min.css" rel="stylesheet"/><script type="text/javascript">// convert url relative to current file
+// ex: python/index.html -> ../python/index.html
+function relative(url) {
+  var urlRoot = '../..';
+  if (urlRoot !== '') {
+    return urlRoot + '/' + url;
+  }
+  return url;
+}</script></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Home</a><form class="search"><input type="text" placeholder="Search" class="form-control"/></form></div></div><div class="search"><div class="results"><h1>Search Results</h1></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">Styling and formatting text</h1><div class="lesson-icons"><div class="level"><img title="Level 1" src="../../assets/img/level1.png"/><span>Novice</span></div><div class="course"><img src="../../logo-white.png"/><span>Web</span></div><div class="pdf"><a href="/web/05 Styling and Formatting Text/05 Styling and Formatting Text.pdf" title="Download PDF" class="download"><span class="glyphicon glyphicon-save-file"></span></a><span>PDF</span></div></div></header></div><div class="col-xs-12"><div class="content"><section id="introduction" class="level2 intro">
 <h2><strong>Introduction:</strong></h2>
 <p>In this session we are going to learn how to style text with different fonts, colours and sizes. We’ll also learn how to add background colours and borders. We will be using the same project you worked on last time, so make sure you open the index.html from the Felix folder.</p>
 </section>
@@ -18,81 +26,81 @@
 <li>Verdana</li>
 </ul>
 <p>Not all fonts exist on all computers, so we need to provide <strong>fall-back fonts</strong> as well. These are very generic like ‘sans serif’, ‘serif’.</p>
-<p>Let’s try changing the font of the headline using the <code>font-family</code> property.</p>
-<pre class="language-css"><code>h1 {
-    color: red;
-    background-color: black;
-    font-family: impact, sans-serif;
-    font-size: 72px;
-    text-decoration: underline;
-    text-transform: uppercase;
-}</code></pre>
+<p>Let’s try changing the font of the headline using the <code class="lang-haskell"><span class="hljs-title">font</span>-<span class="hljs-keyword">family</span></code> property.</p>
+<pre class="language-css"><code class="lang-css"><span class="hljs-tag">h1</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> red</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> black</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">font-family</span>:<span class="hljs-value"> impact, sans-serif</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"> <span class="hljs-number">72px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">text-decoration</span>:<span class="hljs-value"> underline</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">text-transform</span>:<span class="hljs-value"> uppercase</span></span>;
+}</span></code></pre>
 <p>And the font of the paragraphs…</p>
-<pre class="language-css"><code>p {
-    font-family: Georgia, &#39;Times New Roman&#39;, serif;
-}</code></pre>
+<pre class="language-css"><code class="lang-css"><span class="hljs-tag">p</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">font-family</span>:<span class="hljs-value"> Georgia, <span class="hljs-string">'Times New Roman'</span>, serif</span></span>;
+}</span></code></pre>
 <section id="save-and-view." class="level2 save">
 <h2><strong>Save</strong> and <strong>view</strong>.</h2>
 <p>Try some of the different fonts to see which ones you like best. Notice how we separate each font with a comma, and if the font has a name with more than one word we need to put it inside quotation marks.</p>
 <p>Which of the fonts we mentioned do you think looks best? Which one do you think is easiest to read?</p>
 <p>Do you have other fonts on your computer than the ones mentioned? (you probably do). Try opening a program like Word or Pages, all the fonts stored on the computer can usually be found there.</p>
 <figure>
-<img src="fonts.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+<img src="fonts.png" alt="screenshot"><figcaption>screenshot</figcaption>
 </figure>
 <p>Find one you like and try it out on the website!</p>
-<p>You can make text <strong>bold</strong>, <em>italic</em> or both with the font-style property. Let’s change the email text (remember it’s inside an <code>&lt;a&gt;</code> tag).</p>
-<pre class="language-css"><code>a {
-    font-style: bold;
-}</code></pre>
+<p>You can make text <strong>bold</strong>, <em>italic</em> or both with the font-style property. Let’s change the email text (remember it’s inside an <code class="lang-apache"><span class="hljs-tag">&lt;a&gt;</span></code> tag).</p>
+<pre class="language-css"><code class="lang-css"><span class="hljs-tag">a</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">font-style</span>:<span class="hljs-value"> bold</span></span>;
+}</span></code></pre>
 </section>
 <section id="save-and-view.-1" class="level2 save">
 <h2><strong>Save</strong> and <strong>view</strong>.</h2>
 <p>Or we could make it italic.</p>
-<pre class="language-css"><code>a {
-    font-style: italic;
-}</code></pre>
+<pre class="language-css"><code class="lang-css"><span class="hljs-tag">a</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">font-style</span>:<span class="hljs-value"> italic</span></span>;
+}</span></code></pre>
 </section>
 <section id="save-and-view.-2" class="level2 save">
 <h2><strong>Save</strong> and <strong>view</strong>.</h2>
 <p>There’s also a font-style value called ‘oblique’. What does that look like?</p>
-<p>We can even say how bold some text should be using the property <code>font-weight</code>. It takes the values <code>normal</code>, <code>bold</code>, <code>bolder</code>, <code>lighter</code>. You can also use numbers, 100, 200, 300, 400, 500, 600, 700, 800, and 900, where 100 is the thinnest text and 900 is the thickest (boldest text). Normal text is the same as 400, bold is the same as 700. However, not all the fonts have all these, so it’s safer to just use normal and bold. Headlines are normally bold by default. If we wanted our <code>h2</code> to not be bold, we need to write:</p>
-<pre class="language-css"><code>h2 {
-    font-weight: normal;
-}</code></pre>
+<p>We can even say how bold some text should be using the property <code class="lang-scss"><span class="hljs-attribute">font-weight</span></code>. It takes the values <code class="lang-livecodeserver"><span class="hljs-keyword">normal</span></code>, <code class="lang-scss"><span class="hljs-value">bold</span></code>, <code class="lang-scss"><span class="hljs-value">bolder</span></code>, <code class="lang-scss"><span class="hljs-value">lighter</span></code>. You can also use numbers, 100, 200, 300, 400, 500, 600, 700, 800, and 900, where 100 is the thinnest text and 900 is the thickest (boldest text). Normal text is the same as 400, bold is the same as 700. However, not all the fonts have all these, so it’s safer to just use normal and bold. Headlines are normally bold by default. If we wanted our <code>h2</code> to not be bold, we need to write:</p>
+<pre class="language-css"><code class="lang-css"><span class="hljs-tag">h2</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">font-weight</span>:<span class="hljs-value"> normal</span></span>;
+}</span></code></pre>
 <p>Try it!</p>
 </section>
 </section>
 <section id="step-2-borders" class="level1 activity">
 <h1>Step 2: Borders!</h1>
 <p>Let’s add a border around the image</p>
-<pre class="language-css"><code>img {
-    border-color: green;
-    border-style: solid;
-    border-width: 5px;
-}</code></pre>
+<pre class="language-css"><code class="lang-css"><span class="hljs-tag">img</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">border-color</span>:<span class="hljs-value"> green</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">border-style</span>:<span class="hljs-value"> solid</span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">border-width</span>:<span class="hljs-value"> <span class="hljs-number">5px</span></span></span>;
+}</span></code></pre>
 <section id="save-and-view.-3" class="level2 save">
 <h2><strong>Save</strong> and <strong>view</strong>.</h2>
-<p>Try changing the color, width and border-style until you are happy. Some values for border-syle are <code>dashed</code>, <code>dotted</code>, <code>double</code>, <code>groove</code>, <code>ridge</code>, <code>inset</code>, <code>outset</code>.</p>
+<p>Try changing the color, width and border-style until you are happy. Some values for border-syle are <code class="lang-scss"><span class="hljs-value">dashed</span></code>, <code class="lang-scss"><span class="hljs-value">dotted</span></code>, <code class="lang-aspectj"><span class="hljs-keyword">double</span></code>, <code class="lang-scss"><span class="hljs-value">groove</span></code>, <code class="lang-scss"><span class="hljs-value">ridge</span></code>, <code class="lang-scss"><span class="hljs-value">inset</span></code>, <code class="lang-scss"><span class="hljs-value">outset</span></code>.</p>
 <p>You can put borders around all kinds of elements, why not try a few more.</p>
 </section>
 </section>
 <section id="step-3-ids-and-classes" class="level1 activity">
 <h1>Step 3: IDs and classes</h1>
-<p>We want to make the contact paragraph <strong>highlighted</strong>. We can’t use the <code>&lt;p&gt;</code> tag because that would change all the paragraphs. To make a style apply only to one element, we use something called IDs. We need to edit the html to this:</p>
-<pre class="language-markup"><code>&lt;p id =&quot;highlight&quot;&gt;Have you seen Felix? &lt;em&gt;Please&lt;/em&gt; contact his owners at &lt;a href=&quot;mailto:felixowners@email.com&quot;&gt;felixowners@email.com&lt;/a&gt;&lt;/p&gt;</code></pre>
+<p>We want to make the contact paragraph <strong>highlighted</strong>. We can’t use the <code class="lang-apache"><span class="hljs-tag">&lt;p&gt;</span></code> tag because that would change all the paragraphs. To make a style apply only to one element, we use something called IDs. We need to edit the html to this:</p>
+<pre class="language-markup"><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">id</span> =<span class="hljs-value">"highlight"</span>&gt;</span>Have you seen Felix? <span class="hljs-tag">&lt;<span class="hljs-title">em</span>&gt;</span>Please<span class="hljs-tag">&lt;/<span class="hljs-title">em</span>&gt;</span> contact his owners at <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"mailto:felixowners@email.com"</span>&gt;</span>felixowners@email.com<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span></code></pre>
 <p>Then we can style the ID like so:</p>
-<pre class="language-css"><code>#highlight {
-    color: red;
-}</code></pre>
+<pre class="language-css"><code class="lang-css"><span class="hljs-id">#highlight</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> red</span></span>;
+}</span></code></pre>
 <section id="save-and-view.-4" class="level2 save">
 <h2><strong>Save</strong> and <strong>view</strong>.</h2>
 <p>An ID is unique and can only be used once per page. So what if we wanted to make two of the paragraphs have a larger font-size? We can do that by using classes. First we need to give class names to the paragraphs we want changing.</p>
-<pre class="language-markup"><code>&lt;p class=&quot;large&quot;&gt;He went missing from the garden yesterday.&lt;/p&gt;
-&lt;p class=&quot;large&quot;&gt;&lt;strong&gt;Thank you!&lt;/strong&gt;&lt;p&gt;</code></pre>
-<p>we style a class like this (with a <code>.</code> instead of a <code>#</code>):</p>
-<pre class="language-css"><code>.large {
-    font-size:24px;
-}</code></pre>
+<pre class="language-markup"><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"large"</span>&gt;</span>He went missing from the garden yesterday.<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"large"</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">strong</span>&gt;</span>Thank you!<span class="hljs-tag">&lt;/<span class="hljs-title">strong</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span></code></pre>
+<p>we style a class like this (with a <code class="lang-erlang">.</code> instead of a <code class="lang-vala"><span class="hljs-preprocessor">#</span></code>):</p>
+<pre class="language-css"><code class="lang-css"><span class="hljs-class">.large</span> <span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"><span class="hljs-number">24px</span></span></span>;
+}</span></code></pre>
 </section>
 <section id="further-study" class="level2 try">
 <h2>Further study:</h2>
@@ -103,4 +111,4 @@
 </ul>
 </section>
 </section>
-</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><script src="../../assets/script.min.js"></script></body></html>
+</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><script src="../../assets/vendor.min.js"></script><script src="../../assets/script.min.js"></script></body></html>

@@ -1,4 +1,12 @@
-<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Compliment Generator | YourCodeClubName</title><link href="../../../assets/style.min.css" rel="stylesheet"/></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Home</a></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">Compliment Generator</h1></header></div><div class="col-xs-12"><div class="content"><section id="introduction" class="level1 intro">
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Compliment Generator | YourCodeClubName</title><link href="../../../assets/style.min.css" rel="stylesheet"/><script type="text/javascript">// convert url relative to current file
+// ex: python/index.html -> ../python/index.html
+function relative(url) {
+  var urlRoot = '../../..';
+  if (urlRoot !== '') {
+    return urlRoot + '/' + url;
+  }
+  return url;
+}</script></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Home</a><form class="search"><input type="text" placeholder="Search" class="form-control"/></form></div></div><div class="search"><div class="results"><h1>Search Results</h1></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">Compliment Generator</h1><div class="lesson-icons"><div class="level"><img title="Level 1" src="../../../assets/img/level1.png"/><span>Novice</span></div><div class="course"><img src="../../../logo-white.png"/><span>Python</span></div><div class="pdf"><a href="/python/lessons/Compliment Generator/Compliment Generator.pdf" title="Download PDF" class="download"><span class="glyphicon glyphicon-save-file"></span></a><span>PDF</span></div></div></header></div><div class="col-xs-12"><div class="content"><section id="introduction" class="level1 intro">
 <h1>Introduction:</h1>
 <p>Learn how to use lists, to store lots of data in 1 variable.</p>
 </section>
@@ -9,52 +17,52 @@
 <h2>Activity Checklist</h2>
 <ul>
 <li><p>In your projects so far, you’ve used a variable to store a single piece of data, such as a name or a score. But what if you want to store lots of data? In Python, you can use a <em>list</em> to store lots of data in 1 variable:</p>
-<pre class="language-python"><code>bigPlanets = [ &quot;jupiter&quot; , &quot;saturn&quot; , &quot;uranus&quot; , &quot;neptune&quot;]</code></pre>
+<pre class="language-python"><code class="lang-armasm"><span class="hljs-keyword">bigPlanets </span>= [ <span class="hljs-string">"jupiter"</span> , <span class="hljs-string">"saturn"</span> , <span class="hljs-string">"uranus"</span> , <span class="hljs-string">"neptune"</span>]</code></pre>
 <p>This list of text is also known as an <em>array</em> of text. To access items in the list, you just need to know the position of the item. Run this program to give yourself a better idea of how lists work:</p>
-<pre class="language-python"><code>bigPlanets = [ &quot;jupiter&quot; , &quot;saturn&quot; , &quot;uranus&quot; , &quot;neptune&quot;]
-print( bigPlanets )
-print( bigPlanets[0] )
-print( bigPlanets[1] )
-print( bigPlanets[2] )
-print( bigPlanets[3] )</code></pre>
+<pre class="language-python"><code class="lang-stylus">bigPlanets = [ <span class="hljs-string">"jupiter"</span> , <span class="hljs-string">"saturn"</span> , <span class="hljs-string">"uranus"</span> , <span class="hljs-string">"neptune"</span>]
+<span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">( bigPlanets )</span></span>
+<span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">( bigPlanets[<span class="hljs-number">0</span>] )</span></span>
+<span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">( bigPlanets[<span class="hljs-number">1</span>] )</span></span>
+<span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">( bigPlanets[<span class="hljs-number">2</span>] )</span></span>
+<span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">( bigPlanets[<span class="hljs-number">3</span>] )</span></span></code></pre>
 <figure>
-<img src="compliment-planets.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+<img src="compliment-planets.png" alt="screenshot"><figcaption>screenshot</figcaption>
 </figure>
-<p>As you can see, positions start at 0 and not 1, so <code>bigPlanets[1]</code> is “saturn” (the second item) and not “jupiter”.</p></li>
-<li><p>You can use a list called <code>compliments</code> to store all of the possible compliments for your compliment generator program, and then use <code>choice(compliments)</code> to choose a random compliment for the user:</p>
-<pre class="language-python"><code>from random import *
+<p>As you can see, positions start at 0 and not 1, so <code class="lang-accesslog">bigPlanets<span class="hljs-string">[1]</span></code> is “saturn” (the second item) and not “jupiter”.</p></li>
+<li><p>You can use a list called <code>compliments</code> to store all of the possible compliments for your compliment generator program, and then use <code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">choice</span><span class="hljs-params">(compliments)</span></span></code> to choose a random compliment for the user:</p>
+<pre class="language-python"><code class="lang-livescript"><span class="hljs-keyword">from</span> random <span class="hljs-keyword">import</span> *
 
-print(&quot;Compliment Generator&quot;)
-print(&quot;--------------------&quot;)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">"Compliment Generator"</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">"--------------------"</span>)
 
-compliments = [ &quot;Great job on that thing you did. Really super.&quot; ,
-                &quot;You have really really nice programming skills.&quot; ,
-                &quot;You make an excellent human.&quot;
+compliments = [ <span class="hljs-string">"Great job on that thing you did. Really super."</span> ,
+                <span class="hljs-string">"You have really really nice programming skills."</span> ,
+                <span class="hljs-string">"You make an excellent human."</span>
               ]
 
-#print a random item in the &#39;compliments&#39; list
-print(choice(compliments))
-print(&quot;You&#39;re welcome!&quot;)</code></pre>
+<span class="hljs-comment">#print a random item in the 'compliments' list</span>
+<span class="hljs-built_in">print</span>(choice(compliments))
+<span class="hljs-built_in">print</span>(<span class="hljs-string">"You're welcome!"</span>)</code></pre>
 <figure>
-<img src="compliment-list.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+<img src="compliment-list.png" alt="screenshot"><figcaption>screenshot</figcaption>
 </figure></li>
 <li><p>You could make your compliments a little more interesting, by combining random items from 2 different lists:</p>
-<pre class="language-python"><code>from random import *
+<pre class="language-python"><code class="lang-livescript"><span class="hljs-keyword">from</span> random <span class="hljs-keyword">import</span> *
 
-print(&quot;Compliment Generator&quot;)
-print(&quot;--------------------&quot;)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">"Compliment Generator"</span>)
+<span class="hljs-built_in">print</span>(<span class="hljs-string">"--------------------"</span>)
 
-adjectives = [ &quot;amazing&quot; , &quot;above-average&quot; , &quot;excellent&quot; ]
-hobbies = [ &quot;riding a bike&quot; , &quot;programming&quot; , &quot;making a cup of tea&quot; ]
+adjectives = [ <span class="hljs-string">"amazing"</span> , <span class="hljs-string">"above-average"</span> , <span class="hljs-string">"excellent"</span> ]
+hobbies = [ <span class="hljs-string">"riding a bike"</span> , <span class="hljs-string">"programming"</span> , <span class="hljs-string">"making a cup of tea"</span> ]
 
-name = input(&quot;What is your name?: &quot;)
-print( &quot;Here is your compliment&quot; , name , &quot;:&quot; )
+name = input(<span class="hljs-string">"What is your name?: "</span>)
+<span class="hljs-built_in">print</span>( <span class="hljs-string">"Here is your compliment"</span> , name , <span class="hljs-string">":"</span> )
 
-#get a random item from both lists, and add them to the compliment
-print( name , &quot;you are&quot; , choice(adjectives) , &quot;at&quot; , choice(hobbies) )
-print( &quot;You&#39;re welcome!&quot; )</code></pre>
+<span class="hljs-comment">#get a random item from both lists, and add them to the compliment</span>
+<span class="hljs-built_in">print</span>( name , <span class="hljs-string">"you are"</span> , choice(adjectives) , <span class="hljs-string">"at"</span> , choice(hobbies) )
+<span class="hljs-built_in">print</span>( <span class="hljs-string">"You're welcome!"</span> )</code></pre>
 <figure>
-<img src="compliment-2lists.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+<img src="compliment-2lists.png" alt="screenshot"><figcaption>screenshot</figcaption>
 </figure></li>
 </ul>
 </section>
@@ -74,51 +82,51 @@ print( &quot;You&#39;re welcome!&quot; )</code></pre>
 <section id="activity-checklist-1" class="level2 check">
 <h2>Activity Checklist</h2>
 <ul>
-<li><p>Using what you know about <code>while</code> loops and <code>if</code> statements, you could modify your program to keep giving out compliments until the user decides to quit:</p>
-<pre class="language-python"><code>from random import *
+<li><p>Using what you know about <code class="lang-actionscript"><span class="hljs-keyword">while</span></code> loops and <code class="lang-actionscript"><span class="hljs-keyword">if</span></code> statements, you could modify your program to keep giving out compliments until the user decides to quit:</p>
+<pre class="language-python"><code class="lang-python"><span class="hljs-keyword">from</span> random <span class="hljs-keyword">import</span> *
 
-#the program loops as long as this variable is &#39;True&#39;
-running = True
+<span class="hljs-comment">#the program loops as long as this variable is 'True'</span>
+running = <span class="hljs-keyword">True</span>
 
-adjectives = [ &quot;amazing&quot; , &quot;above-average&quot; , &quot;excellent&quot; ]
-hobbies = [ &quot;riding a bike&quot; , &quot;programming&quot; , &quot;making a cup of tea&quot; ]
+adjectives = [ <span class="hljs-string">"amazing"</span> , <span class="hljs-string">"above-average"</span> , <span class="hljs-string">"excellent"</span> ]
+hobbies = [ <span class="hljs-string">"riding a bike"</span> , <span class="hljs-string">"programming"</span> , <span class="hljs-string">"making a cup of tea"</span> ]
 
-print(&quot;Compliment Generator&quot;)
-print(&quot;--------------------&quot;)
+print(<span class="hljs-string">"Compliment Generator"</span>)
+print(<span class="hljs-string">"--------------------"</span>)
 
-name = input(&quot;What is your name?: &quot;)
+name = input(<span class="hljs-string">"What is your name?: "</span>)
 
-print(&#39;&#39;&#39;
+print(<span class="hljs-string">'''
 Menu
   c = get compliment
   q = quit
-&#39;&#39;&#39;)
+'''</span>)
 
-while running == True:
+<span class="hljs-keyword">while</span> running == <span class="hljs-keyword">True</span>:
 
-    menuChoice = input(&quot;\n&gt;_&quot;).lower()
+    menuChoice = input(<span class="hljs-string">"\n&gt;_"</span>).lower()
 
-    #&#39;c&#39; for a compliment
-    if menuChoice == &#39;c&#39;:
+    <span class="hljs-comment">#'c' for a compliment</span>
+    <span class="hljs-keyword">if</span> menuChoice == <span class="hljs-string">'c'</span>:
 
-        print( &quot;Here is your compliment&quot; , name , &quot;:&quot; )
+        print( <span class="hljs-string">"Here is your compliment"</span> , name , <span class="hljs-string">":"</span> )
 
-        #get a random item from both lists, and add them to the compliment
-        print( name , &quot;you are&quot; , choice(adjectives) , &quot;at&quot; , choice(hobbies) )
-        print( &quot;You&#39;re welcome!&quot; )
+        <span class="hljs-comment">#get a random item from both lists, and add them to the compliment</span>
+        print( name , <span class="hljs-string">"you are"</span> , choice(adjectives) , <span class="hljs-string">"at"</span> , choice(hobbies) )
+        print( <span class="hljs-string">"You're welcome!"</span> )
 
-    #&#39;q&#39; to quit
-    elif menuChoice == &#39;q&#39;:
+    <span class="hljs-comment">#'q' to quit</span>
+    <span class="hljs-keyword">elif</span> menuChoice == <span class="hljs-string">'q'</span>:
 
-        running = False
+        running = <span class="hljs-keyword">False</span>
 
-    else:
+    <span class="hljs-keyword">else</span>:
 
-        print(&quot;Please choose a valid option!&quot;)</code></pre>
+        print(<span class="hljs-string">"Please choose a valid option!"</span>)</code></pre>
 <figure>
-<img src="compliment-loop.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+<img src="compliment-loop.png" alt="screenshot"><figcaption>screenshot</figcaption>
 </figure>
-<p>Remember that the the <code>while</code> loop continues to run as long as the variable <code>running</code> is set to <code>True</code>. If the user inputs <code>q</code> to quit, <code>running</code> is set to <code>False</code>.</p></li>
+<p>Remember that the the <code class="lang-actionscript"><span class="hljs-keyword">while</span></code> loop continues to run as long as the variable <code class="lang-applescript"><span class="hljs-property">running</span></code> is set to <code class="lang-autohotkey"><span class="hljs-literal">True</span></code>. If the user inputs <code class="lang-stata"><span class="hljs-literal">q</span></code> to quit, <code class="lang-applescript"><span class="hljs-property">running</span></code> is set to <code class="lang-autohotkey"><span class="hljs-literal">False</span></code>.</p></li>
 </ul>
 </section>
 <section id="save-your-project-2" class="level2 save">
@@ -132,81 +140,81 @@ while running == True:
 <ul>
 <li><p>Your compliment generator is starting to take shape, but it has a problem: what if your user can’t ride a bike or make a cup of tea? In that case, your compliments won’t be true, and won’t cheer them up!</p>
 <p>Let’s modify your program, so that the user can choose to add or remove items from the <code>hobbies</code> list, to allow them to personalise the compliments they receive:</p>
-<pre class="language-python"><code>from random import *
+<pre class="language-python"><code class="lang-python"><span class="hljs-keyword">from</span> random <span class="hljs-keyword">import</span> *
 
-running = True
-adjectives = [ &quot;amazing&quot; , &quot;above-average&quot; , &quot;excellent&quot; ]
-hobbies = [ &quot;riding a bike&quot; , &quot;programming&quot; , &quot;making a cup of tea&quot; ]
+running = <span class="hljs-keyword">True</span>
+adjectives = [ <span class="hljs-string">"amazing"</span> , <span class="hljs-string">"above-average"</span> , <span class="hljs-string">"excellent"</span> ]
+hobbies = [ <span class="hljs-string">"riding a bike"</span> , <span class="hljs-string">"programming"</span> , <span class="hljs-string">"making a cup of tea"</span> ]
 
-print(&quot;Compliment Generator&quot;)
-print(&quot;--------------------&quot;)
+print(<span class="hljs-string">"Compliment Generator"</span>)
+print(<span class="hljs-string">"--------------------"</span>)
 
-name = input(&quot;What is your name?: &quot;)
+name = input(<span class="hljs-string">"What is your name?: "</span>)
 
-print(&#39;&#39;&#39;
+print(<span class="hljs-string">'''
 Menu
   c = get compliment
   a = add hobby to list
   d = delete hobby from list
   p = print hobbies
   q = quit
-&#39;&#39;&#39;)
+'''</span>)
 
-while running == True:
+<span class="hljs-keyword">while</span> running == <span class="hljs-keyword">True</span>:
 
-    menuChoice = input(&quot;\n&gt;_&quot;).lower()
+    menuChoice = input(<span class="hljs-string">"\n&gt;_"</span>).lower()
 
-    #&#39;c&#39; for a compliment
-    if menuChoice == &#39;c&#39;:
+    <span class="hljs-comment">#'c' for a compliment</span>
+    <span class="hljs-keyword">if</span> menuChoice == <span class="hljs-string">'c'</span>:
 
-        print( &quot;Here is your compliment&quot; , name , &quot;:&quot; )
+        print( <span class="hljs-string">"Here is your compliment"</span> , name , <span class="hljs-string">":"</span> )
 
-        #get a random item from both lists, and add them to the compliment
-        print( name , &quot;you are&quot; , choice(adjectives) , &quot;at&quot; , choice(hobbies) )
-        print( &quot;You&#39;re welcome!&quot; )
+        <span class="hljs-comment">#get a random item from both lists, and add them to the compliment</span>
+        print( name , <span class="hljs-string">"you are"</span> , choice(adjectives) , <span class="hljs-string">"at"</span> , choice(hobbies) )
+        print( <span class="hljs-string">"You're welcome!"</span> )
 
-    #&#39;a&#39; to add a hobby
-    elif menuChoice == &#39;a&#39;:
+    <span class="hljs-comment">#'a' to add a hobby</span>
+    <span class="hljs-keyword">elif</span> menuChoice == <span class="hljs-string">'a'</span>:
 
-        itemToAdd = input(&quot;Please enter the hobby to add: &quot;)
+        itemToAdd = input(<span class="hljs-string">"Please enter the hobby to add: "</span>)
         hobbies.append(itemToAdd)
 
-    #&#39;d&#39; to delete a hobby
-    elif menuChoice == &#39;d&#39;:
+    <span class="hljs-comment">#'d' to delete a hobby</span>
+    <span class="hljs-keyword">elif</span> menuChoice == <span class="hljs-string">'d'</span>:
 
-        itemToDelete = input(&quot;Please enter the hobby to remove: &quot;)
+        itemToDelete = input(<span class="hljs-string">"Please enter the hobby to remove: "</span>)
         hobbies.remove(itemToDelete)
 
-    #&#39;p&#39; to print the hobbies list
-    elif menuChoice == &#39;p&#39;:
+    <span class="hljs-comment">#'p' to print the hobbies list</span>
+    <span class="hljs-keyword">elif</span> menuChoice == <span class="hljs-string">'p'</span>:
         print(hobbies)
 
-    #&#39;q&#39; to quit
-    elif menuChoice == &#39;q&#39;:
+    <span class="hljs-comment">#'q' to quit</span>
+    <span class="hljs-keyword">elif</span> menuChoice == <span class="hljs-string">'q'</span>:
 
-        running = False
+        running = <span class="hljs-keyword">False</span>
 
-    else:
+    <span class="hljs-keyword">else</span>:
 
-        print(&quot;Please choose a valid option!&quot;)</code></pre>
-<p>As you can see, you can use <code>append()</code> to add to a list, and <code>remove()</code> to remove an item. Run this program, and personalise the hobbies in the list to suit you. Ask the program for compliments until you’re in a good mood!</p></li>
+        print(<span class="hljs-string">"Please choose a valid option!"</span>)</code></pre>
+<p>As you can see, you can use <code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">append</span><span class="hljs-params">()</span></span></code> to add to a list, and <code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">remove</span><span class="hljs-params">()</span></span></code> to remove an item. Run this program, and personalise the hobbies in the list to suit you. Ask the program for compliments until you’re in a good mood!</p></li>
 <li><p>When testing the program above, did you run into any problems? At the moment, your compliment generator crashes if you try and remove a compliment that isn’t in the list:</p>
 <figure>
-<img src="compliment-error.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+<img src="compliment-error.png" alt="screenshot"><figcaption>screenshot</figcaption>
 </figure>
 <p>You can fix this problem, by first checking that the item to remove exists in the list. Replace your code to remove a hobby with this code:</p>
-<pre class="language-python"><code>    #&#39;d&#39; to delete a hobby
-    elif menuChoice == &#39;d&#39;:
+<pre class="language-python"><code class="lang-bash">    <span class="hljs-comment">#'d' to delete a hobby</span>
+    <span class="hljs-keyword">elif</span> menuChoice == <span class="hljs-string">'d'</span>:
 
-        itemToDelete = input(&quot;Please enter the hobby to remove: &quot;)
-        #only remove an item if it&#39;s in the list
-        if itemToDelete in hobbies:
+        itemToDelete = input(<span class="hljs-string">"Please enter the hobby to remove: "</span>)
+        <span class="hljs-comment">#only remove an item if it's in the list</span>
+        <span class="hljs-keyword">if</span> itemToDelete <span class="hljs-keyword">in</span> hobbies:
             hobbies.remove(itemToDelete)
-        else:
-            print(&quot;Hobby not in list!&quot;)</code></pre>
+        <span class="hljs-keyword">else</span>:
+            <span class="hljs-built_in">print</span>(<span class="hljs-string">"Hobby not in list!"</span>)</code></pre>
 <p>Now run the program and try to delete a hobby that isn’t in the list:</p>
 <figure>
-<img src="compliment-errorfix.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+<img src="compliment-errorfix.png" alt="screenshot"><figcaption>screenshot</figcaption>
 </figure></li>
 </ul>
 </section>
@@ -217,11 +225,11 @@ while running == True:
 <h2>Challenge: Duplicate hobbies</h2>
 <p>Another problem with the program is that it is possible to add the same hobby more than once:</p>
 <figure>
-<img src="compliment-hobbiesx2.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+<img src="compliment-hobbiesx2.png" alt="screenshot"><figcaption>screenshot</figcaption>
 </figure>
 <p>Can you fix this problem, so that a hobby can only be added if it isn’t already in the list:</p>
-<pre class="language-python"><code>if itemToAdd not in hobbies:
-    #add code here...</code></pre>
+<pre class="language-python"><code class="lang-stylus"><span class="hljs-keyword">if</span> itemToAdd not <span class="hljs-keyword">in</span> hobbies:
+    <span class="hljs-hexcolor">#add</span> <span class="hljs-tag">code</span> here...</code></pre>
 </section>
 <section id="save-your-project-4" class="level2 save">
 <h2>Save Your Project</h2>
@@ -230,7 +238,7 @@ while running == True:
 <h2>Challenge: Pet naming service</h2>
 <p>Write a program to help a new pet owner to name their pet:</p>
 <figure>
-<img src="compliment-pet.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+<img src="compliment-pet.png" alt="screenshot"><figcaption>screenshot</figcaption>
 </figure>
 <p>Your program could: + allow the user to add and remove names from the list; + give different names for male and female pets, or different types of animal; + ask the user how many names they need, in case they have more than 1 pet to name.</p>
 </section>
@@ -238,4 +246,4 @@ while running == True:
 <h2>Save Your Project</h2>
 </section>
 </section>
-</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><script src="../../../assets/script.min.js"></script></body></html>
+</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><script src="../../../assets/vendor.min.js"></script><script src="../../../assets/script.min.js"></script></body></html>

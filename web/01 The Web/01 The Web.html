@@ -1,4 +1,12 @@
-<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>The Web | YourCodeClubName</title><link href="../../assets/style.min.css" rel="stylesheet"/></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Home</a></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">The Web</h1></header></div><div class="col-xs-12"><div class="content"><section id="introduction" class="level1 intro">
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>The Web | YourCodeClubName</title><link href="../../assets/style.min.css" rel="stylesheet"/><script type="text/javascript">// convert url relative to current file
+// ex: python/index.html -> ../python/index.html
+function relative(url) {
+  var urlRoot = '../..';
+  if (urlRoot !== '') {
+    return urlRoot + '/' + url;
+  }
+  return url;
+}</script></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Home</a><form class="search"><input type="text" placeholder="Search" class="form-control"/></form></div></div><div class="search"><div class="results"><h1>Search Results</h1></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">The Web</h1><div class="lesson-icons"><div class="level"><img title="Level 1" src="../../assets/img/level1.png"/><span>Novice</span></div><div class="course"><img src="../../logo-white.png"/><span>Web</span></div><div class="pdf"><a href="/web/01 The Web/01 The Web.pdf" title="Download PDF" class="download"><span class="glyphicon glyphicon-save-file"></span></a><span>PDF</span></div></div></header></div><div class="col-xs-12"><div class="content"><section id="introduction" class="level1 intro">
 <h1>Introduction</h1>
 <p>Have you ever wondered how the world wide web works? Of course you have! Today you will learn how to make websites so you too can contribute to building it. Websites are written using <strong>HTML</strong>, which stands for <strong>HyperText Markup Language</strong>. You will find out more about it as you build your page.</p>
 </section>
@@ -9,19 +17,19 @@
 <ul>
 <li>Open a <strong>text editor</strong>.</li>
 <li>Create a new document.</li>
-<li>Write something! For example: <code>Hello! My name is …</code></li>
-<li>Save the file. Call it <code>hello.txt</code>.</li>
+<li>Write something! For example: <code class="lang-applescript">Hello! My <span class="hljs-property">name</span> <span class="hljs-keyword">is</span> …</code></li>
+<li>Save the file. Call it <code class="lang-css"><span class="hljs-tag">hello</span><span class="hljs-class">.txt</span></code>.</li>
 <li>Now find the file and open it again. It opens up in a text editor, which is not that much fun.</li>
-<li>Change the extension (the bit after the dot) to <code>.html</code>, so now the file is called <code>hello.html</code>.</li>
+<li>Change the extension (the bit after the dot) to <code class="lang-asciidoc"><span class="hljs-title">.html</span></code>, so now the file is called <code class="lang-css"><span class="hljs-tag">hello</span><span class="hljs-class">.html</span></code>.</li>
 <li>Open the file again.</li>
 </ul>
-<p>What program was used to open the file this time? The web browser is a special program that knows how to interpret text files written using <strong>HTML language</strong>. We haven’t added any <strong>HTML</strong> yet, we simply put in some text, but the browser doesn’t care! As long as you give it an <code>.html</code> file, it will do its best to show you the file as best as it can understand it.</p>
+<p>What program was used to open the file this time? The web browser is a special program that knows how to interpret text files written using <strong>HTML language</strong>. We haven’t added any <strong>HTML</strong> yet, we simply put in some text, but the browser doesn’t care! As long as you give it an <code class="lang-asciidoc"><span class="hljs-title">.html</span></code> file, it will do its best to show you the file as best as it can understand it.</p>
 <p>This is very useful: even when a website contains errors, the browser will try to figure out how to show it to you anyway.</p>
 <p><strong>How can we view these files?</strong></p>
-<p>When you type in the address in your browser, your request gets passed along to a computer which is always turned on and configured to allow you to see the pages that live inside it. This computer is called a server. When it receives a request from your computer, it looks for all the necessary files, like the <code>.html</code> file, and sends you that with anything else that the page needs, like images and videos.</p>
+<p>When you type in the address in your browser, your request gets passed along to a computer which is always turned on and configured to allow you to see the pages that live inside it. This computer is called a server. When it receives a request from your computer, it looks for all the necessary files, like the <code class="lang-asciidoc"><span class="hljs-title">.html</span></code> file, and sends you that with anything else that the page needs, like images and videos.</p>
 <section id="can-i-have-this-page-please" class="level3">
 <h3>Can I have this page please?</h3>
-<p><img src="diagram_screenshot.png" alt="screenshot" /> Here you go.</p>
+<p><img src="diagram_screenshot.png" alt="screenshot"> Here you go.</p>
 </section>
 </section>
 </section>
@@ -29,19 +37,19 @@
 <h1>Step 2: What is HTML?</h1>
 <p>HTML is a <strong>markup</strong> language - it means that it is used to describe what things are.</p>
 <p>Even though the browser will try to display things as best as it can, it helps it to know what these things are.</p>
-<p>To tell the browser that, we use <code>tags</code>.</p>
-<p>Tags look like this: <code>&lt;p&gt;This is some text.&lt;/p&gt;</code></p>
-<p><code>&lt;p&gt;</code> is short for <strong>paragraph</strong>.</p>
-<p>There is an opening tag, like this: <code>&lt;p&gt;</code>, and a matching closing one with a forward slash: <code>&lt;/p&gt;</code>. The browser knows that anything in between the two tags is a paragraph of text.</p>
+<p>To tell the browser that, we use <code class="lang-vim"><span class="hljs-keyword">tags</span></code>.</p>
+<p>Tags look like this: <code class="lang-applescript">&lt;p&gt;This <span class="hljs-keyword">is</span> <span class="hljs-keyword">some</span> <span class="hljs-type">text</span>.&lt;/p&gt;</code></p>
+<p><code class="lang-apache"><span class="hljs-tag">&lt;p&gt;</span></code> is short for <strong>paragraph</strong>.</p>
+<p>There is an opening tag, like this: <code class="lang-apache"><span class="hljs-tag">&lt;p&gt;</span></code>, and a matching closing one with a forward slash: <code class="lang-apache"><span class="hljs-tag">&lt;/p&gt;</span></code>. The browser knows that anything in between the two tags is a paragraph of text.</p>
 <p>Tags can have attributes, which are bits of useful information about the element. Let’s have a look at the link tag:</p>
-<p><code>&lt;a href=&quot;http://codeclub.org.uk&quot;&gt;Visit CodeClub website&lt;/a&gt;</code></p>
-<p><code>&lt;a&gt;</code> stands for <strong>anchor</strong>, which is what links used to be called.</p>
-<p>It also has the opening tag: <code>&lt;a&gt;</code> and the closing tag: <code>&lt;/a&gt;</code> but we added an attribute to the opening one: <code>&lt;a href=&quot;http://codeclub.org.uk&quot;&gt;</code></p>
-<p><code>href</code> is the attribute, and <code>http://codeclub.org.uk</code> is its value. <code>href</code> stands for <em>hypertext reference</em>. A text that linked to other texts was once named <em>hypertext</em>, because it could have images, and sounds, and could link to other texts. That made it a little bit different to plain text. <code>href</code> tells the browser where the link should take you to, and the text in between the tags will be visible as a link.</p>
+<p><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"http://codeclub.org.uk"</span>&gt;</span>Visit CodeClub website<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span></code></p>
+<p><code class="lang-apache"><span class="hljs-tag">&lt;a&gt;</span></code> stands for <strong>anchor</strong>, which is what links used to be called.</p>
+<p>It also has the opening tag: <code class="lang-apache"><span class="hljs-tag">&lt;a&gt;</span></code> and the closing tag: <code class="lang-apache"><span class="hljs-tag">&lt;/a&gt;</span></code> but we added an attribute to the opening one: <code class="lang-stylus">&lt;<span class="hljs-tag">a</span> href=<span class="hljs-string">"http://codeclub.org.uk"</span>&gt;</code></p>
+<p><code>href</code> is the attribute, and <code class="lang-avrasm"><span class="hljs-label">http:</span>//codeclub<span class="hljs-preprocessor">.org</span>.uk</code> is its value. <code>href</code> stands for <em>hypertext reference</em>. A text that linked to other texts was once named <em>hypertext</em>, because it could have images, and sounds, and could link to other texts. That made it a little bit different to plain text. <code>href</code> tells the browser where the link should take you to, and the text in between the tags will be visible as a link.</p>
 <section id="activity-checklist-1" class="level2 check">
 <h2>Activity Checklist</h2>
 <ul>
-<li>Open the <code>page.html</code> file.</li>
+<li>Open the <code class="lang-css"><span class="hljs-tag">page</span><span class="hljs-class">.html</span></code> file.</li>
 <li>Ask the volunteer whether you can use X-Ray Goggles or developer tools to look at the code (a developer is someone who makes things with code).</li>
 </ul>
 <section id="if-you-can-use-x-ray-goggles" class="level3">
@@ -54,30 +62,30 @@
 <section id="if-you-are-using-developer-tools" class="level3">
 <h3>If you are using developer tools:</h3>
 <ul>
-<li>Move around the page. Right click anything interesting, and then click <code>Inspect element</code>. A panel will open up which will show you the page’s code at the same time as the page.</li>
+<li>Move around the page. Right click anything interesting, and then click <code class="lang-gradle"><span class="hljs-keyword">Inspect</span> element</code>. A panel will open up which will show you the page’s code at the same time as the page.</li>
 <li>Move your mouse over different pieces of code. The corresponding things on the page will be highlighted, so you can see which bit does what.</li>
 <li>Try to inspect all parts of the page. Can you figure out what the different tag names stand for?</li>
 </ul>
-<p>We already know <code>&lt;p&gt;</code> and <code>&lt;a&gt;</code>.</p>
-<p><code>&lt;ol&gt;</code> - ordered list <code>&lt;ul&gt;</code> - unordered list <code>&lt;li&gt;</code> - list item <code>&lt;h1&gt;</code>, <code>&lt;h2&gt;</code>, <code>&lt;h3&gt;</code>, <code>&lt;h4&gt;</code>, <code>&lt;h5&gt;</code>, <code>&lt;h6&gt;</code> - headings <code>&lt;hr&gt;</code> - horizontal rule <code>&lt;div&gt;</code> - a box for grouping things <code>&lt;img&gt;</code> - a special element, which unlike others doesn’t have a closing tag. We use it for putting the images in.</p>
+<p>We already know <code class="lang-apache"><span class="hljs-tag">&lt;p&gt;</span></code> and <code class="lang-apache"><span class="hljs-tag">&lt;a&gt;</span></code>.</p>
+<p><code class="lang-apache"><span class="hljs-tag">&lt;ol&gt;</span></code> - ordered list <code class="lang-apache"><span class="hljs-tag">&lt;ul&gt;</span></code> - unordered list <code class="lang-apache"><span class="hljs-tag">&lt;li&gt;</span></code> - list item <code class="lang-apache"><span class="hljs-tag">&lt;h1&gt;</span></code>, <code class="lang-apache"><span class="hljs-tag">&lt;h2&gt;</span></code>, <code class="lang-apache"><span class="hljs-tag">&lt;h3&gt;</span></code>, <code class="lang-apache"><span class="hljs-tag">&lt;h4&gt;</span></code>, <code class="lang-apache"><span class="hljs-tag">&lt;h5&gt;</span></code>, <code class="lang-apache"><span class="hljs-tag">&lt;h6&gt;</span></code> - headings <code class="lang-apache"><span class="hljs-tag">&lt;hr&gt;</span></code> - horizontal rule <code class="lang-apache"><span class="hljs-tag">&lt;div&gt;</span></code> - a box for grouping things <code class="lang-apache"><span class="hljs-tag">&lt;img&gt;</span></code> - a special element, which unlike others doesn’t have a closing tag. We use it for putting the images in.</p>
 <p>There are also some tags that we will always use in HTML documents, and they are:</p>
-<p><code>&lt;html&gt;</code> - tells the browser where we put our code <code>&lt;head&gt;</code> - inside <code>&lt;head&gt;</code> we put things which may be useful to the browser, but which don’t appear as text on the page. In this example we put a <code>&lt;title&gt;</code> there, which then shows up at the top of the browser window. <code>&lt;body&gt;</code> - that’s where we put the things we want to appear on the page</p>
+<p><code class="lang-apache"><span class="hljs-tag">&lt;html&gt;</span></code> - tells the browser where we put our code <code class="lang-apache"><span class="hljs-tag">&lt;head&gt;</span></code> - inside <code class="lang-apache"><span class="hljs-tag">&lt;head&gt;</span></code> we put things which may be useful to the browser, but which don’t appear as text on the page. In this example we put a <code class="lang-apache"><span class="hljs-tag">&lt;title&gt;</span></code> there, which then shows up at the top of the browser window. <code class="lang-apache"><span class="hljs-tag">&lt;body&gt;</span></code> - that’s where we put the things we want to appear on the page</p>
 </section>
 </section>
 <section id="activity-checklist-2" class="level2 check">
 <h2>Activity Checklist</h2>
 <ul>
-<li>Notice how tags can <strong>nest</strong> within one another. We have the <code>&lt;a&gt;</code> tag, which is inside a <code>&lt;p&gt;</code> tag, which in turn is inside <code>&lt;div&gt;</code>, which is placed inside <code>&lt;body&gt;</code>. Whenever this happens, we say that the tag that is being wrapped is the <em>child</em> and the tag that does the wrapping is the <strong>parent</strong> element. It’s a little bit like a family tree!</li>
-<li>To the browser all tags of the same kind are the same, but you can mark them out using classes and Ids (pronounced aye-dees). For example, some of your paragraphs might be introductions, so you could give them a class <code>introduction</code>. See if you can spot some classes inside <code>page.html</code> .</li>
-<li>Ids are used to mark unique items on your page. See if you can spot the <code>div</code> tag with an <code>id</code> of <code>kitten</code> in the page.</li>
-<li>What will happen if you move things around? Let’s go back to the code editor. Find an <code>&lt;ol&gt;</code> tag in the code and select it with all its got inside, like so:</li>
+<li>Notice how tags can <strong>nest</strong> within one another. We have the <code class="lang-apache"><span class="hljs-tag">&lt;a&gt;</span></code> tag, which is inside a <code class="lang-apache"><span class="hljs-tag">&lt;p&gt;</span></code> tag, which in turn is inside <code class="lang-apache"><span class="hljs-tag">&lt;div&gt;</span></code>, which is placed inside <code class="lang-apache"><span class="hljs-tag">&lt;body&gt;</span></code>. Whenever this happens, we say that the tag that is being wrapped is the <em>child</em> and the tag that does the wrapping is the <strong>parent</strong> element. It’s a little bit like a family tree!</li>
+<li>To the browser all tags of the same kind are the same, but you can mark them out using classes and Ids (pronounced aye-dees). For example, some of your paragraphs might be introductions, so you could give them a class <code>introduction</code>. See if you can spot some classes inside <code class="lang-css"><span class="hljs-tag">page</span><span class="hljs-class">.html</span></code> .</li>
+<li>Ids are used to mark unique items on your page. See if you can spot the <code class="lang-applescript"><span class="hljs-keyword">div</span></code> tag with an <code class="lang-applescript"><span class="hljs-property">id</span></code> of <code>kitten</code> in the page.</li>
+<li>What will happen if you move things around? Let’s go back to the code editor. Find an <code class="lang-apache"><span class="hljs-tag">&lt;ol&gt;</span></code> tag in the code and select it with all its got inside, like so:</li>
 </ul>
-<pre class="language-markup"><code>&lt;ol&gt;
-    &lt;li&gt;Kittens&lt;/li&gt;
-    &lt;li&gt;Cake&lt;/li&gt;
-    &lt;li&gt;Lie-ins&lt;/li&gt;
-    &lt;li&gt;Playing games&lt;/li&gt;
-&lt;/ol&gt;</code></pre>
+<pre class="language-markup"><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-title">ol</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Kittens<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Cake<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Lie-ins<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>Playing games<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ol</span>&gt;</span></code></pre>
 <p>Now copy it and move it somewhere else. Save the page and refresh it in the browser. How does the order of your code affect the order in which things are displayed in the browser?</p>
 </section>
 <section id="things-to-try" class="level2 try">
@@ -85,10 +93,10 @@
 <ul>
 <li>Create your own paragraph of text.</li>
 <li>Make a link that points to another part of the page (hint: it is something to do with id - look out for a link that takes you to the kitten).</li>
-<li>Add your own headings where you think they might be useful. What happens if you change the heading numbers, for example from <code>&lt;h3&gt;</code> to <code>&lt;h4&gt;</code>?</li>
+<li>Add your own headings where you think they might be useful. What happens if you change the heading numbers, for example from <code class="lang-apache"><span class="hljs-tag">&lt;h3&gt;</span></code> to <code class="lang-apache"><span class="hljs-tag">&lt;h4&gt;</span></code>?</li>
 <li>What would you have to do to link to a different page?</li>
 <li>If you are using developer tools, once you bring up the panel with the code try double-clicking on the code that looks interesting. See if you can change it. Now you get a live preview without having to move between the browser and the code editor. Cool, huh? Now refresh the page. What happened? When you edit code like this it doesn’t get saved, so you can preview what would happen if you did, but don’t mess up your file, so you can experiment lots and always go back.</li>
 </ul>
 </section>
 </section>
-</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><script src="../../assets/script.min.js"></script></body></html>
+</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><script src="../../assets/vendor.min.js"></script><script src="../../assets/script.min.js"></script></body></html>

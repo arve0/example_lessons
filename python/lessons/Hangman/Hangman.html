@@ -1,4 +1,12 @@
-<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Hangman | YourCodeClubName</title><link href="../../../assets/style.min.css" rel="stylesheet"/></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Home</a></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">Hangman</h1></header></div><div class="col-xs-12"><div class="content"><section id="introduction" class="level1 intro">
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Hangman | YourCodeClubName</title><link href="../../../assets/style.min.css" rel="stylesheet"/><script type="text/javascript">// convert url relative to current file
+// ex: python/index.html -> ../python/index.html
+function relative(url) {
+  var urlRoot = '../../..';
+  if (urlRoot !== '') {
+    return urlRoot + '/' + url;
+  }
+  return url;
+}</script></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Home</a><form class="search"><input type="text" placeholder="Search" class="form-control"/></form></div></div><div class="search"><div class="results"><h1>Search Results</h1></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">Hangman</h1><div class="lesson-icons"><div class="level"><img title="Level 1" src="../../../assets/img/level1.png"/><span>Novice</span></div><div class="course"><img src="../../../logo-white.png"/><span>Python</span></div><div class="pdf"><a href="/python/lessons/Hangman/Hangman.pdf" title="Download PDF" class="download"><span class="glyphicon glyphicon-save-file"></span></a><span>PDF</span></div></div></header></div><div class="col-xs-12"><div class="content"><section id="introduction" class="level1 intro">
 <h1>Introduction</h1>
 <p>Let’s build a game: Hangman! The computer will pick a word, and the player can guess it letter-by-letter, but if they make too many wrong guesses, they’ll lose.</p>
 </section>
@@ -10,15 +18,15 @@
 <ul>
 <li>Open IDLE, and open a new window.</li>
 <li><p>Write in the following code:</p>
-<pre class="language-python"><code>from random import choice
+<pre class="language-python"><code class="lang-stylus">from random import choice
 
-word = choice([&quot;code&quot;, &quot;club&quot;])
+word = <span class="hljs-function"><span class="hljs-title">choice</span><span class="hljs-params">([<span class="hljs-string">"code"</span>, <span class="hljs-string">"club"</span>])</span></span>
 
-print(word)</code></pre></li>
+<span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(word)</span></span></code></pre></li>
 <li>Save your program, and run it. What word does it print?</li>
 <li><p>Run it again, does it print a different word?</p></li>
 </ul>
-<p>Each time you run this program, it picks a random word from the list <code>[&quot;code&quot;, &quot;club&quot;]</code>, using the <code>choice</code> function.</p>
+<p>Each time you run this program, it picks a random word from the list <code class="lang-json">[<span class="hljs-string">"code"</span>, <span class="hljs-string">"club"</span>]</code>, using the <code class="lang-mel"><span class="hljs-keyword">choice</span></code> function.</p>
 </section>
 </section>
 <section id="step-2-guess-a-letter" class="level1 activity">
@@ -28,81 +36,81 @@ print(word)</code></pre></li>
 <h2>Activity Checklist</h2>
 <ul>
 <li><p>With the same file, edit the code so it looks like this</p>
-<pre class="language-python"><code>from random import choice
+<pre class="language-python"><code class="lang-pf"><span class="hljs-keyword">from</span> <span class="hljs-keyword">random</span> import choice
 
-word = choice([&quot;code&quot;, &quot;club&quot;])
+word = choice([<span class="hljs-string">"code"</span>, <span class="hljs-string">"club"</span>])
 
-out = &quot;&quot;
+<span class="hljs-keyword">out</span> = <span class="hljs-string">""</span>
 
-for letter in word:
-    out = out + &quot;_&quot;
+<span class="hljs-keyword">for</span> letter <span class="hljs-keyword">in</span> word:
+    <span class="hljs-keyword">out</span> = <span class="hljs-keyword">out</span> + <span class="hljs-string">"_"</span>
 
-print(&quot;Guess a letter in the word:&quot;, out)</code></pre></li>
+print(<span class="hljs-string">"Guess a letter in the word:"</span>, <span class="hljs-keyword">out</span>)</code></pre></li>
 <li>Save and run the program.</li>
 <li>You should see “Guess a letter in the word: ____”, in the output window (the other window, not the one you’ve written your program in.) We use a for loop to build up some text with an underscore <code>_</code> for each letter in the word. The word “code” put in, will write out <code>____</code> to the screen.</li>
 <li><p>Let’s guess a letter! Change the code to look like this:</p>
-<pre class="language-python"><code>from random import choice
+<pre class="language-python"><code class="lang-stylus">from random import choice
 
-word = choice([&quot;code&quot;, &quot;club&quot;])
+word = <span class="hljs-function"><span class="hljs-title">choice</span><span class="hljs-params">([<span class="hljs-string">"code"</span>, <span class="hljs-string">"club"</span>])</span></span>
 
-out = &quot;&quot;
+out = <span class="hljs-string">""</span>
 
-for letter in word:
-    out = out + &quot;_&quot;
+<span class="hljs-keyword">for</span> letter <span class="hljs-keyword">in</span> word:
+    out = out + <span class="hljs-string">"_"</span>
 
-print(&quot;Guess a letter in the word, then press enter:&quot;, out)
+<span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"Guess a letter in the word, then press enter:"</span>, out)</span></span>
 
-guess = input()
+guess = <span class="hljs-function"><span class="hljs-title">input</span><span class="hljs-params">()</span></span>
 
-if guess in word:
-    print(&quot;Yay&quot;)
-else:
-    print(&quot;Nope&quot;)</code></pre></li>
+<span class="hljs-keyword">if</span> guess <span class="hljs-keyword">in</span> word:
+    <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"Yay"</span>)</span></span>
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"Nope"</span>)</span></span></code></pre></li>
 </ul>
-<p>We use a new function <code>input()</code> to find out what the player typed. We use <code>if</code> to find out if the letter was in the word. We’ve got the essentials down, so let’s continue onward.</p>
+<p>We use a new function <code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">input</span><span class="hljs-params">()</span></span></code> to find out what the player typed. We use <code class="lang-actionscript"><span class="hljs-keyword">if</span></code> to find out if the letter was in the word. We’ve got the essentials down, so let’s continue onward.</p>
 <p>(Python 2 Note: Use <code>raw_input</code> if you’re on an old version of python)</p>
 </section>
 </section>
 <section id="step-3-track-the-guesses" class="level1 activity">
 <h1>Step 3: Track the guesses</h1>
-<p>Now we’re going to use two features of python, lists and the <code>while</code> loop.</p>
+<p>Now we’re going to use two features of python, lists and the <code class="lang-actionscript"><span class="hljs-keyword">while</span></code> loop.</p>
 <section id="activity-checklist-2" class="level2 check">
 <h2>Activity Checklist</h2>
 <ul>
 <li><p>In the same file, edit the code to look like this:</p>
-<pre class="language-python"><code>from random import choice
+<pre class="language-python"><code class="lang-stylus">from random import choice
 
-word = choice([&quot;code&quot;, &quot;club&quot;])
+word = <span class="hljs-function"><span class="hljs-title">choice</span><span class="hljs-params">([<span class="hljs-string">"code"</span>, <span class="hljs-string">"club"</span>])</span></span>
 
 guessed = []
 
 while True:
 
-    out = &quot;&quot;
-    for letter in word:
-        if letter in guessed:
+    out = <span class="hljs-string">""</span>
+    <span class="hljs-keyword">for</span> letter <span class="hljs-keyword">in</span> word:
+        <span class="hljs-keyword">if</span> letter <span class="hljs-keyword">in</span> guessed:
             out = out + letter
-        else:
-            out = out + &quot;_&quot;
+        <span class="hljs-keyword">else</span>:
+            out = out + <span class="hljs-string">"_"</span>
 
-    if out == word:
-        print(&quot;You guessed&quot;, word)
+    <span class="hljs-keyword">if</span> out == word:
+        <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"You guessed"</span>, word)</span></span>
         break
 
 
-    print(&quot;Guess the word:&quot;, out)
-    guess = input()
+    <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"Guess the word:"</span>, out)</span></span>
+    guess = <span class="hljs-function"><span class="hljs-title">input</span><span class="hljs-params">()</span></span>
 
-    if guess in guessed:
-        print(&quot;Already guessed&quot;, guess)
-    elif guess in word:
-        print(&quot;Yay&quot;)
-        guessed.append(guess)
-    else:
-        print(&quot;Nope&quot;)
+    <span class="hljs-keyword">if</span> guess <span class="hljs-keyword">in</span> guessed:
+        <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"Already guessed"</span>, guess)</span></span>
+    elif guess <span class="hljs-keyword">in</span> word:
+        <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"Yay"</span>)</span></span>
+        guessed.<span class="hljs-function"><span class="hljs-title">append</span><span class="hljs-params">(guess)</span></span>
+    <span class="hljs-keyword">else</span>:
+        <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"Nope"</span>)</span></span>
 
-    print()</code></pre></li>
-<li><p>Run the code, try guessing the letters. What we’ve done is put a loop, like <code>forever</code> in scratch, that will keep asking for letters from the player, until they guess the word. We also use a list, <code>guessed</code>, which we add the letters to when they’re right. This program will loop forever until all the letters are guessed.</p></li>
+    <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">()</span></span></code></pre></li>
+<li><p>Run the code, try guessing the letters. What we’ve done is put a loop, like <code class="lang-livecodeserver"><span class="hljs-keyword">forever</span></code> in scratch, that will keep asking for letters from the player, until they guess the word. We also use a list, <code>guessed</code>, which we add the letters to when they’re right. This program will loop forever until all the letters are guessed.</p></li>
 </ul>
 </section>
 </section>
@@ -116,31 +124,31 @@ while True:
 <p>word = choice([“code”, “club”])</p>
 <p>guessed = [] wrong = []</p>
 <p>while True:</p>
-<pre><code>out = &quot;&quot;
-for letter in word:
-    if letter in guessed:
+<pre><code class="lang-stylus">out = <span class="hljs-string">""</span>
+<span class="hljs-keyword">for</span> letter <span class="hljs-keyword">in</span> word:
+    <span class="hljs-keyword">if</span> letter <span class="hljs-keyword">in</span> guessed:
         out = out + letter
-    else:
-        out = out + &quot;_&quot;
+    <span class="hljs-keyword">else</span>:
+        out = out + <span class="hljs-string">"_"</span>
 
-if out == word:
-    print(&quot;You guessed&quot;, word)
+<span class="hljs-keyword">if</span> out == word:
+    <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"You guessed"</span>, word)</span></span>
     break
 
-print(&quot;Guess the word:&quot;, out)
+<span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"Guess the word:"</span>, out)</span></span>
 
-guess = input()
+guess = <span class="hljs-function"><span class="hljs-title">input</span><span class="hljs-params">()</span></span>
 
-if guess in guessed or guess in wrong:
-    print(&quot;Already guessed&quot;, guess)
-elif guess in word:
-    print(&quot;Yay&quot;)
-    guessed.append(guess)
-else:
-    print(&quot;Nope&quot;)
-    wrong.append(guess)
+<span class="hljs-keyword">if</span> guess <span class="hljs-keyword">in</span> guessed or guess <span class="hljs-keyword">in</span> wrong:
+    <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"Already guessed"</span>, guess)</span></span>
+elif guess <span class="hljs-keyword">in</span> word:
+    <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"Yay"</span>)</span></span>
+    guessed.<span class="hljs-function"><span class="hljs-title">append</span><span class="hljs-params">(guess)</span></span>
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"Nope"</span>)</span></span>
+    wrong.<span class="hljs-function"><span class="hljs-title">append</span><span class="hljs-params">(guess)</span></span>
 
-print()</code></pre></li>
+<span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">()</span></span></code></pre></li>
 </ul>
 <p>```</p>
 <p>We’re using a new list, <code>wrong</code>, to store all the guesses that weren’t right</p>
@@ -153,48 +161,48 @@ print()</code></pre></li>
 <h2>Activity Checklist</h2>
 <ul>
 <li><p>Edit the file, to introduce a new variable, <code>tries</code>:</p>
-<pre class="language-python"><code>from random import choice
+<pre class="language-python"><code class="lang-stylus">from random import choice
 
-word = choice([&quot;code&quot;, &quot;club&quot;])
+word = <span class="hljs-function"><span class="hljs-title">choice</span><span class="hljs-params">([<span class="hljs-string">"code"</span>, <span class="hljs-string">"club"</span>])</span></span>
 
 guessed = []
 wrong = []
 
-tries = 7
+tries = <span class="hljs-number">7</span>
 
-while tries &gt; 0:
+while tries &gt; <span class="hljs-number">0</span>:
 
-    out = &quot;&quot;
-    for letter in word:
-        if letter in guessed:
+    out = <span class="hljs-string">""</span>
+    <span class="hljs-keyword">for</span> letter <span class="hljs-keyword">in</span> word:
+        <span class="hljs-keyword">if</span> letter <span class="hljs-keyword">in</span> guessed:
             out = out + letter
-        else:
-            out = out + &quot;_&quot;
+        <span class="hljs-keyword">else</span>:
+            out = out + <span class="hljs-string">"_"</span>
 
-    if out == word:
+    <span class="hljs-keyword">if</span> out == word:
         break
 
-    print(&quot;Guess the word:&quot;, out)
-    print(tries, &quot;chances left&quot;)
+    <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"Guess the word:"</span>, out)</span></span>
+    <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(tries, <span class="hljs-string">"chances left"</span>)</span></span>
 
-    guess = input()
+    guess = <span class="hljs-function"><span class="hljs-title">input</span><span class="hljs-params">()</span></span>
 
-    if guess in guessed or guess in wrong:
-        print(&quot;Already guessed&quot;, guess)
-    elif guess in word:
-        print(&quot;Yay&quot;)
-        guessed.append(guess)
-    else:
-        print(&quot;Nope&quot;)
-        tries = tries - 1
-        wrong.append(guess)
+    <span class="hljs-keyword">if</span> guess <span class="hljs-keyword">in</span> guessed or guess <span class="hljs-keyword">in</span> wrong:
+        <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"Already guessed"</span>, guess)</span></span>
+    elif guess <span class="hljs-keyword">in</span> word:
+        <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"Yay"</span>)</span></span>
+        guessed.<span class="hljs-function"><span class="hljs-title">append</span><span class="hljs-params">(guess)</span></span>
+    <span class="hljs-keyword">else</span>:
+        <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"Nope"</span>)</span></span>
+        tries = tries - <span class="hljs-number">1</span>
+        wrong.<span class="hljs-function"><span class="hljs-title">append</span><span class="hljs-params">(guess)</span></span>
 
-    print()
+    <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">()</span></span>
 
-if tries:
-    print(&quot;You guessed&quot;, word)
-else:
-    print(&quot;You didn&#39;t get&quot;, word)</code></pre></li>
+<span class="hljs-keyword">if</span> tries:
+    <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"You guessed"</span>, word)</span></span>
+<span class="hljs-keyword">else</span>:
+    <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"You didn't get"</span>, word)</span></span></code></pre></li>
 <li><p>Run the file, and see what happens when you guess wrong letters</p></li>
 </ul>
 </section>
@@ -205,11 +213,11 @@ else:
 <h2>Activity Checklist</h2>
 <ul>
 <li><p>Find the line in the source code:</p>
-<pre class="language-python"><code>word = choice([&quot;code&quot;, &quot;club&quot;])</code></pre></li>
+<pre class="language-python"><code class="lang-stylus">word = <span class="hljs-function"><span class="hljs-title">choice</span><span class="hljs-params">([<span class="hljs-string">"code"</span>, <span class="hljs-string">"club"</span>])</span></span></code></pre></li>
 <li><p>Edit it to add more words, why not try</p>
-<pre class="language-python"><code>word = choice([&quot;code&quot;, &quot;club&quot;, &quot;robot&quot;, &quot;party&quot;])</code></pre></li>
+<pre class="language-python"><code class="lang-stylus">word = <span class="hljs-function"><span class="hljs-title">choice</span><span class="hljs-params">([<span class="hljs-string">"code"</span>, <span class="hljs-string">"club"</span>, <span class="hljs-string">"robot"</span>, <span class="hljs-string">"party"</span>])</span></span></code></pre></li>
 </ul>
 <p>Remember to put the words in quotes, and put a comma between them to make a list of words.</p>
 </section>
 </section>
-</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><script src="../../../assets/script.min.js"></script></body></html>
+</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><script src="../../../assets/vendor.min.js"></script><script src="../../../assets/script.min.js"></script></body></html>

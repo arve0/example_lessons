@@ -1,4 +1,12 @@
-<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>RPG | YourCodeClubName</title><link href="../../../assets/style.min.css" rel="stylesheet"/></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Home</a></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">RPG</h1></header></div><div class="col-xs-12"><div class="content"><section id="introduction" class="level1 intro">
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>RPG | YourCodeClubName</title><link href="../../../assets/style.min.css" rel="stylesheet"/><script type="text/javascript">// convert url relative to current file
+// ex: python/index.html -> ../python/index.html
+function relative(url) {
+  var urlRoot = '../../..';
+  if (urlRoot !== '') {
+    return urlRoot + '/' + url;
+  }
+  return url;
+}</script></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Home</a><form class="search"><input type="text" placeholder="Search" class="form-control"/></form></div></div><div class="search"><div class="results"><h1>Search Results</h1></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">RPG</h1><div class="lesson-icons"><div class="level"><img title="Level 1" src="../../../assets/img/level1.png"/><span>Novice</span></div><div class="course"><img src="../../../logo-white.png"/><span>Python</span></div><div class="pdf"><a href="/python/lessons/RPG/RPG.pdf" title="Download PDF" class="download"><span class="glyphicon glyphicon-save-file"></span></a><span>PDF</span></div></div></header></div><div class="col-xs-12"><div class="content"><section id="introduction" class="level1 intro">
 <h1>Introduction:</h1>
 <p>In this challenge, you’ll design and code your own RPG maze game. The aim of the game will be to collect objects and escape from a house, making sure to avoid all the monsters!</p>
 </section>
@@ -10,30 +18,30 @@
 <li>If you run the RPG.py file, you’ll be able to play a very basic RPG game that only has 2 rooms. Here’s a map of the game:</li>
 </ul>
 <figure>
-<img src="rpg-map1.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+<img src="rpg-map1.png" alt="screenshot"><figcaption>screenshot</figcaption>
 </figure>
-<p>You can type <code>go south</code> to move from the hall to the kitchen, and then <code>go north</code> to go back to the hall again!</p>
+<p>You can type <code class="lang-go"><span class="hljs-keyword">go</span> south</code> to move from the hall to the kitchen, and then <code class="lang-go"><span class="hljs-keyword">go</span> north</code> to go back to the hall again!</p>
 <figure>
-<img src="rpg-controls.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+<img src="rpg-controls.png" alt="screenshot"><figcaption>screenshot</figcaption>
 </figure>
 <ul>
-<li>You can also see what happens when you type in a direction that you cannot go. For example, there is no room to the west of the hall, so if you type <code>go west</code>, you’ll get a friendly error message.</li>
+<li>You can also see what happens when you type in a direction that you cannot go. For example, there is no room to the west of the hall, so if you type <code class="lang-go"><span class="hljs-keyword">go</span> west</code>, you’ll get a friendly error message.</li>
 </ul>
 <figure>
-<img src="rpg-error.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+<img src="rpg-error.png" alt="screenshot"><figcaption>screenshot</figcaption>
 </figure>
 <ul>
 <li>If you edit the RPG.py file, you can see that the map is coded as a dictionary of rooms:</li>
 </ul>
-<pre class="language-python"><code>    #a dictionary linking a room to other room positions
+<pre class="language-python"><code class="lang-cpp">    <span class="hljs-preprocessor">#a dictionary linking a room to other room positions</span>
     rooms = {
 
-                1 : {  &quot;name&quot;  : &quot;Hall&quot; ,
-                       &quot;south&quot; : 2
+                <span class="hljs-number">1</span> : {  <span class="hljs-string">"name"</span>  : <span class="hljs-string">"Hall"</span> ,
+                       <span class="hljs-string">"south"</span> : <span class="hljs-number">2</span>
                     } ,        
 
-                2 : {  &quot;name&quot;  : &quot;Kitchen&quot; ,
-                       &quot;north&quot; : 1
+                <span class="hljs-number">2</span> : {  <span class="hljs-string">"name"</span>  : <span class="hljs-string">"Kitchen"</span> ,
+                       <span class="hljs-string">"north"</span> : <span class="hljs-number">1</span>
                     }
 
              }</code></pre>
@@ -42,23 +50,23 @@
 <li>Let’s add another room to your map (a dining room), to make it a bit more interesting!</li>
 </ul>
 <figure>
-<img src="rpg-dining.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+<img src="rpg-dining.png" alt="screenshot"><figcaption>screenshot</figcaption>
 </figure>
 <p>This new dining room is linked to the hall (to the west). Let’s add this new room into the code:</p>
-<pre class="language-python"><code>#a dictionary linking a room to other room positions
+<pre class="language-python"><code class="lang-cpp"><span class="hljs-preprocessor">#a dictionary linking a room to other room positions</span>
 rooms = {
 
-            1 : {  &quot;name&quot;  : &quot;Hall&quot; ,
-                   &quot;south&quot; : 2 ,
-                   &quot;east&quot;  : 3
+            <span class="hljs-number">1</span> : {  <span class="hljs-string">"name"</span>  : <span class="hljs-string">"Hall"</span> ,
+                   <span class="hljs-string">"south"</span> : <span class="hljs-number">2</span> ,
+                   <span class="hljs-string">"east"</span>  : <span class="hljs-number">3</span>
                 } ,        
 
-            2 : {  &quot;name&quot;  : &quot;Kitchen&quot; ,
-                   &quot;north&quot; : 1
+            <span class="hljs-number">2</span> : {  <span class="hljs-string">"name"</span>  : <span class="hljs-string">"Kitchen"</span> ,
+                   <span class="hljs-string">"north"</span> : <span class="hljs-number">1</span>
                 } ,
 
-            3 : {  &quot;name&quot;  : &quot;Dining Room&quot;,
-                   &quot;west&quot;  : 1
+            <span class="hljs-number">3</span> : {  <span class="hljs-string">"name"</span>  : <span class="hljs-string">"Dining Room"</span>,
+                   <span class="hljs-string">"west"</span>  : <span class="hljs-number">1</span>
                 }
 
          }</code></pre>
@@ -67,7 +75,7 @@ rooms = {
 <li>Try out the game with the new dining room:</li>
 </ul>
 <figure>
-<img src="rpg-new-room.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+<img src="rpg-new-room.png" alt="screenshot"><figcaption>screenshot</figcaption>
 </figure>
 <p>If you can’t move in and out of the dining room, just check that you added all of the code above (including the extra commas to the lines above).</p>
 </section>
@@ -90,30 +98,30 @@ rooms = {
 <ul>
 <li>Adding an item into a room is easy. You can just add it to the dictionary of a room. For example, let’s put a key in the hall.</li>
 </ul>
-<pre class="language-python"><code>#a dictionary linking a room to other room positions
+<pre class="language-python"><code class="lang-cpp"><span class="hljs-preprocessor">#a dictionary linking a room to other room positions</span>
 rooms = {
 
-            1 : {  &quot;name&quot;  : &quot;Hall&quot; ,
-                   &quot;south&quot; : 2 ,
-                   &quot;east&quot;  : 3 ,
-                   &quot;item&quot;  : &quot;key&quot;
+            <span class="hljs-number">1</span> : {  <span class="hljs-string">"name"</span>  : <span class="hljs-string">"Hall"</span> ,
+                   <span class="hljs-string">"south"</span> : <span class="hljs-number">2</span> ,
+                   <span class="hljs-string">"east"</span>  : <span class="hljs-number">3</span> ,
+                   <span class="hljs-string">"item"</span>  : <span class="hljs-string">"key"</span>
                 } ,        
 
-            2 : {  &quot;name&quot;  : &quot;Kitchen&quot; ,
-                   &quot;north&quot; : 1
+            <span class="hljs-number">2</span> : {  <span class="hljs-string">"name"</span>  : <span class="hljs-string">"Kitchen"</span> ,
+                   <span class="hljs-string">"north"</span> : <span class="hljs-number">1</span>
                 } ,
 
-            3 : {  &quot;name&quot;  : &quot;Dining Room&quot;,
-                   &quot;west&quot;  : 1
+            <span class="hljs-number">3</span> : {  <span class="hljs-string">"name"</span>  : <span class="hljs-string">"Dining Room"</span>,
+                   <span class="hljs-string">"west"</span>  : <span class="hljs-number">1</span>
                 }
 
          }</code></pre>
 <p>Remember to put a comma after the line above the new item, or your program won’t run!</p>
 <ul>
-<li>If you run your game after adding the code above, you can now see a key in the hall, and you can even pick it up (by typing <code>get key</code>) and add it to your inventory!</li>
+<li>If you run your game after adding the code above, you can now see a key in the hall, and you can even pick it up (by typing <code class="lang-processing"><span class="hljs-built_in">get</span> <span class="hljs-variable">key</span></code>) and add it to your inventory!</li>
 </ul>
 <figure>
-<img src="rpg-key.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+<img src="rpg-key.png" alt="screenshot"><figcaption>screenshot</figcaption>
 </figure>
 </section>
 <section id="save-your-project-2" class="level2 save">
@@ -135,40 +143,40 @@ rooms = {
 <ul>
 <li>Adding an enemy to a room is as easy as adding any other item. Let’s add a hungry monster to the kitchen:</li>
 </ul>
-<pre class="language-python"><code>#a dictionary linking a room to other room positions
+<pre class="language-python"><code class="lang-cpp"><span class="hljs-preprocessor">#a dictionary linking a room to other room positions</span>
 rooms = {
 
-            1 : {  &quot;name&quot;  : &quot;Hall&quot; ,
-                   &quot;south&quot; : 2 ,
-                   &quot;east&quot;  : 3 ,
-                   &quot;item&quot;  : &quot;key&quot;
+            <span class="hljs-number">1</span> : {  <span class="hljs-string">"name"</span>  : <span class="hljs-string">"Hall"</span> ,
+                   <span class="hljs-string">"south"</span> : <span class="hljs-number">2</span> ,
+                   <span class="hljs-string">"east"</span>  : <span class="hljs-number">3</span> ,
+                   <span class="hljs-string">"item"</span>  : <span class="hljs-string">"key"</span>
                 } ,        
 
-            2 : {  &quot;name&quot;  : &quot;Kitchen&quot; ,
-                   &quot;north&quot; : 1 ,
-                   &quot;item&quot;  : &quot;monster&quot;
+            <span class="hljs-number">2</span> : {  <span class="hljs-string">"name"</span>  : <span class="hljs-string">"Kitchen"</span> ,
+                   <span class="hljs-string">"north"</span> : <span class="hljs-number">1</span> ,
+                   <span class="hljs-string">"item"</span>  : <span class="hljs-string">"monster"</span>
                 } ,
 
-            3 : {  &quot;name&quot;  : &quot;Dining Room&quot;,
-                   &quot;west&quot;  : 1
+            <span class="hljs-number">3</span> : {  <span class="hljs-string">"name"</span>  : <span class="hljs-string">"Dining Room"</span>,
+                   <span class="hljs-string">"west"</span>  : <span class="hljs-number">1</span>
                 }
 
          }</code></pre>
 <ul>
 <li>You also want to make sure that the game ends if the player enters a room with a monster in. You can do this with the following code, which you should add to the end of the game.</li>
 </ul>
-<pre class="language-python"><code>    #player loses if they enter a room with a monster
-    if &quot;item&quot; in rooms[currentRoom] and &quot;monster&quot; in rooms[currentRoom][&quot;item&quot;]:
-        print(&quot;A monster has got you... GAME OVER!&quot;)
-        print(&quot;Press any key to quit&quot;)
-        input()
+<pre class="language-python"><code class="lang-stylus">    <span class="hljs-id">#player</span> loses <span class="hljs-keyword">if</span> they enter <span class="hljs-tag">a</span> room with <span class="hljs-tag">a</span> monster
+    <span class="hljs-keyword">if</span> <span class="hljs-string">"item"</span> <span class="hljs-keyword">in</span> rooms[currentRoom] and <span class="hljs-string">"monster"</span> <span class="hljs-keyword">in</span> rooms[currentRoom][<span class="hljs-string">"item"</span>]:
+        <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"A monster has got you... GAME OVER!"</span>)</span></span>
+        <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"Press any key to quit"</span>)</span></span>
+        <span class="hljs-function"><span class="hljs-title">input</span><span class="hljs-params">()</span></span>
         break</code></pre>
 <p>This code checks whether there is an item in the room, and if so, whether that item is a monster. Notice that this code is indented, putting it in line with the code above it. This means that the game will check for a monster every time the player moves into a new room.</p>
 <ul>
 <li>Test out your code by going into the kitchen, which now contains a monster.</li>
 </ul>
 <figure>
-<img src="rpg-monster.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+<img src="rpg-monster.png" alt="screenshot"><figcaption>screenshot</figcaption>
 </figure>
 </section>
 <section id="save-your-project-4" class="level2 save">
@@ -191,7 +199,7 @@ rooms = {
 <li>In this game, the player wins by getting to the garden and escaping the house. They also need to have the key with them, and the magic potion. Here’s a map of the game.</li>
 </ul>
 <figure>
-<img src="rpg-final-map.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+<img src="rpg-final-map.png" alt="screenshot"><figcaption>screenshot</figcaption>
 </figure>
 <p>Notice that there’s another fourth room (the garden) that links to the dining room (to the north).</p>
 <ul>
@@ -199,25 +207,25 @@ rooms = {
 <li><p>Use the guidance in step 2 above to add a potion to the dining room (or another room in your house).</p></li>
 <li><p>To allow the player to win the game when they get to the garden with the key and the potion, add this code to the end of your game:</p></li>
 </ul>
-<pre class="language-python"><code>    #player wins if they get to the garden with a key and a shield
-    if currentRoom == 4 and &#39;key&#39; in inventory and &#39;potion&#39; in inventory:
-        print(&quot;You escaped the house... YOU WIN!&quot;)
-        print(&quot;Press any key to quit&quot;)
-        input()
+<pre class="language-python"><code class="lang-stylus">    <span class="hljs-id">#player</span> wins <span class="hljs-keyword">if</span> they get to the garden with <span class="hljs-tag">a</span> key and <span class="hljs-tag">a</span> shield
+    <span class="hljs-keyword">if</span> currentRoom == <span class="hljs-number">4</span> and <span class="hljs-string">'key'</span> <span class="hljs-keyword">in</span> inventory and <span class="hljs-string">'potion'</span> <span class="hljs-keyword">in</span> inventory:
+        <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"You escaped the house... YOU WIN!"</span>)</span></span>
+        <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"Press any key to quit"</span>)</span></span>
+        <span class="hljs-function"><span class="hljs-title">input</span><span class="hljs-params">()</span></span>
         break</code></pre>
-<p>Again, make sure this code is indented, and in line with the code above it. This code means that the message <code>...YOU WIN!</code> is displayed if the player is in room 4 (the garden) and if the key and the potion are in the inventory. If you have more than 4 rooms, you may have to use a different room number for your garden in the code above.</p>
+<p>Again, make sure this code is indented, and in line with the code above it. This code means that the message <code class="lang-stylus">..<span class="hljs-class">.YOU</span> WIN!</code> is displayed if the player is in room 4 (the garden) and if the key and the potion are in the inventory. If you have more than 4 rooms, you may have to use a different room number for your garden in the code above.</p>
 <ul>
 <li>Test your game to make sure the player can win!</li>
 </ul>
 <figure>
-<img src="rpg-win.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+<img src="rpg-win.png" alt="screenshot"><figcaption>screenshot</figcaption>
 </figure>
 <ul>
-<li>Finally, let’s add some instructions to your game, so that the player knows what they have to do. Edit the <code>showInstructions()</code> function to include more information.</li>
+<li>Finally, let’s add some instructions to your game, so that the player knows what they have to do. Edit the <code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">showInstructions</span><span class="hljs-params">()</span></span></code> function to include more information.</li>
 </ul>
-<pre class="language-python"><code>def showInstructions():
-    #print a main menu, the commands and instructions
-    print(&#39;&#39;&#39;
+<pre class="language-python"><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">showInstructions</span><span class="hljs-params">()</span>:</span>
+    <span class="hljs-comment">#print a main menu, the commands and instructions</span>
+    print(<span class="hljs-string">'''
 RPG Game
 ========
 Instructions:
@@ -227,10 +235,10 @@ Instructions:
 Commands:
   go [direction]
   get [item]
-&#39;&#39;&#39;)</code></pre>
+'''</span>)</code></pre>
 <p>You will need to add instructions to tell the user what items they need to collect, and what they need to avoid!</p>
 <figure>
-<img src="rpg-instructions.png" alt="screenshot" /><figcaption>screenshot</figcaption>
+<img src="rpg-instructions.png" alt="screenshot"><figcaption>screenshot</figcaption>
 </figure>
 </section>
 <section id="save-your-project-6" class="level2 save">
@@ -238,10 +246,10 @@ Commands:
 </section>
 <section id="challenge-develop-your-own-game" class="level2 challenge">
 <h2>Challenge: Develop your own game</h2>
-<p>Use what you’ve learnt to create your own game. Add lots of rooms, monsters ot avoid and items to collect. Remember to modify the code so that the player wins when they get to a certain room with some of the objects in their inventory. It may help you to sketch a map before you start coding! You could even add stairs to your map and have more than one level of rooms, by typing <code>go up</code> and <code>go down</code>.</p>
+<p>Use what you’ve learnt to create your own game. Add lots of rooms, monsters ot avoid and items to collect. Remember to modify the code so that the player wins when they get to a certain room with some of the objects in their inventory. It may help you to sketch a map before you start coding! You could even add stairs to your map and have more than one level of rooms, by typing <code class="lang-vim"><span class="hljs-keyword">go</span> <span class="hljs-keyword">up</span></code> and <code class="lang-go"><span class="hljs-keyword">go</span> down</code>.</p>
 </section>
 <section id="save-your-project-7" class="level2 save">
 <h2>Save Your Project</h2>
 </section>
 </section>
-</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><script src="../../../assets/script.min.js"></script></body></html>
+</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><script src="../../../assets/vendor.min.js"></script><script src="../../../assets/script.min.js"></script></body></html>

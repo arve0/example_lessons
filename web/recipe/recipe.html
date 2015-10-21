@@ -1,4 +1,12 @@
-<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Coding a recipe | YourCodeClubName</title><link href="../../assets/style.min.css" rel="stylesheet"/></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Home</a></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">Coding a recipe</h1></header></div><div class="col-xs-12"><div class="content"><section id="introduction" class="level1 intro">
+<html><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>Coding a recipe | YourCodeClubName</title><link href="../../assets/style.min.css" rel="stylesheet"/><script type="text/javascript">// convert url relative to current file
+// ex: python/index.html -> ../python/index.html
+function relative(url) {
+  var urlRoot = '../..';
+  if (urlRoot !== '') {
+    return urlRoot + '/' + url;
+  }
+  return url;
+}</script></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Home</a><form class="search"><input type="text" placeholder="Search" class="form-control"/></form></div></div><div class="search"><div class="results"><h1>Search Results</h1></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">Coding a recipe</h1><div class="lesson-icons"><div class="level"><img title="Level 1" src="../../assets/img/level1.png"/><span>Novice</span></div><div class="course"><img src="../../logo-white.png"/><span>Web</span></div><div class="pdf"><a href="/web/recipe/recipe.pdf" title="Download PDF" class="download"><span class="glyphicon glyphicon-save-file"></span></a><span>PDF</span></div></div></header></div><div class="col-xs-12"><div class="content"><section id="introduction" class="level1 intro">
 <h1>Introduction</h1>
 <p>Hey, what’s <strong>your favourite dish</strong>?</p>
 <p>Can you <strong>write down your recipe</strong> for it in HTML<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> so that anyone on the Web can enjoy making it too?</p>
@@ -19,25 +27,25 @@
 <li><p>Here is the bare skeleton of an HTML document, <strong>copy-paste it</strong> into your new file.</p></li>
 </ul>
 <p>Does it look familiar?</p>
-<pre class="sourceCode html"><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span>
-<span class="kw">&lt;html&gt;</span>
-    <span class="kw">&lt;head&gt;</span>
-        <span class="kw">&lt;title&gt;</span>Code Club recipe<span class="kw">&lt;/title&gt;</span>
-    <span class="kw">&lt;/head&gt;</span>
-    <span class="kw">&lt;body&gt;</span>
+<pre class="sourceCode html"><code class="sourceCode html lang-xml"><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>Code Club recipe<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
         HELLO!
-    <span class="kw">&lt;/body&gt;</span>
-<span class="kw">&lt;/html&gt;</span> </code></pre>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span> </code></pre>
 <ul>
-<li><strong>Save your file</strong>. You can save it as whatever you want to call it. Just remember to end your file name with <code>.html</code> so that your computer knows it’s an HTML file. For instance, you could call your file <code>recipe.html</code>. Can you think of a less boring name?</li>
+<li><strong>Save your file</strong>. You can save it as whatever you want to call it. Just remember to end your file name with <code class="lang-asciidoc"><span class="hljs-title">.html</span></code> so that your computer knows it’s an HTML file. For instance, you could call your file <code class="lang-css"><span class="hljs-tag">recipe</span><span class="hljs-class">.html</span></code>. Can you think of a less boring name?</li>
 <li>Do you know where your HTML file has gone?
 <ul>
 <li>NO. Ok, it’s somewhere on your computer. Can you find it?</li>
 <li>YES. Good, let’s move on.</li>
 </ul></li>
 <li><strong>Open your browser</strong><a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>.</li>
-<li>From your browser, <strong>open your HTML file</strong> . Does it say <code>HELLO!</code>?</li>
-<li>Go <strong>back to the code editor</strong>. Can you change the <code>HELLO!</code> text to something else?</li>
+<li>From your browser, <strong>open your HTML file</strong> . Does it say <code class="lang-erlang-repl"><span class="hljs-variable">HELLO</span><span class="hljs-exclamation_mark">!</span></code>?</li>
+<li>Go <strong>back to the code editor</strong>. Can you change the <code class="lang-erlang-repl"><span class="hljs-variable">HELLO</span><span class="hljs-exclamation_mark">!</span></code> text to something else?</li>
 <li><strong>Save</strong> your HTML file.</li>
 <li><strong>Back to your browser</strong>, can you refresh<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> the page where you opened your HTML file?</li>
 <li>Great! Now you’ve got your <strong>tools ready</strong>: code editor to write your code, browser to <em>debug</em><a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a> your code.</li>
@@ -50,13 +58,13 @@
 <h2>Activity Checklist</h2>
 <p><strong>Do you make lists?</strong> For instance, a list of things to do for a party, or a playlist of your favourite videos… you know what we’re talking about.</p>
 <p>You can <strong>make lists in HTML</strong> too! Here’s a code example:</p>
-<pre class="sourceCode html"><code class="sourceCode html"><span class="kw">&lt;ul&gt;</span>
-    <span class="kw">&lt;li&gt;</span>this is a bullet point<span class="kw">&lt;/li&gt;</span>
-    <span class="kw">&lt;li&gt;</span>this is another point<span class="kw">&lt;/li&gt;</span>
-    <span class="kw">&lt;li&gt;</span>...you get the point<span class="kw">&lt;/li&gt;</span>
-<span class="kw">&lt;/ul&gt;</span>   </code></pre>
+<pre class="sourceCode html"><code class="sourceCode html lang-xml"><span class="hljs-tag">&lt;<span class="hljs-title">ul</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>this is a bullet point<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>this is another point<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">li</span>&gt;</span>...you get the point<span class="hljs-tag">&lt;/<span class="hljs-title">li</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">ul</span>&gt;</span>   </code></pre>
 <ul>
-<li><p>Copy-paste the code above in your HTML file. Where? After the <code>&lt;body&gt;</code> <em>opening tag</em>, and before the <code>&lt;/body&gt;</code> <em>closing tag</em>.</p></li>
+<li><p>Copy-paste the code above in your HTML file. Where? After the <code class="lang-apache"><span class="hljs-tag">&lt;body&gt;</span></code> <em>opening tag</em>, and before the <code class="lang-apache"><span class="hljs-tag">&lt;/body&gt;</span></code> <em>closing tag</em>.</p></li>
 <li><p>Save, go to your browser and refresh the page. What do you see?</p></li>
 </ul>
 <p><img class="border-less" src="ul.png" title="This is what you should see"></p>
@@ -73,8 +81,8 @@
 <section id="activity-checklist-2" class="level2 check">
 <h2>Activity Checklist</h2>
 <p>Not all lists are the same. In some lists, the order of things doesn’t matter.</p>
-<p>HTML calls these lists <code>&lt;ul&gt;</code> which stands for <strong>U</strong>n-ordered <strong>L</strong>ist. In these kind of lists, you put <strong>L</strong>ist <strong>I</strong>tems <code>&lt;li&gt;</code> in no particular order, a bit like in your bedroom :)</p>
-<p>Now, can you guess what <code>&lt;ol&gt;</code> stands for?</p>
+<p>HTML calls these lists <code class="lang-apache"><span class="hljs-tag">&lt;ul&gt;</span></code> which stands for <strong>U</strong>n-ordered <strong>L</strong>ist. In these kind of lists, you put <strong>L</strong>ist <strong>I</strong>tems <code class="lang-apache"><span class="hljs-tag">&lt;li&gt;</span></code> in no particular order, a bit like in your bedroom :)</p>
+<p>Now, can you guess what <code class="lang-apache"><span class="hljs-tag">&lt;ol&gt;</span></code> stands for?</p>
 <p>Exactly.</p>
 </section>
 <section id="challenge-1" class="level2 try">
@@ -91,19 +99,19 @@
 <h2>Activity Checklist</h2>
 <p>So far, you have the basics for your recipe:</p>
 <ol type="1">
-<li>A <code>&lt;ul&gt;</code> list of ingredients</li>
-<li>A <code>&lt;ol&gt;</code> list of steps, to turn these ingredients into a tasty dish</li>
+<li>A <code class="lang-apache"><span class="hljs-tag">&lt;ul&gt;</span></code> list of ingredients</li>
+<li>A <code class="lang-apache"><span class="hljs-tag">&lt;ol&gt;</span></code> list of steps, to turn these ingredients into a tasty dish</li>
 </ol>
 <p>Some people like to see what a dish will look like once it’s made, to decide if they want to make it or not.</p>
 <p>Why not <strong>add an image</strong> or two to whet their appetite?</p>
-<p>HTML calls images <code>&lt;img&gt;</code> and wants you to write down exactly where to find an image’s <em>source</em>, or <code>src</code>.</p>
+<p>HTML calls images <code class="lang-apache"><span class="hljs-tag">&lt;img&gt;</span></code> and wants you to write down exactly where to find an image’s <em>source</em>, or <code>src</code>.</p>
 <ul>
-<li>Copy-paste the <code>banana.jpg</code> image, from this project’s <em>Resources</em> folder into the folder where you saved your HTML file.</li>
+<li>Copy-paste the <code class="lang-css"><span class="hljs-tag">banana</span><span class="hljs-class">.jpg</span></code> image, from this project’s <em>Resources</em> folder into the folder where you saved your HTML file.</li>
 </ul>
 <!-- this may change if we use Thimble -->
 
 <ul>
-<li>Add <code>&lt;img src=&quot;banana.jpg&quot;&gt;</code> to your HTML document. Save, go to your browser and refresh your page, you should see some freshly chopped banana slices. Yummy?</li>
+<li>Add <code class="lang-stylus">&lt;<span class="hljs-tag">img</span> src=<span class="hljs-string">"banana.jpg"</span>&gt;</code> to your HTML document. Save, go to your browser and refresh your page, you should see some freshly chopped banana slices. Yummy?</li>
 </ul>
 </section>
 <section id="challenge-2" class="level2 try">
@@ -120,7 +128,7 @@
 <h2>Activity Checklist</h2>
 <p>Your recipe looks much better now, don’t you think?</p>
 <p>Still, some people want to know how long it would take them to make this recipe, whether it’s an easy or difficult one, how many people it serves, what to call this recipe, and so on.</p>
-<p>For a <em>starter</em>, you could <strong>add the name of your recipe</strong> at the top of your HTML document, using a <code>&lt;h1&gt;</code>, which stands for <strong>H</strong>eading <strong>1</strong> and it’s what HTML calls the most important piece of information in a document. What is your recipe called?</p>
+<p>For a <em>starter</em>, you could <strong>add the name of your recipe</strong> at the top of your HTML document, using a <code class="lang-apache"><span class="hljs-tag">&lt;h1&gt;</span></code>, which stands for <strong>H</strong>eading <strong>1</strong> and it’s what HTML calls the most important piece of information in a document. What is your recipe called?</p>
 </section>
 <section id="challenge-3" class="level2 try">
 <h2>Challenge</h2>
@@ -137,32 +145,32 @@
 <p>Now your recipe contains all the information one may want.</p>
 <p>Should we try and make it look as nice as it tastes?</p>
 <p>Ok, have you heard of CSS<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a>? You can use this language to <strong>style your recipe</strong>.</p>
-<p>You can write your CSS inside a <code>&lt;style&gt;</code> tag, placed in the <code>&lt;head&gt;</code> of your HTML document, like in the code example below.</p>
-<pre class="sourceCode html"><code class="sourceCode html"><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span>
-<span class="kw">&lt;html&gt;</span>
-    <span class="kw">&lt;head&gt;</span>
-        <span class="kw">&lt;title&gt;</span>Code Club recipe<span class="kw">&lt;/title&gt;</span>
-        <span class="kw">&lt;style&gt;</span>
+<p>You can write your CSS inside a <code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-title">style</span>&gt;</span><span class="css"></span></code> tag, placed in the <code class="lang-apache"><span class="hljs-tag">&lt;head&gt;</span></code> of your HTML document, like in the code example below.</p>
+<pre class="sourceCode html"><code class="sourceCode html lang-xml"><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>Code Club recipe<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">style</span>&gt;</span><span class="css">
             
-            <span class="co">/* WRITE YOUR CSS UNDER HERE */</span>
+            <span class="hljs-comment">/* WRITE YOUR CSS UNDER HERE */</span>
             
             
-        <span class="kw">&lt;/style&gt;</span>
-    <span class="kw">&lt;/head&gt;</span>
+        </span><span class="hljs-tag">&lt;/<span class="hljs-title">style</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
     ...
-<span class="kw">&lt;/html&gt;</span> </code></pre>
+<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span> </code></pre>
 <p>Just like HTML, CSS needs to be written in a particular way for your browser to make sense of it.</p>
-<pre class="sourceCode css"><code class="sourceCode css">body 
-<span class="kw">{</span>
-    <span class="kw">max-width:</span> <span class="dt">600px</span><span class="kw">;</span>
-    <span class="kw">margin:</span> <span class="dt">30px</span> <span class="dt">auto</span><span class="kw">;</span> 
-<span class="kw">}</span></code></pre>
+<pre class="sourceCode css"><code class="sourceCode css lang-css"><span class="hljs-tag">body</span> 
+<span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">max-width</span>:<span class="hljs-value"> <span class="hljs-number">600px</span></span></span>;
+    <span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"> <span class="hljs-number">30px</span> auto</span></span>; 
+}</span></code></pre>
 </section>
 <section id="challenge-4" class="level2 try">
 <h2>Challenge</h2>
 <ul>
-<li><p>Copy-paste the code above into your HTML document. Where? Anywhere between the <code>&lt;style&gt;</code> <em>opening tag</em> and the <code>&lt;/style&gt;</code> <em>closing tag</em>.</p></li>
-<li><p>Using your browser’s Inspector<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a>, can you work out what the <code>max-width: 600px;</code> and <code>margin: 30px auto;</code> rules do?</p></li>
+<li><p>Copy-paste the code above into your HTML document. Where? Anywhere between the <code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-title">style</span>&gt;</span><span class="css"></span></code> <em>opening tag</em> and the <code class="lang-apache"><span class="hljs-tag">&lt;/style&gt;</span></code> <em>closing tag</em>.</p></li>
+<li><p>Using your browser’s Inspector<a href="#fn6" class="footnoteRef" id="fnref6"><sup>6</sup></a>, can you work out what the <code class="lang-http"><span class="hljs-attribute">max-width</span>: <span class="hljs-string">600px;</span></code> and <code class="lang-cpp">margin: <span class="hljs-number">30</span>px <span class="hljs-keyword">auto</span>;</code> rules do?</p></li>
 </ul>
 </section>
 </section>
@@ -173,11 +181,11 @@
 <p>Now your recipe should sit in the middle of the page, instead of sticking to the left.</p>
 <p>Using CSS, you can <strong>tell your browser how to display your text</strong>, for example:</p>
 <ul>
-<li>Use <code>font-size</code> to make text <em>xx-large</em>, <em>xx-small</em> or anything in between<a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a></li>
-<li>Use <code>text-align</code> to make text stick to the <em>left</em>, <em>right</em> or <em>center</em></li>
-<li>Use <code>font-weight</code> to make text <em>bold</em>, <em>bolder</em> or <em>lighter</em></li>
-<li>Use <code>line-height</code> to squish text lines together, or to give them more room</li>
-<li>Use <code>font-family</code> to choose the font<a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a> for your text</li>
+<li>Use <code class="lang-fortran">font-<span class="hljs-built_in">size</span></code> to make text <em>xx-large</em>, <em>xx-small</em> or anything in between<a href="#fn7" class="footnoteRef" id="fnref7"><sup>7</sup></a></li>
+<li>Use <code class="lang-mel"><span class="hljs-keyword">text</span>-<span class="hljs-keyword">align</span></code> to make text stick to the <em>left</em>, <em>right</em> or <em>center</em></li>
+<li>Use <code class="lang-scss"><span class="hljs-attribute">font-weight</span></code> to make text <em>bold</em>, <em>bolder</em> or <em>lighter</em></li>
+<li>Use <code class="lang-processing"><span class="hljs-built_in">line</span>-<span class="hljs-variable">height</span></code> to squish text lines together, or to give them more room</li>
+<li>Use <code class="lang-haskell"><span class="hljs-title">font</span>-<span class="hljs-keyword">family</span></code> to choose the font<a href="#fn8" class="footnoteRef" id="fnref8"><sup>8</sup></a> for your text</li>
 </ul>
 </section>
 <section id="challenge-5" class="level2 try">
@@ -186,10 +194,10 @@
 <li><p>Play around with the CSS properties above.</p></li>
 <li><p>Can you <strong>make your recipe easier to read</strong>, so that even a granny can read it?</p></li>
 </ul>
-<p>You can start from this code example. Place it inside the CSS rule for <code>body</code>.</p>
-<pre class="sourceCode css"><code class="sourceCode css">font-family<span class="dv">:</span> courier, monospace;
-font-size<span class="dv">:</span> 20px;
-line-height<span class="dv">:</span> 1<span class="fl">.5</span>;</code></pre>
+<p>You can start from this code example. Place it inside the CSS rule for <code class="lang-d"><span class="hljs-keyword">body</span></code>.</p>
+<pre class="sourceCode css"><code class="sourceCode css lang-http"><span class="hljs-attribute">font-family</span>: <span class="hljs-string">courier, monospace;</span>
+<span class="hljs-attribute">font-size</span>: <span class="hljs-string">20px;</span>
+<span class="hljs-attribute">line-height</span>: <span class="hljs-string">1.5;</span></code></pre>
 <p><img class="border-less" src="centred.png" title="This is what you should see"></p>
 </section>
 </section>
@@ -199,10 +207,10 @@ line-height<span class="dv">:</span> 1<span class="fl">.5</span>;</code></pre>
 <h2>Activity Checklist</h2>
 <p>Using CSS, you can <strong>get creative with colours</strong>. Do you want your text to look like <span style="color:tomato;">tomatoes</span> on <span style="background:peachpuff;padding:2px 4px">peachpuff</span>? No problem.</p>
 <ul>
-<li>Copy-paste the code example below into your HTML document. Place it inside the CSS rule for <code>body</code>.</li>
+<li>Copy-paste the code example below into your HTML document. Place it inside the CSS rule for <code class="lang-d"><span class="hljs-keyword">body</span></code>.</li>
 </ul>
-<pre class="sourceCode css"><code class="sourceCode css">color<span class="dv">:</span> tomato;
-background-color<span class="dv">:</span> peachpuff;</code></pre>
+<pre class="sourceCode css"><code class="sourceCode css lang-http"><span class="hljs-attribute">color</span>: <span class="hljs-string">tomato;</span>
+<span class="hljs-attribute">background-color</span>: <span class="hljs-string">peachpuff;</span></code></pre>
 <ul>
 <li>Save, go to your browser and refresh your page. What do you see?</li>
 </ul>
@@ -216,7 +224,7 @@ background-color<span class="dv">:</span> peachpuff;</code></pre>
 <ul>
 <li>With your HTML page open in your browser, right-click anywhere on your page.</li>
 <li>Choose <strong>Inspect Element</strong> from the menu that will pop up.</li>
-<li>Click on the <code>&lt;body&gt;</code> element on the left panel (where your HTML is) and its <em>Styles</em> will show up in the right panel.</li>
+<li>Click on the <code class="lang-apache"><span class="hljs-tag">&lt;body&gt;</span></code> element on the left panel (where your HTML is) and its <em>Styles</em> will show up in the right panel.</li>
 </ul>
 <p>You should see something similar to the image below.</p>
 <p><img class="border-less" src="inspect-body.png" title="Click on the body element on the left panel and its Styles will show up in the right panel"></p>
@@ -235,19 +243,19 @@ background-color<span class="dv">:</span> peachpuff;</code></pre>
 <section id="activity-checklist-8" class="level2 check">
 <h2>Activity Checklist</h2>
 <p>What if you want to make only <em>some</em> parts of your HTML a certain colour?</p>
-<p>CSS and HTML use <strong>different ways to call the same things</strong>. In HTML you say <code>&lt;body&gt; ... &lt;/body&gt;</code> and in CSS you say <code>body { ... }</code></p>
+<p>CSS and HTML use <strong>different ways to call the same things</strong>. In HTML you say <code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span> ... <span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span></code> and in CSS you say <code class="lang-less"><span class="hljs-tag">body</span> { ... }</code></p>
 <ul>
-<li>To change the colour of your <code>&lt;h1&gt;</code> HTML element, add this CSS.</li>
+<li>To change the colour of your <code class="lang-apache"><span class="hljs-tag">&lt;h1&gt;</span></code> HTML element, add this CSS.</li>
 </ul>
-<pre class="sourceCode css"><code class="sourceCode css">h1 
-<span class="kw">{</span>
-    <span class="kw">color:</span> <span class="dt">maroon</span><span class="kw">;</span>
-<span class="kw">}</span></code></pre>
+<pre class="sourceCode css"><code class="sourceCode css lang-css"><span class="hljs-tag">h1</span> 
+<span class="hljs-rules">{
+    <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> maroon</span></span>;
+}</span></code></pre>
 <ul>
 <li>Save, go to your browser and refresh your page. What do you see?</li>
 </ul>
-<p>Now <code>&lt;h1&gt;</code> has a new <code>color</code>, while the rest of your page <em>inherits</em> the <code>color</code> you gave to the <code>&lt;body&gt;</code>.</p>
-<p>The <code>h1</code> <code>color</code> takes precedence over the <code>body</code> one, because the <em>selector</em> <code>h1</code> is <strong>more specific</strong> than <code>body</code>. CSS likes <em>specificity</em>.</p>
+<p>Now <code class="lang-apache"><span class="hljs-tag">&lt;h1&gt;</span></code> has a new <code class="lang-dos"><span class="hljs-built_in">color</span></code>, while the rest of your page <em>inherits</em> the <code class="lang-dos"><span class="hljs-built_in">color</span></code> you gave to the <code class="lang-apache"><span class="hljs-tag">&lt;body&gt;</span></code>.</p>
+<p>The <code>h1</code> <code class="lang-dos"><span class="hljs-built_in">color</span></code> takes precedence over the <code class="lang-d"><span class="hljs-keyword">body</span></code> one, because the <em>selector</em> <code>h1</code> is <strong>more specific</strong> than <code class="lang-d"><span class="hljs-keyword">body</span></code>. CSS likes <em>specificity</em>.</p>
 </section>
 <section id="challenge-7" class="level2 try">
 <h2>Challenge</h2>
@@ -260,7 +268,7 @@ background-color<span class="dv">:</span> peachpuff;</code></pre>
 </section>
 </section>
 <section class="footnotes">
-<hr />
+<hr>
 <ol>
 <li id="fn1"><p><strong>HTML</strong> stands for <strong>H</strong>ow <strong>T</strong>o <strong>M</strong>ake <strong>L</strong>unch… well, no. HTML stands for <strong>H</strong>yper<strong>T</strong>ext <strong>M</strong>arkup <strong>L</strong>anguage, which is the language that every website in the World “speaks”. To make a website, you teach your computer how to “translate” your ideas into HTML.<a href="#fnref1">↩</a></p></li>
 <li id="fn2"><p><strong>What’s a browser?</strong> A web browser is a special app that knows how to interpret text files written in HTML. The most popular browsers are Internet Explorer, Google Chrome and Mozilla Firefox.<a href="#fnref2">↩</a></p></li>
@@ -268,9 +276,9 @@ background-color<span class="dv">:</span> peachpuff;</code></pre>
 <li id="fn4"><p><strong>What’s debugging?</strong> Debugging means to find and correct glitches in your code. It takes both patience and speed, just like catching a flying bug. Luckily, debugging HTML code in your browser is easy: right-click anywhere on a page and choose <strong>Inspect Element</strong>. This will pop open your browser’s <strong>Inspector</strong>, where you can see every page’s <em>source code</em> and much more. When you hover over the source code with your mouse, the corresponding HTML element on the page will light up.<a href="#fnref4">↩</a></p></li>
 <li id="fn5"><p><strong>CSS</strong> deals with how we <strong>C</strong>ook, <strong>S</strong>tyle and <strong>S</strong>erve food… well, no. CSS stands for <strong>C</strong>ascading <strong>S</strong>tyle <strong>S</strong>heets and it’s the language you can use to tell your browser to change colours, sizes and many other <em>stylistic</em> aspects of your HTML documents.<a href="#fnref5">↩</a></p></li>
 <li id="fn6"><p><strong>What’s a browser’s Inspector?</strong> In your browser, right-click anywhere on a page and choose <strong>Inspect Element</strong>. This will pop open your browser’s <strong>Inspector</strong>, where you can see every page’s <em>source code</em>, <em>styles</em> and much more. When you hover over the source code with your mouse, the corresponding HTML element on the page will light up. When you click on an HTML tag in the source code (left panel), you’ll see all its CSS styles (on the right panel).<a href="#fnref6">↩</a></p></li>
-<li id="fn7"><p><strong>How can you control the size of things in CSS?</strong> Using <code>px</code>, which stands for <em>pixel</em>. Try to go really close to your computer screen: do you see little dots? Every little dot on your computer screen is a <em>pixel</em>. So, <code>20px</code> means 20 of those little dots.<a href="#fnref7">↩</a></p></li>
+<li id="fn7"><p><strong>How can you control the size of things in CSS?</strong> Using <code>px</code>, which stands for <em>pixel</em>. Try to go really close to your computer screen: do you see little dots? Every little dot on your computer screen is a <em>pixel</em>. So, <code class="lang-cpp"><span class="hljs-number">20</span>px</code> means 20 of those little dots.<a href="#fnref7">↩</a></p></li>
 <li id="fn8"><p><strong>What’s a font?</strong> You can think of a font as the “dress code” for the letters of the alphabet, numbers and punctuation. You can use fonts to “dress” the same text in many different ways, and express certain moods or feelings, for example <span style="font-family:monospace;font-size: 125%;">this</span>, <span style="font-family:Times,serif;font-size: 125%;">this</span>, <span style="font-family:Helvetica,Arial,sans-serif;font-size: 125%;">this</span>, <span style="font-family:cursive;font-size: 125%;">this</span> or <span style="font-family:Impact,Charcoal,sans-serif;font-size: 115%;">this</span>. You can explore and use hundreds of free fonts on <a href="https://www.google.com/fonts">Google Fonts</a>.<a href="#fnref8">↩</a></p></li>
 </ol>
 </section>
 </div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div><div class="author"><p><strong>Author:</strong></p><p>Matteo Menapace</p>
-</div></div></div></div></div><script src="../../assets/script.min.js"></script></body></html>
+</div></div></div></div></div><script src="../../assets/vendor.min.js"></script><script src="../../assets/script.min.js"></script></body></html>
