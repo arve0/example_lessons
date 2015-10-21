@@ -1,6 +1,6 @@
 ---
 title: Brain Game
-level: Scratch 2
+level: 1
 language: en-GB
 stylesheet: scratch
 embeds: "*.png"

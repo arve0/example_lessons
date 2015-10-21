@@ -1,6 +1,6 @@
 ---
 title: Playing against the Computer
-level: Python +
+level: 1
 language: en
 stylesheet: python
 ---

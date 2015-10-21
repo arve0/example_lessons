@@ -1,7 +1,7 @@
 
 ---
 title: Quiz
-level: Python 1
+level: 1
 language: en
 stylesheet: python
 embeds: "*.png"

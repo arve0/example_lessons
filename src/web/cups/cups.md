@@ -1,6 +1,6 @@
 ---
 title: Coding Cups and Balls
-level: HTML&CSS 2
+level: 1
 language: en-GB
 embeds: "*.png"
 materials: "Resources"

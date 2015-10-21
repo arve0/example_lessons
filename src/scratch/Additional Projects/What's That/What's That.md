@@ -1,6 +1,6 @@
 ---
 title: What's That
-level: Scratch +
+level: 1
 language: en-GB
 stylesheet: scratch
 embeds: "*.png"

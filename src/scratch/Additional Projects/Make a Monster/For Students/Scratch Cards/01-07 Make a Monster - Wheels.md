@@ -1,6 +1,6 @@
 ---
 title: Scratch Card - Wheels
-level: Level 4
+level: 1
 language: en-GB
 stylesheet: scratch
 embeds: "*.png"

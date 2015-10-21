@@ -1,7 +1,7 @@
 
 ---
 title: Secret Messages
-level: Python 2
+level: 1
 language: en
 stylesheet: python
 embeds: "*.png"

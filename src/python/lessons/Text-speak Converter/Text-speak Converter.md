@@ -1,6 +1,6 @@
 ---
 title: Text-speak Converter
-level: Python 2
+level: 1
 language: en
 stylesheet: python
 embeds: "*.png"

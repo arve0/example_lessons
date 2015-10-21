@@ -1,6 +1,6 @@
 ---
 title: Project Template
-level: Python +
+level: 1
 language: en-GB
 stylesheet: python
 embeds: "*.png"

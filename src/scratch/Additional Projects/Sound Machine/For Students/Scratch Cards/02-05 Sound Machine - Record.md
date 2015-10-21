@@ -1,6 +1,6 @@
 ---
 title: Scratch Card - Record
-level: Level 6
+level: 1
 language: en-GB
 stylesheet: scratch
 embeds: "*.png"

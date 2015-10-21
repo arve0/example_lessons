@@ -1,6 +1,6 @@
 ---
 title: Audio and video on web pages
-level: HTML&CSS 2
+level: 1
 language: en-GB
 embeds: "*.png"
 materials: "code and images"

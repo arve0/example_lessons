@@ -1,6 +1,6 @@
 ---
 title: Styling and formatting text
-level: HTML&CSS 1
+level: 1
 language: en-GB
 embeds: "*.png"
 materials: "code and images"

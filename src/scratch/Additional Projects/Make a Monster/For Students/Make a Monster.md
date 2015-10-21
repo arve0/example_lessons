@@ -1,6 +1,6 @@
 ---
 title: Create your own monster
-level: Scratch +
+level: 1
 language: en-GB
 stylesheet: scratch
 embeds: "*.png"

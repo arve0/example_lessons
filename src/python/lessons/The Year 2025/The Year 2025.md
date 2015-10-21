@@ -1,6 +1,6 @@
 ---
 title: The Year 2025
-level: Python 1
+level: 1
 language: en
 stylesheet: python
 embeds: "*.png"

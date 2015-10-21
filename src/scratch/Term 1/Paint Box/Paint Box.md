@@ -1,6 +1,6 @@
 ---
 title: Paint Box
-level: Scratch 1
+level: 1
 language: en-GB
 stylesheet: scratch
 embeds: "*.png"

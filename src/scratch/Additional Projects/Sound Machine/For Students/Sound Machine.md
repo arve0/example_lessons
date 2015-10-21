@@ -1,6 +1,6 @@
 ---
 title: Sound machine
-level: Scratch +
+level: 1
 language: en-GB
 stylesheet: scratch
 ---

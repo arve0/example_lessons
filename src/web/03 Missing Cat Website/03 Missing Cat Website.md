@@ -1,6 +1,6 @@
 ---
 title: Missing cat website
-level: HTML&CSS 1
+level: 1
 language: en-GB
 embeds: "*.png"
 materials: "code and images"

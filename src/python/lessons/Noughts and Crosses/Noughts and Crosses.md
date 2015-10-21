@@ -1,6 +1,6 @@
 ---
 title: Noughts and Crosses
-level: Python +
+level: 1
 language: en
 stylesheet: python
 ---

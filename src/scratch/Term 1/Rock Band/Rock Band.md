@@ -1,6 +1,6 @@
 ---
 title: Rock Band
-level: Scratch 1
+level: 1
 language: en-GB
 stylesheet: scratch
 embeds: "*.png"
