@@ -26,14 +26,21 @@ cp -r scratch-curriculum/en-GB/ src/scratch
 cp -r webdev-curriculum/en-GB/ src/web
 
 # fix format of yaml headers and code blocks
-find src/ -name "*.md" -print0 | xargs -0 -L 1 codeclub_lesson_builder/utils/fix_yaml_header.sh 
-find src/ -name "*.md" -print0 | xargs -0 -L 1 codeclub_lesson_builder/utils/fix_code_blocks.sh 
+find src/ -name '*.md' -print0 | xargs -0 -L 1 codeclub_lesson_builder/utils/fix_yaml_header.sh 
+find src/ -name '*.md' -print0 | xargs -0 -L 1 codeclub_lesson_builder/utils/fix_code_blocks.sh 
 
 # fix YAML in one of the files manually
 sed -i '' 's/\.\.\./---/g' src/python/lessons/Minecraft2D/Minecraft2D.md
 
+# remove levels (should be integers)
+find src/ -name '*.md' -exec sed -i '' 's/level: [^0-9].*$/level: 1/g' {} \+
+
 # create index.md
-echo -e "---\ntitle: welcome\ntemplate: index.jade\n---\n# welcome\n... to this demo of [codeclub_lesson_builder](https://github.com/arve0/codeclub_lesson_builder)" > src/index.md
+echo -e '---\ntitle: welcome\ntemplate: index.jade\n---\n# welcome\n... to this demo of [codeclub_lesson_builder](https://github.com/arve0/codeclub_lesson_builder)' > src/index.md
+
+# get generic logos
+wget kodeklubben.github.io/logo-white.png -O src/logo-white.png
+wget kodeklubben.github.io/logo-black.png -O src/logo-black.png
 
 # copy setup script and run it
 cp ./codeclub_lesson_builder/utils/setup .
