@@ -6,7 +6,7 @@ function relative(url) {
     return urlRoot + '/' + url;
   }
   return url;
-}</script></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Home</a><form class="search"><input type="text" placeholder="Search" class="form-control"/></form></div></div><div class="search"><div class="results"><h1>Search Results</h1></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">Minecraft 2D</h1><div class="lesson-icons"><div class="level"><img title="Level 1" src="../../../assets/img/level1.png"/><span>Novice</span></div><div class="course"><img src="../../../logo-white.png"/><span>Python</span></div><div class="pdf"><a href="/python/lessons/Minecraft2D/Minecraft2D.pdf" title="Download PDF" class="download"><span class="glyphicon glyphicon-save-file"></span></a><span>PDF</span></div></div></header></div><div class="col-xs-12"><div class="content"><section id="introduction" class="level1 intro">
+}</script></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span><span class="hidden-xs"> Home</span></a><form class="search"><input type="text" placeholder="Search" class="form-control"/></form><a title="Take introduction tour" data-placement="bottom" href="#" class="intro"></a></div></div><div class="search"><div class="results"><h1>Search Results</h1></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">Minecraft 2D</h1><div class="lesson-icons"><div class="level"><img title="Level 1" src="../../../assets/img/level1.png"/><span>Novice</span></div><div class="course"><img src="../../logo-white.png"/><span>Python</span></div><div class="pdf"><a href="/python/lessons/Minecraft2D/Minecraft2D.pdf" title="Download PDF" class="download"><span class="glyphicon glyphicon-save-file"></span></a><span>PDF</span></div></div></header></div><div class="col-xs-12"><div class="content"><section id="introduction" class="level1 intro">
 <h1>Introduction</h1>
 <p>In this project, you’ll design and code improvements to a 2D version of Minecraft.</p>
 </section>
@@ -46,7 +46,6 @@ function relative(url) {
     <span class="hljs-comment">#----------------------------------------------------</span>
 
     <span class="hljs-title">MAXTILES</span>  = <span class="hljs-number">20</span></code></pre>
-
 <p>Change this number and then double-click the Minecraft.py file to store more of each resource.</p>
 </section>
 <section id="save-your-project" class="level2 save">
@@ -101,7 +100,6 @@ function relative(url) {
 
     pygame<span class="hljs-class">.display</span><span class="hljs-class">.set_caption</span>(<span class="hljs-string">'pygame window'</span>)
     pygame<span class="hljs-class">.display</span><span class="hljs-class">.set_icon</span>(pygame<span class="hljs-class">.image</span><span class="hljs-class">.load</span>(<span class="hljs-string">'player.png'</span>))</code></pre>
-
 <p>Edit these 2 lines of code to customise your game. Remember that if you change the icon to a new file then you’ll have to create it!</p>
 </section>
 <section id="save-your-project-4" class="level2 save">
@@ -130,7 +128,6 @@ function relative(url) {
     <span class="hljs-variable">WATER =</span> <span class="hljs-number">2</span>
     <span class="hljs-variable">BRICK =</span> <span class="hljs-number">3</span>
     <span class="hljs-variable">WOOD  =</span> <span class="hljs-number">4</span></code></pre>
-
 <ul>
 <li>In the same file, there is also a list of all the resources. You should add wood to that list too:</li>
 </ul>
@@ -138,7 +135,6 @@ function relative(url) {
     <span class="hljs-comment">#----------------------------</span>
 
     <span class="hljs-keyword">resources</span> =<span class="hljs-sqbracket"> [DIRT,GRASS,WATER,BRICK,WOOD]</span></code></pre>
-
 <ul>
 <li>You also need to set the image for the wood resource in the textures dictionary, so that the correct graphics will be shown:</li>
 </ul>
@@ -152,7 +148,6 @@ function relative(url) {
                     BRICK   : pygame.image.<span class="hljs-built_in">load</span>(<span class="hljs-string">'brick.png'</span>),
                     WOOD    : pygame.image.<span class="hljs-built_in">load</span>(<span class="hljs-string">'wood.png'</span>)
                  }</code></pre>
-
 <p>Notice that you need to add a comma (<code>,</code>) after the brick image in the line above.</p>
 <ul>
 <li>You can also add wood to your inventory dictionary. You can choose how many you start with:</li>
@@ -167,7 +162,6 @@ function relative(url) {
                     <span class="hljs-string">BRICK   :</span> <span class="hljs-number">0</span>,
                     <span class="hljs-string">WOOD    :</span> <span class="hljs-number">5</span>
                 }</code></pre>
-
 <ul>
 <li>If you now run the game, you’ll see that you now have a wood resource that you can place on the map, but there isn’t any wood on the map to begin with:</li>
 </ul>
@@ -191,7 +185,6 @@ function relative(url) {
             <span class="hljs-comment">#otherwise it's DIRT</span>
             <span class="hljs-keyword">else</span>:
                 <span class="hljs-variable">tile =</span> DIRT</code></pre>
-
 <p>Do you know what this code does? For each space on the map, the program chooses a random number between 0 and 9. Whenever the random number is a 5, wood is placed on the map. After you add this code, you should see some wood in your game:</p>
 <figure>
 <img src="mine3-7.png" alt="screenshot" /><figcaption>screenshot</figcaption>
@@ -229,7 +222,6 @@ function relative(url) {
                 <span class="hljs-string">BRICK    :</span> { <span class="hljs-string">WATER :</span> <span class="hljs-number">1</span>, <span class="hljs-string">DIRT :</span> <span class="hljs-number">2</span> },
                 <span class="hljs-string">PLANK    :</span> { <span class="hljs-string">WOOD :</span> <span class="hljs-number">3</span> }
             }</code></pre>
-
 <p>This code tells the game that it can create a new plank if there are 3 wood in the player’s inventory. Again, don’t forget the comma after the line above.</p>
 <ul>
 <li>You need to make sure that the player knows how to craft planks, by adding some more instructions to the list:</li>
@@ -249,7 +241,6 @@ function relative(url) {
                         <span class="hljs-string">"   BRICK = 2xDIRT + 1xWATER"</span>,
                         <span class="hljs-string">"   PLANK = 3xWOOD"</span>     
                     ]</code></pre>
-
 <ul>
 <li>If you collect 3 wood and hold down shift and press 6, you should see a new plank in your inventory. You can then add planks of wood to your map!</li>
 </ul>

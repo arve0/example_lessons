@@ -6,7 +6,7 @@ function relative(url) {
     return urlRoot + '/' + url;
   }
   return url;
-}</script></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Home</a><form class="search"><input type="text" placeholder="Search" class="form-control"/></form></div></div><div class="search"><div class="results"><h1>Search Results</h1></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">Saving your work</h1><div class="lesson-icons"><div class="level"><img title="Level undefined" src="../../assets/img/levelundefined.png"/><span></span></div><div class="course"><img src="../../logo-white.png"/><span>Web</span></div><div class="pdf"><a href="/web/volunteer-resources/saving-your-work.pdf" title="Download PDF" class="download"><span class="glyphicon glyphicon-save-file"></span></a><span>PDF</span></div></div></header></div><div class="col-xs-12"><div class="content"><p><strong>Introduction:</strong> It’s important to <strong>save</strong> your work regularly, so you don’t lose any of the brilliant ideas you’ve come up with. Let’s have a look at where to save your code and various other things you might need (like images) so that the browser can find them correctly.</p>
+}</script></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span><span class="hidden-xs"> Home</span></a><form class="search"><input type="text" placeholder="Search" class="form-control"/></form><a title="Take introduction tour" data-placement="bottom" href="#" class="intro"></a></div></div><div class="search"><div class="results"><h1>Search Results</h1></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">Saving your work</h1><div class="lesson-icons"><div class="level"><img title="Level undefined" src="../../assets/img/levelundefined.png"/><span></span></div><div class="course"><img src="../logo-white.png"/><span>Web</span></div><div class="pdf"><a href="/web/volunteer-resources/saving-your-work.pdf" title="Download PDF" class="download"><span class="glyphicon glyphicon-save-file"></span></a><span>PDF</span></div></div></header></div><div class="col-xs-12"><div class="content"><p><strong>Introduction:</strong> It’s important to <strong>save</strong> your work regularly, so you don’t lose any of the brilliant ideas you’ve come up with. Let’s have a look at where to save your code and various other things you might need (like images) so that the browser can find them correctly.</p>
 <section id="previewing-the-changes-you-make" class="level1">
 <h1>Previewing the changes you make</h1>
 <p>When you make changes in the <strong>text editor</strong>, you have to <strong>save</strong> them before you can <strong>preview</strong> them in the <strong>browser</strong>. Once you’ve saved them, you have to <strong>refresh</strong> the browser. If you’re on Windows, often you can use a keyboard shortcut like <strong>CTRL+S</strong> to save the file you’re editing, and many browsers will allow you to refresh the page with the <strong>CTRL+R</strong> shortcut or the <strong>F5</strong> key (if using Internet Explorer). On the Mac these shortcuts are similar, command+S to save the document you’re editing and command+R to refresh the page in the browser.</p>
@@ -39,7 +39,6 @@ function relative(url) {
 \- page.html
 <span class="hljs-string">|</span>
 \ kitty.jpg</code></pre>
-
 <p>Let’s tidy it up a bit more. What if later we want to include more images? Let’s put them in their own directory so it’s easier to find them.</p>
 <pre><code class="hljs">my_kitty_site
 <span class="hljs-string">|</span>
@@ -49,7 +48,6 @@ function relative(url) {
   \ kitty.jpg
   <span class="hljs-string">|</span>
   \ kitty_and_puppy.jpg</code></pre>
-
 <p>Now when we open up the page in the browser, the image doesn’t show up! This is because the browser can’t find it. Let’s help it by adding what we call a path – a route through the directories it has to take to find the files, starting at the page. In our case we would have to go into the images directory before we get to the picture, like this: <code>&lt;img src=&quot;images/kitty.jpg&quot; alt=&quot;A kitty playing with some wool.&quot;&gt;</code></p>
 <p>The images/ bit before the name of the kitty image file tells the browser to go into the images directory first. Save, refresh, and the kitty is back.</p>
 </section>
@@ -68,7 +66,6 @@ function relative(url) {
   \ kitty.jpg
   <span class="hljs-string">|</span>
   \ kitty_and_puppy.jpg</code></pre>
-
 <p>Again, when we open up the page.html our images don’t work. This is because the browser looks for files in relation to the page you’re looking at. When we said: <code>&lt;img src=&quot;images/kitty.jpg&quot; alt=&quot;A kitty playing with some wool.&quot;&gt;</code></p>
 <p>We meant: “from page.html go into the directory called images where you will find kitty.jpg”. But there are no images inside the pages directory, where page.html lives! What we wanted to say was: “from page.html go one directory up, then go into the directory called images where you will find kitty.jpg”. So how can we say it? <code>&lt;img src=&quot;../images/kitty.jpg&quot; alt=&quot;A kitty playing with some wool.&quot;&gt;</code></p>
 <p>The value of the whole src attribute can then be broken down into these parts:</p>

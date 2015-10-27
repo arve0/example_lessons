@@ -6,7 +6,7 @@ function relative(url) {
     return urlRoot + '/' + url;
   }
   return url;
-}</script></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Home</a><form class="search"><input type="text" placeholder="Search" class="form-control"/></form></div></div><div class="search"><div class="results"><h1>Search Results</h1></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">Turtles All The Way Down</h1><div class="lesson-icons"><div class="level"><img title="Level 1" src="../../../assets/img/level1.png"/><span>Novice</span></div><div class="course"><img src="../../../logo-white.png"/><span>Python</span></div><div class="pdf"><a href="/python/lessons/Turtles All the Way Down/Turtles All the Way Down.pdf" title="Download PDF" class="download"><span class="glyphicon glyphicon-save-file"></span></a><span>PDF</span></div></div></header></div><div class="col-xs-12"><div class="content"><section id="step-1-drawing-a-mountain" class="level1 activity">
+}</script></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span><span class="hidden-xs"> Home</span></a><form class="search"><input type="text" placeholder="Search" class="form-control"/></form><a title="Take introduction tour" data-placement="bottom" href="#" class="intro"></a></div></div><div class="search"><div class="results"><h1>Search Results</h1></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">Turtles All The Way Down</h1><div class="lesson-icons"><div class="level"><img title="Level 1" src="../../../assets/img/level1.png"/><span>Novice</span></div><div class="course"><img src="../../logo-white.png"/><span>Python</span></div><div class="pdf"><a href="/python/lessons/Turtles All the Way Down/Turtles All the Way Down.pdf" title="Download PDF" class="download"><span class="glyphicon glyphicon-save-file"></span></a><span>PDF</span></div></div></header></div><div class="col-xs-12"><div class="content"><section id="step-1-drawing-a-mountain" class="level1 activity">
 <h1>Step 1: Drawing a Mountain</h1>
 <p>Pick up your turtles, open IDLE, it’s time to draw again. But first, look at the following three shapes: How would we draw them in python?</p>
 <pre><code class="hljs"><span class="hljs-strong">_____</span><span class="hljs-strong">_____</span><span class="hljs-strong">_____</span><span class="hljs-strong">_____</span><span class="hljs-strong">_____</span>
@@ -20,7 +20,6 @@ function relative(url) {
 <span class="hljs-code">         __/  \__</span>
 <span class="hljs-code">         \      /</span>
 <span class="hljs-strong">____/\__</span><span class="hljs-emphasis">_/      \_</span><span class="hljs-strong">__/\__</span>_</code></pre>
-
 <section id="activity-checklist" class="level2 check">
 <h2>Activity Checklist</h2>
 <ul>
@@ -32,7 +31,6 @@ function relative(url) {
         forward(<span class="hljs-number">30</span>)
 
     first()</code></pre>
-
 <p>We’re going to put all the shapes in functions. The second one looks easy too, let’s add it to the file we’re writing.</p>
 <ul>
 <li>Edit your code so it looks like the following:</li>
@@ -57,8 +55,7 @@ function relative(url) {
 <pre><code class="hljs">/<span class="hljs-string">\</span>
            /  <span class="hljs-string">\</span>
           /    <span class="hljs-string">\</span>
-_________/      <span class="hljs-string">\________</span></code></pre>
-</li>
+_________/      <span class="hljs-string">\________</span></code></pre></li>
 </ul>
 </section>
 </section>
@@ -69,7 +66,6 @@ _________/      <span class="hljs-string">\________</span></code></pre>
 </span>         __/  <span class="hljs-command">\_</span>_
          <span class="hljs-command">\ </span>     /
 ____/<span class="hljs-command">\_</span>__/      <span class="hljs-command">\_</span>__/<span class="hljs-command">\_</span>__</code></pre>
-
 <p>You can see we draw the second shape, turn, draw it again, turn, draw it again, turn and draw it one last time.</p>
 <section id="activity-checklist-1" class="level2 check">
 <h2>Activity Checklist</h2>
@@ -95,8 +91,7 @@ def <span class="hljs-title">third</span><span class="hljs-params">()</span>:
     <span class="hljs-title">left</span><span class="hljs-params">(<span class="hljs-number">60</span>)</span>
     <span class="hljs-title">second</span><span class="hljs-params">()</span>
 
-<span class="hljs-title">third</span><span class="hljs-params">()</span></span></code></pre>
-</li>
+<span class="hljs-title">third</span><span class="hljs-params">()</span></span></code></pre></li>
 </ul>
 <p><code>third</code> looks very much like <code>second</code>, but instead of calling <code>forward</code>, we’re calling <code>second</code>. If we wanted to, we could even write the fourth one, and call <code>third</code> instead. This seems like an awful lot of work still, surely we can get the computer to understand what we’re doing.</p>
 <p>This shape is a special shape, which you draw by drawing it over and over: The third is made up of the second, the second is made up of the first. What we really want to do is tell the computer to keep drawing it over and over again until it is done.</p>
@@ -124,8 +119,7 @@ def <span class="hljs-title">third</span><span class="hljs-params">()</span>:
         left(<span class="hljs-number">60</span>)
         mountain(newdepth)
 
-mountain(<span class="hljs-number">3</span>)</code></pre>
-</li>
+mountain(<span class="hljs-number">3</span>)</code></pre></li>
 </ul>
 <p>We can see that we’ve used code very similar to <code>first</code>, <code>second</code> and <code>third</code>. We use an <code>if</code> to work out if we should draw the simple case, or the special one. In the special case, we ask to draw a mountain, like how <code>third</code> called <code>second</code>, but we ask it to draw a simpler one each time, at a new depth, one less than what we started with.</p>
 <ul>
@@ -162,8 +156,7 @@ mountain(<span class="hljs-number">3</span>)</code></pre>
     mountain(depth, length)
     right(<span class="hljs-number">120</span>)
 
-snowflake(<span class="hljs-number">4</span>,<span class="hljs-number">5</span>)</code></pre>
-</li>
+snowflake(<span class="hljs-number">4</span>,<span class="hljs-number">5</span>)</code></pre></li>
 </ul>
 <p>This picture is known as the Koch Snowflake. If you like, try playing with the angles and seeing what happens.</p>
 <p>This is called a fractal, because the larger picture is made up of smaller versions of itself.</p>
@@ -191,7 +184,6 @@ ________<span class="hljs-string">|         |________</span>
       <span class="hljs-string">|_           _|</span>
     _   <span class="hljs-string">|         |   _</span>
 ___<span class="hljs-string">| |__|         |__| |___</span></code></pre>
-
 <p>Like before with the mountain, we have a simple case: a straight line, and a special case: draw a line with a square bump in it. We can see the third one is just like before, drawing the second one a few times.</p>
 <section id="activity-checklist-4" class="level2 check">
 <h2>Activity Checklist</h2>
@@ -214,8 +206,7 @@ forward<span class="hljs-comment">(30)</span></code></pre></li>
         <span class="hljs-string">|         |</span>
         <span class="hljs-string">|         |</span>
         <span class="hljs-string">|         |</span>
-________<span class="hljs-string">|         |________</span></code></pre>
-</li>
+________<span class="hljs-string">|         |________</span></code></pre></li>
 </ul>
 <p>We have the simple case <code>forward(100)</code>, and we know how to draw the bumpy line, so let’s skip straight to the drawing!</p>
 </section>
@@ -249,8 +240,7 @@ ________<span class="hljs-string">|         |________</span></code></pre>
     box(depth, length)
     left(<span class="hljs-number">90</span>)
 
-xcurve(<span class="hljs-number">4</span>,<span class="hljs-number">5</span>)</code></pre>
-</li>
+xcurve(<span class="hljs-number">4</span>,<span class="hljs-number">5</span>)</code></pre></li>
 <li>We’ve left the special case out for you to fill in; it should be trying to draw the bumpy line, but calling <code>box(newdepth, length)</code> to do it. Your code should look very much like the mountain and snowflake.</li>
 </ul>
 </section>
@@ -285,7 +275,6 @@ xcurve(<span class="hljs-number">4</span>,<span class="hljs-number">5</span>)</c
 <span class="hljs-code">  ----    ----</span>
 <span class="hljs-header"> /\  /\  /\  /\
 ----------------</span></code></pre>
-
 <section id="activity-checklist-6" class="level2 check">
 <h2>Activity Checklist</h2>
 <ul>
@@ -325,8 +314,7 @@ def <span class="hljs-function">triforce</span>(depth, length)<span class="hljs-
 <span class="hljs-function">speed</span>(<span class="hljs-number">11</span>)
 <span class="hljs-function">penup</span>()
 <span class="hljs-function">setpos</span>(-<span class="hljs-number">255</span>,-<span class="hljs-number">255</span>)
-<span class="hljs-function">triforce</span>(<span class="hljs-number">7</span>, <span class="hljs-number">512</span>)</span></code></pre>
-</li>
+<span class="hljs-function">triforce</span>(<span class="hljs-number">7</span>, <span class="hljs-number">512</span>)</span></code></pre></li>
 </ul>
 <p>You might have noticed, we’re using a new command <code>setpos</code> to move the turtle robot to the corner of the screen.</p>
 <ul>

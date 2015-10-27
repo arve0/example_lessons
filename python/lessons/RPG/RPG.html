@@ -6,7 +6,7 @@ function relative(url) {
     return urlRoot + '/' + url;
   }
   return url;
-}</script></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Home</a><form class="search"><input type="text" placeholder="Search" class="form-control"/></form></div></div><div class="search"><div class="results"><h1>Search Results</h1></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">RPG</h1><div class="lesson-icons"><div class="level"><img title="Level 1" src="../../../assets/img/level1.png"/><span>Novice</span></div><div class="course"><img src="../../../logo-white.png"/><span>Python</span></div><div class="pdf"><a href="/python/lessons/RPG/RPG.pdf" title="Download PDF" class="download"><span class="glyphicon glyphicon-save-file"></span></a><span>PDF</span></div></div></header></div><div class="col-xs-12"><div class="content"><section id="introduction" class="level1 intro">
+}</script></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span><span class="hidden-xs"> Home</span></a><form class="search"><input type="text" placeholder="Search" class="form-control"/></form><a title="Take introduction tour" data-placement="bottom" href="#" class="intro"></a></div></div><div class="search"><div class="results"><h1>Search Results</h1></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">RPG</h1><div class="lesson-icons"><div class="level"><img title="Level 1" src="../../../assets/img/level1.png"/><span>Novice</span></div><div class="course"><img src="../../logo-white.png"/><span>Python</span></div><div class="pdf"><a href="/python/lessons/RPG/RPG.pdf" title="Download PDF" class="download"><span class="glyphicon glyphicon-save-file"></span></a><span>PDF</span></div></div></header></div><div class="col-xs-12"><div class="content"><section id="introduction" class="level1 intro">
 <h1>Introduction:</h1>
 <p>In this challenge, you’ll design and code your own RPG maze game. The aim of the game will be to collect objects and escape from a house, making sure to avoid all the monsters!</p>
 </section>
@@ -45,7 +45,6 @@ function relative(url) {
                     }
 
              }</code></pre>
-
 <p>Actually, this is a dictionary that links a room number to another dictionary, containing all of the information about the room. For example, room 1 in the code above is the hall. The hall is linked to room 2 (the kitchen) to the south. Room 2 (the kitchen) also links to room 1 (the hall) to the north.</p>
 <ul>
 <li>Let’s add another room to your map (a dining room), to make it a bit more interesting!</li>
@@ -71,7 +70,6 @@ function relative(url) {
                 }
 
          }</code></pre>
-
 <p>To add this room to the game, notice that you need to add the new room (room number 3), and give it a name. You also need to link to room 1 (the hall) to the west of the new room. You need to add information to the dictionary for the hall, to allow you to enter the dining room to the east. Remember to add a comma after the second room in the dictionary, or your code won’t run!</p>
 <ul>
 <li>Try out the game with the new dining room:</li>
@@ -118,7 +116,6 @@ function relative(url) {
                 }
 
          }</code></pre>
-
 <p>Remember to put a comma after the line above the new item, or your program won’t run!</p>
 <ul>
 <li>If you run your game after adding the code above, you can now see a key in the hall, and you can even pick it up (by typing <code>get key</code>) and add it to your inventory!</li>
@@ -165,7 +162,6 @@ function relative(url) {
                 }
 
          }</code></pre>
-
 <ul>
 <li>You also want to make sure that the game ends if the player enters a room with a monster in. You can do this with the following code, which you should add to the end of the game.</li>
 </ul>
@@ -175,7 +171,6 @@ function relative(url) {
         <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"Press any key to quit"</span>)</span></span>
         <span class="hljs-function"><span class="hljs-title">input</span><span class="hljs-params">()</span></span>
         break</code></pre>
-
 <p>This code checks whether there is an item in the room, and if so, whether that item is a monster. Notice that this code is indented, putting it in line with the code above it. This means that the game will check for a monster every time the player moves into a new room.</p>
 <ul>
 <li>Test out your code by going into the kitchen, which now contains a monster.</li>
@@ -218,7 +213,6 @@ function relative(url) {
         <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"Press any key to quit"</span>)</span></span>
         <span class="hljs-function"><span class="hljs-title">input</span><span class="hljs-params">()</span></span>
         break</code></pre>
-
 <p>Again, make sure this code is indented, and in line with the code above it. This code means that the message <code>...YOU WIN!</code> is displayed if the player is in room 4 (the garden) and if the key and the potion are in the inventory. If you have more than 4 rooms, you may have to use a different room number for your garden in the code above.</p>
 <ul>
 <li>Test your game to make sure the player can win!</li>
@@ -242,7 +236,6 @@ Commands:
   go [direction]
   get [item]
 '''</span>)</code></pre>
-
 <p>You will need to add instructions to tell the user what items they need to collect, and what they need to avoid!</p>
 <figure>
 <img src="rpg-instructions.png" alt="screenshot" /><figcaption>screenshot</figcaption>

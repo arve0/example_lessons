@@ -6,7 +6,7 @@ function relative(url) {
     return urlRoot + '/' + url;
   }
   return url;
-}</script></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Home</a><form class="search"><input type="text" placeholder="Search" class="form-control"/></form></div></div><div class="search"><div class="results"><h1>Search Results</h1></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">Hangman</h1><div class="lesson-icons"><div class="level"><img title="Level 1" src="../../../assets/img/level1.png"/><span>Novice</span></div><div class="course"><img src="../../../logo-white.png"/><span>Python</span></div><div class="pdf"><a href="/python/lessons/Hangman/Hangman.pdf" title="Download PDF" class="download"><span class="glyphicon glyphicon-save-file"></span></a><span>PDF</span></div></div></header></div><div class="col-xs-12"><div class="content"><section id="introduction" class="level1 intro">
+}</script></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span><span class="hidden-xs"> Home</span></a><form class="search"><input type="text" placeholder="Search" class="form-control"/></form><a title="Take introduction tour" data-placement="bottom" href="#" class="intro"></a></div></div><div class="search"><div class="results"><h1>Search Results</h1></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">Hangman</h1><div class="lesson-icons"><div class="level"><img title="Level 1" src="../../../assets/img/level1.png"/><span>Novice</span></div><div class="course"><img src="../../logo-white.png"/><span>Python</span></div><div class="pdf"><a href="/python/lessons/Hangman/Hangman.pdf" title="Download PDF" class="download"><span class="glyphicon glyphicon-save-file"></span></a><span>PDF</span></div></div></header></div><div class="col-xs-12"><div class="content"><section id="introduction" class="level1 intro">
 <h1>Introduction</h1>
 <p>Let’s build a game: Hangman! The computer will pick a word, and the player can guess it letter-by-letter, but if they make too many wrong guesses, they’ll lose.</p>
 </section>
@@ -65,8 +65,7 @@ guess = <span class="hljs-function"><span class="hljs-title">input</span><span c
 <span class="hljs-keyword">if</span> guess <span class="hljs-keyword">in</span> word:
     <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"Yay"</span>)</span></span>
 <span class="hljs-keyword">else</span>:
-    <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"Nope"</span>)</span></span></code></pre>
-</li>
+    <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"Nope"</span>)</span></span></code></pre></li>
 </ul>
 <p>We use a new function <code>input()</code> to find out what the player typed. We use <code>if</code> to find out if the letter was in the word. We’ve got the essentials down, so let’s continue onward.</p>
 <p>(Python 2 Note: Use <code>raw_input</code> if you’re on an old version of python)</p>
@@ -155,8 +154,7 @@ while True:
         <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"Nope"</span>)</span></span>
         wrong.<span class="hljs-function"><span class="hljs-title">append</span><span class="hljs-params">(guess)</span></span>
 
-    <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">()</span></span></code></pre>
-</li>
+    <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">()</span></span></code></pre></li>
 </ul>
 <p>We’re using a new list, <code>wrong</code>, to store all the guesses that weren’t right</p>
 <p>Only one last thing before the game is complete, which is to only have a few chances to guess.</p>
@@ -222,8 +220,7 @@ while tries &gt; <span class="hljs-number">0</span>:
 <li>Find the line in the source code:
 <pre><code>word = <span class="hljs-function"><span class="hljs-title">choice</span><span class="hljs-params">([<span class="hljs-string">"code"</span>, <span class="hljs-string">"club"</span>])</span></span></code></pre></li>
 <li>Edit it to add more words, why not try
-<pre><code>word = <span class="hljs-function"><span class="hljs-title">choice</span><span class="hljs-params">([<span class="hljs-string">"code"</span>, <span class="hljs-string">"club"</span>, <span class="hljs-string">"robot"</span>, <span class="hljs-string">"party"</span>])</span></span></code></pre>
-</li>
+<pre><code>word = <span class="hljs-function"><span class="hljs-title">choice</span><span class="hljs-params">([<span class="hljs-string">"code"</span>, <span class="hljs-string">"club"</span>, <span class="hljs-string">"robot"</span>, <span class="hljs-string">"party"</span>])</span></span></code></pre></li>
 </ul>
 <p>Remember to put the words in quotes, and put a comma between them to make a list of words.</p>
 </section>

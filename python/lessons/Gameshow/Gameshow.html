@@ -6,7 +6,7 @@ function relative(url) {
     return urlRoot + '/' + url;
   }
   return url;
-}</script></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Home</a><form class="search"><input type="text" placeholder="Search" class="form-control"/></form></div></div><div class="search"><div class="results"><h1>Search Results</h1></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">Gameshow</h1><div class="lesson-icons"><div class="level"><img title="Level 1" src="../../../assets/img/level1.png"/><span>Novice</span></div><div class="course"><img src="../../../logo-white.png"/><span>Python</span></div><div class="pdf"><a href="/python/lessons/Gameshow/Gameshow.pdf" title="Download PDF" class="download"><span class="glyphicon glyphicon-save-file"></span></a><span>PDF</span></div></div></header></div><div class="col-xs-12"><div class="content"><section id="introduction" class="level1 intro">
+}</script></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span><span class="hidden-xs"> Home</span></a><form class="search"><input type="text" placeholder="Search" class="form-control"/></form><a title="Take introduction tour" data-placement="bottom" href="#" class="intro"></a></div></div><div class="search"><div class="results"><h1>Search Results</h1></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">Gameshow</h1><div class="lesson-icons"><div class="level"><img title="Level 1" src="../../../assets/img/level1.png"/><span>Novice</span></div><div class="course"><img src="../../logo-white.png"/><span>Python</span></div><div class="pdf"><a href="/python/lessons/Gameshow/Gameshow.pdf" title="Download PDF" class="download"><span class="glyphicon glyphicon-save-file"></span></a><span>PDF</span></div></div></header></div><div class="col-xs-12"><div class="content"><section id="introduction" class="level1 intro">
 <h1>Introduction:</h1>
 <p>As well as using <code>for</code> loops to repeat commands a set number of times, a <code>while</code> loop can also be used to repeat commands <em>until something happens in your program</em>.</p>
 </section>
@@ -51,7 +51,6 @@ print(<span class="hljs-string">"The winning door is"</span>, winningDoor)
     print(<span class="hljs-string">"Well done!"</span>)
 <span class="hljs-keyword">else</span>:
     print(<span class="hljs-string">"Unlucky!"</span>)</code></pre>
-
 <figure>
 <img src="gameshow.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure>
@@ -96,7 +95,6 @@ Guess the correct door to win the prize!
         print(<span class="hljs-string">"Well done!"</span>)
     <span class="hljs-keyword">else</span>:
         print(<span class="hljs-string">"Unlucky!"</span>)</code></pre>
-
 <figure>
 <img src="gameshow-loop3.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure>
@@ -176,7 +174,6 @@ Guess the correct door to win the prize!
 
 print(<span class="hljs-string">"Thanks for playing."</span>)
 print(<span class="hljs-string">"Your final score is"</span>, score)</code></pre>
-
 <figure>
 <img src="gameshow-while.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure>
@@ -252,7 +249,6 @@ Guess the correct door 3 times in as few attempts as possible!
     print(<span class="hljs-string">"Your score is now"</span>, score)
 
 print(<span class="hljs-string">"\n** You did it! That look you"</span>, attempts, <span class="hljs-string">"attempts **"</span>)</code></pre>
-
 <p>The <code>while</code> loop in this program continues to run as long as the score is less than 3 (<code>while score &lt; 3:</code>). Once the score gets to 3, the program ends, and the number of attempts is printed.</p></li>
 </ul>
 </section>
@@ -271,19 +267,16 @@ print(<span class="hljs-string">"\n** You did it! That look you"</span>, attempt
 <li>You can use a <code>while</code> loop to run the game as long as the player wants to keep playing:</li>
 </ul>
 <pre><code><span class="hljs-keyword">while</span> playing == <span class="hljs-keyword">True</span>:</code></pre>
-
 <ul>
 <li>If the user enters <code>n</code> because they wish to stick with the score they have, you can set the <code>playing</code> variable to <code>False</code>:</li>
 </ul>
 <pre><code><span class="hljs-keyword">if</span> answer == <span class="hljs-string">'n'</span>:
     playing = <span class="hljs-keyword">False</span></code></pre>
-
 <ul>
 <li>At the end of the program (outside of the <code>while</code> loop), you can say “Well done!” to the player if their score is exactly 21:</li>
 </ul>
 <pre><code><span class="hljs-keyword">if</span> score == <span class="hljs-number">21</span>:
     <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"Well done!"</span>)</span></span></code></pre>
-
 </section>
 <section id="save-your-project-3" class="level2 save">
 <h2>Save Your Project</h2>
