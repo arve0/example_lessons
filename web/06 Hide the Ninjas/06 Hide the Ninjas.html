@@ -11,21 +11,21 @@ function relative(url) {
 <p>This project will build on your knowledge of CSS-fu.</p>
 <p>Five ninjas arrived in town and need to hide before anyone notices them. Using your own ninja-like CSS skills to get them into a safe spot. You can move the ninjas themselves, and some of the objects in the street too. Quick! There is no time!</p>
 <figure>
-<img src="ninjas.png" alt="screenshot"><figcaption>screenshot</figcaption>
+<img src="ninjas.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure>
 </section>
 <section id="step-1-meet-the-ninjas" class="level1 activity">
 <h1>Step 1: Meet the ninjas</h1>
 <ul>
-<li>Open up the file called <code class="lang-css"><span class="hljs-tag">ninjas</span><span class="hljs-class">.html</span></code> in the code editor. Open it up in the browser as well.</li>
+<li>Open up the file called <code>ninjas.html</code> in the code editor. Open it up in the browser as well.</li>
 <li>Read through the code. Can you guess which parts correspond to what objects in the street? Notice that we are using two languages: HTML to add all elements to the page, and CSS placed between the <code>style</code> tags.</li>
-<li>The elements we will be playing with are the images (<code class="lang-apache"><span class="hljs-tag">&lt;img&gt;</span></code> tags). We can control their position using CSS.</li>
+<li>The elements we will be playing with are the images (<code>&lt;img&gt;</code> tags). We can control their position using CSS.</li>
 </ul>
 <p><strong>Let’s move a ninja</strong></p>
 <ul>
-<li>Each one of the ninjas is named using the <code class="lang-applescript"><span class="hljs-property">id</span></code> attribute. Let’s move Alex The Ninja first. Find Alex’s corresponding CSS rule.</li>
-<li>Change the value of <code class="lang-scss"><span class="hljs-attribute">left</span></code> to <code class="lang-cpp"><span class="hljs-number">100</span>px</code> and <code class="lang-scss"><span class="hljs-attribute">top</span></code> to <code class="lang-cpp"><span class="hljs-number">320</span>px</code>. When <code class="lang-fortran"><span class="hljs-keyword">position</span></code> property is set to <code class="lang-scss"><span class="hljs-value">absolute</span></code> it means we will be describing the position in relation to ninja’s parent element - in this case the <code class="lang-apache"><span class="hljs-tag">&lt;div&gt;</span></code> with <code class="lang-applescript"><span class="hljs-property">id</span></code> <code>street_corner</code>. <code>px</code> means <code>pixel</code>. <code class="lang-scss"><span class="hljs-attribute">left</span></code> describes how far to move the ninja from the left edge (by how many pixels), and <code class="lang-scss"><span class="hljs-attribute">top</span></code> tells the browser how far to move it down from the top edge.</li>
-<li>Change <code class="lang-scss"><span class="hljs-attribute">left</span></code> to <code class="lang-livecodeserver"><span class="hljs-constant">right</span></code> and <code class="lang-scss"><span class="hljs-attribute">top</span></code> to <code class="lang-scss"><span class="hljs-attribute">bottom</span></code>. Now your code tells the browser to put the ninja a <code class="lang-cpp"><span class="hljs-number">100</span>px</code> to the left of the right edge, and <code class="lang-cpp"><span class="hljs-number">320</span>px</code> up from the bottom edge.</li>
+<li>Each one of the ninjas is named using the <code>id</code> attribute. Let’s move Alex The Ninja first. Find Alex’s corresponding CSS rule.</li>
+<li>Change the value of <code>left</code> to <code>100px</code> and <code>top</code> to <code>320px</code>. When <code>position</code> property is set to <code>absolute</code> it means we will be describing the position in relation to ninja’s parent element - in this case the <code>&lt;div&gt;</code> with <code>id</code> <code>street_corner</code>. <code>px</code> means <code>pixel</code>. <code>left</code> describes how far to move the ninja from the left edge (by how many pixels), and <code>top</code> tells the browser how far to move it down from the top edge.</li>
+<li>Change <code>left</code> to <code>right</code> and <code>top</code> to <code>bottom</code>. Now your code tells the browser to put the ninja a <code>100px</code> to the left of the right edge, and <code>320px</code> up from the bottom edge.</li>
 </ul>
 <p>Pixels describe the smallest physical point your monitor can display. They are often used to describe the screen dimensions.</p>
 </section>
@@ -35,15 +35,15 @@ function relative(url) {
 <ul>
 <li>Find the <code>wheelie_bin</code> element in the CSS.</li>
 </ul>
-<p>100% describes the full width of the available screen space. As we are positioning ninjas and other object in relation to the <code>street_corner</code>, which is 600 pixels wide, in our case 100% will equal <code class="lang-cpp"><span class="hljs-number">600</span>px</code>. If we were to draw a bigger street corner, for example <code class="lang-cpp"><span class="hljs-number">800</span>px</code> wide, then 100% would mean <code class="lang-cpp"><span class="hljs-number">800</span>px</code>. Depending on context, sizes described in percentages will have different meanings.</p>
+<p>100% describes the full width of the available screen space. As we are positioning ninjas and other object in relation to the <code>street_corner</code>, which is 600 pixels wide, in our case 100% will equal <code>600px</code>. If we were to draw a bigger street corner, for example <code>800px</code> wide, then 100% would mean <code>800px</code>. Depending on context, sizes described in percentages will have different meanings.</p>
 </section>
 <section id="step-3-one-more-unit-type" class="level1 activity">
 <h1>Step 3: One more unit type</h1>
 <p>As if we didn’t already have enough unit types, we will try another one! You know how to use pixels and percentages, so now let’s try <code>ems</code>.</p>
-<p><code>Em</code> is a measurement type borrowed from the field of typography , which concerns itself with the appearance of letters and text. One em is equal to the current font size. Notice that at the top of the CSS we set <code class="lang-fortran">font-<span class="hljs-built_in">size</span></code> on the <code class="lang-d"><span class="hljs-keyword">body</span></code> element to 20px, so one <code class="lang-vim"><span class="hljs-keyword">em</span></code> will appear as 20 pixels.</p>
+<p><code>Em</code> is a measurement type borrowed from the field of typography , which concerns itself with the appearance of letters and text. One em is equal to the current font size. Notice that at the top of the CSS we set <code>font-size</code> on the <code>body</code> element to 20px, so one <code>em</code> will appear as 20 pixels.</p>
 <ul>
-<li>Find the <code>bicycle</code> in the CSS. Apart from the <code class="lang-vim"><span class="hljs-keyword">em</span></code> bit it should be familiar to you. See if you can move the bicycle to hide Sam The Ninja.</li>
-<li>We’ve mentioned that the size of the <code class="lang-vim"><span class="hljs-keyword">em</span></code> is based on the font size. To see it in practice, find <code class="lang-d"><span class="hljs-keyword">body</span></code> in the CSS. Change the <code class="lang-fortran">font-<span class="hljs-built_in">size</span></code> value to 30px. What happened? Because now each <code class="lang-vim"><span class="hljs-keyword">em</span></code> is 30 pixels wide and 30 pixels tall all elements using this measurement have shifted their position!</li>
+<li>Find the <code>bicycle</code> in the CSS. Apart from the <code>em</code> bit it should be familiar to you. See if you can move the bicycle to hide Sam The Ninja.</li>
+<li>We’ve mentioned that the size of the <code>em</code> is based on the font size. To see it in practice, find <code>body</code> in the CSS. Change the <code>font-size</code> value to 30px. What happened? Because now each <code>em</code> is 30 pixels wide and 30 pixels tall all elements using this measurement have shifted their position!</li>
 </ul>
 </section>
 <section id="step-4-quick-hide-the-ninjas" class="level1 activity">
@@ -52,9 +52,9 @@ function relative(url) {
 <section id="things-to-try" class="level2 try">
 <h2>Things to try</h2>
 <ul>
-<li>Can you figure out how to make ninjas appear in front of some of the street objects? What would happen if you copied the <code class="lang-apache"><span class="hljs-tag">&lt;img&gt;</span></code> tag for the ninja after the <code class="lang-apache"><span class="hljs-tag">&lt;img&gt;</span></code> tag that displays the object?</li>
+<li>Can you figure out how to make ninjas appear in front of some of the street objects? What would happen if you copied the <code>&lt;img&gt;</code> tag for the ninja after the <code>&lt;img&gt;</code> tag that displays the object?</li>
 <li>Can you add some more objects to the scene? You could add images from your computer or ones you find on the internet.</li>
 </ul>
 </section>
 </section>
-</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><script src="../../assets/vendor.min.js"></script><script src="../../assets/script.min.js"></script></body></html>
+</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><div class="intro-question modal fade"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title">Hi there!</h4></div><div class="modal-body"><p>Seems like this is your first time here. Would you like a tour?</p></div><div class="modal-footer"><button class="btn btn-success">Yes!</button><button data-dismiss="modal" class="btn btn-danger">No thanks</button></div></div></div></div><script src="../../assets/vendor.min.js"></script><script src="../../assets/script.min.js"></script></body></html>

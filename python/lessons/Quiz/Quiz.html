@@ -16,22 +16,23 @@ function relative(url) {
 <h2>Activity Checklist</h2>
 <ul>
 <li><p>Let’s start by writing a very simple quiz program, which asks the player a question, and shows them a smiley face if they input the correct answer.</p>
-<pre class="language-python"><code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"In Python, what do you call a 'box' used to store data?"</span>)</span></span>
+<pre><code><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"In Python, what do you call a 'box' used to store data?"</span>)</span></span>
 answer = <span class="hljs-function"><span class="hljs-title">input</span><span class="hljs-params">()</span></span>
 
 <span class="hljs-keyword">if</span> answer == <span class="hljs-string">"variable"</span>:
     <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">" :) "</span>)</span></span>
 
 <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"Thank you for playing!"</span>)</span></span></code></pre>
-<p>When writing this program, you’ll need to add a colon (<code>:</code>) to the end of the line <code class="lang-actionscript"><span class="hljs-keyword">if</span> answer == <span class="hljs-string">"variable"</span>:</code>, and indent the line below it (move it to the right), by pressing the Tab key (to the left of the ‘Q’ key on the keyboard).</p></li>
+
+<p>When writing this program, you’ll need to add a colon (<code>:</code>) to the end of the line <code>if answer == &quot;variable&quot;:</code>, and indent the line below it (move it to the right), by pressing the Tab key (to the left of the ‘Q’ key on the keyboard).</p></li>
 <li><p>Once you’ve written the program above, try it out twice - once getting the question right, and once getting it wrong. Notice that you don’t see a smiley face unless you get the answer right.</p>
 <figure>
-<img src="quiz-if.png" alt="screenshot"><figcaption>screenshot</figcaption>
+<img src="quiz-if.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure>
 <p>This program only runs the indented code (the code that prints the smiley face) <em>if</em> the answer is correct. Notice that the text “Thank you for playing!” isn’t indented, and so is printed every time, whether the answer is right or wrong.</p>
-<p>Python uses 2 equals signs <code class="lang-haml">=<span class="ruby">=</span></code> to check if 2 things are the same. This is because one equals sign <code class="lang-haml">=<span class="ruby"></span></code> is used to store something in a variable (for example <code class="lang-stylus">answer = <span class="hljs-function"><span class="hljs-title">input</span><span class="hljs-params">()</span></span></code>).</p></li>
-<li><p>The program above prints a smiley face if the player gets the question right, but doesn’t print anything to tell them they got the answer wrong. You can use an <code class="lang-actionscript"><span class="hljs-keyword">else</span></code> statement to print a sad face if the user inputs anything other than the correct answer.</p>
-<pre class="language-python"><code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"In Python, what do you call a 'box' used to store data?"</span>)</span></span>
+<p>Python uses 2 equals signs <code>==</code> to check if 2 things are the same. This is because one equals sign <code>=</code> is used to store something in a variable (for example <code>answer = input()</code>).</p></li>
+<li><p>The program above prints a smiley face if the player gets the question right, but doesn’t print anything to tell them they got the answer wrong. You can use an <code>else</code> statement to print a sad face if the user inputs anything other than the correct answer.</p>
+<pre><code><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"In Python, what do you call a 'box' used to store data?"</span>)</span></span>
 answer = <span class="hljs-function"><span class="hljs-title">input</span><span class="hljs-params">()</span></span>
 
 <span class="hljs-keyword">if</span> answer == <span class="hljs-string">"variable"</span>:
@@ -40,9 +41,10 @@ answer = <span class="hljs-function"><span class="hljs-title">input</span><span 
     <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">" :( "</span>)</span></span>
 
 <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"Thank you for playing!"</span>)</span></span></code></pre>
+
 <p>Try out this new program, and you can see that unless you enter the correct answer, a sad face is printed.</p>
 <figure>
-<img src="quiz-if-else.png" alt="screenshot"><figcaption>screenshot</figcaption>
+<img src="quiz-if-else.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure></li>
 </ul>
 </section>
@@ -51,7 +53,7 @@ answer = <span class="hljs-function"><span class="hljs-title">input</span><span 
 </section>
 <section id="challenge-question-time" class="level2 challenge">
 <h2>Challenge: Question time</h2>
-<p>Use what you’ve learnt so far to create your own quiz. You can choose any topic you like, and your quiz should use <code class="lang-actionscript"><span class="hljs-keyword">if</span></code> and <code class="lang-actionscript"><span class="hljs-keyword">else</span></code> statements to let the player know how they’re doing.</p>
+<p>Use what you’ve learnt so far to create your own quiz. You can choose any topic you like, and your quiz should use <code>if</code> and <code>else</code> statements to let the player know how they’re doing.</p>
 </section>
 <section id="save-your-project-1" class="level2 save">
 <h2>Save Your Project</h2>
@@ -65,15 +67,16 @@ answer = <span class="hljs-function"><span class="hljs-title">input</span><span 
 <ul>
 <li><p>If you’ve tested your quiz, you may have you noticed that it’s possible to get a sad face even when you input a correct answer! Like in this example, where the player has accidently presSED CAPS LOCK!</p>
 <figure>
-<img src="quiz-test.png" alt="screenshot"><figcaption>screenshot</figcaption>
+<img src="quiz-test.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure>
 <p>This happens because Python is very strict when it compares the player’s answer to the correct answer. To Python, “V” isn’t the same as “v”, and so if your player uses any capital letters in your answer, Python thinks the answer’s wrong!</p>
 <p>Test this out in your game, to see if the same thing happens.</p></li>
 <li><p>To fix this problem, all you need to do is convert whatever the player inputs into lower case, so that there are no capital letters in the player’s answer. Make this change to the line where the player inputs their answer:</p>
-<pre class="language-python"><code class="lang-stylus">answer = <span class="hljs-function"><span class="hljs-title">input</span><span class="hljs-params">()</span></span>.<span class="hljs-function"><span class="hljs-title">lower</span><span class="hljs-params">()</span></span></code></pre></li>
+<pre><code>answer = <span class="hljs-function"><span class="hljs-title">input</span><span class="hljs-params">()</span></span>.<span class="hljs-function"><span class="hljs-title">lower</span><span class="hljs-params">()</span></span></code></pre>
+</li>
 <li><p>Now test your quiz again. Have you fixed the problem?</p>
 <figure>
-<img src="quiz-test-lower.png" alt="screenshot"><figcaption>screenshot</figcaption>
+<img src="quiz-test-lower.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure></li>
 </ul>
 </section>
@@ -93,8 +96,8 @@ answer = <span class="hljs-function"><span class="hljs-title">input</span><span 
 <section id="activity-checklist-2" class="level2 check">
 <h2>Activity Checklist</h2>
 <ul>
-<li><p>So far you’ve used <code class="lang-actionscript"><span class="hljs-keyword">if</span></code> and <code class="lang-actionscript"><span class="hljs-keyword">else</span></code> to let the player know if they got the answer right or wrong. But what if you wanted a multiple choice question, where the user could see one of 4 messages? You can use an <code class="lang-bash"><span class="hljs-keyword">elif</span></code> statement to do this.</p>
-<pre class="language-python"><code class="lang-python">print(<span class="hljs-string">'''
+<li><p>So far you’ve used <code>if</code> and <code>else</code> to let the player know if they got the answer right or wrong. But what if you wanted a multiple choice question, where the user could see one of 4 messages? You can use an <code>elif</code> statement to do this.</p>
+<pre><code>print(<span class="hljs-string">'''
 Q1 - In Python, what do you call a 'box' used to store data?
 a - text
 b - variable
@@ -110,11 +113,12 @@ answer = input().lower()
     print(<span class="hljs-string">" Don't be silly! :( "</span>)
 <span class="hljs-keyword">else</span>:
     print(<span class="hljs-string">" You didn't choose a, b or c :( "</span>)</code></pre>
-<p><code class="lang-bash"><span class="hljs-keyword">elif</span></code> is short for “else if”. So in the program above, the player sees one of 4 messages, depending on what they entered for their answer.</p></li>
+
+<p><code>elif</code> is short for “else if”. So in the program above, the player sees one of 4 messages, depending on what they entered for their answer.</p></li>
 <li><p>Add the code above to your quiz, so that you have a multiple choice question.</p></li>
 <li><p>Test this new question 4 times, so that you see each of the 4 messages.</p>
 <figure>
-<img src="quiz-elif.png" alt="screenshot"><figcaption>screenshot</figcaption>
+<img src="quiz-elif.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure></li>
 </ul>
 </section>
@@ -130,17 +134,17 @@ answer = input().lower()
 </section>
 <section id="challenge-keeping-score" class="level2 challenge">
 <h2>Challenge: Keeping score</h2>
-<p>Can you use a <code class="lang-sqf"><span class="hljs-built_in">score</span></code> variable in your quiz program, to keep track of the player’s score? This is how the variable could be used: + At the start of the program, set the score to 0. + Whenever a question is answered correctly, add 1 to their score. (<code class="lang-sqf"><span class="hljs-built_in">score</span> = <span class="hljs-built_in">score</span> + <span class="hljs-number">1</span></code>) + Print the player’s score at the end of the quiz.</p>
+<p>Can you use a <code>score</code> variable in your quiz program, to keep track of the player’s score? This is how the variable could be used: + At the start of the program, set the score to 0. + Whenever a question is answered correctly, add 1 to their score. (<code>score = score + 1</code>) + Print the player’s score at the end of the quiz.</p>
 </section>
 <section id="save-your-project-6" class="level2 save">
 <h2>Save Your Project</h2>
 </section>
 <section id="challenge-how-did-i-do" class="level2 challenge">
 <h2>Challenge: How did I do?</h2>
-<p>Can you print a personalised message to the player at the end of the game? + Say “well done” <code class="lang-actionscript"><span class="hljs-keyword">if</span></code> they got all of the questions right. + <code class="lang-actionscript"><span class="hljs-keyword">else</span></code> say “try again” if they got any wrong. (You’ll need to use your <code class="lang-sqf"><span class="hljs-built_in">score</span></code> variable to decide which message to print!)</p>
+<p>Can you print a personalised message to the player at the end of the game? + Say “well done” <code>if</code> they got all of the questions right. + <code>else</code> say “try again” if they got any wrong. (You’ll need to use your <code>score</code> variable to decide which message to print!)</p>
 </section>
 <section id="save-your-project-7" class="level2 save">
 <h2>Save Your Project</h2>
 </section>
 </section>
-</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><script src="../../../assets/vendor.min.js"></script><script src="../../../assets/script.min.js"></script></body></html>
+</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><div class="intro-question modal fade"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title">Hi there!</h4></div><div class="modal-body"><p>Seems like this is your first time here. Would you like a tour?</p></div><div class="modal-footer"><button class="btn btn-success">Yes!</button><button data-dismiss="modal" class="btn btn-danger">No thanks</button></div></div></div></div><script src="../../../assets/vendor.min.js"></script><script src="../../../assets/script.min.js"></script></body></html>

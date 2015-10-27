@@ -16,8 +16,8 @@ function relative(url) {
 <section id="activity-checklist" class="level2 check">
 <h2>Activity Checklist</h2>
 <ul>
-<li><p>Open IDLE, and either open your file from last week and save it as a new file, or if you can’t find it, copy the following in:</p>
-<pre class="language-python"><code class="lang-python"><span class="hljs-keyword">from</span> tkinter <span class="hljs-keyword">import</span> *
+<li>Open IDLE, and either open your file from last week and save it as a new file, or if you can’t find it, copy the following in:
+<pre><code><span class="hljs-keyword">from</span> tkinter <span class="hljs-keyword">import</span> *
 
 main = Tk()
 
@@ -89,8 +89,9 @@ grid = [
 
 c.bind(<span class="hljs-string">"&lt;Button-1&gt;"</span>, click)
 
-mainloop()</code></pre></li>
-<li><p>Save and run the program, make sure it works!</p></li>
+mainloop()</code></pre>
+</li>
+<li>Save and run the program, make sure it works!</li>
 </ul>
 <p>You should be able to click on squares, to place circles and crosses until there are three in a row.</p>
 </section>
@@ -98,73 +99,78 @@ mainloop()</code></pre></li>
 <section id="step-2-play-anywhere" class="level1 activity">
 <h1>Step 2: Play anywhere</h1>
 <p>Before we can teach the computer how to make a good move, we should teach it to make any move. We will get the computer to pick any free square and play there.</p>
-<p>Remember that we use the variable <code class="lang-mel"><span class="hljs-keyword">grid</span></code> to store how the board looks. It’s a list that starts off [“0”, “1”, “2”, … ], and we replace elements with “X” or “O” as the game progresses. We will have to find a free spot, then play it.</p>
+<p>Remember that we use the variable <code>grid</code> to store how the board looks. It’s a list that starts off [“0”, “1”, “2”, … ], and we replace elements with “X” or “O” as the game progresses. We will have to find a free spot, then play it.</p>
 <section id="activity-checklist-1" class="level2 check">
 <h2>Activity Checklist</h2>
 <ul>
-<li><p>At the top of the file, we will have to import the <code class="lang-autoit"><span class="hljs-built_in">random</span></code> library, so we can pick a move</p>
-<pre class="language-python"><code class="lang-monkey">from tkinter <span class="hljs-preprocessor"><span class="hljs-keyword">import</span> *</span>
-<span class="hljs-preprocessor"><span class="hljs-keyword">import</span> random</span></code></pre></li>
+<li>At the top of the file, we will have to import the <code>random</code> library, so we can pick a move
+<pre><code>from tkinter <span class="hljs-preprocessor"><span class="hljs-keyword">import</span> *</span>
+<span class="hljs-preprocessor"><span class="hljs-keyword">import</span> random</span></code></pre>
+</li>
 </ul>
-<p>You hopefully remember using <code class="lang-autoit"><span class="hljs-built_in">random</span>.choice</code> from the earlier lessons.</p>
+<p>You hopefully remember using <code>random.choice</code> from the earlier lessons.</p>
 <ul>
-<li><p>In the same file we will introduce a new function, <code>free_squares</code>: Add this code below the function <code>winner</code>, and above the line <code class="lang-stylus">c.<span class="hljs-function"><span class="hljs-title">bind</span><span class="hljs-params">(...)</span></span></code>:</p>
-<pre class="language-python"><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">free_squares</span><span class="hljs-params">()</span>:</span>
+<li>In the same file we will introduce a new function, <code>free_squares</code>: Add this code below the function <code>winner</code>, and above the line <code>c.bind(...)</code>:
+<pre><code><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">free_squares</span><span class="hljs-params">()</span>:</span>
 output = []
 
 <span class="hljs-keyword">for</span> position, square <span class="hljs-keyword">in</span> enumerate(grid):
     <span class="hljs-keyword">if</span> square != <span class="hljs-string">"X"</span> <span class="hljs-keyword">and</span> square != <span class="hljs-string">"O"</span>:
         output.append(position)
 
-<span class="hljs-keyword">return</span> output</code></pre></li>
+<span class="hljs-keyword">return</span> output</code></pre>
+</li>
 </ul>
 <p>This function creates an empty list, and then for each square in the grid, checks if it is empty.</p>
-<p>We use a function <code class="lang-swift"><span class="hljs-built_in">enumerate</span></code> to tell us the positions of each item in the list. <code class="lang-swift"><span class="hljs-built_in">enumerate</span></code> turns a list of [‘A’,‘B’,‘C’] into pairs of (0, ‘A’), (1,‘B’) and so on, so we don’t have to count them</p>
+<p>We use a function <code>enumerate</code> to tell us the positions of each item in the list. <code>enumerate</code> turns a list of [‘A’,‘B’,‘C’] into pairs of (0, ‘A’), (1,‘B’) and so on, so we don’t have to count them</p>
 <ul>
-<li><p>Next we write a function <code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">play_move</span><span class="hljs-params">()</span></span></code> which finds an empty square to play in. Add this function after <code>free_squares</code> and before the line <code class="lang-stylus">c.<span class="hljs-function"><span class="hljs-title">bind</span><span class="hljs-params">(...)</span></span></code></p>
-<pre class="language-python"><code class="lang-cpp"><span class="hljs-function">def <span class="hljs-title">play_move</span><span class="hljs-params">()</span>
-moves  </span>= free_squares()
+<li>Next we write a function <code>play_move()</code> which finds an empty square to play in. Add this function after <code>free_squares</code> and before the line <code>c.bind(...)</code>
+<pre><code>def play_move()
+moves  = free_squares()
 move   = random.choice(moves)
-down   = move <span class="hljs-comment">// 3</span>
-across = move % <span class="hljs-number">3</span>
+down   = move // 3
+across = move % 3
 
 grid[move] = <span class="hljs-string">"X"</span>
 
-c.create_line(across * <span class="hljs-number">200</span>, down * <span class="hljs-number">200</span>, (across + <span class="hljs-number">1</span>) * <span class="hljs-number">200</span>, (down + <span class="hljs-number">1</span>) * <span class="hljs-number">200</span>)
-c.create_line(across * <span class="hljs-number">200</span>, (down + <span class="hljs-number">1</span>) * <span class="hljs-number">200</span>, (across + <span class="hljs-number">1</span>) * <span class="hljs-number">200</span>, down * <span class="hljs-number">200</span>)</code></pre></li>
-<li><p>First we get the list of empty squares, pick one, and convert the square number into across and down, using the <code class="lang-erlang-repl"><span class="hljs-comment">%</span></code> and <code class="lang-1c"><span class="hljs-comment">//</span></code> operators. Let’s look at the numbered grid to see how this works:</p>
-<pre><code class="lang-cpp"> <span class="hljs-number">0</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span>
+c.create_line(across <span class="hljs-keyword">*</span> 200, down <span class="hljs-keyword">*</span> 200, (across + 1) <span class="hljs-keyword">*</span> 200, (down + 1) <span class="hljs-keyword">*</span> 200)
+c.create_line(across <span class="hljs-keyword">*</span> 200, (down + 1) <span class="hljs-keyword">*</span> 200, (across + 1) <span class="hljs-keyword">*</span> 200, down <span class="hljs-keyword">*</span> 200)</code></pre>
+</li>
+<li>First we get the list of empty squares, pick one, and convert the square number into across and down, using the <code>%</code> and <code>//</code> operators. Let’s look at the numbered grid to see how this works:
+<pre><code class="hljs"><span class="hljs-number">0</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span>
  -----
- <span class="hljs-number">0</span> | <span class="hljs-number">0</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span>
- <span class="hljs-number">1</span> | <span class="hljs-number">3</span> <span class="hljs-number">4</span> <span class="hljs-number">5</span>
- <span class="hljs-number">2</span> | <span class="hljs-number">6</span> <span class="hljs-number">7</span> <span class="hljs-number">8</span></code></pre></li>
+ <span class="hljs-number">0</span> <span class="hljs-string">| 0 1 2</span>
+ <span class="hljs-number">1</span> <span class="hljs-string">| 3 4 5</span>
+ <span class="hljs-number">2</span> <span class="hljs-string">| 6 7 8</span></code></pre>
+</li>
 </ul>
 <p>The 5 square is 1 down, and 2 across. If we divide 5 by 3, we get 1 with remainder 2</p>
-<p><code class="lang-cpp"><span class="hljs-number">5</span> <span class="hljs-comment">// 3</span></code> is 1, <code class="lang-cpp"><span class="hljs-number">6</span> <span class="hljs-comment">// 3</span></code> is 2, and so on. The <code class="lang-1c"><span class="hljs-comment">//</span></code> operator gives us how many times 3 divides it, but ignores the remainder, which tells us how far down we must go.</p>
-<p><code class="lang-cpp"><span class="hljs-number">5</span> % <span class="hljs-number">3</span></code> is 2, <code class="lang-cpp"><span class="hljs-number">6</span> % <span class="hljs-number">3</span></code> is + The <code class="lang-erlang-repl"><span class="hljs-comment">%</span></code> operator gives us the remainder, which is how far along we must go.</p>
+<p><code>5 // 3</code> is 1, <code>6 // 3</code> is 2, and so on. The <code>//</code> operator gives us how many times 3 divides it, but ignores the remainder, which tells us how far down we must go.</p>
+<p><code>5 % 3</code> is 2, <code>6 % 3</code> is + The <code>%</code> operator gives us the remainder, which is how far along we must go.</p>
 <ul>
-<li><p>Now we will edit the click() function to use <code>play_move</code>, so after you click, the computer makes a move.</p>
-<pre class="language-python"><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">click</span><span class="hljs-params">(event)</span>:</span>
-<span class="hljs-keyword">global</span> shape, grid
+<li>Now we will edit the click() function to use <code>play_move</code>, so after you click, the computer makes a move.
+<pre><code><span class="hljs-function">def <span class="hljs-title">click</span><span class="hljs-params">(<span class="hljs-keyword">event</span>)</span>:
+global shape, grid
 
-across = int(c.canvasx(event.x)/<span class="hljs-number">200</span>)
-down   = int(c.canvasy(event.y)/<span class="hljs-number">200</span>)
+across </span>= <span class="hljs-keyword">int</span>(c.canvasx(<span class="hljs-keyword">event</span>.x)/<span class="hljs-number">200</span>)
+down   = <span class="hljs-keyword">int</span>(c.canvasy(<span class="hljs-keyword">event</span>.y)/<span class="hljs-number">200</span>)
 square = across + (down*<span class="hljs-number">3</span>)
 
-<span class="hljs-keyword">if</span> grid[square] == <span class="hljs-string">"X"</span> <span class="hljs-keyword">or</span> grid[square] == <span class="hljs-string">"O"</span>:
+<span class="hljs-keyword">if</span> grid[square] == <span class="hljs-string">"X"</span> or grid[square] == <span class="hljs-string">"O"</span>:
+    <span class="hljs-function"><span class="hljs-keyword">return</span>
+
+<span class="hljs-keyword">if</span> <span class="hljs-title">winner</span><span class="hljs-params">()</span>:
     <span class="hljs-keyword">return</span>
 
-<span class="hljs-keyword">if</span> winner():
+c.<span class="hljs-title">create_oval</span><span class="hljs-params">(across * <span class="hljs-number">200</span>, down * <span class="hljs-number">200</span>, (across + <span class="hljs-number">1</span>)</span> * 200, <span class="hljs-params">(down + <span class="hljs-number">1</span>)</span> * 200)
+
+grid[square] </span>= <span class="hljs-string">"O"</span>
+
+<span class="hljs-function"><span class="hljs-keyword">if</span> <span class="hljs-title">winner</span><span class="hljs-params">()</span>:
     <span class="hljs-keyword">return</span>
 
-c.create_oval(across * <span class="hljs-number">200</span>, down * <span class="hljs-number">200</span>, (across + <span class="hljs-number">1</span>) * <span class="hljs-number">200</span>, (down + <span class="hljs-number">1</span>) * <span class="hljs-number">200</span>)
-
-grid[square] = <span class="hljs-string">"O"</span>
-
-<span class="hljs-keyword">if</span> winner():
-    <span class="hljs-keyword">return</span>
-
-play_move()</code></pre></li>
+<span class="hljs-title">play_move</span><span class="hljs-params">()</span></span></code></pre>
+</li>
 </ul>
 <p>We check to see if the player has won, and if not, the computer will play a move!.</p>
 <ul>
@@ -178,8 +184,8 @@ play_move()</code></pre></li>
 <section id="activity-checklist-2" class="level2 check">
 <h2>Activity Checklist</h2>
 <ul>
-<li><p>Edit the <code>winner</code> function to take an argument <code class="lang-mel"><span class="hljs-keyword">grid</span></code>:</p>
-<pre class="language-python"><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">winner</span><span class="hljs-params">(grid)</span>:</span>
+<li>Edit the <code>winner</code> function to take an argument <code>grid</code>:
+<pre><code><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">winner</span><span class="hljs-params">(grid)</span>:</span>
 <span class="hljs-keyword">for</span> across <span class="hljs-keyword">in</span> range(<span class="hljs-number">3</span>):
     row  = across * <span class="hljs-number">3</span>
     line = grid[row] + grid[row + <span class="hljs-number">1</span>] + grid[row + <span class="hljs-number">2</span>]
@@ -201,40 +207,42 @@ line = grid[<span class="hljs-number">0</span>] + grid[<span class="hljs-number"
 line = grid[<span class="hljs-number">2</span>] + grid[<span class="hljs-number">4</span>] + grid[<span class="hljs-number">6</span>]
 
 <span class="hljs-keyword">if</span> line == <span class="hljs-string">"XXX"</span> <span class="hljs-keyword">or</span> line == <span class="hljs-string">"OOO"</span>:
-    <span class="hljs-keyword">return</span> <span class="hljs-keyword">True</span></code></pre></li>
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">True</span></code></pre>
+</li>
 </ul>
 <p>You should only have to change the first line of the function. This means <code>winner</code> will use a grid passed to it, instead of the grid of the current game</p>
 <ul>
-<li><p>Now we change <code>click</code> to pass in this grid.</p>
-<pre class="language-python"><code class="lang-stylus">def <span class="hljs-function"><span class="hljs-title">click</span><span class="hljs-params">(event)</span></span>:
+<li>Now we change <code>click</code> to pass in this grid.
+<pre><code><span class="hljs-function">def <span class="hljs-title">click</span><span class="hljs-params">(<span class="hljs-keyword">event</span>)</span>:
 global shape, grid
-across = <span class="hljs-function"><span class="hljs-title">int</span><span class="hljs-params">(c.canvasx(event.x)</span></span>/<span class="hljs-number">200</span>)
-down = <span class="hljs-function"><span class="hljs-title">int</span><span class="hljs-params">(c.canvasy(event.y)</span></span>/<span class="hljs-number">200</span>)
+across </span>= <span class="hljs-keyword">int</span>(c.canvasx(<span class="hljs-keyword">event</span>.x)/<span class="hljs-number">200</span>)
+down = <span class="hljs-keyword">int</span>(c.canvasy(<span class="hljs-keyword">event</span>.y)/<span class="hljs-number">200</span>)
 
 square = across + (down*<span class="hljs-number">3</span>)
 
 <span class="hljs-keyword">if</span> grid[square] == <span class="hljs-string">"X"</span> or grid[square] == <span class="hljs-string">"O"</span>:
-    return
+    <span class="hljs-function"><span class="hljs-keyword">return</span>
 
-<span class="hljs-keyword">if</span> <span class="hljs-function"><span class="hljs-title">winner</span><span class="hljs-params">(grid)</span></span>:
-    return
+<span class="hljs-keyword">if</span> <span class="hljs-title">winner</span><span class="hljs-params">(grid)</span>:
+    <span class="hljs-keyword">return</span>
 
-c.create_oval(
+c.<span class="hljs-title">create_oval</span><span class="hljs-params">(
     across*<span class="hljs-number">200</span>,down*<span class="hljs-number">200</span>,
-    (across+<span class="hljs-number">1</span>)*<span class="hljs-number">200</span>,(down+<span class="hljs-number">1</span>)*<span class="hljs-number">200</span>
+    (across+<span class="hljs-number">1</span>)</span>*200,<span class="hljs-params">(down+<span class="hljs-number">1</span>)</span>*200
 )
-grid[square] = <span class="hljs-string">"O"</span>
+grid[square] </span>= <span class="hljs-string">"O"</span>
 
-<span class="hljs-keyword">if</span> <span class="hljs-function"><span class="hljs-title">winner</span><span class="hljs-params">(grid)</span></span>:
-    return
+<span class="hljs-function"><span class="hljs-keyword">if</span> <span class="hljs-title">winner</span><span class="hljs-params">(grid)</span>:
+    <span class="hljs-keyword">return</span>
 
-<span class="hljs-function"><span class="hljs-title">play_move</span><span class="hljs-params">()</span></span></code></pre></li>
+<span class="hljs-title">play_move</span><span class="hljs-params">()</span></span></code></pre>
+</li>
 </ul>
-<p>Every time you see <code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">winner</span><span class="hljs-params">()</span></span></code>, you replace it with <code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">winner</span><span class="hljs-params">(grid)</span></span></code>.</p>
+<p>Every time you see <code>winner()</code>, you replace it with <code>winner(grid)</code>.</p>
 <ul>
 <li>Run your code, it should work like before. It is important to make sure we haven’t made any mistakes.</li>
-<li><p>Let’s change play_move to find a winning move!</p>
-<pre class="language-python"><code class="lang-mel">def play_move():
+<li>Let’s change play_move to find a winning move!
+<pre><code>def play_move():
 <span class="hljs-keyword">move</span> = -<span class="hljs-number">1</span>
 moves = free_squares()
 
@@ -265,9 +273,10 @@ c.create_line(
 c.create_line(
     across<span class="hljs-variable">*200</span>, (down+<span class="hljs-number">1</span>)<span class="hljs-variable">*200</span>,
     (across+<span class="hljs-number">1</span>)<span class="hljs-variable">*200</span>, down<span class="hljs-variable">*200</span>
-)</code></pre></li>
+)</code></pre>
+</li>
 </ul>
-<p>We make a copy of the grid, using <code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">list</span><span class="hljs-params">(grid)</span></span></code>, place an X where we could play, and call <code>winner</code> to see if it wins!</p>
+<p>We make a copy of the grid, using <code>list(grid)</code>, place an X where we could play, and call <code>winner</code> to see if it wins!</p>
 <ul>
 <li>Run and test your program. If the computer is lucky, it should try and win.</li>
 </ul>
@@ -283,8 +292,8 @@ c.create_line(
 <section id="activity-checklist-3" class="level2 check">
 <h2>Activity Checklist</h2>
 <ul>
-<li><p>Edit <code>play_move</code> to find the players winning move, and block it!</p>
-<pre class="language-python"><code class="lang-mel">def play_move():
+<li>Edit <code>play_move</code> to find the players winning move, and block it!
+<pre><code>def play_move():
 <span class="hljs-keyword">move</span> = -<span class="hljs-number">1</span>
 moves = free_squares()
 
@@ -324,15 +333,16 @@ c.create_line(
 c.create_line(
     across<span class="hljs-variable">*200</span>, (down+<span class="hljs-number">1</span>)<span class="hljs-variable">*200</span>,
     (across+<span class="hljs-number">1</span>)<span class="hljs-variable">*200</span>, down<span class="hljs-variable">*200</span>
-)</code></pre></li>
-<li><p>Run your code, and try to win. It should be a lot harder to beat the computer.</p></li>
+)</code></pre>
+</li>
+<li>Run your code, and try to win. It should be a lot harder to beat the computer.</li>
 </ul>
 </section>
 </section>
 <section id="the-complete-program" class="level1 activity">
 <h1>The Complete Program</h1>
 <p>Your final program should look something like this!</p>
-<pre class="language-python"><code class="lang-python"><span class="hljs-keyword">from</span> tkinter <span class="hljs-keyword">import</span> *
+<pre><code><span class="hljs-keyword">from</span> tkinter <span class="hljs-keyword">import</span> *
     <span class="hljs-keyword">import</span> random
 
     main = Tk()
@@ -453,9 +463,10 @@ c.create_line(
     c.bind(<span class="hljs-string">"&lt;Button-1&gt;"</span>, click)
 
     mainloop()</code></pre>
+
 <section id="challenge" class="level2 challenge">
 <h2>Challenge</h2>
 <p>It’s still possible to win against the program, but can you change the code to make the computer play perfectly?</p>
 </section>
 </section>
-</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><script src="../../../assets/vendor.min.js"></script><script src="../../../assets/script.min.js"></script></body></html>
+</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><div class="intro-question modal fade"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title">Hi there!</h4></div><div class="modal-body"><p>Seems like this is your first time here. Would you like a tour?</p></div><div class="modal-footer"><button class="btn btn-success">Yes!</button><button data-dismiss="modal" class="btn btn-danger">No thanks</button></div></div></div></div><script src="../../../assets/vendor.min.js"></script><script src="../../../assets/script.min.js"></script></body></html>

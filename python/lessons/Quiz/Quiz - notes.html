@@ -8,7 +8,7 @@ function relative(url) {
   return url;
 }</script></head><body><div class="container"><div class="row"><div class="col-xs-12"><div class="top-menu"><a href="../../../index.html" class="btn btn-default"><span aria-hidden="true" class="glyphicon glyphicon-home"></span> Home</a><form class="search"><input type="text" placeholder="Search" class="form-control"/></form></div></div><div class="search"><div class="results"><h1>Search Results</h1></div></div><div class="col-xs-12"><header class="clearfix"><img src="../../../assets/img/ccno_logo.png" class="logo hidden-xs"/><h1 class="title">Quiz — Notes for Club Leaders</h1><div class="lesson-icons"><div class="level"><img title="Level undefined" src="../../../assets/img/levelundefined.png"/><span></span></div><div class="course"><img src="../../../logo-white.png"/><span>Python</span></div><div class="pdf"><a href="/python/lessons/Quiz/Quiz - notes.pdf" title="Download PDF" class="download"><span class="glyphicon glyphicon-save-file"></span></a><span>PDF</span></div></div></header></div><div class="col-xs-12"><div class="content"><section id="introduction" class="level1">
 <h1>Introduction:</h1>
-<p>This project teaches children how to use selection (<code class="lang-actionscript"><span class="hljs-keyword">if</span></code>, <code class="lang-actionscript"><span class="hljs-keyword">else</span></code> and <code class="lang-bash"><span class="hljs-keyword">elif</span></code> statements) in their programs, to alter program flow in response to data. This is achieved through writing and testing a simple quiz program, which includes written text and multiple choice responses.</p>
+<p>This project teaches children how to use selection (<code>if</code>, <code>else</code> and <code>elif</code> statements) in their programs, to alter program flow in response to data. This is achieved through writing and testing a simple quiz program, which includes written text and multiple choice responses.</p>
 </section>
 <section id="resources" class="level1">
 <h1>Resources</h1>
@@ -24,9 +24,9 @@ function relative(url) {
 <ul>
 <li>Selection, using:
 <ul>
-<li><code class="lang-actionscript"><span class="hljs-keyword">if</span></code>;</li>
-<li><code class="lang-actionscript"><span class="hljs-keyword">else</span></code>;</li>
-<li><code class="lang-bash"><span class="hljs-keyword">elif</span></code>.</li>
+<li><code>if</code>;</li>
+<li><code>else</code>;</li>
+<li><code>elif</code>.</li>
 </ul></li>
 <li>Program testing and problem solving.</li>
 </ul>
@@ -34,11 +34,11 @@ function relative(url) {
 <section id="challenges" class="level1">
 <h1>Challenges</h1>
 <ul>
-<li>Question time - using <code class="lang-actionscript"><span class="hljs-keyword">if</span></code> and <code class="lang-actionscript"><span class="hljs-keyword">else</span></code> to give quiz answer feedback;</li>
-<li>Fixing your quiz - use of the <code class="lang-stylus">.<span class="hljs-function"><span class="hljs-title">lower</span><span class="hljs-params">()</span></span></code> method to reduce errors in answer feedback;</li>
-<li>Multiple choice quiz - using <code class="lang-bash"><span class="hljs-keyword">elif</span></code> to add multiple choice quiz questions;</li>
-<li>Keeping score - addition of a <code class="lang-sqf"><span class="hljs-built_in">score</span></code> variable to track progress;</li>
-<li>How did I do? - further use of <code class="lang-actionscript"><span class="hljs-keyword">if</span></code> and <code class="lang-actionscript"><span class="hljs-keyword">else</span></code> statements to provide an end of quiz message, based on their score.</li>
+<li>Question time - using <code>if</code> and <code>else</code> to give quiz answer feedback;</li>
+<li>Fixing your quiz - use of the <code>.lower()</code> method to reduce errors in answer feedback;</li>
+<li>Multiple choice quiz - using <code>elif</code> to add multiple choice quiz questions;</li>
+<li>Keeping score - addition of a <code>score</code> variable to track progress;</li>
+<li>How did I do? - further use of <code>if</code> and <code>else</code> statements to provide an end of quiz message, based on their score.</li>
 </ul>
 </section>
 <section id="frequently-asked-questions" class="level1">
@@ -46,26 +46,30 @@ function relative(url) {
 <ul>
 <li>As the player’s input is stored as text, any questions with a numerical answer should also be represented as text. For example:</li>
 </ul>
-<pre class="language-python"><code class="lang-erlang"><span class="hljs-keyword">if</span> answer == <span class="hljs-string">"4"</span>:
-    ...</code></pre>
+<pre><code><span class="hljs-keyword">if</span> answer == <span class="hljs-string">"4"</span>:
+    <span class="hljs-keyword">...</span></code></pre>
+
 <p>and <em>not</em>:</p>
-<pre class="language-python"><code class="lang-cpp"><span class="hljs-keyword">if</span> answer == <span class="hljs-number">4</span>:
-    ...</code></pre>
+<pre><code><span class="hljs-keyword">if</span> answer == <span class="hljs-number">4</span>:
+    <span class="hljs-keyword">...</span></code></pre>
+
 <p>As an alternative, it is also possible to cast the player’s answer to a number, and then compare the two numbers:</p>
-<pre class="language-python"><code class="lang-stylus">answer = <span class="hljs-function"><span class="hljs-title">int</span><span class="hljs-params">(answer)</span></span>
+<pre><code>answer = int(answer)
 <span class="hljs-keyword">if</span> answer == <span class="hljs-number">4</span>:
-    ...</code></pre>
+    <span class="hljs-keyword">...</span></code></pre>
+
 <ul>
-<li><p>Each <code class="lang-actionscript"><span class="hljs-keyword">if</span></code>/<code class="lang-actionscript"><span class="hljs-keyword">else</span></code>/<code class="lang-bash"><span class="hljs-keyword">elif</span></code> statement should end with a colon.</p></li>
-<li><p>The body of each <code class="lang-actionscript"><span class="hljs-keyword">if</span></code>/<code class="lang-actionscript"><span class="hljs-keyword">else</span></code>/<code class="lang-bash"><span class="hljs-keyword">elif</span></code> statement should be uniformly indented. It is recommended that the Tab key is used for this, as it makes indentation mistakes easier to spot. For example, the following program will not run:</p></li>
+<li><p>Each <code>if</code>/<code>else</code>/<code>elif</code> statement should end with a colon.</p></li>
+<li><p>The body of each <code>if</code>/<code>else</code>/<code>elif</code> statement should be uniformly indented. It is recommended that the Tab key is used for this, as it makes indentation mistakes easier to spot. For example, the following program will not run:</p></li>
 </ul>
-<pre class="language-python"><code class="lang-stylus"><span class="hljs-keyword">if</span> answer == <span class="hljs-string">"variable"</span>:
+<pre><code><span class="hljs-keyword">if</span> answer == <span class="hljs-string">"variable"</span>:
    <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"Well done"</span>)</span></span>
   <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"---------"</span>)</span></span>
     <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">" :) "</span>)</span></span>
  )</code></pre>
+
 <ul>
-<li>Children should remember the difference between <code class="lang-haml">=<span class="ruby"></span></code> (used for variable assignment) and <code class="lang-haml">=<span class="ruby">=</span></code> (used for checking equality).</li>
+<li>Children should remember the difference between <code>=</code> (used for variable assignment) and <code>==</code> (used for checking equality).</li>
 </ul>
 </section>
-</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><script src="../../../assets/vendor.min.js"></script><script src="../../../assets/script.min.js"></script></body></html>
+</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><div class="intro-question modal fade"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title">Hi there!</h4></div><div class="modal-body"><p>Seems like this is your first time here. Would you like a tour?</p></div><div class="modal-footer"><button class="btn btn-success">Yes!</button><button data-dismiss="modal" class="btn btn-danger">No thanks</button></div></div></div></div><script src="../../../assets/vendor.min.js"></script><script src="../../../assets/script.min.js"></script></body></html>

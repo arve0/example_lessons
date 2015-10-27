@@ -18,34 +18,35 @@ function relative(url) {
 <li>Run the Minecraft2D.py file and you should see a screen that looks like this:</li>
 </ul>
 <figure>
-<img src="mine1-1.png" alt="screenshot"><figcaption>screenshot</figcaption>
+<img src="mine1-1.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure>
 <ul>
 <li><p>Your character is the yellow circle in the top-left of the game screen! Use the arrow keys to move around the world, which as you can see is full of different resources; dirt (the brown squares), grass (the green ones) and water (the blue ones).</p></li>
 <li><p>You can press the spacebar to collect resources. For example, move onto some water and press spacebar, you’ll see that you now have one more water in your inventory. Pick up a few of each type of resource.</p></li>
 </ul>
 <figure>
-<img src="mine1-3.png" alt="screenshot"><figcaption>screenshot</figcaption>
+<img src="mine1-3.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure>
 <ul>
 <li>Press the number keys (1 to 4) to place a resource on the map. For example, press 3 to place some water on the map. This will only work if you have some spare water in your inventory.</li>
 </ul>
 <figure>
-<img src="mine1-4.png" alt="screenshot"><figcaption>screenshot</figcaption>
+<img src="mine1-4.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure>
 <ul>
 <li>You can craft an item by holding down the shift key and pressing a number. Crafting means combining items you already have in your inventory to create new ones. Try holding shift and pressing 4 to craft a new brick (as long as you have 2 dirt and 1 water in your inventory).</li>
 </ul>
 <figure>
-<img src="mine1-5.png" alt="screenshot"><figcaption>screenshot</figcaption>
+<img src="mine1-5.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure>
 <ul>
 <li>As you play, you’ll notice that you can only hold a maximum of 20 of each resource in your inventory. If you want to increase this, you can change the variable called <code>MAXTILES</code> in the variables.py file.</li>
 </ul>
-<pre class="language-python"><code class="lang-nginx">    <span class="hljs-comment">#the maximum number of each resource that can be held</span>
+<pre><code><span class="hljs-comment">#the maximum number of each resource that can be held</span>
     <span class="hljs-comment">#----------------------------------------------------</span>
 
     <span class="hljs-title">MAXTILES</span>  = <span class="hljs-number">20</span></code></pre>
+
 <p>Change this number and then double-click the Minecraft.py file to store more of each resource.</p>
 </section>
 <section id="save-your-project" class="level2 save">
@@ -56,7 +57,7 @@ function relative(url) {
 <p>Play around with the game and see what you can build. Can you build a house, with a garden and a lake? A swimming pool? What else can you create?</p>
 <p>Here’s a simple example:</p>
 <figure>
-<img src="mineBuildYourWorld.png" alt="screenshot"><figcaption>screenshot</figcaption>
+<img src="mineBuildYourWorld.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure>
 </section>
 <section id="save-your-project-1" class="level2 save">
@@ -73,13 +74,13 @@ function relative(url) {
 </ul>
 <p>Here are some improved graphics for the grass. I’ve added different shades of grass and even a few flowers:</p>
 <figure>
-<img src="mine2-1.png" alt="screenshot"><figcaption>screenshot</figcaption>
+<img src="mine2-1.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure>
 <ul>
 <li>Save the image and then reload the game and you’ll see the new graphics:</li>
 </ul>
 <figure>
-<img src="mine2-2.png" alt="screenshot"><figcaption>screenshot</figcaption>
+<img src="mine2-2.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure>
 </section>
 <section id="save-your-project-2" class="level2 save">
@@ -95,11 +96,12 @@ function relative(url) {
 <section id="challenge-customising-the-game" class="level2 challenge">
 <h2>Challenge: Customising the game</h2>
 <p>Open the variables.py file and you’ll find some code for setting the image and caption for the game window:</p>
-<pre class="language-python"><code class="lang-stylus">    <span class="hljs-id">#the</span> title bar text/image
+<pre><code><span class="hljs-id">#the</span> title bar text/image
     #------------------------
 
     pygame<span class="hljs-class">.display</span><span class="hljs-class">.set_caption</span>(<span class="hljs-string">'pygame window'</span>)
     pygame<span class="hljs-class">.display</span><span class="hljs-class">.set_icon</span>(pygame<span class="hljs-class">.image</span><span class="hljs-class">.load</span>(<span class="hljs-string">'player.png'</span>))</code></pre>
+
 <p>Edit these 2 lines of code to customise your game. Remember that if you change the icon to a new file then you’ll have to create it!</p>
 </section>
 <section id="save-your-project-4" class="level2 save">
@@ -115,30 +117,32 @@ function relative(url) {
 <li>Let’s firstly create the graphics for a new resource called ‘wood’. You can make a copy of an existing image and rename it. You can then edit the image to look like wood:</li>
 </ul>
 <figure>
-<img src="mine3-1.png" alt="screenshot"><figcaption>screenshot</figcaption>
+<img src="mine3-1.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure>
 <ul>
 <li>Once you have your image for wood, you can then add the resource to your game. Open the variables.py file and add wood as a resource:</li>
 </ul>
-<pre class="language-python"><code class="lang-cpp">    <span class="hljs-preprocessor">#variables representing the different resources</span>
-    <span class="hljs-preprocessor">#----------------------------------------------</span>
+<pre><code><span class="hljs-comment">#variables representing the different resources</span>
+    <span class="hljs-comment">#----------------------------------------------</span>
 
-    DIRT  = <span class="hljs-number">0</span>
-    GRASS = <span class="hljs-number">1</span>
-    WATER = <span class="hljs-number">2</span>
-    BRICK = <span class="hljs-number">3</span>
-    WOOD  = <span class="hljs-number">4</span></code></pre>
+    <span class="hljs-variable">DIRT  =</span> <span class="hljs-number">0</span>
+    <span class="hljs-variable">GRASS =</span> <span class="hljs-number">1</span>
+    <span class="hljs-variable">WATER =</span> <span class="hljs-number">2</span>
+    <span class="hljs-variable">BRICK =</span> <span class="hljs-number">3</span>
+    <span class="hljs-variable">WOOD  =</span> <span class="hljs-number">4</span></code></pre>
+
 <ul>
 <li>In the same file, there is also a list of all the resources. You should add wood to that list too:</li>
 </ul>
-<pre class="language-python"><code class="lang-apache">    <span class="hljs-comment">#a list of all game resources</span>
+<pre><code><span class="hljs-comment">#a list of all game resources</span>
     <span class="hljs-comment">#----------------------------</span>
 
     <span class="hljs-keyword">resources</span> =<span class="hljs-sqbracket"> [DIRT,GRASS,WATER,BRICK,WOOD]</span></code></pre>
+
 <ul>
 <li>You also need to set the image for the wood resource in the textures dictionary, so that the correct graphics will be shown:</li>
 </ul>
-<pre class="language-python"><code class="lang-livecodeserver">    <span class="hljs-comment">#a dictionary linking resources to textures</span>
+<pre><code><span class="hljs-comment">#a dictionary linking resources to textures</span>
     <span class="hljs-comment">#------------------------------------------</span>
 
     textures =   {
@@ -148,46 +152,49 @@ function relative(url) {
                     BRICK   : pygame.image.<span class="hljs-built_in">load</span>(<span class="hljs-string">'brick.png'</span>),
                     WOOD    : pygame.image.<span class="hljs-built_in">load</span>(<span class="hljs-string">'wood.png'</span>)
                  }</code></pre>
+
 <p>Notice that you need to add a comma (<code>,</code>) after the brick image in the line above.</p>
 <ul>
 <li>You can also add wood to your inventory dictionary. You can choose how many you start with:</li>
 </ul>
-<pre class="language-python"><code class="lang-cpp">    <span class="hljs-preprocessor">#the number of each resource that we have to start with</span>
-    <span class="hljs-preprocessor">#------------------------------------------------------</span>
+<pre><code>#the number of each resource that we have to start with
+    #------------------------------------------------------
 
     inventory =   {
-                    DIRT    : <span class="hljs-number">10</span>,
-                    GRASS   : <span class="hljs-number">10</span>,
-                    WATER   : <span class="hljs-number">10</span>,
-                    BRICK   : <span class="hljs-number">0</span>,
-                    WOOD    : <span class="hljs-number">5</span>
+                    <span class="hljs-string">DIRT    :</span> <span class="hljs-number">10</span>,
+                    <span class="hljs-string">GRASS   :</span> <span class="hljs-number">10</span>,
+                    <span class="hljs-string">WATER   :</span> <span class="hljs-number">10</span>,
+                    <span class="hljs-string">BRICK   :</span> <span class="hljs-number">0</span>,
+                    <span class="hljs-string">WOOD    :</span> <span class="hljs-number">5</span>
                 }</code></pre>
+
 <ul>
 <li>If you now run the game, you’ll see that you now have a wood resource that you can place on the map, but there isn’t any wood on the map to begin with:</li>
 </ul>
 <figure>
-<img src="mine3-6.png" alt="screenshot"><figcaption>screenshot</figcaption>
+<img src="mine3-6.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure>
 <ul>
 <li>To start the game with some wood resources dotted around, you need to edit the Minecraft2D.py file. Open the file and add the following lines:</li>
 </ul>
-<pre class="language-python"><code class="lang-pf">            <span class="hljs-comment">#pick a random number between 0 and 9</span>
-            <span class="hljs-keyword">random</span>Number = <span class="hljs-keyword">random</span>.randint(<span class="hljs-number">0</span>,<span class="hljs-number">10</span>)
+<pre><code><span class="hljs-comment">#pick a random number between 0 and 9</span>
+            <span class="hljs-variable">randomNumber =</span> random.randint(<span class="hljs-number">0</span>,<span class="hljs-number">10</span>)
             <span class="hljs-comment">#WATER if the random number is a 1 or a 2</span>
-            if <span class="hljs-keyword">random</span>Number <span class="hljs-keyword">in</span> [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>]:
-                tile = WATER
+            <span class="hljs-keyword">if</span> randomNumber <span class="hljs-keyword">in</span> [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>]:
+                <span class="hljs-variable">tile =</span> WATER
             <span class="hljs-comment">#GRASS if the random number is a 3 or a 4</span>
-            elif <span class="hljs-keyword">random</span>Number <span class="hljs-keyword">in</span> [<span class="hljs-number">3</span>,<span class="hljs-number">4</span>]:
-                tile = GRASS
+            elif randomNumber <span class="hljs-keyword">in</span> [<span class="hljs-number">3</span>,<span class="hljs-number">4</span>]:
+                <span class="hljs-variable">tile =</span> GRASS
             <span class="hljs-comment">#ADD THESE 2 LINES - WOOD if the random number is a 5</span>
-            elif <span class="hljs-keyword">random</span>Number <span class="hljs-keyword">in</span> [<span class="hljs-number">5</span>]:
-                tile = WOOD
+            elif randomNumber <span class="hljs-keyword">in</span> [<span class="hljs-number">5</span>]:
+                <span class="hljs-variable">tile =</span> WOOD
             <span class="hljs-comment">#otherwise it's DIRT</span>
-            else:
-                tile = DIRT</code></pre>
+            <span class="hljs-keyword">else</span>:
+                <span class="hljs-variable">tile =</span> DIRT</code></pre>
+
 <p>Do you know what this code does? For each space on the map, the program chooses a random number between 0 and 9. Whenever the random number is a 5, wood is placed on the map. After you add this code, you should see some wood in your game:</p>
 <figure>
-<img src="mine3-7.png" alt="screenshot"><figcaption>screenshot</figcaption>
+<img src="mine3-7.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure>
 </section>
 <section id="save-your-project-5" class="level2 save">
@@ -210,23 +217,24 @@ function relative(url) {
 <li>Follow the instructions in step 3 above to make a new ‘plank’ resource. However, make sure that there are 0 planks in the player’s inventory, and that there aren’t any planks on the map to begin with.</li>
 </ul>
 <figure>
-<img src="mine4-1.png" alt="screenshot"><figcaption>screenshot</figcaption>
+<img src="mine4-1.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure>
 <ul>
 <li>To allow the player to craft planks of wood, you’ll need to add a crafting rule to your game. Open the variables.py file and add the following code to the crafting rules dictionary:</li>
 </ul>
-<pre class="language-python"><code class="lang-nginx">    <span class="hljs-comment">#rules to make new objects</span>
-    <span class="hljs-comment">#-------------------------</span>
+<pre><code>#rules to make <span class="hljs-keyword">new</span> objects
+    #-------------------------
 
-    <span class="hljs-title">craft</span> = {
-                <span class="hljs-title">BRICK</span>    : { <span class="hljs-title">WATER</span> : <span class="hljs-number">1</span>, DIRT : <span class="hljs-number">2</span> },
-                PLANK    : { <span class="hljs-title">WOOD</span> : <span class="hljs-number">3</span> }
+    craft = {
+                <span class="hljs-string">BRICK    :</span> { <span class="hljs-string">WATER :</span> <span class="hljs-number">1</span>, <span class="hljs-string">DIRT :</span> <span class="hljs-number">2</span> },
+                <span class="hljs-string">PLANK    :</span> { <span class="hljs-string">WOOD :</span> <span class="hljs-number">3</span> }
             }</code></pre>
+
 <p>This code tells the game that it can create a new plank if there are 3 wood in the player’s inventory. Again, don’t forget the comma after the line above.</p>
 <ul>
 <li>You need to make sure that the player knows how to craft planks, by adding some more instructions to the list:</li>
 </ul>
-<pre class="language-python"><code class="lang-nginx">    <span class="hljs-comment">#instructions list</span>
+<pre><code><span class="hljs-comment">#instructions list</span>
     <span class="hljs-comment">#-----------------</span>
 
     <span class="hljs-title">instructions</span> =  [
@@ -241,11 +249,12 @@ function relative(url) {
                         <span class="hljs-string">"   BRICK = 2xDIRT + 1xWATER"</span>,
                         <span class="hljs-string">"   PLANK = 3xWOOD"</span>     
                     ]</code></pre>
+
 <ul>
 <li>If you collect 3 wood and hold down shift and press 6, you should see a new plank in your inventory. You can then add planks of wood to your map!</li>
 </ul>
 <figure>
-<img src="mine4-4.png" alt="screenshot"><figcaption>screenshot</figcaption>
+<img src="mine4-4.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure>
 </section>
 <section id="save-your-project-7" class="level2 save">
@@ -259,4 +268,4 @@ function relative(url) {
 <h2>Save Your Project</h2>
 </section>
 </section>
-</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><script src="../../../assets/vendor.min.js"></script><script src="../../../assets/script.min.js"></script></body></html>
+</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><div class="intro-question modal fade"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title">Hi there!</h4></div><div class="modal-body"><p>Seems like this is your first time here. Would you like a tour?</p></div><div class="modal-footer"><button class="btn btn-success">Yes!</button><button data-dismiss="modal" class="btn btn-danger">No thanks</button></div></div></div></div><script src="../../../assets/vendor.min.js"></script><script src="../../../assets/script.min.js"></script></body></html>

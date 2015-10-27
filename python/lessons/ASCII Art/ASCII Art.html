@@ -21,23 +21,24 @@ function relative(url) {
 <li>On Mac, open up Terminal.app and type <code>idle</code> and press enter;</li>
 <li>On Linux, open up a Terminal, and type <code>idle</code> and press enter.</li>
 </ul></li>
-<li><p>Click <code class="lang-gradle"><span class="hljs-keyword">File</span> → <span class="hljs-keyword">New</span> Window</code>, and type the following into the window that appears:</p>
-<pre class="language-python"><code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"Hello, how are you?"</span>)</span></span></code></pre>
-<p>This program will print some text to the screen. Notice that the text you want to print is surrounded by speech marks (<code class="lang-1c"><span class="hljs-string">"</span></code>). Here’s an image showing what you need to do:</p>
+<li><p>Click <code>File → New Window</code>, and type the following into the window that appears:</p>
+<pre><code><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"Hello, how are you?"</span>)</span></span></code></pre>
+
+<p>This program will print some text to the screen. Notice that the text you want to print is surrounded by speech marks (<code>&quot;</code>). Here’s an image showing what you need to do:</p>
 <figure>
-<img src="ascii-hello.png" alt="screenshot"><figcaption>screenshot</figcaption>
+<img src="ascii-hello.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure></li>
-<li><p>Save the file, by clicking <code class="lang-fortran"><span class="hljs-keyword">File</span> → <span class="hljs-keyword">Save</span></code>, and name the file <code class="lang-css"><span class="hljs-tag">hello</span><span class="hljs-class">.py</span></code> or something similar. Don’t forget to type the <code class="lang-asciidoc"><span class="hljs-title">.py</span></code> bit at the end, which tells the computer that it’s a Python file. Without it, your program won’t be colour coded, which can be really helpful.</p>
+<li><p>Save the file, by clicking <code>File → Save</code>, and name the file <code>hello.py</code> or something similar. Don’t forget to type the <code>.py</code> bit at the end, which tells the computer that it’s a Python file. Without it, your program won’t be colour coded, which can be really helpful.</p>
 <figure>
-<img src="ascii-save.png" alt="screenshot"><figcaption>screenshot</figcaption>
+<img src="ascii-save.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure></li>
-<li><p>Run the file by clicking <code class="lang-mathematica"><span class="hljs-keyword">Run</span> → <span class="hljs-keyword">Run</span> <span class="hljs-keyword">Module</span></code>. You should see another window appear, which is the Python shell. This is the place that your program will run. If everything has worked properly, you should see your text printed to the screen.</p>
+<li><p>Run the file by clicking <code>Run → Run Module</code>. You should see another window appear, which is the Python shell. This is the place that your program will run. If everything has worked properly, you should see your text printed to the screen.</p>
 <figure>
-<img src="ascii-run.png" alt="screenshot"><figcaption>screenshot</figcaption>
+<img src="ascii-run.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure></li>
-<li><p>If you’ve made a mistake, for example missing out a speech mark (<code class="lang-1c"><span class="hljs-string">"</span></code>), then you’ll get an error message instead, telling you what went wrong! Try it!</p>
+<li><p>If you’ve made a mistake, for example missing out a speech mark (<code>&quot;</code>), then you’ll get an error message instead, telling you what went wrong! Try it!</p>
 <figure>
-<img src="ascii-error.png" alt="screenshot"><figcaption>screenshot</figcaption>
+<img src="ascii-error.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure></li>
 <li><p>Congratulations, you are now officially a Python programmer! Give yourself a pat on the back (or if you’re feeling lazy, get someone else to do it for you).</p></li>
 </ul>
@@ -49,7 +50,7 @@ function relative(url) {
 <h2>Challenge: What’s on your mind?</h2>
 <p>Change the program above to print something more interesting to the screen!</p>
 <figure>
-<img src="ascii-mind.png" alt="screenshot"><figcaption>screenshot</figcaption>
+<img src="ascii-mind.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure>
 </section>
 <section id="save-your-project-1" class="level2 save">
@@ -63,18 +64,20 @@ function relative(url) {
 <ul>
 <li><p>Let’s print something much more fun than text… ASCII art! ASCII art is creating pictures out of text. Here’s an example - it’s meant to be a dog!</p>
 <figure>
-<img src="ascii-dog.png" alt="screenshot"><figcaption>screenshot</figcaption>
+<img src="ascii-dog.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure>
 <p>To make this masterpiece, you can type the following into the IDLE editor and run the program:</p>
-<pre class="language-python"><code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"A picture of a dog..."</span>)</span></span>
+<pre><code><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"A picture of a dog..."</span>)</span></span>
 <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">" 0____  "</span>)</span></span>
-<span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"  ||||  "</span>)</span></span></code></pre></li>
-<li><p>If you prefer, you can use 3 single quotes (<code class="lang-asciidoc"><span class="hljs-horizontal_rule">'''</span></code>) instead of speech marks, which allows you to print multiple lines of text with 1 print statement. Like this:</p>
-<pre class="language-python"><code class="lang-python">print(<span class="hljs-string">'''
+<span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"  ||||  "</span>)</span></span></code></pre>
+</li>
+<li><p>If you prefer, you can use 3 single quotes (<code>'''</code>) instead of speech marks, which allows you to print multiple lines of text with 1 print statement. Like this:</p>
+<pre><code>print(<span class="hljs-string">'''
 A picture of a dog...
  0____
   ||||
 '''</span>)</code></pre>
+
 <p>If you run this program, you’ll see it prints the same dog as before.</p></li>
 </ul>
 </section>
@@ -85,7 +88,7 @@ A picture of a dog...
 <h2>Challenge: About yourself</h2>
 <p>Write a Python program to tell others about yourself, by using text and ASCII art. You can create images of your hobbies, friends, family… anything you want! Here’s an example:</p>
 <figure>
-<img src="ascii-aboutMe.png" alt="screenshot"><figcaption>screenshot</figcaption>
+<img src="ascii-aboutMe.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure>
 </section>
 <section id="save-your-project-3" class="level2 save">
@@ -97,24 +100,27 @@ A picture of a dog...
 <section id="activity-checklist-2" class="level2 check">
 <h2>Activity Checklist</h2>
 <ul>
-<li><p>Python can also do calculations using text! What do you get if you multiply <code class="lang-1c"><span class="hljs-string">"hello"</span></code> by 5? Let’s ask Python, by running this program:</p>
-<pre class="language-python"><code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"hello"</span> * <span class="hljs-number">5</span>)</span></span></code></pre>
-<p>The star <code class="lang-gherkin"><span class="hljs-keyword">*</span></code> in the program above is a multiply sign. Run the program above, and you should see the answer:</p>
+<li><p>Python can also do calculations using text! What do you get if you multiply <code>&quot;hello&quot;</code> by 5? Let’s ask Python, by running this program:</p>
+<pre><code><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"hello"</span> * <span class="hljs-number">5</span>)</span></span></code></pre>
+
+<p>The star <code>*</code> in the program above is a multiply sign. Run the program above, and you should see the answer:</p>
 <figure>
-<img src="ascii-textcalc.png" alt="screenshot"><figcaption>screenshot</figcaption>
+<img src="ascii-textcalc.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure></li>
-<li><p>You can make the printed text above easier to read, by putting a space after the word <code class="lang-1c"><span class="hljs-string">"hello"</span></code> in your program:</p>
-<pre class="language-python"><code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"hello "</span> * <span class="hljs-number">5</span>)</span></span></code></pre>
+<li><p>You can make the printed text above easier to read, by putting a space after the word <code>&quot;hello&quot;</code> in your program:</p>
+<pre><code><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"hello "</span> * <span class="hljs-number">5</span>)</span></span></code></pre>
+
 <p>Run this program and you’ll see that the output is a little easier to read than before.</p></li>
-<li><p>If <code class="lang-1c"><span class="hljs-string">"hello "</span></code> multiplied by 5 is <code class="lang-1c"><span class="hljs-string">"hello hello hello hello hello "</span></code>, then what is <code class="lang-cpp"><span class="hljs-string">"hello"</span> - <span class="hljs-number">7</span></code>? Does this calculation even make sense?</p>
+<li><p>If <code>&quot;hello &quot;</code> multiplied by 5 is <code>&quot;hello hello hello hello hello &quot;</code>, then what is <code>&quot;hello&quot; - 7</code>? Does this calculation even make sense?</p>
 <figure>
-<img src="ascii-minus.png" alt="screenshot"><figcaption>screenshot</figcaption>
+<img src="ascii-minus.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure>
 <p>Oops, you’ve broken it! Instead of an answer, we get an error message. It looks like that calculation doesn’t make sense in Python!</p></li>
-<li><p>How about addition? What answer do you think <code class="lang-1c"><span class="hljs-string">"hello "</span> +  <span class="hljs-string">"world</span></code>" would give? Try it out, by running the following program:</p>
-<pre class="language-python"><code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"hello "</span> + <span class="hljs-string">"world"</span>)</span></span></code></pre>
+<li><p>How about addition? What answer do you think <code>&quot;hello &quot; +  &quot;world</code>&quot; would give? Try it out, by running the following program:</p>
+<pre><code><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"hello "</span> + <span class="hljs-string">"world"</span>)</span></span></code></pre>
+
 <figure>
-<img src="ascii-textadd.png" alt="screenshot"><figcaption>screenshot</figcaption>
+<img src="ascii-textadd.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure>
 <p>Does it give you the answer you expected?</p></li>
 </ul>
@@ -125,9 +131,10 @@ A picture of a dog...
 <section id="challenge-words-and-numbers" class="level2 challenge">
 <h2>Challenge: Words and numbers</h2>
 <p>What does the following program print to the screen? See if you can guess correctly before running the program.</p>
-<pre class="language-python"><code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"ha "</span>*<span class="hljs-number">4</span>)</span></span>
+<pre><code><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"ha "</span>*<span class="hljs-number">4</span>)</span></span>
 <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"ba"</span> + <span class="hljs-string">"na"</span>*<span class="hljs-number">2</span>)</span></span>
 <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"He"</span> + <span class="hljs-string">"l"</span>*<span class="hljs-number">2</span> + <span class="hljs-string">"o"</span> + <span class="hljs-string">"!"</span>*<span class="hljs-number">10</span>)</span></span></code></pre>
+
 <p>Can you make up any words of your own?</p>
 </section>
 <section id="save-your-project-5" class="level2 save">
@@ -140,22 +147,25 @@ A picture of a dog...
 <h2>Activity Checklist</h2>
 <ul>
 <li><p>Now that you know how to do calculations on text, now what? Why is it useful? Well, let’s say you wanted to draw an ASCII art rectangle that is 30 characters long and 3 characters high. You could either draw it the hard way, like this:</p>
-<pre class="language-python"><code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"##############################"</span>)</span></span>
+<pre><code><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"##############################"</span>)</span></span>
 <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"##############################"</span>)</span></span>
 <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"##############################"</span>)</span></span></code></pre>
+
 <p>Or you could save time and draw it the easy way, like this:</p>
-<pre class="language-python"><code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"#"</span> * <span class="hljs-number">30</span>)</span></span>
+<pre><code><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"#"</span> * <span class="hljs-number">30</span>)</span></span>
 <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"#"</span> * <span class="hljs-number">30</span>)</span></span>
 <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"#"</span> * <span class="hljs-number">30</span>)</span></span></code></pre>
+
 <p>Both give you exactly the same rectangle printed to the screen:</p>
 <figure>
-<img src="ascii-rect.png" alt="screenshot"><figcaption>screenshot</figcaption>
+<img src="ascii-rect.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure></li>
 <li><p>You could even use calculations to make interesting patterns, like this wave:</p>
-<pre class="language-python"><code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"/\  "</span>*<span class="hljs-number">10</span>)</span></span>
+<pre><code><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"/\  "</span>*<span class="hljs-number">10</span>)</span></span>
 <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"  \/"</span>*<span class="hljs-number">10</span>)</span></span></code></pre>
+
 <figure>
-<img src="ascii-wave.png" alt="screenshot"><figcaption>screenshot</figcaption>
+<img src="ascii-wave.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure></li>
 </ul>
 </section>
@@ -167,11 +177,11 @@ A picture of a dog...
 <p>Your best friend is having an 11th birthday party, and as a gift you’ve decided to code them a scarf! Use calculations wherever possible to make your own scarf pattern.</p>
 <p>If you’re feeling generous, you could even code them a cake (including 11 candles) to go with it!</p>
 <figure>
-<img src="ascii-birthday.png" alt="screenshot"><figcaption>screenshot</figcaption>
+<img src="ascii-birthday.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure>
 </section>
 <section id="save-your-project-7" class="level2 save">
 <h2>Save Your Project</h2>
 </section>
 </section>
-</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><script src="../../../assets/vendor.min.js"></script><script src="../../../assets/script.min.js"></script></body></html>
+</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><div class="intro-question modal fade"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title">Hi there!</h4></div><div class="modal-body"><p>Seems like this is your first time here. Would you like a tour?</p></div><div class="modal-footer"><button class="btn btn-success">Yes!</button><button data-dismiss="modal" class="btn btn-danger">No thanks</button></div></div></div></div><script src="../../../assets/vendor.min.js"></script><script src="../../../assets/script.min.js"></script></body></html>

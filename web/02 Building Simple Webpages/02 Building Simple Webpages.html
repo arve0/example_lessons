@@ -16,7 +16,7 @@ function relative(url) {
 <h2>Activity Checklist</h2>
 <ul>
 <li>Open a text editor.</li>
-<li>Open the <code class="lang-css"><span class="hljs-tag">about_me</span><span class="hljs-class">.html</span></code> file. It contains only a little bit of HTML code to get you started, but you will write the rest yourself.</li>
+<li>Open the <code>about_me.html</code> file. It contains only a little bit of HTML code to get you started, but you will write the rest yourself.</li>
 </ul>
 </section>
 </section>
@@ -27,31 +27,33 @@ function relative(url) {
 <section id="activity-checklist-1" class="level2 check">
 <h2>Activity Checklist</h2>
 <ul>
-<li>Let’s pick the list of things we like as an example. One of the mistakes that happen often is forgetting the <strong>closing tag</strong>, so let’s remove the <code class="lang-apache"><span class="hljs-tag">&lt;/ul&gt;</span></code> to see how it affects the page. Save the file and refresh it in the browser.</li>
+<li>Let’s pick the list of things we like as an example. One of the mistakes that happen often is forgetting the <strong>closing tag</strong>, so let’s remove the <code>&lt;/ul&gt;</code> to see how it affects the page. Save the file and refresh it in the browser.</li>
 </ul>
 <p>What happened? Some things below the list moved a little bit to the right. If you inspect the page with X-Ray Goggles you can see that things which followed the list now nest inside it, which is why they have moved to the right. After we removed the closing tag the browser simply doesn’t know the list of items has ended.</p>
 <ul>
-<li>Add the closing <code class="lang-apache"><span class="hljs-tag">&lt;/ul&gt;</span></code> tag back in and save it. Now when you refresh the page the rest of tags aren’t inside <code class="lang-apache"><span class="hljs-tag">&lt;ul&gt;</span></code> anymore.</li>
-<li>Tags need to be spelt correctly for browser to understand them. What would happen if we misspelt something? +Find the <code class="lang-apache"><span class="hljs-tag">&lt;h1&gt;</span></code> tag. Let’s change it to <code class="lang-apache"><span class="hljs-tag">&lt;d1&gt;</span></code>. Save the document and refresh it in the browser.</li>
+<li>Add the closing <code>&lt;/ul&gt;</code> tag back in and save it. Now when you refresh the page the rest of tags aren’t inside <code>&lt;ul&gt;</code> anymore.</li>
+<li>Tags need to be spelt correctly for browser to understand them. What would happen if we misspelt something? +Find the <code>&lt;h1&gt;</code> tag. Let’s change it to <code>&lt;d1&gt;</code>. Save the document and refresh it in the browser.</li>
 </ul>
 <p>What happened? Since the browser doesn’t know what you mean by this tag it can no longer tell that it’s a heading and so it doesn’t use a larger text to show how important this piece of text is.</p>
 <ul>
-<li>Change <code class="lang-apache"><span class="hljs-tag">&lt;d1&gt;</span></code> back to <code class="lang-apache"><span class="hljs-tag">&lt;h1&gt;</span></code> and save again.</li>
-<li>Find one of the <code class="lang-apache"><span class="hljs-tag">&lt;img&gt;</span></code> tags. We’ve just tried misspelling the tag name and the browser wasn’t sure what to do with it. But what if we misspell the attribute?</li>
+<li>Change <code>&lt;d1&gt;</code> back to <code>&lt;h1&gt;</code> and save again.</li>
+<li>Find one of the <code>&lt;img&gt;</code> tags. We’ve just tried misspelling the tag name and the browser wasn’t sure what to do with it. But what if we misspell the attribute?</li>
 </ul>
-<p>Inside <code class="lang-apache"><span class="hljs-tag">&lt;img&gt;</span></code> tag we have the <code>src</code> and <code>alt</code> attributes:</p>
-<pre class="language-markup"><code class="lang-stylus">&lt;<span class="hljs-tag">img</span> src=<span class="hljs-string">"kitten.jpg"</span> alt=<span class="hljs-string">"This is a kitten."</span> /&gt;</code></pre>
+Inside <code>&lt;img&gt;</code> tag we have the <code>src</code> and <code>alt</code> attributes:
+<pre><code>&lt;img <span class="hljs-variable">src=</span><span class="hljs-string">"kitten.jpg"</span> <span class="hljs-variable">alt=</span><span class="hljs-string">"This is a kitten."</span> /&gt;</code></pre>
+
 <ul>
 <li>Try changing <code>src</code> to something else. Save the document and refresh in the browser.</li>
 </ul>
 <p>Oh no! The kitten is gone! Suddenly, the browser no longer knows where to look for the picture to display - it is looking for the file name inside the <code>src</code> attribute, which is no longer there.</p>
 <ul>
 <li>Change it back to <code>src</code> so we can keep looking at the kitten.</li>
-<li><p>Now remove the second quote (<code class="lang-1c"><span class="hljs-string">"</span></code>) from the <code>alt</code> attribute of this image: the one after the text, so you end up with this:</p>
-<pre class="language-markup"><code class="lang-stylus">&lt;<span class="hljs-tag">img</span> src=<span class="hljs-string">"kitten.jpg"</span> alt=<span class="hljs-string">"This is a kitten. /&gt;</span></code></pre></li>
-<li><p>Save it and refresh in the browser.</p></li>
+<li>Now remove the second quote (<code>&quot;</code>) from the <code>alt</code> attribute of this image: the one after the text, so you end up with this:
+<pre><code>&lt;img <span class="hljs-variable">src=</span><span class="hljs-string">"kitten.jpg"</span> <span class="hljs-variable">alt=</span><span class="hljs-string">"This is a kitten. /&gt;</span></code></pre>
+</li>
+<li>Save it and refresh in the browser.</li>
 </ul>
-<p>The next tag disappeared. Why? The browser will think that everything after <code class="lang-1c">alt=<span class="hljs-string">"</span></code> and before the next quote (<code class="lang-1c"><span class="hljs-string">"</span></code>) is the additional text for this image, including the end of the image tag and the next opening tag.</p>
+<p>The next tag disappeared. Why? The browser will think that everything after <code>alt=&quot;</code> and before the next quote (<code>&quot;</code>) is the additional text for this image, including the end of the image tag and the next opening tag.</p>
 <ul>
 <li>Fix it again by adding a quote after the <code>alt</code> text.</li>
 </ul>
@@ -61,7 +63,7 @@ function relative(url) {
 <section id="step-3-create-another-page-and-link-to-it" class="level1 activity">
 <h1>Step 3: Create another page and link to it</h1>
 <ul>
-<li>Let’s create another page. Open <code class="lang-css"><span class="hljs-tag">about_me_page_2</span><span class="hljs-class">.html</span></code>. It has a little bit less code than the last page you were working with, but I’m sure you can figure out how to add new tags by now.</li>
+<li>Let’s create another page. Open <code>about_me_page_2.html</code>. It has a little bit less code than the last page you were working with, but I’m sure you can figure out how to add new tags by now.</li>
 </ul>
 <p><strong>Some hints and ideas:</strong></p>
 <ul>
@@ -71,17 +73,21 @@ function relative(url) {
 </ul>
 <p><strong>Are you done? Great! Let’s now link the two pages you have created together.</strong></p>
 <p>When we’ve been linking to parts of the same page, we could just point links to a specific id within a page, like this:</p>
-<pre class="language-markup"><code class="lang-livecodeserver">&lt;<span class="hljs-operator">a</span> href=<span class="hljs-string">"#kitten"</span>&gt;Click <span class="hljs-built_in">to</span> see <span class="hljs-operator">a</span> kitten&lt;/<span class="hljs-operator">a</span>&gt;</code></pre>
+<pre><code>&lt;<span class="hljs-operator">a</span> href=<span class="hljs-string">"#kitten"</span>&gt;Click <span class="hljs-built_in">to</span> see <span class="hljs-operator">a</span> kitten&lt;/<span class="hljs-operator">a</span>&gt;</code></pre>
+
 <p>Which then took you to something like this:</p>
-<pre class="language-markup"><code class="lang-stylus">&lt;<span class="hljs-tag">div</span> id=<span class="hljs-string">"kitten"</span>&gt;
+<pre><code>&lt;<span class="hljs-tag">div</span> id=<span class="hljs-string">"kitten"</span>&gt;
     &lt;<span class="hljs-tag">img</span> src=<span class="hljs-string">"kitten.jpg"</span> alt=<span class="hljs-string">"This is a kitten."</span> /&gt;
 &lt;/div&gt;</code></pre>
-<p>To link to another page, we don’t need to include the hash symbol (<code class="lang-vala"><span class="hljs-preprocessor">#</span></code>), but instead we need to say which file we would like the link to take us to.</p>
-<p>So to link from <code class="lang-css"><span class="hljs-tag">about_me_page_2</span><span class="hljs-class">.html</span></code> to <code class="lang-css"><span class="hljs-tag">about_me</span><span class="hljs-class">.html</span></code> write it like this:</p>
-<pre class="language-markup"><code class="lang-livecodeserver">&lt;<span class="hljs-operator">a</span> href=<span class="hljs-string">"about_me.html"</span>&gt;Go <span class="hljs-built_in">to</span> About Me page&lt;/<span class="hljs-operator">a</span>&gt;</code></pre>
+
+<p>To link to another page, we don’t need to include the hash symbol (<code>#</code>), but instead we need to say which file we would like the link to take us to.</p>
+<p>So to link from <code>about_me_page_2.html</code> to <code>about_me.html</code> write it like this:</p>
+<pre><code>&lt;<span class="hljs-operator">a</span> href=<span class="hljs-string">"about_me.html"</span>&gt;Go <span class="hljs-built_in">to</span> About Me page&lt;/<span class="hljs-operator">a</span>&gt;</code></pre>
+
 <p>You can change the link text to something else, like the page title if you have changed it.</p>
-<p>To link back from <code class="lang-css"><span class="hljs-tag">about_me</span><span class="hljs-class">.html</span></code> to <code class="lang-css"><span class="hljs-tag">about_me_page_2</span><span class="hljs-class">.html</span></code> you would have to write it like so:</p>
-<pre class="language-markup"><code class="lang-livecodeserver">&lt;<span class="hljs-operator">a</span> href=<span class="hljs-string">"about_me_page_2.html"</span>&gt;Go <span class="hljs-built_in">to</span> my <span class="hljs-keyword">second</span> page&lt;/<span class="hljs-operator">a</span>&gt;</code></pre>
+<p>To link back from <code>about_me.html</code> to <code>about_me_page_2.html</code> you would have to write it like so:</p>
+<pre><code>&lt;<span class="hljs-operator">a</span> href=<span class="hljs-string">"about_me_page_2.html"</span>&gt;Go <span class="hljs-built_in">to</span> my <span class="hljs-keyword">second</span> page&lt;/<span class="hljs-operator">a</span>&gt;</code></pre>
+
 <p>Congratulations! You have made your own website.</p>
 </section>
 <section id="putting-your-website-on-the-web-extra-activity" class="level1 activity">
@@ -91,18 +97,18 @@ function relative(url) {
 <p>Remember servers from the first session? Servers are computers that are always on and connected to the internet, and they are set up so people can visit websites that live on those computers.</p>
 <p>To do that we will use <strong>Cyberduck</strong> - it’s a program for moving files from your computer to a server.</p>
 <ul>
-<li>Click <code class="lang-inform7"><span class="hljs-keyword">Open</span> Connection</code>.</li>
+<li>Click <code>Open Connection</code>.</li>
 <li>Add the server name, user name and password as instructed by the CodeClub volunteer.</li>
-<li>Click <code class="lang-mathematica"><span class="hljs-keyword">Connect</span></code>. You will then see all the folders and files on the server - most likely the server will be empty, as you haven’t added your files yet.</li>
+<li>Click <code>Connect</code>. You will then see all the folders and files on the server - most likely the server will be empty, as you haven’t added your files yet.</li>
 <li>Drag your website files from your computer into your server window. The uploading will begin.</li>
 <li>Once uploaded, you can visit your website at the address given to you by the CodeClub volunteer.</li>
 </ul>
 <section id="things-to-try" class="level2 try">
 <h2>Things to try</h2>
 <ul>
-<li>How could you link to another page on the web? (Hint: try adding <code class="lang-groovy"><span class="hljs-string">http:</span><span class="hljs-comment">//</span></code> and then the address of the site you want to link to)</li>
-<li>Similar to suggestion above, how would you add a picture from somewhere on the web instead of from your computer? (Hint: again, try adding <code class="lang-groovy"><span class="hljs-string">http:</span><span class="hljs-comment">//</span></code> and the address of the picture)</li>
+<li>How could you link to another page on the web? (Hint: try adding <code>http://</code> and then the address of the site you want to link to)</li>
+<li>Similar to suggestion above, how would you add a picture from somewhere on the web instead of from your computer? (Hint: again, try adding <code>http://</code> and the address of the picture)</li>
 </ul>
 </section>
 </section>
-</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><script src="../../assets/vendor.min.js"></script><script src="../../assets/script.min.js"></script></body></html>
+</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><div class="intro-question modal fade"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title">Hi there!</h4></div><div class="modal-body"><p>Seems like this is your first time here. Would you like a tour?</p></div><div class="modal-footer"><button class="btn btn-success">Yes!</button><button data-dismiss="modal" class="btn btn-danger">No thanks</button></div></div></div></div><script src="../../assets/vendor.min.js"></script><script src="../../assets/script.min.js"></script></body></html>

@@ -15,70 +15,78 @@ function relative(url) {
 <p>Adding videos from YouTube is really simple.</p>
 <ul>
 <li>Go to the video page on YouTube.</li>
-<li>Under the video player you can find the <code class="lang-mathematica"><span class="hljs-keyword">Share</span></code> button. Click that.</li>
+<li>Under the video player you can find the <code>Share</code> button. Click that.</li>
 <li>To get the code you can use on your web page, click <code>Embed</code>.</li>
 </ul>
 <p>It will look something like this:</p>
-<pre class="langauge-markup"><code class="lang-stylus">&lt;<span class="hljs-tag">iframe</span> <span class="hljs-attribute">width</span>=<span class="hljs-string">"560"</span> <span class="hljs-attribute">height</span>=<span class="hljs-string">"315"</span> src=<span class="hljs-string">"http://www.youtube.com/embed/FxhGIajRsq4"</span>
-   frameborder=<span class="hljs-string">"0"</span> allowfullscreen&gt;&lt;/iframe&gt;</code></pre>
+<pre><code>&lt;iframe <span class="hljs-variable">width=</span><span class="hljs-string">"560"</span> <span class="hljs-variable">height=</span><span class="hljs-string">"315"</span> <span class="hljs-variable">src=</span><span class="hljs-string">"http://www.youtube.com/embed/FxhGIajRsq4"</span>
+   <span class="hljs-variable">frameborder=</span><span class="hljs-string">"0"</span> allowfullscreen&gt;&lt;/iframe&gt;</code></pre>
+
 <p>This specific code fragment would add a CodeClub video to your page. Just copy and past it where you would like the video to appear.</p>
-<p>Notice the <code class="lang-processing"><span class="hljs-variable">width</span></code> and <code class="lang-processing"><span class="hljs-variable">height</span></code> attributes. They allow you to control how big will the video be on the page, so feel free to change them.</p>
+<p>Notice the <code>width</code> and <code>height</code> attributes. They allow you to control how big will the video be on the page, so feel free to change them.</p>
 </section>
 <section id="add-a-video-from-vimeo." class="level1 activity">
 <h1>Add a video from Vimeo.</h1>
 <ul>
 <li>Go to the video page on Vimeo.</li>
-<li>Click the <code class="lang-mathematica"><span class="hljs-keyword">Share</span></code> button on the video player.</li>
+<li>Click the <code>Share</code> button on the video player.</li>
 <li>On the right hand side there is an Embed box. Click it to select the code and copy it. It will look a bit like this:</li>
 </ul>
-<pre class="langauge-markup"><code class="lang-stylus">&lt;<span class="hljs-tag">iframe</span> src=<span class="hljs-string">"http://player.vimeo.com/video/44738167"</span> <span class="hljs-attribute">width</span>=<span class="hljs-string">"600"</span> <span class="hljs-attribute">height</span>=<span class="hljs-string">"338"</span>
-   frameborder=<span class="hljs-string">"0"</span> webkitAllowFullScreen mozallowfullscreen allowFullScreen&gt;&lt;/iframe&gt;</code></pre>
+<pre><code>&lt;iframe <span class="hljs-variable">src=</span><span class="hljs-string">"http://player.vimeo.com/video/44738167"</span> <span class="hljs-variable">width=</span><span class="hljs-string">"600"</span> <span class="hljs-variable">height=</span><span class="hljs-string">"338"</span>
+   <span class="hljs-variable">frameborder=</span><span class="hljs-string">"0"</span> webkitAllowFullScreen mozallowfullscreen allowFullScreen&gt;&lt;/iframe&gt;</code></pre>
+
 <ul>
-<li>Paste the code where you would like the video to appear on the page. Notice the <code class="lang-processing"><span class="hljs-variable">width</span></code> and <code class="lang-processing"><span class="hljs-variable">height</span></code> attributes. They allow you to control how big will the video be on the page, so feel free to change them.</li>
+<li>Paste the code where you would like the video to appear on the page. Notice the <code>width</code> and <code>height</code> attributes. They allow you to control how big will the video be on the page, so feel free to change them.</li>
 </ul>
 </section>
 <section id="add-a-video-file-from-your-computer" class="level1 activity">
 <h1>Add a video file from your computer</h1>
 <p>If you have a video you have created you can put it on your page without having to upload it to YouTube or Vimeo.</p>
 <ul>
-<li>To place a video on your page you will need to add a <code>video</code> tag. Just like the <code class="lang-apache"><span class="hljs-tag">&lt;img&gt;</span></code> tag is has the <code>src</code> attribute pointing to the file:</li>
+<li>To place a video on your page you will need to add a <code>video</code> tag. Just like the <code>&lt;img&gt;</code> tag is has the <code>src</code> attribute pointing to the file:</li>
 </ul>
-<pre class="langauge-markup"><code class="lang-xml">    <span class="hljs-tag">&lt;<span class="hljs-title">video</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"spaceship_landing.mp4"</span>&gt;</span>
+<pre><code><span class="hljs-tag">&lt;<span class="hljs-title">video</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"spaceship_landing.mp4"</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">video</span>&gt;</span></code></pre>
-<p>Sadly the annoying thing about adding video that was is that not every browser can play all of the video formats. You will have to save it in at least <code class="lang-asciidoc"><span class="hljs-title">.mp4</span></code> and <code class="lang-asciidoc"><span class="hljs-title">.ogv</span></code> formats, which will work in most browsers.</p>
+
+<p>Sadly the annoying thing about adding video that was is that not every browser can play all of the video formats. You will have to save it in at least <code>.mp4</code> and <code>.ogv</code> formats, which will work in most browsers.</p>
 <p>To let the browser know we have more than one format of video ready, write it like this:</p>
-<pre class="langauge-markup"><code class="lang-xml">    <span class="hljs-tag">&lt;<span class="hljs-title">video</span>&gt;</span>
+<pre><code><span class="hljs-tag">&lt;<span class="hljs-title">video</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">source</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"spaceship_landing.ogv"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"video/ogg"</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">source</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"spaceship_landing.mp4"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"video/mp4"</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">video</span>&gt;</span></code></pre>
+
 <ul>
 <li>To add a picture that will be seen before the video plays, you can use a <code>poster</code> attribute:</li>
 </ul>
-<pre class="langauge-markup"><code class="lang-xml">    <span class="hljs-tag">&lt;<span class="hljs-title">video</span> <span class="hljs-attribute">poster</span>=<span class="hljs-value">"spaceship_landing.jpg"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">source</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"spaceship_landing.ogv"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"video/ogg"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">source</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"spaceship_landing.mp4"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"video/mp4"</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">video</span>&gt;</span></code></pre>
+<pre><code>&lt;video <span class="hljs-variable">poster=</span><span class="hljs-string">"spaceship_landing.jpg"</span>&gt;
+        &lt;source <span class="hljs-variable">src=</span><span class="hljs-string">"spaceship_landing.ogv"</span> <span class="hljs-variable">type=</span><span class="hljs-string">"video/ogg"</span>&gt;
+        &lt;source <span class="hljs-variable">src=</span><span class="hljs-string">"spaceship_landing.mp4"</span> <span class="hljs-variable">type=</span><span class="hljs-string">"video/mp4"</span>&gt;
+    &lt;/video&gt;</code></pre>
+
 <ul>
 <li>If you want to automatically play the video, you can add the <code>autoplay</code> keyword, like this:</li>
 </ul>
-<pre class="langauge-markup"><code class="lang-xml">    <span class="hljs-tag">&lt;<span class="hljs-title">video</span> <span class="hljs-attribute">poster</span>=<span class="hljs-value">"spaceship_landing.jpg"</span> <span class="hljs-attribute">autoplay</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">source</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"spaceship_landing.ogv"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"video/ogg"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">source</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"spaceship_landing.mp4"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"video/mp4"</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">video</span>&gt;</span></code></pre>
+<pre><code>&lt;video <span class="hljs-variable">poster=</span><span class="hljs-string">"spaceship_landing.jpg"</span> autoplay&gt;
+        &lt;source <span class="hljs-variable">src=</span><span class="hljs-string">"spaceship_landing.ogv"</span> <span class="hljs-variable">type=</span><span class="hljs-string">"video/ogg"</span>&gt;
+        &lt;source <span class="hljs-variable">src=</span><span class="hljs-string">"spaceship_landing.mp4"</span> <span class="hljs-variable">type=</span><span class="hljs-string">"video/mp4"</span>&gt;
+    &lt;/video&gt;</code></pre>
+
 <ul>
 <li>To display video controls, such as the play button, the volume and so on you can add the <code>controls</code> keyword:</li>
 </ul>
-<pre class="langauge-markup"><code class="lang-xml">    <span class="hljs-tag">&lt;<span class="hljs-title">video</span> <span class="hljs-attribute">poster</span>=<span class="hljs-value">"spaceship_landing.jpg"</span> <span class="hljs-attribute">controls</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">source</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"spaceship_landing.ogv"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"video/ogg"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">source</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"spaceship_landing.mp4"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"video/mp4"</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">video</span>&gt;</span></code></pre>
+<pre><code>&lt;video <span class="hljs-variable">poster=</span><span class="hljs-string">"spaceship_landing.jpg"</span> controls&gt;
+        &lt;source <span class="hljs-variable">src=</span><span class="hljs-string">"spaceship_landing.ogv"</span> <span class="hljs-variable">type=</span><span class="hljs-string">"video/ogg"</span>&gt;
+        &lt;source <span class="hljs-variable">src=</span><span class="hljs-string">"spaceship_landing.mp4"</span> <span class="hljs-variable">type=</span><span class="hljs-string">"video/mp4"</span>&gt;
+    &lt;/video&gt;</code></pre>
+
 <ul>
-<li>You can also control the size of the video using the <code class="lang-processing"><span class="hljs-variable">width</span></code> and <code class="lang-processing"><span class="hljs-variable">height</span></code> attributes. Write this:</li>
+<li>You can also control the size of the video using the <code>width</code> and <code>height</code> attributes. Write this:</li>
 </ul>
-<pre class="langauge-markup"><code class="lang-xml">    <span class="hljs-tag">&lt;<span class="hljs-title">video</span> <span class="hljs-attribute">poster</span>=<span class="hljs-value">"spaceship_landing.jpg"</span> <span class="hljs-attribute">width</span>=<span class="hljs-value">"600"</span> <span class="hljs-attribute">height</span>=<span class="hljs-value">"400"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">source</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"spaceship_landing.ogv"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"video/ogg"</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">source</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"spaceship_landing.mp4"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"video/mp4"</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">video</span>&gt;</span></code></pre>
+<pre><code>&lt;video <span class="hljs-variable">poster=</span><span class="hljs-string">"spaceship_landing.jpg"</span> <span class="hljs-variable">width=</span><span class="hljs-string">"600"</span> <span class="hljs-variable">height=</span><span class="hljs-string">"400"</span>&gt;
+        &lt;source <span class="hljs-variable">src=</span><span class="hljs-string">"spaceship_landing.ogv"</span> <span class="hljs-variable">type=</span><span class="hljs-string">"video/ogg"</span>&gt;
+        &lt;source <span class="hljs-variable">src=</span><span class="hljs-string">"spaceship_landing.mp4"</span> <span class="hljs-variable">type=</span><span class="hljs-string">"video/mp4"</span>&gt;
+    &lt;/video&gt;</code></pre>
+
 </section>
 <section id="adding-an-audio-file-from-your-computer" class="level1 activity">
 <h1>Adding an audio file from your computer</h1>
@@ -86,27 +94,31 @@ function relative(url) {
 <ul>
 <li>To place the audio on page write this:</li>
 </ul>
-<pre class="langauge-markup"><code class="lang-xml">    <span class="hljs-tag">&lt;<span class="hljs-title">audio</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"spaceship.mp3"</span>&gt;</span>
+<pre><code><span class="hljs-tag">&lt;<span class="hljs-title">audio</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"spaceship.mp3"</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">audio</span>&gt;</span></code></pre>
+
 <p>Notice the <code>src</code> attribute which points to the file.</p>
-<p>Just like with video, not every browser can play every type of audio file, so to make sure as many people as possible can hear the audio you have to add the file in more than one format, at least in <code class="lang-asciidoc"><span class="hljs-title">.mp3</span></code> and <code class="lang-asciidoc"><span class="hljs-title">.oga</span></code>.</p>
-<pre class="langauge-markup"><code class="lang-xml">    <span class="hljs-tag">&lt;<span class="hljs-title">audio</span>&gt;</span>
+<p>Just like with video, not every browser can play every type of audio file, so to make sure as many people as possible can hear the audio you have to add the file in more than one format, at least in <code>.mp3</code> and <code>.oga</code>.</p>
+<pre><code><span class="hljs-tag">&lt;<span class="hljs-title">audio</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">source</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"spaceship.mp3"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">'audio/mp3'</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">source</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"spaceship.ogg"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">'audio/ogg; codecs=vorbis'</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">audio</span>&gt;</span></code></pre>
+
 <ul>
 <li>To add the controls you need to add the <code>controls</code> keyword:</li>
 </ul>
-<pre class="langauge-markup"><code class="lang-xml">    <span class="hljs-tag">&lt;<span class="hljs-title">audio</span> <span class="hljs-attribute">controls</span>&gt;</span>
+<pre><code><span class="hljs-tag">&lt;<span class="hljs-title">audio</span> <span class="hljs-attribute">controls</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">source</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"spaceship.mp3"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">'audio/mp3'</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">source</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"spaceship.ogg"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">'audio/ogg; codecs=vorbis'</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">audio</span>&gt;</span></code></pre>
+
 <ul>
 <li>If you want the audio to play as soon as the page loads, you can add the <code>autoplay</code> keyword, like this:</li>
 </ul>
-<pre class="langauge-markup"><code class="lang-xml">    <span class="hljs-tag">&lt;<span class="hljs-title">audio</span> <span class="hljs-attribute">controls</span> <span class="hljs-attribute">autoplay</span>&gt;</span>
+<pre><code><span class="hljs-tag">&lt;<span class="hljs-title">audio</span> <span class="hljs-attribute">controls</span> <span class="hljs-attribute">autoplay</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">source</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"spaceship.mp3"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">'audio/mp3'</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">source</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"spaceship.ogg"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">'audio/ogg; codecs=vorbis'</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">audio</span>&gt;</span></code></pre>
+
 </section>
-</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><script src="../../assets/vendor.min.js"></script><script src="../../assets/script.min.js"></script></body></html>
+</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><div class="intro-question modal fade"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title">Hi there!</h4></div><div class="modal-body"><p>Seems like this is your first time here. Would you like a tour?</p></div><div class="modal-footer"><button class="btn btn-success">Yes!</button><button data-dismiss="modal" class="btn btn-danger">No thanks</button></div></div></div></div><script src="../../assets/vendor.min.js"></script><script src="../../assets/script.min.js"></script></body></html>

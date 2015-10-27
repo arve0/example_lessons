@@ -17,57 +17,59 @@ function relative(url) {
 <h2>Activity Checklist</h2>
 <ul>
 <li><p>Let’s make a turtle move around the screen, by running this short Python program:</p>
-<pre class="language-python"><code class="lang-erlang">from turtle import *
-<span class="hljs-function"><span class="hljs-title">shape</span><span class="hljs-params">(<span class="hljs-string">"turtle"</span>)</span>
-<span class="hljs-title">speed</span><span class="hljs-params">(<span class="hljs-number">5</span>)</span>
+<pre><code>from turtle import *
+<span class="hljs-function">shape</span>("turtle")
+<span class="hljs-function">speed</span>(5)
 
-<span class="hljs-title">forward</span><span class="hljs-params">(<span class="hljs-number">100</span>)</span>
-<span class="hljs-title">right</span><span class="hljs-params">(<span class="hljs-number">90</span>)</span>
-<span class="hljs-title">forward</span><span class="hljs-params">(<span class="hljs-number">100</span>)</span>
+<span class="hljs-function">forward</span>(100)
+<span class="hljs-function">right</span>(90)
+<span class="hljs-function">forward</span>(100)
 
-<span class="hljs-title">done</span><span class="hljs-params">()</span></span></code></pre>
+<span class="hljs-function">done</span>()</code></pre>
+
 <figure>
-<img src="turtle.png" alt="screenshot"><figcaption>screenshot</figcaption>
+<img src="turtle.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure></li>
 <li><p>The turtle has a pen attached, and draws a line as it moves around the screen. Here’s what the program does:</p>
 <ul>
-<li><p><code class="lang-capnproto"><span class="hljs-keyword">from</span> turtle <span class="hljs-keyword">import</span> *</code> tells Python that you want to use the turtle library, a collection of code you can use to draw on the screen. The <code class="lang-gherkin"><span class="hljs-keyword">*</span></code> means ‘import everything’.</p></li>
-<li><p><code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">shape</span><span class="hljs-params">(<span class="hljs-string">"turtle"</span>)</span></span></code> makes the drawing robot look like a turtle. As well as turtle, you can also use “arrow”, “circle”, “square”, “triangle” or “classic”.</p></li>
-<li><p><code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">speed</span><span class="hljs-params">(<span class="hljs-number">5</span>)</span></span></code> tells the turtle how fast to draw. You can use a number between 1 and 11. 11 is the fastest, 1 is the slowest.</p></li>
-<li><p><code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">forward</span><span class="hljs-params">(<span class="hljs-number">100</span>)</span></span></code> and <code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">backward</span><span class="hljs-params">(<span class="hljs-number">100</span>)</span></span></code> tells the turtle to move forward or backward 100 pixels.</p></li>
-<li><p><code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">left</span><span class="hljs-params">(<span class="hljs-number">45</span>)</span></span></code> and <code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">right</span><span class="hljs-params">(<span class="hljs-number">90</span>)</span></span></code> turn the turtle left or right by a number of degrees. Here are some examples:</p>
+<li><p><code>from turtle import *</code> tells Python that you want to use the turtle library, a collection of code you can use to draw on the screen. The <code>*</code> means ‘import everything’.</p></li>
+<li><p><code>shape(&quot;turtle&quot;)</code> makes the drawing robot look like a turtle. As well as turtle, you can also use “arrow”, “circle”, “square”, “triangle” or “classic”.</p></li>
+<li><p><code>speed(5)</code> tells the turtle how fast to draw. You can use a number between 1 and 11. 11 is the fastest, 1 is the slowest.</p></li>
+<li><p><code>forward(100)</code> and <code>backward(100)</code> tells the turtle to move forward or backward 100 pixels.</p></li>
+<li><p><code>left(45)</code> and <code>right(90)</code> turn the turtle left or right by a number of degrees. Here are some examples:</p>
 <figure>
-<img src="turtle_degrees.png" alt="screenshot"><figcaption>screenshot</figcaption>
+<img src="turtle_degrees.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure></li>
-<li><p><code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">done</span><span class="hljs-params">()</span></span></code> tells Python that we’ve finished programming the turtle.</p></li>
+<li><p><code>done()</code> tells Python that we’ve finished programming the turtle.</p></li>
 </ul></li>
 <li><p>What’s your favourite colour? To make your drawings more interesting, you can also change the colour and the size of the pen drawing the line. Here’s a simple example to try:</p>
-<pre class="language-python"><code class="lang-erlang">from turtle import *
-<span class="hljs-function"><span class="hljs-title">shape</span><span class="hljs-params">(<span class="hljs-string">"turtle"</span>)</span>
-<span class="hljs-title">speed</span><span class="hljs-params">(<span class="hljs-number">8</span>)</span>
+<pre><code>from turtle import *
+<span class="hljs-function">shape</span>("turtle")
+<span class="hljs-function">speed</span>(8)
 
-<span class="hljs-title">color</span><span class="hljs-params">(<span class="hljs-string">"Purple"</span>)</span>
-<span class="hljs-title">pensize</span><span class="hljs-params">(<span class="hljs-number">7</span>)</span>
-<span class="hljs-title">right</span><span class="hljs-params">(<span class="hljs-number">90</span>)</span>
-<span class="hljs-title">forward</span><span class="hljs-params">(<span class="hljs-number">100</span>)</span>
-<span class="hljs-title">left</span><span class="hljs-params">(<span class="hljs-number">90</span>)</span>
-<span class="hljs-title">forward</span><span class="hljs-params">(<span class="hljs-number">50</span>)</span>
+<span class="hljs-function">color</span>("Purple")
+<span class="hljs-function">pensize</span>(7)
+<span class="hljs-function">right</span>(90)
+<span class="hljs-function">forward</span>(100)
+<span class="hljs-function">left</span>(90)
+<span class="hljs-function">forward</span>(50)
 
-<span class="hljs-title">color</span><span class="hljs-params">(<span class="hljs-string">"Orange"</span>)</span>
-<span class="hljs-title">pensize</span><span class="hljs-params">(<span class="hljs-number">3</span>)</span>
-<span class="hljs-title">penup</span><span class="hljs-params">()</span>
-<span class="hljs-title">forward</span><span class="hljs-params">(<span class="hljs-number">50</span>)</span>
-<span class="hljs-title">pendown</span><span class="hljs-params">()</span>
-<span class="hljs-title">forward</span><span class="hljs-params">(<span class="hljs-number">50</span>)</span>
+<span class="hljs-function">color</span>("Orange")
+<span class="hljs-function">pensize</span>(3)
+<span class="hljs-function">penup</span>()
+<span class="hljs-function">forward</span>(50)
+<span class="hljs-function">pendown</span>()
+<span class="hljs-function">forward</span>(50)
 
-<span class="hljs-title">done</span><span class="hljs-params">()</span></span></code></pre>
+<span class="hljs-function">done</span>()</code></pre>
+
 <figure>
-<img src="turtle_colour.png" alt="screenshot"><figcaption>screenshot</figcaption>
+<img src="turtle_colour.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure></li>
 <li><p>The code above contains a couple of new commands:</p>
 <ul>
-<li><p><code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">color</span><span class="hljs-params">(<span class="hljs-string">"Purple"</span>)</span></span></code> turns the turtle and the line purple. Notice the American spelling of the word colour, which doesn’t have a ‘u’ in it. You can also specify colours in <em>hex</em>, like you did in CSS. Instead of using <code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">pencolor</span><span class="hljs-params">(<span class="hljs-string">"Red"</span>)</span></span></code> you could use <code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">pencolor</span><span class="hljs-params">(<span class="hljs-string">"#FF0000"</span>)</span></span></code>.</p></li>
-<li><p><code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">penup</span><span class="hljs-params">()</span></span></code> lifts the pen from the screen, and <code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">pendown</span><span class="hljs-params">()</span></span></code> lowers it again. This means that you can move the turtle without leaving a trail!</p></li>
+<li><p><code>color(&quot;Purple&quot;)</code> turns the turtle and the line purple. Notice the American spelling of the word colour, which doesn’t have a ‘u’ in it. You can also specify colours in <em>hex</em>, like you did in CSS. Instead of using <code>pencolor(&quot;Red&quot;)</code> you could use <code>pencolor(&quot;#FF0000&quot;)</code>.</p></li>
+<li><p><code>penup()</code> lifts the pen from the screen, and <code>pendown()</code> lowers it again. This means that you can move the turtle without leaving a trail!</p></li>
 </ul></li>
 </ul>
 </section>
@@ -96,58 +98,62 @@ function relative(url) {
 <h2>Activity Checklist</h2>
 <ul>
 <li><p>Open up a new file, and run the following program:</p>
-<pre class="language-python"><code class="lang-swift">from turtle <span class="hljs-keyword">import</span> *
+<pre><code><span class="hljs-keyword">from</span> turtle import *
 
 speed(<span class="hljs-number">11</span>)
 shape(<span class="hljs-string">"turtle"</span>)
 
-<span class="hljs-keyword">for</span> <span class="hljs-built_in">count</span> <span class="hljs-keyword">in</span> range(<span class="hljs-number">4</span>):
-    forward(<span class="hljs-number">100</span>)
-    <span class="hljs-keyword">right</span>(<span class="hljs-number">90</span>)
+<span class="hljs-function"><span class="hljs-keyword">for</span> count <span class="hljs-keyword">in</span> <span class="hljs-title">range</span><span class="hljs-params">(<span class="hljs-number">4</span>)</span>:
+    <span class="hljs-title">forward</span><span class="hljs-params">(<span class="hljs-number">100</span>)</span>
+    <span class="hljs-title">right</span><span class="hljs-params">(<span class="hljs-number">90</span>)</span>
 
-done()</code></pre>
-<p>This program uses a <code class="lang-actionscript"><span class="hljs-keyword">for</span></code> loop. You can use a <code class="lang-actionscript"><span class="hljs-keyword">for</span></code> loop in Python whenever you want to repeat some code a set number of times.</p>
-<p>In the program above, the commands <code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">forward</span><span class="hljs-params">(<span class="hljs-number">100</span>)</span></span></code> and <code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">right</span><span class="hljs-params">(<span class="hljs-number">90</span>)</span></span></code> are repeated 4 times, drawing a square. Turning 90 degrees for each corner means we turn 360 degrees in total.</p></li>
-<li><p>Just like with an <code class="lang-actionscript"><span class="hljs-keyword">if</span></code> statement, you should use the Tab key to indent the code that you want to repeat. Try changing the code, so that the line <code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">forward</span><span class="hljs-params">(<span class="hljs-number">100</span>)</span></span></code> is indented but the line <code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">right</span><span class="hljs-params">(<span class="hljs-number">50</span>)</span></span></code> isn’t, like this:</p>
-<pre class="language-python"><code class="lang-swift">from turtle <span class="hljs-keyword">import</span> *
+<span class="hljs-title">done</span><span class="hljs-params">()</span></span></code></pre>
+
+<p>This program uses a <code>for</code> loop. You can use a <code>for</code> loop in Python whenever you want to repeat some code a set number of times.</p>
+<p>In the program above, the commands <code>forward(100)</code> and <code>right(90)</code> are repeated 4 times, drawing a square. Turning 90 degrees for each corner means we turn 360 degrees in total.</p></li>
+<li><p>Just like with an <code>if</code> statement, you should use the Tab key to indent the code that you want to repeat. Try changing the code, so that the line <code>forward(100)</code> is indented but the line <code>right(50)</code> isn’t, like this:</p>
+<pre><code><span class="hljs-keyword">from</span> turtle import *
 
 speed(<span class="hljs-number">11</span>)
 shape(<span class="hljs-string">"turtle"</span>)
 
-<span class="hljs-keyword">for</span> <span class="hljs-built_in">count</span> <span class="hljs-keyword">in</span> range(<span class="hljs-number">4</span>):
-    forward(<span class="hljs-number">100</span>)
-<span class="hljs-keyword">right</span>(<span class="hljs-number">90</span>)
+<span class="hljs-function"><span class="hljs-keyword">for</span> count <span class="hljs-keyword">in</span> <span class="hljs-title">range</span><span class="hljs-params">(<span class="hljs-number">4</span>)</span>:
+    <span class="hljs-title">forward</span><span class="hljs-params">(<span class="hljs-number">100</span>)</span>
+<span class="hljs-title">right</span><span class="hljs-params">(<span class="hljs-number">90</span>)</span>
 
-done()</code></pre>
-<p>What happens when you run this program? Did you get a straight line? In this program, Python will repeat <code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">forward</span><span class="hljs-params">(<span class="hljs-number">100</span>)</span></span></code> four times, and <em>then</em> turn <code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">right</span><span class="hljs-params">(<span class="hljs-number">90</span>)</span></span></code>.</p></li>
+<span class="hljs-title">done</span><span class="hljs-params">()</span></span></code></pre>
+
+<p>What happens when you run this program? Did you get a straight line? In this program, Python will repeat <code>forward(100)</code> four times, and <em>then</em> turn <code>right(90)</code>.</p></li>
 <li><p>Now that you know how to repeat commands, you can create complicated shapes and patterns really easily. Run this program:</p>
-<pre class="language-python"><code class="lang-swift">from turtle <span class="hljs-keyword">import</span> *
+<pre><code><span class="hljs-keyword">from</span> turtle import *
 
 speed(<span class="hljs-number">11</span>)
 shape(<span class="hljs-string">"turtle"</span>)
 
-<span class="hljs-keyword">for</span> <span class="hljs-built_in">count</span> <span class="hljs-keyword">in</span> range(<span class="hljs-number">8</span>):
-    forward(<span class="hljs-number">100</span>)
-    <span class="hljs-keyword">right</span>(<span class="hljs-number">45</span>)
+<span class="hljs-function"><span class="hljs-keyword">for</span> count <span class="hljs-keyword">in</span> <span class="hljs-title">range</span><span class="hljs-params">(<span class="hljs-number">8</span>)</span>:
+    <span class="hljs-title">forward</span><span class="hljs-params">(<span class="hljs-number">100</span>)</span>
+    <span class="hljs-title">right</span><span class="hljs-params">(<span class="hljs-number">45</span>)</span>
 
-done()</code></pre>
+<span class="hljs-title">done</span><span class="hljs-params">()</span></span></code></pre>
+
 <figure>
-<img src="turtle_octagon.png" alt="screenshot"><figcaption>screenshot</figcaption>
+<img src="turtle_octagon.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure>
 <p>This program works in the same way as the square drawing program, except that it repeats 8 times, and only turns 45 degrees for each corner. This means that the code draws an 8-sided shape (an octagon), as the corners for each of the 8 sides add up to 360 degrees (360 divided by 8 is 45).</p></li>
-<li><p>Here’s another example of what can be created using a <code class="lang-actionscript"><span class="hljs-keyword">for</span></code> loop. What does this program draw?</p>
-<pre class="language-python"><code class="lang-aspectj">from turtle <span class="hljs-keyword">import</span> *
+<li><p>Here’s another example of what can be created using a <code>for</code> loop. What does this program draw?</p>
+<pre><code><span class="hljs-keyword">from</span> turtle import *
 
 speed(<span class="hljs-number">11</span>)
 shape(<span class="hljs-string">"turtle"</span>)
 
-<span class="hljs-keyword">for</span> count in range(<span class="hljs-number">30</span>):
-    forward(5)
-    penup()
-    forward(5)
-    pendown()
+<span class="hljs-function"><span class="hljs-keyword">for</span> count <span class="hljs-keyword">in</span> <span class="hljs-title">range</span><span class="hljs-params">(<span class="hljs-number">30</span>)</span>:
+    <span class="hljs-title">forward</span><span class="hljs-params">(<span class="hljs-number">5</span>)</span>
+    <span class="hljs-title">penup</span><span class="hljs-params">()</span>
+    <span class="hljs-title">forward</span><span class="hljs-params">(<span class="hljs-number">5</span>)</span>
+    <span class="hljs-title">pendown</span><span class="hljs-params">()</span>
 
-done()</code></pre></li>
+<span class="hljs-title">done</span><span class="hljs-params">()</span></span></code></pre>
+</li>
 </ul>
 </section>
 <section id="save-your-project-2" class="level2 save">
@@ -156,7 +162,7 @@ done()</code></pre></li>
 <section id="challenge-loopy-shapes" class="level2 challenge">
 <h2>Challenge: Loopy shapes</h2>
 <ul>
-<li>Can you use a <code class="lang-actionscript"><span class="hljs-keyword">for</span></code> loop to draw:
+<li>Can you use a <code>for</code> loop to draw:
 <ul>
 <li>A pentagon? (five sides)</li>
 <li>A hexagon? (six sides) Remember that the angles of all the corners always add up to 360 degrees!</li>
@@ -170,20 +176,21 @@ done()</code></pre></li>
 <section id="challenge-drawing-patterns" class="level2 challenge">
 <h2>Challenge: Drawing patterns</h2>
 <p>Can you use what you’ve learnt to draw awesome patterns? Here’s an example:</p>
-<pre class="language-python"><code class="lang-scss">from turtle import *
+<pre><code><span class="hljs-keyword">from</span> turtle import *
 
-<span class="hljs-function">speed</span>(11)
-<span class="hljs-function">shape</span>("turtle")
-<span class="hljs-function">pensize</span>(6)
-<span class="hljs-function">color</span>("Red")
+speed(<span class="hljs-number">11</span>)
+shape(<span class="hljs-string">"turtle"</span>)
+pensize(<span class="hljs-number">6</span>)
+color(<span class="hljs-string">"Red"</span>)
 
-for count in <span class="hljs-function">range</span>(36)<span class="hljs-value">:
-    <span class="hljs-function">forward</span>(<span class="hljs-number">100</span>)
-    <span class="hljs-function">right</span>(<span class="hljs-number">100</span>)
+<span class="hljs-function"><span class="hljs-keyword">for</span> count <span class="hljs-keyword">in</span> <span class="hljs-title">range</span><span class="hljs-params">(<span class="hljs-number">36</span>)</span>:
+    <span class="hljs-title">forward</span><span class="hljs-params">(<span class="hljs-number">100</span>)</span>
+    <span class="hljs-title">right</span><span class="hljs-params">(<span class="hljs-number">100</span>)</span>
 
-<span class="hljs-function">done</span>()</span></code></pre>
+<span class="hljs-title">done</span><span class="hljs-params">()</span></span></code></pre>
+
 <figure>
-<img src="turtle_loopy.png" alt="screenshot"><figcaption>screenshot</figcaption>
+<img src="turtle_loopy.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure>
 </section>
 <section id="save-your-project-4" class="level2 save">
@@ -193,14 +200,16 @@ for count in <span class="hljs-function">range</span>(36)<span class="hljs-value
 <h2>Challenge: Variables and loops</h2>
 <p>When drawing different shapes, you had to calculate how many degrees to turn for each corner yourself.</p>
 <p>Can you use a calculation, so that the computer works this out for you? To work out the number of degrees to turn, you can divide 360 by the number of sides in the shape:</p>
-<pre class="language-python"><code class="lang-cpp">sides = <span class="hljs-number">4</span>
-angle = <span class="hljs-number">360</span> / sides</code></pre>
-<p><code>/</code> is the Python symbol for divide. Notice that the answer is stored in a variable called <code class="lang-matlab"><span class="hljs-built_in">angle</span></code>, which you can then use to draw your shape:</p>
-<pre class="language-python"><code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">left</span><span class="hljs-params">(angle)</span></span></code></pre>
+<pre><code><span class="hljs-setting">sides = <span class="hljs-value"><span class="hljs-number">4</span></span></span>
+<span class="hljs-setting">angle = <span class="hljs-value"><span class="hljs-number">360</span> / sides</span></span></code></pre>
+
+<p><code>/</code> is the Python symbol for divide. Notice that the answer is stored in a variable called <code>angle</code>, which you can then use to draw your shape:</p>
+<pre><code><span class="hljs-function"><span class="hljs-title">left</span><span class="hljs-params">(angle)</span></span></code></pre>
+
 <p>You can then change the number stored in the <code>sides</code> variable and test that it works for any shape!</p>
 </section>
 <section id="save-your-project-5" class="level2 save">
 <h2>Save Your Project</h2>
 </section>
 </section>
-</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><script src="../../../assets/vendor.min.js"></script><script src="../../../assets/script.min.js"></script></body></html>
+</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><div class="intro-question modal fade"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title">Hi there!</h4></div><div class="modal-body"><p>Seems like this is your first time here. Would you like a tour?</p></div><div class="modal-footer"><button class="btn btn-success">Yes!</button><button data-dismiss="modal" class="btn btn-danger">No thanks</button></div></div></div></div><script src="../../../assets/vendor.min.js"></script><script src="../../../assets/script.min.js"></script></body></html>

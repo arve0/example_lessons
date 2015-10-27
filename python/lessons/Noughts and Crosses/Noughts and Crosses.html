@@ -13,9 +13,10 @@ function relative(url) {
 <section id="step-1-drawing-the-grid" class="level1 activity">
 <h1>Step 1: Drawing the grid</h1>
 <p>We want to draw four lines, in a # pattern, like this:</p>
-<pre><code class="lang-gherkin">_|<span class="hljs-string">_</span>|_
-_|<span class="hljs-string">_</span>|_
- |<span class="hljs-string"> </span>|</code></pre>
+<pre><code class="hljs">_<span class="hljs-string">|_|_</span>
+_<span class="hljs-string">|_|_</span>
+ <span class="hljs-string">| |</span></code></pre>
+
 <p>We could use the turtle commands to draw it, but today we’re going to learn about the Tk Canvas.</p>
 <section id="activity-checklist" class="level2 check">
 <h2>Activity Checklist</h2>
@@ -23,79 +24,81 @@ _|<span class="hljs-string">_</span>|_
 <li>Open up IDLE, create a New File, and save it as ‘xox.py’</li>
 </ul>
 <p>Write the following code:</p>
-<pre class="language-python"><code class="lang-cpp">
-from tkinter import *
+<pre><code>from tkinter <span class="hljs-keyword">import</span> *
 
-main = Tk()
+main = <span class="hljs-type">Tk</span>()
 
-c = Canvas(main, width=<span class="hljs-number">600</span>, height=<span class="hljs-number">600</span>)
-c.pack()
+<span class="hljs-built_in">c</span> = <span class="hljs-type">Canvas</span>(main, width=<span class="hljs-number">600</span>, height=<span class="hljs-number">600</span>)
+<span class="hljs-built_in">c</span>.pack()
 
-c.create_line(<span class="hljs-number">200</span>, <span class="hljs-number">0</span>, <span class="hljs-number">200</span>, <span class="hljs-number">600</span>)
-c.create_line(<span class="hljs-number">400</span>, <span class="hljs-number">0</span>, <span class="hljs-number">400</span>, <span class="hljs-number">600</span>)
+<span class="hljs-built_in">c</span>.create_line(<span class="hljs-number">200</span>, <span class="hljs-number">0</span>, <span class="hljs-number">200</span>, <span class="hljs-number">600</span>)
+<span class="hljs-built_in">c</span>.create_line(<span class="hljs-number">400</span>, <span class="hljs-number">0</span>, <span class="hljs-number">400</span>, <span class="hljs-number">600</span>)
 
-c.create_line(<span class="hljs-number">0</span>, <span class="hljs-number">200</span>, <span class="hljs-number">600</span>, <span class="hljs-number">200</span>)
-c.create_line(<span class="hljs-number">0</span>, <span class="hljs-number">400</span>, <span class="hljs-number">600</span>, <span class="hljs-number">400</span>)
+<span class="hljs-built_in">c</span>.create_line(<span class="hljs-number">0</span>, <span class="hljs-number">200</span>, <span class="hljs-number">600</span>, <span class="hljs-number">200</span>)
+<span class="hljs-built_in">c</span>.create_line(<span class="hljs-number">0</span>, <span class="hljs-number">400</span>, <span class="hljs-number">600</span>, <span class="hljs-number">400</span>)
 
 mainloop()</code></pre>
+
 <ul>
 <li>Save and Run your program, and it will draw a grid !</li>
 </ul>
 <section id="the-canvas" class="level3">
 <h3>The Canvas</h3>
-<p>We make a 600 by 600 pixel window with <code class="lang-stylus">c = <span class="hljs-function"><span class="hljs-title">Canvas</span><span class="hljs-params">(main, width=<span class="hljs-number">600</span>, height=<span class="hljs-number">600</span>)</span></span></code>, which looks like this to the computer:</p>
-<pre><code class="lang-1c">    <span class="hljs-number">0</span>       <span class="hljs-number">200</span>      <span class="hljs-number">400</span>      <span class="hljs-number">600</span>   ...
+<p>We make a 600 by 600 pixel window with <code>c = Canvas(main, width=600, height=600)</code>, which looks like this to the computer:</p>
+<pre><code class="hljs"><span class="hljs-number">0</span>       <span class="hljs-number">200</span>      <span class="hljs-number">400</span>      <span class="hljs-number">600</span>   <span class="hljs-keyword">...</span>
    <span class="hljs-number">0</span>+--------+--------+--------+-----&gt; across
-    <span class="hljs-string">|</span>
-    <span class="hljs-string">|</span>
-    <span class="hljs-string">|</span>
-    <span class="hljs-string">|</span>
- <span class="hljs-number">200</span><span class="hljs-string">|        A        B</span>
-    <span class="hljs-string">|</span>
-    <span class="hljs-string">|</span>
-    <span class="hljs-string">|</span>
-    <span class="hljs-string">|</span>
- <span class="hljs-number">400</span><span class="hljs-string">|        C        D</span>
-    <span class="hljs-string">|</span>
-    <span class="hljs-string">|</span>
-    <span class="hljs-string">|</span>
-    <span class="hljs-string">|</span>
- <span class="hljs-number">600</span><span class="hljs-string">|</span>
-    <span class="hljs-string">|</span>
- ...<span class="hljs-string">|</span>
+    |
+    |
+    |
+    |
+ <span class="hljs-number">200</span>|        A        B
+    |
+    |
+    |
+    |
+ <span class="hljs-number">400</span>|        C        D
+    |
+    |
+    |
+    |
+ <span class="hljs-number">600</span>|
+    |
+ <span class="hljs-keyword">...</span>|
     V
   down</code></pre>
-<p>Here point <code class="lang-autohotkey"><span class="hljs-literal">A</span></code> is at 200 across, 200 down. Point <code>B</code> is at 400 across, 200 down. Point <code class="lang-mathematica"><span class="hljs-keyword">C</span></code> is at 200 across, 400 down. Point <code class="lang-mathematica"><span class="hljs-keyword">D</span></code> is at 400 across, 400 down.</p>
-<p>Each of the commands <code class="lang-stylus">c.<span class="hljs-function"><span class="hljs-title">create_line</span><span class="hljs-params">(across1,down1,across2,down2)</span></span></code> draws a line across the screen, and the four numbers act as positions. If we wanted to draw a line from A to D, we would do <code class="lang-cpp">c.create_line(<span class="hljs-number">200</span>, <span class="hljs-number">200</span>, <span class="hljs-number">400</span>, <span class="hljs-number">400</span>)</code>.</p>
-<pre><code class="lang-1c">     <span class="hljs-number">0</span>       <span class="hljs-number">200</span>      <span class="hljs-number">400</span>      <span class="hljs-number">600</span>   ...
+
+<p>Here point <code>A</code> is at 200 across, 200 down. Point <code>B</code> is at 400 across, 200 down. Point <code>C</code> is at 200 across, 400 down. Point <code>D</code> is at 400 across, 400 down.</p>
+<p>Each of the commands <code>c.create_line(across1,down1,across2,down2)</code> draws a line across the screen, and the four numbers act as positions. If we wanted to draw a line from A to D, we would do <code>c.create_line(200, 200, 400, 400)</code>.</p>
+<pre><code class="hljs"><span class="hljs-number">0</span>       <span class="hljs-number">200</span>      <span class="hljs-number">400</span>      <span class="hljs-number">600</span>   <span class="hljs-keyword">...</span>
    <span class="hljs-number">0</span> +--------A--------B--------+-----&gt; across
-     <span class="hljs-string">|</span>
-     <span class="hljs-string">|</span>
-     <span class="hljs-string">|</span>
-     <span class="hljs-string">|</span>
+     |
+     |
+     |
+     |
  <span class="hljs-number">200</span> M                          O
-     <span class="hljs-string">|</span>
-     <span class="hljs-string">|</span>
-     <span class="hljs-string">|</span>
-     <span class="hljs-string">|</span>
+     |
+     |
+     |
+     |
  <span class="hljs-number">400</span> N                          P
-     <span class="hljs-string">|</span>
-     <span class="hljs-string">|</span>
-     <span class="hljs-string">|</span>
-     <span class="hljs-string">|</span>
- <span class="hljs-number">600</span> <span class="hljs-string">|        C        D</span>
-     <span class="hljs-string">|</span>
- ... <span class="hljs-string">|</span>
+     |
+     |
+     |
+     |
+ <span class="hljs-number">600</span> |        C        D
+     |
+ <span class="hljs-keyword">...</span> |
      V
    down</code></pre>
-<p>We want to draw lines from A to C, B to D, M to O, and N to P.</p>
-<pre class="language-python"><code class="lang-cpp">c.create_line(<span class="hljs-number">200</span>, <span class="hljs-number">0</span>, <span class="hljs-number">200</span>, <span class="hljs-number">600</span>) <span class="hljs-preprocessor"># A to C</span>
-c.create_line(<span class="hljs-number">400</span>, <span class="hljs-number">0</span>, <span class="hljs-number">400</span>, <span class="hljs-number">600</span>) <span class="hljs-preprocessor"># B to D</span>
 
-c.create_line(<span class="hljs-number">0</span>, <span class="hljs-number">200</span>, <span class="hljs-number">600</span>, <span class="hljs-number">200</span>) <span class="hljs-preprocessor"># M to O</span>
-c.create_line(<span class="hljs-number">0</span>, <span class="hljs-number">400</span>, <span class="hljs-number">600</span>, <span class="hljs-number">400</span>) <span class="hljs-preprocessor"># N to P</span>
-</code></pre>
-<p>In code, across is often called <code>x</code>, and down is often called <code class="lang-stata"><span class="hljs-literal">y</span></code>. This grid system is quite like the co-ordinates you’ve learned in mathematics, but we start from the top-left hand side.</p>
+<p>We want to draw lines from A to C, B to D, M to O, and N to P.</p>
+<pre><code>c.create_line(<span class="hljs-number">200</span>, <span class="hljs-number">0</span>, <span class="hljs-number">200</span>, <span class="hljs-number">600</span>) <span class="hljs-comment"># A to C</span>
+c.create_line(<span class="hljs-number">400</span>, <span class="hljs-number">0</span>, <span class="hljs-number">400</span>, <span class="hljs-number">600</span>) <span class="hljs-comment"># B to D</span>
+
+c.create_line(<span class="hljs-number">0</span>, <span class="hljs-number">200</span>, <span class="hljs-number">600</span>, <span class="hljs-number">200</span>) <span class="hljs-comment"># M to O</span>
+c.create_line(<span class="hljs-number">0</span>, <span class="hljs-number">400</span>, <span class="hljs-number">600</span>, <span class="hljs-number">400</span>) <span class="hljs-comment"># N to P</span></code></pre>
+
+<p>In code, across is often called <code>x</code>, and down is often called <code>y</code>. This grid system is quite like the co-ordinates you’ve learned in mathematics, but we start from the top-left hand side.</p>
 </section>
 </section>
 </section>
@@ -106,8 +109,7 @@ c.create_line(<span class="hljs-number">0</span>, <span class="hljs-number">400<
 <ul>
 <li>In the same file, let’s add a new function to draw when you click the mouse!</li>
 </ul>
-<pre class="language-python"><code class="lang-python">
-<span class="hljs-keyword">from</span> tkinter <span class="hljs-keyword">import</span> *
+<pre><code><span class="hljs-keyword">from</span> tkinter <span class="hljs-keyword">import</span> *
 
 main = Tk()
 
@@ -125,14 +127,13 @@ c.create_line(<span class="hljs-number">0</span>, <span class="hljs-number">400<
 
 c.bind(<span class="hljs-string">"&lt;Button-1&gt;"</span>, click)
 
-mainloop()
-</code></pre>
+mainloop()</code></pre>
+
 <ul>
 <li>Run your code, and click on the grid, what happens? You should see a circle in the centre of the grid.</li>
 <li>Let’s edit the code, so it will draw where you click. For this we’ll need to take the mouse position, and work out which grid square it is in, and change the <code>click</code> function</li>
 </ul>
-<pre class="language-python"><code class="lang-python">
-<span class="hljs-keyword">from</span> tkinter <span class="hljs-keyword">import</span> *
+<pre><code><span class="hljs-keyword">from</span> tkinter <span class="hljs-keyword">import</span> *
 
 main = Tk()
 
@@ -156,11 +157,11 @@ c.create_line(<span class="hljs-number">0</span>, <span class="hljs-number">400<
 
 c.bind(<span class="hljs-string">"&lt;Button-1&gt;"</span>, click)
 
-mainloop()
-</code></pre>
-<p><code class="lang-lisp">int<span class="hljs-list">(<span class="hljs-keyword">c</span>.canvasx<span class="hljs-list">(<span class="hljs-keyword">event</span>.x)</span>/200)</span></code> takes the mouse position, <code class="lang-cs"><span class="hljs-keyword">event</span>.x</code> turns it into the canvas position, <code class="lang-stylus">c.<span class="hljs-function"><span class="hljs-title">canvas</span><span class="hljs-params">(event.x)</span></span></code> and then divides it by 200, and rounds it down, so we get a number 0, 1 or 2 to tell us how far across the mouse is.</p>
+mainloop()</code></pre>
+
+<p><code>int(c.canvasx(event.x)/200)</code> takes the mouse position, <code>event.x</code> turns it into the canvas position, <code>c.canvas(event.x)</code> and then divides it by 200, and rounds it down, so we get a number 0, 1 or 2 to tell us how far across the mouse is.</p>
 <ul>
-<li>Run the code, click in the grid squares, each one should fill in with a circle! The code <code class="lang-cpp">c.create_oval(across*<span class="hljs-number">200</span>,down*<span class="hljs-number">200</span>,(across+<span class="hljs-number">1</span>)*<span class="hljs-number">200</span>,(down+<span class="hljs-number">1</span>)*<span class="hljs-number">200</span>)</code> turns ‘Along 1, Down 2’ into positions on the grid, like Along 200, Down 400.</li>
+<li>Run the code, click in the grid squares, each one should fill in with a circle! The code <code>c.create_oval(across*200,down*200,(across+1)*200,(down+1)*200)</code> turns ‘Along 1, Down 2’ into positions on the grid, like Along 200, Down 400.</li>
 </ul>
 </section>
 </section>
@@ -171,8 +172,7 @@ mainloop()
 <ul>
 <li>In the same file, let’s add some code to draw an X, then an O, then an X, …</li>
 </ul>
-<pre class="language-python"><code class="lang-python">
-<span class="hljs-keyword">from</span> tkinter <span class="hljs-keyword">import</span> *
+<pre><code><span class="hljs-keyword">from</span> tkinter <span class="hljs-keyword">import</span> *
 
 main = Tk()
 
@@ -211,10 +211,10 @@ shape = <span class="hljs-string">"O"</span>
 
 c.bind(<span class="hljs-string">"&lt;Button-1&gt;"</span>, click)
 
-mainloop()
-</code></pre>
+mainloop()</code></pre>
+
 <ul>
-<li>Run your program, try click on a grid, it should draw a O, click elsewhere it should draw an X We’ve used a new feature of python, <code class="lang-applescript"><span class="hljs-keyword">global</span></code> to let us change the variable <code class="lang-fortran"><span class="hljs-built_in">shape</span></code> in the function <code>click</code>. If you change variables defined outside of a function, then you have to use <code class="lang-applescript"><span class="hljs-keyword">global</span></code>.</li>
+<li>Run your program, try click on a grid, it should draw a O, click elsewhere it should draw an X We’ve used a new feature of python, <code>global</code> to let us change the variable <code>shape</code> in the function <code>click</code>. If you change variables defined outside of a function, then you have to use <code>global</code>.</li>
 <li>What happens if you click on the same square twice? This is because our code doesn’t keep track of what has been drawn, or where players have moved. We will have write some more code to fix this.</li>
 </ul>
 </section>
@@ -223,12 +223,11 @@ mainloop()
 <h1>Step 4: Keeping track</h1>
 <section id="activity-checklist-3" class="level2 check">
 <h2>Activity Checklist</h2>
-<p>To stop players playing the same move twice, we’ll have to keep track of the moves they make. To do this we’ll introduce a list called <code class="lang-mel"><span class="hljs-keyword">grid</span></code></p>
+<p>To stop players playing the same move twice, we’ll have to keep track of the moves they make. To do this we’ll introduce a list called <code>grid</code></p>
 <ul>
 <li>In the same file,</li>
 </ul>
-<pre class="language-python"><code class="lang-python">
-<span class="hljs-keyword">from</span> tkinter <span class="hljs-keyword">import</span> *
+<pre><code><span class="hljs-keyword">from</span> tkinter <span class="hljs-keyword">import</span> *
 
 main = Tk()
 
@@ -279,8 +278,7 @@ grid = [
 
 c.bind(<span class="hljs-string">"&lt;Button-1&gt;"</span>, click)
 
-mainloop()
-</code></pre>
+mainloop()</code></pre>
 <ul>
 <li>Run your program, and try and click in the same square twice? What happens?</li>
 </ul>
@@ -294,8 +292,7 @@ mainloop()
 <ul>
 <li>In the same file, we’re going to introduce a new function <code>winner</code>, and call it to check if the game has been won The completed code looks like this!</li>
 </ul>
-<pre class="language-python"><code class="lang-python">
-<span class="hljs-keyword">from</span> tkinter <span class="hljs-keyword">import</span> *
+<pre><code><span class="hljs-keyword">from</span> tkinter <span class="hljs-keyword">import</span> *
 
 main = Tk()
 
@@ -373,8 +370,8 @@ grid = [
 
 c.bind(<span class="hljs-string">"&lt;Button-1&gt;"</span>, click)
 
-mainloop()
-</code></pre>
+mainloop()</code></pre>
+
 <ul>
 <li>Try playing the game and winning, can you make any more moves? We have four checks in <code>winner</code>
 <ul>
@@ -390,4 +387,4 @@ mainloop()
 <p>You’re all done! Why not change the code to draw different shapes!</p>
 </section>
 </section>
-</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><script src="../../../assets/vendor.min.js"></script><script src="../../../assets/script.min.js"></script></body></html>
+</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><div class="intro-question modal fade"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title">Hi there!</h4></div><div class="modal-body"><p>Seems like this is your first time here. Would you like a tour?</p></div><div class="modal-footer"><button class="btn btn-success">Yes!</button><button data-dismiss="modal" class="btn btn-danger">No thanks</button></div></div></div></div><script src="../../../assets/vendor.min.js"></script><script src="../../../assets/script.min.js"></script></body></html>

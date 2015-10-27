@@ -15,64 +15,66 @@ function relative(url) {
 <section id="activity-checklist" class="level2 check">
 <h2>Activity Checklist</h2>
 <ul>
-<li><p>Let’s start by using what you already know about turtles to draw a star. Run this program, but make sure <em>not</em> to name the program <code class="lang-css"><span class="hljs-tag">turtle</span><span class="hljs-class">.py</span></code> - any other name is fine!</p>
-<pre class="language-python"><code class="lang-livescript"><span class="hljs-keyword">from</span> turtle <span class="hljs-keyword">import</span> *
+<li><p>Let’s start by using what you already know about turtles to draw a star. Run this program, but make sure <em>not</em> to name the program <code>turtle.py</code> - any other name is fine!</p>
+<pre><code>from turtle <span class="hljs-keyword">import</span> *
 
-<span class="hljs-comment">#this will draw a light grey star on a dark blue background</span>
-color(<span class="hljs-string">"WhiteSmoke"</span>)
-bgcolor(<span class="hljs-string">"MidnightBlue"</span>)
+#<span class="hljs-function"><span class="hljs-keyword">this</span> will draw a light grey star on a dark blue background
+<span class="hljs-title">color</span><span class="hljs-params">(<span class="hljs-string">"WhiteSmoke"</span>)</span>
+<span class="hljs-title">bgcolor</span><span class="hljs-params">(<span class="hljs-string">"MidnightBlue"</span>)</span>
 
-pendown()
-begin_fill()
+<span class="hljs-title">pendown</span><span class="hljs-params">()</span>
+<span class="hljs-title">begin_fill</span><span class="hljs-params">()</span>
 
-<span class="hljs-comment">#draw the star shape</span>
-<span class="hljs-keyword">for</span> side <span class="hljs-keyword">in</span> range(<span class="hljs-number">5</span>):
-    left(<span class="hljs-number">144</span>)
-    forward(<span class="hljs-number">50</span>)
+#draw the star shape
+<span class="hljs-keyword">for</span> side in <span class="hljs-title">range</span><span class="hljs-params">(<span class="hljs-number">5</span>)</span>:
+    <span class="hljs-title">left</span><span class="hljs-params">(<span class="hljs-number">144</span>)</span>
+    <span class="hljs-title">forward</span><span class="hljs-params">(<span class="hljs-number">50</span>)</span>
 
-end_fill()
-penup()
+<span class="hljs-title">end_fill</span><span class="hljs-params">()</span>
+<span class="hljs-title">penup</span><span class="hljs-params">()</span>
 
-forward(<span class="hljs-number">100</span>)
-done()</code></pre>
+<span class="hljs-title">forward</span><span class="hljs-params">(<span class="hljs-number">100</span>)</span>
+<span class="hljs-title">done</span><span class="hljs-params">()</span></span></code></pre>
+
 <figure>
-<img src="sky-star.png" alt="screenshot"><figcaption>screenshot</figcaption>
+<img src="sky-star.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure>
-<p>The only new commands here are <code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">begin_fill</span><span class="hljs-params">()</span></span></code> and <code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">end_fill</span><span class="hljs-params">()</span></span></code>. These commands are used to colour in a shape. Also notice that there is no pen line between the star and the turtle in the image above, as you have used the <code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">penup</span><span class="hljs-params">()</span></span></code> function to stop the turtle drawing.</p>
+<p>The only new commands here are <code>begin_fill()</code> and <code>end_fill()</code>. These commands are used to colour in a shape. Also notice that there is no pen line between the star and the turtle in the image above, as you have used the <code>penup()</code> function to stop the turtle drawing.</p>
 <p>Also, you might have noticed the names of some <a href="http://www.w3schools.com/html/html_colornames.asp">new colours</a>! You can also use hex colour codes, just like you did when making web pages.</p></li>
-<li><p>If you wanted to draw 3 stars at different positions around the screen, then you can define your own new function called <code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">drawStar</span><span class="hljs-params">()</span></span></code>, and then just call this new function 3 times:</p>
-<pre class="language-python"><code class="lang-python"><span class="hljs-keyword">from</span> turtle <span class="hljs-keyword">import</span> *
+<li><p>If you wanted to draw 3 stars at different positions around the screen, then you can define your own new function called <code>drawStar()</code>, and then just call this new function 3 times:</p>
+<pre><code><span class="hljs-keyword">from</span> turtle import *
 
-<span class="hljs-comment">#a function for drawing a star</span>
-<span class="hljs-comment">#'def' means 'define'</span>
-<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">drawStar</span><span class="hljs-params">()</span>:</span>
-    pendown()
-    begin_fill()
-    <span class="hljs-keyword">for</span> side <span class="hljs-keyword">in</span> range(<span class="hljs-number">5</span>):
-        left(<span class="hljs-number">144</span>)
-        forward(<span class="hljs-number">50</span>)
-    end_fill()
-    penup()
+<span class="hljs-preprocessor">#a function for drawing a star</span>
+<span class="hljs-preprocessor">#'def' means '<span class="hljs-keyword">define</span>'</span>
+<span class="hljs-function">def <span class="hljs-title">drawStar</span><span class="hljs-params">()</span>:
+    <span class="hljs-title">pendown</span><span class="hljs-params">()</span>
+    <span class="hljs-title">begin_fill</span><span class="hljs-params">()</span>
+    <span class="hljs-keyword">for</span> side <span class="hljs-keyword">in</span> <span class="hljs-title">range</span><span class="hljs-params">(<span class="hljs-number">5</span>)</span>:
+        <span class="hljs-title">left</span><span class="hljs-params">(<span class="hljs-number">144</span>)</span>
+        <span class="hljs-title">forward</span><span class="hljs-params">(<span class="hljs-number">50</span>)</span>
+    <span class="hljs-title">end_fill</span><span class="hljs-params">()</span>
+    <span class="hljs-title">penup</span><span class="hljs-params">()</span>
 
-<span class="hljs-comment">#this will draw a light grey star on a dark blue background</span>
-color(<span class="hljs-string">"WhiteSmoke"</span>)
-bgcolor(<span class="hljs-string">"MidnightBlue"</span>)
+#<span class="hljs-keyword">this</span> will draw a light grey star on a dark blue background
+<span class="hljs-title">color</span><span class="hljs-params">(<span class="hljs-string">"WhiteSmoke"</span>)</span>
+<span class="hljs-title">bgcolor</span><span class="hljs-params">(<span class="hljs-string">"MidnightBlue"</span>)</span>
 
-<span class="hljs-comment">#use the function to draw stars!</span>
-drawStar()
-forward(<span class="hljs-number">100</span>)
-drawStar()
-left(<span class="hljs-number">120</span>)
-forward(<span class="hljs-number">150</span>)
-drawStar()
+#use the function to draw stars!
+<span class="hljs-title">drawStar</span><span class="hljs-params">()</span>
+<span class="hljs-title">forward</span><span class="hljs-params">(<span class="hljs-number">100</span>)</span>
+<span class="hljs-title">drawStar</span><span class="hljs-params">()</span>
+<span class="hljs-title">left</span><span class="hljs-params">(<span class="hljs-number">120</span>)</span>
+<span class="hljs-title">forward</span><span class="hljs-params">(<span class="hljs-number">150</span>)</span>
+<span class="hljs-title">drawStar</span><span class="hljs-params">()</span>
 
-hideturtle()
-done()</code></pre>
+<span class="hljs-title">hideturtle</span><span class="hljs-params">()</span>
+<span class="hljs-title">done</span><span class="hljs-params">()</span></span></code></pre>
+
 <figure>
-<img src="sky-function.png" alt="screenshot"><figcaption>screenshot</figcaption>
+<img src="sky-function.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure>
-<p>You’ve seen and used functions before. For example, <code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">penup</span><span class="hljs-params">()</span></span></code> and <code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">pendown</span><span class="hljs-params">()</span></span></code> are functions. When using these functions, you didn’t need to know exactly how they worked, you could just use them whenever you needed them.</p>
-<p>Your new <code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">drawStar</span><span class="hljs-params">()</span></span></code> function works in the same way. Now that you have a function for drawing a star, you don’t have to worry about exactly how to draw a star every time, you can just call the function which does all the hard work for you!</p></li>
+<p>You’ve seen and used functions before. For example, <code>penup()</code> and <code>pendown()</code> are functions. When using these functions, you didn’t need to know exactly how they worked, you could just use them whenever you needed them.</p>
+<p>Your new <code>drawStar()</code> function works in the same way. Now that you have a function for drawing a star, you don’t have to worry about exactly how to draw a star every time, you can just call the function which does all the hard work for you!</p></li>
 </ul>
 </section>
 <section id="save-your-project" class="level2 save">
@@ -88,80 +90,82 @@ done()</code></pre>
 </section>
 <section id="step-2-passing-data-to-functions" class="level1 activity">
 <h1>Step 2: Passing data to functions</h1>
-<p>You now have a function for drawing stars, but what if you wanted to draw lots of stars that are different sizes? One way would be to create lots of different functions, like <code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">drawBigStar</span><span class="hljs-params">()</span></span></code>, <code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">drawMediumStar</span><span class="hljs-params">()</span></span></code> and <code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">drawSmallStar</span><span class="hljs-params">()</span></span></code>.</p>
-<p>A better way is to <em>pass data</em> to your <code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">drawStar</span><span class="hljs-params">()</span></span></code> function, to tell it what size star you want! You’ve already used lots of functions that receive data before, such as:</p>
-<pre class="language-python"><code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">forward</span><span class="hljs-params">(<span class="hljs-number">100</span>)</span></span></code></pre>
-<p>…which tells the <code class="lang-oxygene"><span class="hljs-keyword">forward</span></code> function to move 100 pixels, and:</p>
-<pre class="language-python"><code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"Hello"</span>)</span></span></code></pre>
-<p>…which tells the <code class="lang-bash"><span class="hljs-built_in">print</span></code> function to print “Hello” to the screen.</p>
+<p>You now have a function for drawing stars, but what if you wanted to draw lots of stars that are different sizes? One way would be to create lots of different functions, like <code>drawBigStar()</code>, <code>drawMediumStar()</code> and <code>drawSmallStar()</code>.</p>
+<p>A better way is to <em>pass data</em> to your <code>drawStar()</code> function, to tell it what size star you want! You’ve already used lots of functions that receive data before, such as:</p>
+<pre><code><span class="hljs-function"><span class="hljs-title">forward</span><span class="hljs-params">(<span class="hljs-number">100</span>)</span></span></code></pre>
+<p>…which tells the <code>forward</code> function to move 100 pixels, and:</p>
+<pre><code><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"Hello"</span>)</span></span></code></pre>
+<p>…which tells the <code>print</code> function to print “Hello” to the screen.</p>
 <section id="activity-checklist-1" class="level2 check">
 <h2>Activity Checklist</h2>
 <ul>
-<li><p>Here’s a program with a <code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">drawStar</span><span class="hljs-params">()</span></span></code> function that can draw stars of different sizes, using whatever number is passed to it.</p>
-<pre class="language-python"><code class="lang-python"><span class="hljs-keyword">from</span> turtle <span class="hljs-keyword">import</span> *
+<li><p>Here’s a program with a <code>drawStar()</code> function that can draw stars of different sizes, using whatever number is passed to it.</p>
+<pre><code><span class="hljs-keyword">from</span> turtle import *
 
-<span class="hljs-comment">#a function for drawing a star of a particular size</span>
-<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">drawStar</span><span class="hljs-params">(starSize)</span>:</span>
-    pendown()
-    begin_fill()
-    <span class="hljs-keyword">for</span> side <span class="hljs-keyword">in</span> range(<span class="hljs-number">5</span>):
-        left(<span class="hljs-number">144</span>)
-        forward(starSize)
-    end_fill()
-    penup()
+<span class="hljs-preprocessor">#a function for drawing a star of a particular size</span>
+<span class="hljs-function">def <span class="hljs-title">drawStar</span><span class="hljs-params">(starSize)</span>:
+    <span class="hljs-title">pendown</span><span class="hljs-params">()</span>
+    <span class="hljs-title">begin_fill</span><span class="hljs-params">()</span>
+    <span class="hljs-keyword">for</span> side <span class="hljs-keyword">in</span> <span class="hljs-title">range</span><span class="hljs-params">(<span class="hljs-number">5</span>)</span>:
+        <span class="hljs-title">left</span><span class="hljs-params">(<span class="hljs-number">144</span>)</span>
+        <span class="hljs-title">forward</span><span class="hljs-params">(starSize)</span>
+    <span class="hljs-title">end_fill</span><span class="hljs-params">()</span>
+    <span class="hljs-title">penup</span><span class="hljs-params">()</span>
 
-<span class="hljs-comment">#this will draw a light grey star on a dark blue background</span>
-color(<span class="hljs-string">"WhiteSmoke"</span>)
-bgcolor(<span class="hljs-string">"MidnightBlue"</span>)
+#<span class="hljs-keyword">this</span> will draw a light grey star on a dark blue background
+<span class="hljs-title">color</span><span class="hljs-params">(<span class="hljs-string">"WhiteSmoke"</span>)</span>
+<span class="hljs-title">bgcolor</span><span class="hljs-params">(<span class="hljs-string">"MidnightBlue"</span>)</span>
 
-<span class="hljs-comment">#use the function to draw stars of different sizes!</span>
-drawStar(<span class="hljs-number">50</span>)
-forward(<span class="hljs-number">100</span>)
-drawStar(<span class="hljs-number">30</span>)
-left(<span class="hljs-number">120</span>)
-forward(<span class="hljs-number">150</span>)
-drawStar(<span class="hljs-number">70</span>)
+#use the function to draw stars of different sizes!
+<span class="hljs-title">drawStar</span><span class="hljs-params">(<span class="hljs-number">50</span>)</span>
+<span class="hljs-title">forward</span><span class="hljs-params">(<span class="hljs-number">100</span>)</span>
+<span class="hljs-title">drawStar</span><span class="hljs-params">(<span class="hljs-number">30</span>)</span>
+<span class="hljs-title">left</span><span class="hljs-params">(<span class="hljs-number">120</span>)</span>
+<span class="hljs-title">forward</span><span class="hljs-params">(<span class="hljs-number">150</span>)</span>
+<span class="hljs-title">drawStar</span><span class="hljs-params">(<span class="hljs-number">70</span>)</span>
 
-hideturtle()
-done()</code></pre>
+<span class="hljs-title">hideturtle</span><span class="hljs-params">()</span>
+<span class="hljs-title">done</span><span class="hljs-params">()</span></span></code></pre>
+
 <figure>
-<img src="sky-parameters.png" alt="screenshot"><figcaption>screenshot</figcaption>
+<img src="sky-parameters.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure>
-<p>When your program runs the line <code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">drawStar</span><span class="hljs-params">(<span class="hljs-number">50</span>)</span></span></code>, the number <code class="lang-cpp"><span class="hljs-number">50</span></code> is passed to the <code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">drawStar</span><span class="hljs-params">()</span></span></code> function, and so the value of <code>starSize</code> is set to <code class="lang-cpp"><span class="hljs-number">50</span></code>. This means that the line <code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">forward</span><span class="hljs-params">(starSize)</span></span></code> draws a line 50 pixels long.</p>
+<p>When your program runs the line <code>drawStar(50)</code>, the number <code>50</code> is passed to the <code>drawStar()</code> function, and so the value of <code>starSize</code> is set to <code>50</code>. This means that the line <code>forward(starSize)</code> draws a line 50 pixels long.</p>
 <figure>
-<img src="sky-parameter-passing.png" alt="screenshot"><figcaption>screenshot</figcaption>
+<img src="sky-parameter-passing.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure></li>
-<li><p>You can pass as much data to your <code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">drawStar</span><span class="hljs-params">()</span></span></code> function as you want. For example, you could also pass the colour of the star you want to draw:</p>
-<pre class="language-python"><code class="lang-python"><span class="hljs-keyword">from</span> turtle <span class="hljs-keyword">import</span> *
+<li><p>You can pass as much data to your <code>drawStar()</code> function as you want. For example, you could also pass the colour of the star you want to draw:</p>
+<pre><code><span class="hljs-keyword">from</span> turtle import *
 
-<span class="hljs-comment">#a function for drawing a star of a particular size</span>
-<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">drawStar</span><span class="hljs-params">(starSize, starColour)</span>:</span>
-    color(starColour)
-    pendown()
-    begin_fill()
-    <span class="hljs-keyword">for</span> side <span class="hljs-keyword">in</span> range(<span class="hljs-number">5</span>):
-        left(<span class="hljs-number">144</span>)
-        forward(starSize)
-    end_fill()
-    penup()
+<span class="hljs-preprocessor">#a function for drawing a star of a particular size</span>
+<span class="hljs-function">def <span class="hljs-title">drawStar</span><span class="hljs-params">(starSize, starColour)</span>:
+    <span class="hljs-title">color</span><span class="hljs-params">(starColour)</span>
+    <span class="hljs-title">pendown</span><span class="hljs-params">()</span>
+    <span class="hljs-title">begin_fill</span><span class="hljs-params">()</span>
+    <span class="hljs-keyword">for</span> side <span class="hljs-keyword">in</span> <span class="hljs-title">range</span><span class="hljs-params">(<span class="hljs-number">5</span>)</span>:
+        <span class="hljs-title">left</span><span class="hljs-params">(<span class="hljs-number">144</span>)</span>
+        <span class="hljs-title">forward</span><span class="hljs-params">(starSize)</span>
+    <span class="hljs-title">end_fill</span><span class="hljs-params">()</span>
+    <span class="hljs-title">penup</span><span class="hljs-params">()</span>
 
-<span class="hljs-comment">#this will draw a dark blue background</span>
-bgcolor(<span class="hljs-string">"MidnightBlue"</span>)
+#<span class="hljs-keyword">this</span> will draw a dark blue background
+<span class="hljs-title">bgcolor</span><span class="hljs-params">(<span class="hljs-string">"MidnightBlue"</span>)</span>
 
-<span class="hljs-comment">#use the function to draw stars of different sizes!</span>
-drawStar(<span class="hljs-number">50</span>, <span class="hljs-string">"Red"</span>)
-forward(<span class="hljs-number">100</span>)
-drawStar(<span class="hljs-number">30</span>, <span class="hljs-string">"White"</span>)
-left(<span class="hljs-number">120</span>)
-forward(<span class="hljs-number">150</span>)
-drawStar(<span class="hljs-number">70</span>, <span class="hljs-string">"Green"</span>)
+#use the function to draw stars of different sizes!
+<span class="hljs-title">drawStar</span><span class="hljs-params">(<span class="hljs-number">50</span>, <span class="hljs-string">"Red"</span>)</span>
+<span class="hljs-title">forward</span><span class="hljs-params">(<span class="hljs-number">100</span>)</span>
+<span class="hljs-title">drawStar</span><span class="hljs-params">(<span class="hljs-number">30</span>, <span class="hljs-string">"White"</span>)</span>
+<span class="hljs-title">left</span><span class="hljs-params">(<span class="hljs-number">120</span>)</span>
+<span class="hljs-title">forward</span><span class="hljs-params">(<span class="hljs-number">150</span>)</span>
+<span class="hljs-title">drawStar</span><span class="hljs-params">(<span class="hljs-number">70</span>, <span class="hljs-string">"Green"</span>)</span>
 
-hideturtle()
-done()</code></pre>
+<span class="hljs-title">hideturtle</span><span class="hljs-params">()</span>
+<span class="hljs-title">done</span><span class="hljs-params">()</span></span></code></pre>
+
 <figure>
-<img src="sky-colours.png" alt="screenshot"><figcaption>screenshot</figcaption>
+<img src="sky-colours.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure>
-<p>Calling the function <code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">drawStar</span><span class="hljs-params">(<span class="hljs-number">50</span>, <span class="hljs-string">"red"</span>)</span></span></code> works in the same way as before, except now the first piece of data (<code class="lang-cpp"><span class="hljs-number">50</span></code>) becomes the value of <code>starSize</code>, and the second piece of data (<code class="lang-1c"><span class="hljs-string">"Red"</span></code>) becomes the value of <code>starColour</code>.</p></li>
+<p>Calling the function <code>drawStar(50, &quot;red&quot;)</code> works in the same way as before, except now the first piece of data (<code>50</code>) becomes the value of <code>starSize</code>, and the second piece of data (<code>&quot;Red&quot;</code>) becomes the value of <code>starColour</code>.</p></li>
 </ul>
 </section>
 <section id="save-your-project-2" class="level2 save">
@@ -169,7 +173,7 @@ done()</code></pre>
 </section>
 <section id="challenge-drawing-planets" class="level2 challenge">
 <h2>Challenge: Drawing planets</h2>
-<p>Create a function for drawing a planet called <code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">drawPlanet</span><span class="hljs-params">()</span></span></code>. Pass data to the function, so that you can specify the size and colour of the planet you want to draw.</p>
+<p>Create a function for drawing a planet called <code>drawPlanet()</code>. Pass data to the function, so that you can specify the size and colour of the planet you want to draw.</p>
 </section>
 <section id="save-your-project-3" class="level2 save">
 <h2>Save Your Project</h2>
@@ -177,76 +181,78 @@ done()</code></pre>
 </section>
 <section id="step-3-random-stars" class="level1 activity">
 <h1>Step 3: Random stars</h1>
-<p>Let’s use the <code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">drawStar</span><span class="hljs-params">()</span></span></code> function to draw different sized stars randomly around the screen.</p>
+<p>Let’s use the <code>drawStar()</code> function to draw different sized stars randomly around the screen.</p>
 <section id="activity-checklist-2" class="level2 check">
 <h2>Activity Checklist</h2>
 <ul>
 <li><p>Run this program, which moves the turtle to a new position, and then draws a white star:</p>
-<pre class="language-python"><code class="lang-python"><span class="hljs-keyword">from</span> turtle <span class="hljs-keyword">import</span> *
+<pre><code><span class="hljs-keyword">from</span> turtle import *
 
-<span class="hljs-comment">#a function for drawing a star of a particular size</span>
-<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">drawStar</span><span class="hljs-params">(starSize, starColour)</span>:</span>
-    color(starColour)
-    pendown()
-    begin_fill()
-    <span class="hljs-keyword">for</span> side <span class="hljs-keyword">in</span> range(<span class="hljs-number">5</span>):
-        left(<span class="hljs-number">144</span>)
-        forward(starSize)
-    end_fill()
-    penup()
+<span class="hljs-preprocessor">#a function for drawing a star of a particular size</span>
+<span class="hljs-function">def <span class="hljs-title">drawStar</span><span class="hljs-params">(starSize, starColour)</span>:
+    <span class="hljs-title">color</span><span class="hljs-params">(starColour)</span>
+    <span class="hljs-title">pendown</span><span class="hljs-params">()</span>
+    <span class="hljs-title">begin_fill</span><span class="hljs-params">()</span>
+    <span class="hljs-keyword">for</span> side <span class="hljs-keyword">in</span> <span class="hljs-title">range</span><span class="hljs-params">(<span class="hljs-number">5</span>)</span>:
+        <span class="hljs-title">left</span><span class="hljs-params">(<span class="hljs-number">144</span>)</span>
+        <span class="hljs-title">forward</span><span class="hljs-params">(starSize)</span>
+    <span class="hljs-title">end_fill</span><span class="hljs-params">()</span>
+    <span class="hljs-title">penup</span><span class="hljs-params">()</span>
 
-<span class="hljs-comment">#this will draw a dark blue background</span>
-bgcolor(<span class="hljs-string">"MidnightBlue"</span>)
+#<span class="hljs-keyword">this</span> will draw a dark blue background
+<span class="hljs-title">bgcolor</span><span class="hljs-params">(<span class="hljs-string">"MidnightBlue"</span>)</span>
 
-<span class="hljs-comment">#move to a different location (x=200,y=200)</span>
-penup()
-setpos(<span class="hljs-number">200</span> , <span class="hljs-number">200</span>)
-pendown()
+#move to a different <span class="hljs-title">location</span> <span class="hljs-params">(x=<span class="hljs-number">200</span>,y=<span class="hljs-number">200</span>)</span>
+<span class="hljs-title">penup</span><span class="hljs-params">()</span>
+<span class="hljs-title">setpos</span><span class="hljs-params">(<span class="hljs-number">200</span> , <span class="hljs-number">200</span>)</span>
+<span class="hljs-title">pendown</span><span class="hljs-params">()</span>
 
-<span class="hljs-comment">#use the function to draw a large red star</span>
-drawStar(<span class="hljs-number">50</span>, <span class="hljs-string">"White"</span>)
+#use the function to draw a large red star
+<span class="hljs-title">drawStar</span><span class="hljs-params">(<span class="hljs-number">50</span>, <span class="hljs-string">"White"</span>)</span>
 
-hideturtle()
-done()</code></pre>
-<p>The <code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">setpos</span><span class="hljs-params">()</span></span></code> function moves the turtle to whatever x and y coordinates are passed to it. In the program above, the code <code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">setpos</span><span class="hljs-params">(<span class="hljs-number">200</span> , <span class="hljs-number">200</span>)</span></span></code> moves the turtle to the point x=200, y=200 on the screen. What would happen if you changed the numbers passed to the <code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">setpos</span><span class="hljs-params">()</span></span></code> function?</p>
+<span class="hljs-title">hideturtle</span><span class="hljs-params">()</span>
+<span class="hljs-title">done</span><span class="hljs-params">()</span></span></code></pre>
+
+<p>The <code>setpos()</code> function moves the turtle to whatever x and y coordinates are passed to it. In the program above, the code <code>setpos(200 , 200)</code> moves the turtle to the point x=200, y=200 on the screen. What would happen if you changed the numbers passed to the <code>setpos()</code> function?</p>
 <figure>
-<img src="sky-xy.png" alt="screenshot"><figcaption>screenshot</figcaption>
+<img src="sky-xy.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure></li>
-<li><p>You’ll be using code to move to a random location a lot, so let’s define another function called <code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">moveToRandomLocation</span><span class="hljs-params">()</span></span></code>, which, well, moves the turtle to a random location (obviously)!</p>
-<pre class="language-python"><code class="lang-python"><span class="hljs-keyword">from</span> turtle <span class="hljs-keyword">import</span> *
-<span class="hljs-keyword">from</span> random <span class="hljs-keyword">import</span> *
+<li><p>You’ll be using code to move to a random location a lot, so let’s define another function called <code>moveToRandomLocation()</code>, which, well, moves the turtle to a random location (obviously)!</p>
+<pre><code><span class="hljs-keyword">from</span> turtle import *
+<span class="hljs-keyword">from</span> random import *
 
-<span class="hljs-comment">#a function for moving the turtle to a random location</span>
-<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">moveToRandomLocation</span><span class="hljs-params">()</span>:</span>
-    penup()
-    setpos( randint(-<span class="hljs-number">400</span>,<span class="hljs-number">400</span>) , randint(-<span class="hljs-number">400</span>,<span class="hljs-number">400</span>) )
-    pendown()
+<span class="hljs-preprocessor">#a function for moving the turtle to a random location</span>
+<span class="hljs-function">def <span class="hljs-title">moveToRandomLocation</span><span class="hljs-params">()</span>:
+    <span class="hljs-title">penup</span><span class="hljs-params">()</span>
+    <span class="hljs-title">setpos</span><span class="hljs-params">( randint(-<span class="hljs-number">400</span>,<span class="hljs-number">400</span>)</span> , <span class="hljs-title">randint</span><span class="hljs-params">(-<span class="hljs-number">400</span>,<span class="hljs-number">400</span>)</span> )
+    <span class="hljs-title">pendown</span><span class="hljs-params">()</span>
 
-<span class="hljs-comment">#a function for drawing a star of a particular size</span>
-<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">drawStar</span><span class="hljs-params">(starSize, starColour)</span>:</span>
-    color(starColour)
-    pendown()
-    begin_fill()
-    <span class="hljs-keyword">for</span> side <span class="hljs-keyword">in</span> range(<span class="hljs-number">5</span>):
-        left(<span class="hljs-number">144</span>)
-        forward(starSize)
-    end_fill()
-    penup()
+#a function <span class="hljs-keyword">for</span> drawing a star of a particular size
+def <span class="hljs-title">drawStar</span><span class="hljs-params">(starSize, starColour)</span>:
+    <span class="hljs-title">color</span><span class="hljs-params">(starColour)</span>
+    <span class="hljs-title">pendown</span><span class="hljs-params">()</span>
+    <span class="hljs-title">begin_fill</span><span class="hljs-params">()</span>
+    <span class="hljs-keyword">for</span> side <span class="hljs-keyword">in</span> <span class="hljs-title">range</span><span class="hljs-params">(<span class="hljs-number">5</span>)</span>:
+        <span class="hljs-title">left</span><span class="hljs-params">(<span class="hljs-number">144</span>)</span>
+        <span class="hljs-title">forward</span><span class="hljs-params">(starSize)</span>
+    <span class="hljs-title">end_fill</span><span class="hljs-params">()</span>
+    <span class="hljs-title">penup</span><span class="hljs-params">()</span>
 
-<span class="hljs-comment">#this will draw a dark blue background</span>
-bgcolor(<span class="hljs-string">"MidnightBlue"</span>)
+#<span class="hljs-keyword">this</span> will draw a dark blue background
+<span class="hljs-title">bgcolor</span><span class="hljs-params">(<span class="hljs-string">"MidnightBlue"</span>)</span>
 
-<span class="hljs-comment">#draw 30 stars (random sizes/locations)</span>
-<span class="hljs-keyword">for</span> star <span class="hljs-keyword">in</span> range(<span class="hljs-number">30</span>):
-    moveToRandomLocation()
-    drawStar( randint(<span class="hljs-number">5</span>,<span class="hljs-number">25</span>) , <span class="hljs-string">"White"</span>)
+#draw 30 <span class="hljs-title">stars</span> <span class="hljs-params">(random sizes/locations)</span>
+<span class="hljs-keyword">for</span> star <span class="hljs-keyword">in</span> <span class="hljs-title">range</span><span class="hljs-params">(<span class="hljs-number">30</span>)</span>:
+    <span class="hljs-title">moveToRandomLocation</span><span class="hljs-params">()</span>
+    <span class="hljs-title">drawStar</span><span class="hljs-params">( randint(<span class="hljs-number">5</span>,<span class="hljs-number">25</span>)</span> , "White")
 
-hideturtle()
-done()</code></pre>
+<span class="hljs-title">hideturtle</span><span class="hljs-params">()</span>
+<span class="hljs-title">done</span><span class="hljs-params">()</span></span></code></pre>
+
 <figure>
-<img src="sky-random.png" alt="screenshot"><figcaption>screenshot</figcaption>
+<img src="sky-random.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure>
-<p>As you can see, this program draws 30 stars, each time moving to a random location and then drawing a star with a random size between 5 and 25 pixels. Remember that the code <code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">randint</span><span class="hljs-params">(<span class="hljs-number">5</span>,<span class="hljs-number">25</span>)</span></span></code> chooses a random number between 5 and 25.</p></li>
+<p>As you can see, this program draws 30 stars, each time moving to a random location and then drawing a star with a random size between 5 and 25 pixels. Remember that the code <code>randint(5,25)</code> chooses a random number between 5 and 25.</p></li>
 </ul>
 </section>
 <section id="save-your-project-4" class="level2 save">
@@ -259,130 +265,132 @@ done()</code></pre>
 <section id="activity-checklist-3" class="level2 check">
 <h2>Activity Checklist</h2>
 <ul>
-<li><p>It would be great if we could add a galaxy of small multi-coloured stars to our drawing. As we already have a function to draw stars, we can create another function called <code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">drawGalaxy</span><span class="hljs-params">()</span></span></code> that makes use of the <code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">drawStar</span><span class="hljs-params">()</span></span></code> function that we already have:</p>
-<pre class="language-python"><code class="lang-python"><span class="hljs-keyword">from</span> turtle <span class="hljs-keyword">import</span> *
-<span class="hljs-keyword">from</span> random <span class="hljs-keyword">import</span> *
+<li><p>It would be great if we could add a galaxy of small multi-coloured stars to our drawing. As we already have a function to draw stars, we can create another function called <code>drawGalaxy()</code> that makes use of the <code>drawStar()</code> function that we already have:</p>
+<pre><code><span class="hljs-keyword">from</span> turtle import *
+<span class="hljs-keyword">from</span> random import *
 
-<span class="hljs-comment">#a function for moving the turtle to a random location</span>
-<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">moveToRandomLocation</span><span class="hljs-params">()</span>:</span>
-    penup()
-    setpos( randint(-<span class="hljs-number">400</span>,<span class="hljs-number">400</span>) , randint(-<span class="hljs-number">400</span>,<span class="hljs-number">400</span>) )
-    pendown()
+<span class="hljs-preprocessor">#a function for moving the turtle to a random location</span>
+<span class="hljs-function">def <span class="hljs-title">moveToRandomLocation</span><span class="hljs-params">()</span>:
+    <span class="hljs-title">penup</span><span class="hljs-params">()</span>
+    <span class="hljs-title">setpos</span><span class="hljs-params">( randint(-<span class="hljs-number">400</span>,<span class="hljs-number">400</span>)</span> , <span class="hljs-title">randint</span><span class="hljs-params">(-<span class="hljs-number">400</span>,<span class="hljs-number">400</span>)</span> )
+    <span class="hljs-title">pendown</span><span class="hljs-params">()</span>
 
-<span class="hljs-comment">#a function for drawing a star of a particular size</span>
-<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">drawStar</span><span class="hljs-params">(starSize, starColour)</span>:</span>
-    color(starColour)
-    pendown()
-    begin_fill()
-    <span class="hljs-keyword">for</span> side <span class="hljs-keyword">in</span> range(<span class="hljs-number">5</span>):
-        left(<span class="hljs-number">144</span>)
-        forward(starSize)
-    end_fill()
-    penup()
+#a function <span class="hljs-keyword">for</span> drawing a star of a particular size
+def <span class="hljs-title">drawStar</span><span class="hljs-params">(starSize, starColour)</span>:
+    <span class="hljs-title">color</span><span class="hljs-params">(starColour)</span>
+    <span class="hljs-title">pendown</span><span class="hljs-params">()</span>
+    <span class="hljs-title">begin_fill</span><span class="hljs-params">()</span>
+    <span class="hljs-keyword">for</span> side <span class="hljs-keyword">in</span> <span class="hljs-title">range</span><span class="hljs-params">(<span class="hljs-number">5</span>)</span>:
+        <span class="hljs-title">left</span><span class="hljs-params">(<span class="hljs-number">144</span>)</span>
+        <span class="hljs-title">forward</span><span class="hljs-params">(starSize)</span>
+    <span class="hljs-title">end_fill</span><span class="hljs-params">()</span>
+    <span class="hljs-title">penup</span><span class="hljs-params">()</span>
 
-<span class="hljs-comment">#a function for drawing a small galaxy of stars</span>
-<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">drawGalaxy</span><span class="hljs-params">(numberOfStars)</span>:</span>
-    starColours = [<span class="hljs-string">"#058396"</span>,<span class="hljs-string">"#0275A6"</span>,<span class="hljs-string">"#827E01"</span>]
+#a function <span class="hljs-keyword">for</span> drawing a small galaxy of stars
+def <span class="hljs-title">drawGalaxy</span><span class="hljs-params">(numberOfStars)</span>:
+    starColours </span>= [<span class="hljs-string">"#058396"</span>,<span class="hljs-string">"#0275A6"</span>,<span class="hljs-string">"#827E01"</span>]
     moveToRandomLocation()
-    <span class="hljs-comment">#draw lots of small coloured stars</span>
-    <span class="hljs-keyword">for</span> star <span class="hljs-keyword">in</span> range(numberOfStars):
-        penup()
-        left( randint(-<span class="hljs-number">180</span>,<span class="hljs-number">180</span>) )
-        forward( randint(<span class="hljs-number">5</span>,<span class="hljs-number">20</span>) )
-        pendown()
-        <span class="hljs-comment">#draw a small star in a random colour</span>
-        drawStar( <span class="hljs-number">2</span>, choice(starColours) )
+    <span class="hljs-preprocessor">#draw lots of small coloured stars</span>
+    <span class="hljs-function"><span class="hljs-keyword">for</span> star <span class="hljs-keyword">in</span> <span class="hljs-title">range</span><span class="hljs-params">(numberOfStars)</span>:
+        <span class="hljs-title">penup</span><span class="hljs-params">()</span>
+        <span class="hljs-title">left</span><span class="hljs-params">( randint(-<span class="hljs-number">180</span>,<span class="hljs-number">180</span>)</span> )
+        <span class="hljs-title">forward</span><span class="hljs-params">( randint(<span class="hljs-number">5</span>,<span class="hljs-number">20</span>)</span> )
+        <span class="hljs-title">pendown</span><span class="hljs-params">()</span>
+        #draw a small star <span class="hljs-keyword">in</span> a random colour
+        <span class="hljs-title">drawStar</span><span class="hljs-params">( <span class="hljs-number">2</span>, choice(starColours)</span> )
 
-speed(<span class="hljs-number">11</span>)
+<span class="hljs-title">speed</span><span class="hljs-params">(<span class="hljs-number">11</span>)</span>
 
-<span class="hljs-comment">#this will draw a dark blue background</span>
-bgcolor(<span class="hljs-string">"MidnightBlue"</span>)
+#<span class="hljs-keyword">this</span> will draw a dark blue background
+<span class="hljs-title">bgcolor</span><span class="hljs-params">(<span class="hljs-string">"MidnightBlue"</span>)</span>
 
-<span class="hljs-comment">#draw 30 white stars (random sizes/locations)</span>
-<span class="hljs-keyword">for</span> star <span class="hljs-keyword">in</span> range(<span class="hljs-number">30</span>):
-    moveToRandomLocation()
-    drawStar( randint(<span class="hljs-number">5</span>,<span class="hljs-number">25</span>) , <span class="hljs-string">"White"</span>)
+#draw 30 white <span class="hljs-title">stars</span> <span class="hljs-params">(random sizes/locations)</span>
+<span class="hljs-keyword">for</span> star <span class="hljs-keyword">in</span> <span class="hljs-title">range</span><span class="hljs-params">(<span class="hljs-number">30</span>)</span>:
+    <span class="hljs-title">moveToRandomLocation</span><span class="hljs-params">()</span>
+    <span class="hljs-title">drawStar</span><span class="hljs-params">( randint(<span class="hljs-number">5</span>,<span class="hljs-number">25</span>)</span> , "White")
 
-<span class="hljs-comment">#draw 3 small galaxies of 40 stars</span>
-<span class="hljs-keyword">for</span> galaxy <span class="hljs-keyword">in</span> range(<span class="hljs-number">3</span>):
-    drawGalaxy(<span class="hljs-number">40</span>)
+#draw 3 small galaxies of 40 stars
+<span class="hljs-keyword">for</span> galaxy <span class="hljs-keyword">in</span> <span class="hljs-title">range</span><span class="hljs-params">(<span class="hljs-number">3</span>)</span>:
+    <span class="hljs-title">drawGalaxy</span><span class="hljs-params">(<span class="hljs-number">40</span>)</span>
 
-hideturtle()
-done()</code></pre>
+<span class="hljs-title">hideturtle</span><span class="hljs-params">()</span>
+<span class="hljs-title">done</span><span class="hljs-params">()</span></span></code></pre>
+
 <figure>
-<img src="sky-galaxies.png" alt="screenshot"><figcaption>screenshot</figcaption>
+<img src="sky-galaxies.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure>
-<p>Calling <code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">drawGalaxy</span><span class="hljs-params">(<span class="hljs-number">40</span>)</span></span></code> 3 times means that 3 new galaxies are drawn, each containing 40 stars. For each galaxy, the <code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">drawStar</span><span class="hljs-params">()</span></span></code> function is run 40 times, each time moving a small random amount before drawing a really small random colour star.</p>
-<p>The code <code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">speed</span><span class="hljs-params">(<span class="hljs-number">11</span>)</span></span></code> has also been added to speed up the turtle!</p></li>
+<p>Calling <code>drawGalaxy(40)</code> 3 times means that 3 new galaxies are drawn, each containing 40 stars. For each galaxy, the <code>drawStar()</code> function is run 40 times, each time moving a small random amount before drawing a really small random colour star.</p>
+<p>The code <code>speed(11)</code> has also been added to speed up the turtle!</p></li>
 <li><p>You can also draw constellations made up of stars, joined together with white lines. Again, this is really easy to do, because you already have the function to draw stars!</p>
-<pre class="language-python"><code class="lang-python"><span class="hljs-keyword">from</span> turtle <span class="hljs-keyword">import</span> *
-<span class="hljs-keyword">from</span> random <span class="hljs-keyword">import</span> *
+<pre><code><span class="hljs-keyword">from</span> turtle import *
+<span class="hljs-keyword">from</span> random import *
 
-<span class="hljs-comment">#a function for moving the turtle to a random location</span>
-<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">moveToRandomLocation</span><span class="hljs-params">()</span>:</span>
-    penup()
-    setpos( randint(-<span class="hljs-number">400</span>,<span class="hljs-number">400</span>) , randint(-<span class="hljs-number">400</span>,<span class="hljs-number">400</span>) )
-    pendown()
+<span class="hljs-preprocessor">#a function for moving the turtle to a random location</span>
+<span class="hljs-function">def <span class="hljs-title">moveToRandomLocation</span><span class="hljs-params">()</span>:
+    <span class="hljs-title">penup</span><span class="hljs-params">()</span>
+    <span class="hljs-title">setpos</span><span class="hljs-params">( randint(-<span class="hljs-number">400</span>,<span class="hljs-number">400</span>)</span> , <span class="hljs-title">randint</span><span class="hljs-params">(-<span class="hljs-number">400</span>,<span class="hljs-number">400</span>)</span> )
+    <span class="hljs-title">pendown</span><span class="hljs-params">()</span>
 
-<span class="hljs-comment">#a function for drawing a star of a particular size</span>
-<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">drawStar</span><span class="hljs-params">(starSize, starColour)</span>:</span>
-    color(starColour)
-    pendown()
-    begin_fill()
-    <span class="hljs-keyword">for</span> side <span class="hljs-keyword">in</span> range(<span class="hljs-number">5</span>):
-        left(<span class="hljs-number">144</span>)
-        forward(starSize)
-    end_fill()
-    penup()
+#a function <span class="hljs-keyword">for</span> drawing a star of a particular size
+def <span class="hljs-title">drawStar</span><span class="hljs-params">(starSize, starColour)</span>:
+    <span class="hljs-title">color</span><span class="hljs-params">(starColour)</span>
+    <span class="hljs-title">pendown</span><span class="hljs-params">()</span>
+    <span class="hljs-title">begin_fill</span><span class="hljs-params">()</span>
+    <span class="hljs-keyword">for</span> side <span class="hljs-keyword">in</span> <span class="hljs-title">range</span><span class="hljs-params">(<span class="hljs-number">5</span>)</span>:
+        <span class="hljs-title">left</span><span class="hljs-params">(<span class="hljs-number">144</span>)</span>
+        <span class="hljs-title">forward</span><span class="hljs-params">(starSize)</span>
+    <span class="hljs-title">end_fill</span><span class="hljs-params">()</span>
+    <span class="hljs-title">penup</span><span class="hljs-params">()</span>
 
-<span class="hljs-comment">#a function for drawing a small galaxy of stars</span>
-<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">drawGalaxy</span><span class="hljs-params">(numberOfStars)</span>:</span>
-    starColours = [<span class="hljs-string">"#058396"</span>,<span class="hljs-string">"#0275A6"</span>,<span class="hljs-string">"#827E01"</span>]
+#a function <span class="hljs-keyword">for</span> drawing a small galaxy of stars
+def <span class="hljs-title">drawGalaxy</span><span class="hljs-params">(numberOfStars)</span>:
+    starColours </span>= [<span class="hljs-string">"#058396"</span>,<span class="hljs-string">"#0275A6"</span>,<span class="hljs-string">"#827E01"</span>]
     moveToRandomLocation()
-    <span class="hljs-comment">#draw lots of small coloured stars</span>
-    <span class="hljs-keyword">for</span> star <span class="hljs-keyword">in</span> range(numberOfStars):
-        penup()
-        left( randint(-<span class="hljs-number">180</span>,<span class="hljs-number">180</span>) )
-        forward( randint(<span class="hljs-number">5</span>,<span class="hljs-number">20</span>) )
-        pendown()       
-        <span class="hljs-comment">#draw a small star in a random colour</span>
-        drawStar( <span class="hljs-number">2</span>, choice(starColours) )
+    <span class="hljs-preprocessor">#draw lots of small coloured stars</span>
+    <span class="hljs-function"><span class="hljs-keyword">for</span> star <span class="hljs-keyword">in</span> <span class="hljs-title">range</span><span class="hljs-params">(numberOfStars)</span>:
+        <span class="hljs-title">penup</span><span class="hljs-params">()</span>
+        <span class="hljs-title">left</span><span class="hljs-params">( randint(-<span class="hljs-number">180</span>,<span class="hljs-number">180</span>)</span> )
+        <span class="hljs-title">forward</span><span class="hljs-params">( randint(<span class="hljs-number">5</span>,<span class="hljs-number">20</span>)</span> )
+        <span class="hljs-title">pendown</span><span class="hljs-params">()</span>      
+        #draw a small star <span class="hljs-keyword">in</span> a random colour
+        <span class="hljs-title">drawStar</span><span class="hljs-params">( <span class="hljs-number">2</span>, choice(starColours)</span> )
 
-<span class="hljs-comment">#a function for drawing a joined constellation of stars</span>
-<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">drawConstellation</span><span class="hljs-params">(numberOfStars)</span>:</span>
-    moveToRandomLocation()
-    <span class="hljs-comment">#first draw all stars except the last one,</span>
-    <span class="hljs-comment">#joined by lines, like this: *--*--*--</span>
-    <span class="hljs-keyword">for</span> star <span class="hljs-keyword">in</span> range(numberOfStars-<span class="hljs-number">1</span>):
-        drawStar( randint(<span class="hljs-number">7</span>,<span class="hljs-number">15</span>) , <span class="hljs-string">"white"</span>)
-        pendown()
-        left( randint(-<span class="hljs-number">90</span>,<span class="hljs-number">90</span>) )
-        forward( randint(<span class="hljs-number">30</span>,<span class="hljs-number">70</span>) )
-    <span class="hljs-comment">#now draw the last star</span>
-    drawStar( randint(<span class="hljs-number">7</span>,<span class="hljs-number">15</span>) , <span class="hljs-string">"White"</span>)
+#a function <span class="hljs-keyword">for</span> drawing a joined constellation of stars
+def <span class="hljs-title">drawConstellation</span><span class="hljs-params">(numberOfStars)</span>:
+    <span class="hljs-title">moveToRandomLocation</span><span class="hljs-params">()</span>
+    #first draw all stars except the last one,
+    #joined by lines, like <span class="hljs-keyword">this</span>: *--*--*--
+    <span class="hljs-keyword">for</span> star <span class="hljs-keyword">in</span> <span class="hljs-title">range</span><span class="hljs-params">(numberOfStars-<span class="hljs-number">1</span>)</span>:
+        <span class="hljs-title">drawStar</span><span class="hljs-params">( randint(<span class="hljs-number">7</span>,<span class="hljs-number">15</span>)</span> , "white")
+        <span class="hljs-title">pendown</span><span class="hljs-params">()</span>
+        <span class="hljs-title">left</span><span class="hljs-params">( randint(-<span class="hljs-number">90</span>,<span class="hljs-number">90</span>)</span> )
+        <span class="hljs-title">forward</span><span class="hljs-params">( randint(<span class="hljs-number">30</span>,<span class="hljs-number">70</span>)</span> )
+    #now draw the last star
+    <span class="hljs-title">drawStar</span><span class="hljs-params">( randint(<span class="hljs-number">7</span>,<span class="hljs-number">15</span>)</span> , "White")
 
-speed(<span class="hljs-number">11</span>)
+<span class="hljs-title">speed</span><span class="hljs-params">(<span class="hljs-number">11</span>)</span>
 
-<span class="hljs-comment">#this will draw a dark blue background</span>
-bgcolor(<span class="hljs-string">"MidnightBlue"</span>)
+#<span class="hljs-keyword">this</span> will draw a dark blue background
+<span class="hljs-title">bgcolor</span><span class="hljs-params">(<span class="hljs-string">"MidnightBlue"</span>)</span>
 
-<span class="hljs-comment">#draw 30 white stars (random sizes/locations)</span>
-<span class="hljs-keyword">for</span> star <span class="hljs-keyword">in</span> range(<span class="hljs-number">30</span>):
-    moveToRandomLocation()
-    drawStar( randint(<span class="hljs-number">5</span>,<span class="hljs-number">25</span>) , <span class="hljs-string">"White"</span>)
+#draw 30 white <span class="hljs-title">stars</span> <span class="hljs-params">(random sizes/locations)</span>
+<span class="hljs-keyword">for</span> star <span class="hljs-keyword">in</span> <span class="hljs-title">range</span><span class="hljs-params">(<span class="hljs-number">30</span>)</span>:
+    <span class="hljs-title">moveToRandomLocation</span><span class="hljs-params">()</span>
+    <span class="hljs-title">drawStar</span><span class="hljs-params">( randint(<span class="hljs-number">5</span>,<span class="hljs-number">25</span>)</span> , "White")
 
-<span class="hljs-comment">#draw 3 small galaxies of 40 stars</span>
-<span class="hljs-keyword">for</span> galaxy <span class="hljs-keyword">in</span> range(<span class="hljs-number">3</span>):
-    drawGalaxy(<span class="hljs-number">40</span>)
+#draw 3 small galaxies of 40 stars
+<span class="hljs-keyword">for</span> galaxy <span class="hljs-keyword">in</span> <span class="hljs-title">range</span><span class="hljs-params">(<span class="hljs-number">3</span>)</span>:
+    <span class="hljs-title">drawGalaxy</span><span class="hljs-params">(<span class="hljs-number">40</span>)</span>
 
-<span class="hljs-comment">#draw 2 constellations, each with a random number of stars</span>
-<span class="hljs-keyword">for</span> constellation <span class="hljs-keyword">in</span> range(<span class="hljs-number">2</span>):
-    drawConstellation(randint(<span class="hljs-number">4</span>,<span class="hljs-number">7</span>))
+#draw 2 constellations, each with a random number of stars
+<span class="hljs-keyword">for</span> constellation <span class="hljs-keyword">in</span> <span class="hljs-title">range</span><span class="hljs-params">(<span class="hljs-number">2</span>)</span>:
+    <span class="hljs-title">drawConstellation</span><span class="hljs-params">(randint(<span class="hljs-number">4</span>,<span class="hljs-number">7</span>)</span>)
 
-hideturtle()
-done()</code></pre>
+<span class="hljs-title">hideturtle</span><span class="hljs-params">()</span>
+<span class="hljs-title">done</span><span class="hljs-params">()</span></span></code></pre>
+
 <figure>
-<img src="sky-constellations.png" alt="screenshot"><figcaption>screenshot</figcaption>
+<img src="sky-constellations.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure></li>
 </ul>
 </section>
@@ -392,12 +400,12 @@ done()</code></pre>
 <section id="challenge-functions-everywhere" class="level2 challenge">
 <h2>Challenge: Functions everywhere!</h2>
 <p>Program the turtle to draw your own picture. Try to use functions wherever possible, to draw any shapes that you’ll use a lot.</p>
-<p>For example, you could draw a house, using <code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">drawSquare</span><span class="hljs-params">()</span></span></code> and <code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">drawTriangle</span><span class="hljs-params">()</span></span></code> functions.</p>
+<p>For example, you could draw a house, using <code>drawSquare()</code> and <code>drawTriangle()</code> functions.</p>
 <p>You could even pass data to your functions, to allow you to draw shapes in different sizes and colours! Here are some examples:</p>
-<p><img src="sky-flowers.png" alt="screenshot"> <img src="sky-birds.png" alt="screenshot"></p>
+<p><img src="sky-flowers.png" alt="screenshot" /> <img src="sky-birds.png" alt="screenshot" /></p>
 </section>
 <section id="save-your-project-6" class="level2 save">
 <h2>Save Your Project</h2>
 </section>
 </section>
-</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><script src="../../../assets/vendor.min.js"></script><script src="../../../assets/script.min.js"></script></body></html>
+</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><div class="intro-question modal fade"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title">Hi there!</h4></div><div class="modal-body"><p>Seems like this is your first time here. Would you like a tour?</p></div><div class="modal-footer"><button class="btn btn-success">Yes!</button><button data-dismiss="modal" class="btn btn-danger">No thanks</button></div></div></div></div><script src="../../../assets/vendor.min.js"></script><script src="../../../assets/script.min.js"></script></body></html>

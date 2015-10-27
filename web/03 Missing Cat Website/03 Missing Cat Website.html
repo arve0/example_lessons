@@ -10,27 +10,28 @@ function relative(url) {
 <h2><strong>The Mission:</strong></h2>
 <p>Felix the cat has gone missing. His owner made a poster to hang up in the neighborhood, but you realise making a website means many more people can see it.</p>
 <figure>
-<img src="missingcat.png" alt="screenshot"><figcaption>screenshot</figcaption>
+<img src="missingcat.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure>
 </section>
 <section id="step-1" class="level1 activity">
 <h1>Step 1:</h1>
 <ul>
 <li>Make a new folder called Felix</li>
-<li>Make a new document called <code class="lang-axapta"><span class="hljs-keyword">index</span>.html</code> and save it inside the folder called <strong>Felix</strong></li>
+<li>Make a new document called <code>index.html</code> and save it inside the folder called <strong>Felix</strong></li>
 <li>Now set up your document like you learnt in the previous session</li>
 </ul>
-<pre class="language-markup"><code class="lang-xml"><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<pre><code><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span></code></pre>
+
 <ul>
-<li>Make a title and header. Remember the title goes in the head and the header goes in the body. Try using “Felix the cat is missing” as a title, and Missing as the h1. Right beneath the <code class="lang-apache"><span class="hljs-tag">&lt;h1&gt;</span></code> we can make a <code class="lang-apache"><span class="hljs-tag">&lt;h2&gt;</span></code> saying “Felix the cat”.</li>
+<li>Make a title and header. Remember the title goes in the head and the header goes in the body. Try using “Felix the cat is missing” as a title, and Missing as the h1. Right beneath the <code>&lt;h1&gt;</code> we can make a <code>&lt;h2&gt;</code> saying “Felix the cat”.</li>
 </ul>
-<pre class="language-markup"><code class="lang-xml"><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
+<pre><code><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span> Felix the cat is missing <span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
@@ -40,31 +41,37 @@ function relative(url) {
         <span class="hljs-tag">&lt;<span class="hljs-title">h2</span>&gt;</span>Felix the cat<span class="hljs-tag">&lt;/<span class="hljs-title">h2</span>&gt;</span>
     <span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span></code></pre>
+
 </section>
 <section id="step-2" class="level1 activity">
 <h1>Step 2:</h1>
-<p>We also need a picture of Felix, so people know what to look for. We’ve previously learned how to put in an image that’s already hosted somewhere on the internet, but this time we are going to use an image on our computer. We need to put the image <strong>felix.jpg</strong> in the same folder as our <code class="lang-axapta"><span class="hljs-keyword">index</span>.html</code>, the folder you named <strong>Felix</strong>.</p>
+<p>We also need a picture of Felix, so people know what to look for. We’ve previously learned how to put in an image that’s already hosted somewhere on the internet, but this time we are going to use an image on our computer. We need to put the image <strong>felix.jpg</strong> in the same folder as our <code>index.html</code>, the folder you named <strong>Felix</strong>.</p>
 <ul>
-<li>Now, write the <code class="lang-apache"><span class="hljs-tag">&lt;img&gt;</span></code> tag like you would normally, but in the src attribute, instead of writing a URL we just write <code class="lang-css"><span class="hljs-tag">felix</span><span class="hljs-class">.jpg</span></code>. And don’t forget to put in an alt attribute!</li>
+<li>Now, write the <code>&lt;img&gt;</code> tag like you would normally, but in the src attribute, instead of writing a URL we just write <code>felix.jpg</code>. And don’t forget to put in an alt attribute!</li>
 </ul>
-<pre class="language-markup"><code class="lang-stylus">&lt;<span class="hljs-tag">img</span> src=<span class="hljs-string">"felix.jpg"</span> alt=<span class="hljs-string">"picture of Felix"</span>&gt;</code></pre>
+<pre><code>&lt;img <span class="hljs-variable">src=</span><span class="hljs-string">"felix.jpg"</span> <span class="hljs-variable">alt=</span><span class="hljs-string">"picture of Felix"</span>&gt;</code></pre>
+
 <section id="save-your-file-and-view-it-in-a-browser." class="level2 save">
 <h2>Save your file and view it in a browser.</h2>
 <ul>
 <li>The image is quite large, so we want to make it a bit smaller. We can do this by using height or width attributes (or both). We don’t specify the width in centimeters or meters or inches or feet, but in something called <em>pixels</em>. I’m going to go with 400 pixels for this image.</li>
 </ul>
-<pre class="language-markup"><code class="lang-stylus">&lt;<span class="hljs-tag">img</span> src=<span class="hljs-string">"felix.jpg"</span> alt=<span class="hljs-string">"picture of Felix"</span> <span class="hljs-attribute">width</span>=<span class="hljs-string">"400"</span>&gt;</code></pre>
+<pre><code>&lt;img <span class="hljs-variable">src=</span><span class="hljs-string">"felix.jpg"</span> <span class="hljs-variable">alt=</span><span class="hljs-string">"picture of Felix"</span> <span class="hljs-variable">width=</span><span class="hljs-string">"400"</span>&gt;</code></pre>
+
 </section>
 </section>
 <section id="step-3" class="level1 activity">
 <h1>Step 3:</h1>
 <p>Underneath the picture we should write a description of Felix, and give some details of when and where he went missing. For this we can just write some paragraphs.</p>
-<pre class="language-markup"><code class="lang-applescript">&lt;p&gt;Felix <span class="hljs-keyword">is</span> a very nice cat. He likes cuddles, sitting <span class="hljs-keyword">in</span> <span class="hljs-keyword">front</span> <span class="hljs-keyword">of</span> <span class="hljs-keyword">the</span> radiator <span class="hljs-keyword">and</span> his toy mouse. His fur <span class="hljs-keyword">is</span> orange. &lt;/p&gt;
+<pre><code>&lt;p&gt;Felix <span class="hljs-keyword">is</span> a very nice cat. He likes cuddles, sitting <span class="hljs-keyword">in</span> <span class="hljs-keyword">front</span> <span class="hljs-keyword">of</span> <span class="hljs-keyword">the</span> radiator <span class="hljs-keyword">and</span> his toy mouse. His fur <span class="hljs-keyword">is</span> orange. &lt;/p&gt;
 &lt;p&gt;He went missing <span class="hljs-keyword">from</span> <span class="hljs-keyword">the</span> garden yesterday.&lt;/p&gt;</code></pre>
+
 <p>We also need some information about how to contact the owners if anyone has seen or found Felix.</p>
-<pre class="language-markup"><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Have you seen Felix? Please contact his owners at felixowners@email.com<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span></code></pre>
+<pre><code><span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Have you seen Felix? Please contact his owners at felixowners@email.com<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span></code></pre>
+
 <p>That’s just a pretend email address, but let’s make it so that if someone clicks on it, it opens up their email client. We do this almost the same way we make a link, but instead of a <strong>url</strong> we put in a <code>mailto</code> like this:</p>
-<pre class="language-markup"><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Have you seen Felix? Please contact his owners at <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"mailto:felixowners@email.com"</span>&gt;</span>felixowners@email.com<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span></code></pre>
+<pre><code><span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Have you seen Felix? Please contact his owners at <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"mailto:felixowners@email.com"</span>&gt;</span>felixowners@email.com<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span></code></pre>
+
 <section id="save-your-document-and-check-if-it-works-in-a-browser" class="level2 save">
 <h2>Save your document and check if it works in a browser!</h2>
 </section>
@@ -72,9 +79,11 @@ function relative(url) {
 <section id="step-4-adding-strong-text-and-emphasis" class="level1 activity">
 <h1>Step 4: Adding strong text and emphasis</h1>
 <p>We really want people to find Felix, so we want to add some <em>emphasis</em> to ‘please’. We do this with the em tag.</p>
-<pre class="language-markup"><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Have you seen Felix? <span class="hljs-tag">&lt;<span class="hljs-title">em</span>&gt;</span>Please<span class="hljs-tag">&lt;/<span class="hljs-title">em</span>&gt;</span> contact his owners at felixowners@email.com<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span></code></pre>
+<pre><code><span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Have you seen Felix? <span class="hljs-tag">&lt;<span class="hljs-title">em</span>&gt;</span>Please<span class="hljs-tag">&lt;/<span class="hljs-title">em</span>&gt;</span> contact his owners at felixowners@email.com<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span></code></pre>
+
 <p>We also want ‘thank you’ to stand out, which we can do by adding the strong tag.</p>
-<pre class="language-markup"><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">strong</span>&gt;</span>Thank you!<span class="hljs-tag">&lt;/<span class="hljs-title">strong</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span></code></pre>
+<pre><code><span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">strong</span>&gt;</span>Thank you!<span class="hljs-tag">&lt;/<span class="hljs-title">strong</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span></code></pre>
+
 <section id="save-your-document-and-view-it-in-the-browser." class="level2 save">
 <h2>Save your document and view it in the browser.</h2>
 <p>Notice how please is now in <em>italics</em> and Thank you is <strong>bold</strong>?</p>
@@ -83,37 +92,44 @@ function relative(url) {
 <section id="step-5-comments" class="level1 activity">
 <h1>Step 5: Comments</h1>
 <p>Sometimes it is useful to write comments in the html file itself. By comments we mean stuff that is meant for humans to read if they’re viewing the file, and not for the browser to read and display. We do that by using the special code:</p>
-<pre class="language-markup"><code class="lang-xml"><span class="hljs-comment">&lt;!-- write anything here --&gt;</span></code></pre>
+<pre><code><span class="hljs-comment">&lt;!-- write anything here --&gt;</span></code></pre>
+
 <p>Anything between the the arrows is the comment. Let’s put a comment in our file saying this is a code club project and Felix is not real.</p>
-<pre class="language-markup"><code class="lang-xml"><span class="hljs-comment">&lt;!-- This is a Code Club project. Felix is not real and not really missing --&gt;</span></code></pre>
+<pre><code><span class="hljs-comment">&lt;!-- This is a Code Club project. Felix is not real and not really missing --&gt;</span></code></pre>
+
 </section>
 <section id="step-6-more-metadata-thats-just-stuff-that-goes-in-the-head" class="level1 activity">
 <h1>Step 6: More metadata (that’s just stuff that goes in the head)</h1>
 <ul>
 <li>Let’s add who wrote the webpage to the webpage, so anyone viewing the file knows it’s you.</li>
 </ul>
-<pre class="language-markup"><code class="lang-applescript">&lt;meta <span class="hljs-property">name</span>=<span class="hljs-string">"author"</span> content=<span class="hljs-string">"#"</span>&gt;</code></pre>
+<pre><code>&lt;meta <span class="hljs-variable">name=</span><span class="hljs-string">"author"</span> <span class="hljs-variable">content=</span><span class="hljs-string">"#"</span>&gt;</code></pre>
+
 <ul>
-<li>Replace the # with your name. It’s also common to add what language the website is in. We do this by adding an attribute to the <code class="lang-apache"><span class="hljs-tag">&lt;html&gt;</span></code> tag.</li>
+<li>Replace the # with your name. It’s also common to add what language the website is in. We do this by adding an attribute to the <code>&lt;html&gt;</code> tag.</li>
 </ul>
-<pre class="language-markup"><code class="lang-stylus">&lt;<span class="hljs-tag">html</span> lang=<span class="hljs-string">"en"</span>&gt;</code></pre>
+<pre><code>&lt;<span class="hljs-tag">html</span> lang=<span class="hljs-string">"en"</span>&gt;</code></pre>
+
 <p><em>en</em> stands for English.</p>
 <p>It’s also good practice to add the character set (or alphabet) the document is written in. We usually use <strong>UTF-8</strong>.</p>
-<pre class="language-markup"><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">charset</span>=<span class="hljs-value">"UTF-8"</span>&gt;</span></code></pre>
+<pre><code><span class="hljs-tag">&lt;<span class="hljs-title">meta</span> <span class="hljs-attribute">charset</span>=<span class="hljs-value">"UTF-8"</span>&gt;</span></code></pre>
+
 <p>We can also add a description of the webpage</p>
-<pre class="language-markup"><code class="lang-smalltalk">    &lt;meta name=<span class="hljs-comment">"description"</span> content=<span class="hljs-comment">"a page dedicated to finding the missing cat Felix"</span>&gt;</code></pre>
+<pre><code>&lt;meta <span class="hljs-variable">name=</span><span class="hljs-string">"description"</span> <span class="hljs-variable">content=</span><span class="hljs-string">"a page dedicated to finding the missing cat Felix"</span>&gt;</code></pre>
+
 <p>And some keywords, separated by commas</p>
-<pre class="language-markup"><code class="lang-applescript">&lt;meta <span class="hljs-property">name</span>=<span class="hljs-string">"keywords"</span> content=<span class="hljs-string">"Felix, cat, missing"</span>&gt;</code></pre>
+<pre><code>&lt;meta <span class="hljs-variable">name=</span><span class="hljs-string">"keywords"</span> <span class="hljs-variable">content=</span><span class="hljs-string">"Felix, cat, missing"</span>&gt;</code></pre>
+
 <figure>
-<img src="screenshot_jsbin.png" alt="screenshot"><figcaption>screenshot</figcaption>
+<img src="screenshot_jsbin.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure>
 <section id="further-study" class="level2 try">
 <h2>Further study:</h2>
 <ul>
 <li>Is there anything else you could add to the webpage that would help people find Felix? More information? How would you add a map of where he went missing?</li>
-<li>More fun with images. Add an image that moves. Try adding the image <code class="lang-css"><span class="hljs-tag">catswithhats</span><span class="hljs-class">.gif</span></code> to the website. Open it in the browser to see what happens.</li>
-<li>When Felix gets found and is safely back at home, use the tag <code class="lang-apache"><span class="hljs-tag">&lt;del&gt;</span></code> to strike through any information that is no longer correct, like the fact that he’s missing. Use the <code class="lang-apache"><span class="hljs-tag">&lt;ins&gt;</span></code> tag to insert any new information instead, like <strong>Found</strong>!</li>
+<li>More fun with images. Add an image that moves. Try adding the image <code>catswithhats.gif</code> to the website. Open it in the browser to see what happens.</li>
+<li>When Felix gets found and is safely back at home, use the tag <code>&lt;del&gt;</code> to strike through any information that is no longer correct, like the fact that he’s missing. Use the <code>&lt;ins&gt;</code> tag to insert any new information instead, like <strong>Found</strong>!</li>
 </ul>
 </section>
 </section>
-</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><script src="../../assets/vendor.min.js"></script><script src="../../assets/script.min.js"></script></body></html>
+</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><div class="intro-question modal fade"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title">Hi there!</h4></div><div class="modal-body"><p>Seems like this is your first time here. Would you like a tour?</p></div><div class="modal-footer"><button class="btn btn-success">Yes!</button><button data-dismiss="modal" class="btn btn-danger">No thanks</button></div></div></div></div><script src="../../assets/vendor.min.js"></script><script src="../../assets/script.min.js"></script></body></html>

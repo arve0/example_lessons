@@ -26,38 +26,38 @@ function relative(url) {
 <li><p>Here is the skeleton of an HTML<a href="#fn1" class="footnoteRef" id="fnref1"><sup>1</sup></a> document.</p></li>
 </ul>
 <p><strong>Copy-paste it</strong> into your new file.</p>
-<pre><code class="lang-xml"><span class="hljs-doctype">&lt;!DOCTYPE html&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">html</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">head</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">title</span>&gt;</span>Code Club comic<span class="hljs-tag">&lt;/<span class="hljs-title">title</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">style</span>&gt;</span><span class="css">
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;title&gt;Code Club comic&lt;/title&gt;
+        &lt;style&gt;
             
-            * <span class="hljs-rules">{ <span class="hljs-rule"><span class="hljs-attribute">box-sizing</span>:<span class="hljs-value"> border-box</span></span>; <span class="hljs-rule"><span class="hljs-attribute">position</span>:<span class="hljs-value"> relative</span></span>; }</span>
-            <span class="hljs-tag">html</span>, <span class="hljs-tag">body</span> <span class="hljs-rules">{ <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">100%</span></span></span>; }</span>
+            * { box-sizing: border-box; position: relative; }
+            html, body { height: 100%; }
             
-            <span class="hljs-tag">body</span> 
-            <span class="hljs-rules">{
-                <span class="hljs-rule"><span class="hljs-attribute">max-width</span>:<span class="hljs-value"> <span class="hljs-number">600px</span></span></span>;
-                <span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"> <span class="hljs-number">0</span> auto</span></span>; 
-                <span class="hljs-rule"><span class="hljs-attribute">padding-left</span>:<span class="hljs-value"> <span class="hljs-number">10px</span></span></span>;
-            }</span>
+            body 
+            {
+                max-width: 600px;
+                margin: 0 auto; 
+                padding-left: 10px;
+            }
             
-        </span><span class="hljs-tag">&lt;/<span class="hljs-title">style</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">head</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-title">body</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>HELLO!<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
-    <span class="hljs-tag">&lt;/<span class="hljs-title">body</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-title">html</span>&gt;</span></code></pre>
+        &lt;/style&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h1&gt;HELLO!&lt;/h1&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
 <ul>
-<li><strong>Save your file</strong>. You can save it as whatever you want to call it. Just remember to end your file name with <code class="lang-asciidoc"><span class="hljs-title">.html</span></code> so that your computer knows it’s an HTML file. For instance, you could call your file <code class="lang-css"><span class="hljs-tag">comic</span><span class="hljs-class">.html</span></code>. Can you think of a less boring name?</li>
+<li><strong>Save your file</strong>. You can save it as whatever you want to call it. Just remember to end your file name with <code>.html</code> so that your computer knows it’s an HTML file. For instance, you could call your file <code>comic.html</code>. Can you think of a less boring name?</li>
 <li>Do you know where your HTML file has gone?
 <ul>
 <li>NO. Ok, it’s somewhere on your computer. Can you find it?</li>
 <li>YES. Good, let’s move on.</li>
 </ul></li>
 <li><strong>Open your browser</strong><a href="#fn2" class="footnoteRef" id="fnref2"><sup>2</sup></a>.</li>
-<li>From your browser, <strong>open your HTML file</strong> . Does it say <code class="lang-erlang-repl"><span class="hljs-variable">HELLO</span><span class="hljs-exclamation_mark">!</span></code>?</li>
-<li>Go <strong>back to the code editor</strong>. Can you change the <code class="lang-erlang-repl"><span class="hljs-variable">HELLO</span><span class="hljs-exclamation_mark">!</span></code> text to the title of your comic?</li>
+<li>From your browser, <strong>open your HTML file</strong> . Does it say <code>HELLO!</code>?</li>
+<li>Go <strong>back to the code editor</strong>. Can you change the <code>HELLO!</code> text to the title of your comic?</li>
 <li><strong>Save</strong> your HTML file.</li>
 <li><strong>Back to your browser</strong>, can you refresh<a href="#fn3" class="footnoteRef" id="fnref3"><sup>3</sup></a> the page where you opened your HTML file?</li>
 <li>Great! Now you’ve got your <strong>tools ready</strong>: code editor to write your code, browser to <em>debug</em><a href="#fn4" class="footnoteRef" id="fnref4"><sup>4</sup></a> your code.</li>
@@ -75,31 +75,31 @@ function relative(url) {
 <p>To make a sequence you need at least two panels.</p>
 <section id="lets-start-with-one-panel" class="level4">
 <h4>Let’s start with one panel</h4>
-<pre><code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-title">section</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"panel"</span>&gt;</span>
+<pre><code>&lt;section class=&quot;panel&quot;&gt;
 
-<span class="hljs-tag">&lt;/<span class="hljs-title">section</span>&gt;</span>  </code></pre>
+&lt;/section&gt;  </code></pre>
 <ul>
-<li>Copy-paste this code inside your HTML document. Where? Anywhere between the <code class="lang-apache"><span class="hljs-tag">&lt;body&gt;</span></code> <em>opening tag</em> and the <code class="lang-apache"><span class="hljs-tag">&lt;/body&gt;</span></code> <em>closing tag</em>.</li>
+<li>Copy-paste this code inside your HTML document. Where? Anywhere between the <code>&lt;body&gt;</code> <em>opening tag</em> and the <code>&lt;/body&gt;</code> <em>closing tag</em>.</li>
 </ul>
-<p>Using the <code class="lang-coffeescript"><span class="hljs-class"><span class="hljs-keyword">class</span></span></code> attribute you can <em>classify</em> your HTML elements.</p>
-<p>Here we have a particular kind of <code class="lang-apache"><span class="hljs-tag">&lt;section&gt;</span></code> which we called “panel”. You could call it whatever you like, for example “comic panel” or “cute cat”: <strong><code class="lang-coffeescript"><span class="hljs-class"><span class="hljs-keyword">class</span></span></code> names are entirely up to you</strong>. Since we’re making a comic panel, it makes sense to just call it “panel”.</p>
+<p>Using the <code>class</code> attribute you can <em>classify</em> your HTML elements.</p>
+<p>Here we have a particular kind of <code>&lt;section&gt;</code> which we called “panel”. You could call it whatever you like, for example “comic panel” or “cute cat”: <strong><code>class</code> names are entirely up to you</strong>. Since we’re making a comic panel, it makes sense to just call it “panel”.</p>
 <ul>
 <li>Save, go to your browser and refresh the page. Do you see a panel?</li>
 </ul>
-<p>No, indeed. That’s because your <code class="lang-cs">&lt;section <span class="hljs-keyword">class</span>=<span class="hljs-string">"panel"</span>&gt;</code> is empty and can’t be seen.</p>
+<p>No, indeed. That’s because your <code>&lt;section class=&quot;panel&quot;&gt;</code> is empty and can’t be seen.</p>
 <p>You can use CSS<a href="#fn5" class="footnoteRef" id="fnref5"><sup>5</sup></a> to make it visible.</p>
-<pre><code class="lang-css"><span class="hljs-tag">section</span><span class="hljs-attr_selector">[class="panel"]</span>
-<span class="hljs-rules">{
-    <span class="hljs-rule"><span class="hljs-attribute">border-bottom</span>:<span class="hljs-value"> <span class="hljs-number">10px</span> solid white</span></span>;
-    <span class="hljs-rule"><span class="hljs-attribute">border-right</span>:<span class="hljs-value"> <span class="hljs-number">10px</span> solid white</span></span>;
+<pre><code>section[class=&quot;panel&quot;]
+{
+    border-bottom: 10px solid white;
+    border-right: 10px solid white;
 
-    <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> yellow</span></span>;
+    background-color: yellow;
     
-    <span class="hljs-rule"><span class="hljs-attribute">height</span>:<span class="hljs-value"> <span class="hljs-number">300px</span></span></span>;
-    <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">100%</span></span></span>;
-}</span></code></pre>
+    height: 300px;
+    width: 100%;
+}</code></pre>
 <ul>
-<li>Copy-paste this code into your HTML document. Where? Anywhere between the <code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-title">style</span>&gt;</span><span class="css"></span></code> <em>opening tag</em> and the <code class="lang-apache"><span class="hljs-tag">&lt;/style&gt;</span></code> <em>closing tag</em>.</li>
+<li>Copy-paste this code into your HTML document. Where? Anywhere between the <code>&lt;style&gt;</code> <em>opening tag</em> and the <code>&lt;/style&gt;</code> <em>closing tag</em>.</li>
 </ul>
 </section>
 </section>
@@ -117,13 +117,13 @@ function relative(url) {
 <section id="activity-checklist-2" class="level2 check">
 <h2>Activity Checklist</h2>
 <p>So far, you have the building block of your comic: the <em>panel</em>.</p>
-<p>No matter how many <code class="lang-apache"><span class="hljs-tag">&lt;section&gt;</span></code> elements you add to your HTML document, as long as you <em>classify</em> them with <code class="lang-cs"><span class="hljs-keyword">class</span>=<span class="hljs-string">"panel"</span></code> your browser will give them all the same “yellow box” style.</p>
-<p><code class="lang-coffeescript"><span class="hljs-class"><span class="hljs-keyword">class</span></span></code> names are useful for <strong>shared rules</strong>.</p>
+<p>No matter how many <code>&lt;section&gt;</code> elements you add to your HTML document, as long as you <em>classify</em> them with <code>class=&quot;panel&quot;</code> your browser will give them all the same “yellow box” style.</p>
+<p><code>class</code> names are useful for <strong>shared rules</strong>.</p>
 <p>Now, empty panels don’t really tell a story, do they? Why not <strong>add images</strong> to get your story off the ground?</p>
-<p>HTML calls images <code class="lang-apache"><span class="hljs-tag">&lt;img&gt;</span></code> and wants you to write down exactly where to find an image’s <em>source</em>, or <code>src</code>.</p>
+<p>HTML calls images <code>&lt;img&gt;</code> and wants you to write down exactly where to find an image’s <em>source</em>, or <code>src</code>.</p>
 <ul>
-<li><p>Copy-paste the <code class="lang-css"><span class="hljs-tag">waiter</span><span class="hljs-class">.png</span></code> image, from this project’s <em>Resources</em> folder into the folder where you saved your HTML file.</p></li>
-<li><p>Add <code class="lang-stylus">&lt;<span class="hljs-tag">img</span> src=<span class="hljs-string">"waiter.png"</span>&gt;</code> inside one of your panels. That means the image will be <em>nested</em> between the <code class="lang-cs">&lt;section <span class="hljs-keyword">class</span>=<span class="hljs-string">"panel"</span>&gt;</code> <em>opening tag</em> and the <code class="lang-apache"><span class="hljs-tag">&lt;/section&gt;</span></code> <em>closing tag</em>.</p></li>
+<li><p>Copy-paste the <code>waiter.png</code> image, from this project’s <em>Resources</em> folder into the folder where you saved your HTML file.</p></li>
+<li><p>Add <code>&lt;img src=&quot;waiter.png&quot;&gt;</code> inside one of your panels. That means the image will be <em>nested</em> between the <code>&lt;section class=&quot;panel&quot;&gt;</code> <em>opening tag</em> and the <code>&lt;/section&gt;</code> <em>closing tag</em>.</p></li>
 <li><p>Save, go to your browser and refresh your page. What do you see?</p></li>
 </ul>
 <p><img class="border-less" src="image.png" title="This is what you should see"></p>
@@ -142,13 +142,13 @@ function relative(url) {
 <h2>Activity Checklist</h2>
 <p>Now that you have images, you can start writing your story.</p>
 <p>In comics, you can use <strong><em>speech bubbles</em></strong> <!--💬--> to make your characters “talk”.</p>
-<p>A speech bubble is usually a short <em>paragraph</em>, which HTML calls <code class="lang-apache"><span class="hljs-tag">&lt;p&gt;</span></code>.</p>
+<p>A speech bubble is usually a short <em>paragraph</em>, which HTML calls <code>&lt;p&gt;</code>.</p>
 <ul>
-<li><p>Can you <strong>add a <code class="lang-apache"><span class="hljs-tag">&lt;p&gt;</span></code> element</strong> inside your panel, after the <code class="lang-apache"><span class="hljs-tag">&lt;img&gt;</span></code>?</p></li>
-<li><p>Since this is a special kind of paragraph, can you think of an appropriate <code class="lang-coffeescript"><span class="hljs-class"><span class="hljs-keyword">class</span></span></code> name for it?</p></li>
+<li><p>Can you <strong>add a <code>&lt;p&gt;</code> element</strong> inside your panel, after the <code>&lt;img&gt;</code>?</p></li>
+<li><p>Since this is a special kind of paragraph, can you think of an appropriate <code>class</code> name for it?</p></li>
 </ul>
 <p>How about this?</p>
-<pre><code class="lang-vbnet">&lt;p <span class="hljs-keyword">class</span>=<span class="hljs-string">"bubble"</span>&gt;Hello, I am your browser. Would you <span class="hljs-keyword">like</span> <span class="hljs-keyword">to</span> <span class="hljs-keyword">order</span> something <span class="hljs-keyword">to</span> drink?&lt;/p&gt;</code></pre>
+<pre><code>&lt;p class=&quot;bubble&quot;&gt;Hello, I am your browser. Would you like to order something to drink?&lt;/p&gt;</code></pre>
 <ul>
 <li>Save, go to your browser and refresh the page. What do you see?</li>
 </ul>
@@ -159,27 +159,27 @@ function relative(url) {
 <ul>
 <li>Can you <strong>move your speech bubble on top of the image</strong>?</li>
 </ul>
-<p>Using <code class="lang-http"><span class="hljs-attribute">position</span>: <span class="hljs-string">absolute;</span></code> you can position texts and images within your panel, no matter where your browser initially puts them.</p>
-<pre><code class="lang-css"><span class="hljs-tag">p</span><span class="hljs-attr_selector">[class="bubble"]</span>
-<span class="hljs-rules">{
-    <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> white</span></span>;
-    <span class="hljs-rule"><span class="hljs-attribute">padding</span>:<span class="hljs-value"> <span class="hljs-number">10px</span></span></span>;
-    <span class="hljs-rule"><span class="hljs-attribute">margin</span>:<span class="hljs-value"> <span class="hljs-number">0</span></span></span>;
+<p>Using <code>position: absolute;</code> you can position texts and images within your panel, no matter where your browser initially puts them.</p>
+<pre><code>p[class=&quot;bubble&quot;]
+{
+    background-color: white;
+    padding: 10px;
+    margin: 0;
     
-    <span class="hljs-rule"><span class="hljs-attribute">position</span>:<span class="hljs-value"> absolute</span></span>;
-}</span></code></pre>
+    position: absolute;
+}</code></pre>
 <ul>
-<li><p>Copy-paste the code above into your HTML document. Where? Anywhere between the <code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-title">style</span>&gt;</span><span class="css"></span></code> <em>opening tag</em> and the <code class="lang-apache"><span class="hljs-tag">&lt;/style&gt;</span></code> <em>closing tag</em>.</p></li>
+<li><p>Copy-paste the code above into your HTML document. Where? Anywhere between the <code>&lt;style&gt;</code> <em>opening tag</em> and the <code>&lt;/style&gt;</code> <em>closing tag</em>.</p></li>
 <li><p>Save, go to your browser and refresh the page. Where is your speech bubble now?</p></li>
 </ul>
 <p>You can use these CSS properties to move your speech bubble around:</p>
 <ul>
-<li><code class="lang-scss"><span class="hljs-attribute">top</span></code></li>
-<li><code class="lang-scss"><span class="hljs-attribute">left</span></code></li>
-<li><code class="lang-livecodeserver"><span class="hljs-constant">right</span></code></li>
-<li><code class="lang-scss"><span class="hljs-attribute">bottom</span></code></li>
+<li><code>top</code></li>
+<li><code>left</code></li>
+<li><code>right</code></li>
+<li><code>bottom</code></li>
 </ul>
-<p>For example, you can try with <code class="lang-http"><span class="hljs-attribute">top</span>: <span class="hljs-string">30px;</span></code> and then tweak it.</p>
+<p>For example, you can try with <code>top: 30px;</code> and then tweak it.</p>
 <p><img class="border-less" src="speech-bubble.png" title="This is what you should see"></p>
 </section>
 </section>
@@ -188,31 +188,31 @@ function relative(url) {
 <section id="activity-checklist-4" class="level2 check">
 <h2>Activity Checklist</h2>
 <p>What if you want another speech bubble? What if you want many speech bubbles, all in <strong>different positions</strong>?</p>
-<p><code class="lang-coffeescript"><span class="hljs-class"><span class="hljs-keyword">class</span></span></code> won’t cut it this time, you need another HTML attribute.</p>
-<p>Meet <code class="lang-applescript"><span class="hljs-property">id</span></code>.</p>
-<pre><code class="lang-vbnet">&lt;p id=<span class="hljs-string">"panel1-bubble1"</span> <span class="hljs-keyword">class</span>=<span class="hljs-string">"bubble"</span>&gt;Hello, I am your browser. Would you <span class="hljs-keyword">like</span> <span class="hljs-keyword">to</span> <span class="hljs-keyword">order</span> something <span class="hljs-keyword">to</span> drink?&lt;/p&gt;</code></pre>
+<p><code>class</code> won’t cut it this time, you need another HTML attribute.</p>
+<p>Meet <code>id</code>.</p>
+<pre><code>&lt;p id=&quot;panel1-bubble1&quot; class=&quot;bubble&quot;&gt;Hello, I am your browser. Would you like to order something to drink?&lt;/p&gt;</code></pre>
 <!-- this is where highlighting inside the code would be great, so that we can highlight the id="panel1-bubble1" part -->
 
-<p>Unlike <code class="lang-coffeescript"><span class="hljs-class"><span class="hljs-keyword">class</span></span></code>, which you can can give to as many HTML elements as you please, there can be <strong>only one</strong> element in your HTML document with a certain <code class="lang-applescript"><span class="hljs-property">id</span></code>.</p>
-<p>An <strong><code class="lang-applescript"><span class="hljs-property">id</span></code> is unique</strong>, just like you :)</p>
+<p>Unlike <code>class</code>, which you can can give to as many HTML elements as you please, there can be <strong>only one</strong> element in your HTML document with a certain <code>id</code>.</p>
+<p>An <strong><code>id</code> is unique</strong>, just like you :)</p>
 <ul>
-<li>In your <code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-title">style</span>&gt;</span><span class="css"></span></code> can you add a new CSS rule, only for one speech bubble? Where? Anywhere between the <code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-title">style</span>&gt;</span><span class="css"></span></code> <em>opening tag</em> and the <code class="lang-apache"><span class="hljs-tag">&lt;/style&gt;</span></code> <em>closing tag</em>.</li>
+<li>In your <code>&lt;style&gt;</code> can you add a new CSS rule, only for one speech bubble? Where? Anywhere between the <code>&lt;style&gt;</code> <em>opening tag</em> and the <code>&lt;/style&gt;</code> <em>closing tag</em>.</li>
 </ul>
-<p>For example, this rule will apply only to the one bubble <em>identified</em> as <code class="lang-gcode">pa<span class="hljs-label">nel1</span>-bubble<span class="hljs-number">1</span></code>.</p>
-<pre><code class="lang-css"><span class="hljs-tag">p</span><span class="hljs-attr_selector">[id="panel1-bubble1"]</span>
-<span class="hljs-rules">{
-    <span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"> <span class="hljs-number">30px</span></span></span>;
-    <span class="hljs-rule"><span class="hljs-attribute">left</span>:<span class="hljs-value"> <span class="hljs-number">300px</span></span></span>;
-    <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">300px</span></span></span>;
-}</span></code></pre>
+<p>For example, this rule will apply only to the one bubble <em>identified</em> as <code>panel1-bubble1</code>.</p>
+<pre><code>p[id=&quot;panel1-bubble1&quot;]
+{
+    top: 30px;
+    left: 300px;
+    width: 300px;
+}</code></pre>
 </section>
 <section id="challenge-3" class="level2 try">
 <h2>Challenge</h2>
 <p>Do you know your <em>classes</em> from your <em>ids</em>?</p>
 <ul>
-<li>Can you <strong>make many more speech bubbles</strong>, give them unique <code class="lang-applescript"><span class="hljs-property">id</span></code> names and position them inside your panels?</li>
+<li>Can you <strong>make many more speech bubbles</strong>, give them unique <code>id</code> names and position them inside your panels?</li>
 </ul>
-<p>You can call them whatever you like: <strong><code class="lang-applescript"><span class="hljs-property">id</span></code> names are entirely up to you</strong>.</p>
+<p>You can call them whatever you like: <strong><code>id</code> names are entirely up to you</strong>.</p>
 </section>
 </section>
 <section id="step-6-how-do-you-get-many-panels-on-the-same-row" class="level1 activity new-page">
@@ -220,27 +220,27 @@ function relative(url) {
 <section id="activity-checklist-5" class="level2 check">
 <h2>Activity Checklist</h2>
 <p>Your story is coming to life now. How many panels have you got?</p>
-<p>You can <strong>use <code class="lang-applescript"><span class="hljs-property">id</span></code> to make panels unique</strong> too!</p>
-<p>For example, you may want to change the <code class="lang-processing"><span class="hljs-variable">width</span></code> or <code class="lang-processing"><span class="hljs-variable">height</span></code> of your panels:</p>
-<pre><code class="lang-css"><span class="hljs-tag">section</span><span class="hljs-attr_selector">[id="panel2"]</span>
-<span class="hljs-rules">{
-    <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">300px</span></span></span>;
-}</span>
+<p>You can <strong>use <code>id</code> to make panels unique</strong> too!</p>
+<p>For example, you may want to change the <code>width</code> or <code>height</code> of your panels:</p>
+<pre><code>section[id=&quot;panel2&quot;]
+{
+    width: 300px;
+}
 
-<span class="hljs-tag">section</span><span class="hljs-attr_selector">[id="panel3"]</span>
-<span class="hljs-rules">{
-    <span class="hljs-rule"><span class="hljs-attribute">width</span>:<span class="hljs-value"> <span class="hljs-number">200px</span></span></span>;
-}</span></code></pre>
+section[id=&quot;panel3&quot;]
+{
+    width: 200px;
+}</code></pre>
 <ul>
-<li><p>Copy-paste the code above into your HTML document. Where? Anywhere between the <code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-title">style</span>&gt;</span><span class="css"></span></code> <em>opening tag</em> and the <code class="lang-apache"><span class="hljs-tag">&lt;/style&gt;</span></code> <em>closing tag</em>.</p></li>
-<li><p>Can you <strong>give the correct <code class="lang-applescript"><span class="hljs-property">id</span></code> names to two panels</strong> in your HTML document?</p></li>
+<li><p>Copy-paste the code above into your HTML document. Where? Anywhere between the <code>&lt;style&gt;</code> <em>opening tag</em> and the <code>&lt;/style&gt;</code> <em>closing tag</em>.</p></li>
+<li><p>Can you <strong>give the correct <code>id</code> names to two panels</strong> in your HTML document?</p></li>
 </ul>
 </section>
 <section id="challenge-4" class="level2 try">
 <h2>Challenge</h2>
 <p>What if you want to have those <strong>two panels in the same row</strong>?</p>
 <ul>
-<li><p>Can you add <code class="lang-http"><span class="hljs-attribute">float</span>: <span class="hljs-string">left;</span></code> inside your <code class="lang-cs">section[<span class="hljs-keyword">class</span>=<span class="hljs-string">"panel"</span>]</code> CSS rule?</p></li>
+<li><p>Can you add <code>float: left;</code> inside your <code>section[class=&quot;panel&quot;]</code> CSS rule?</p></li>
 <li><p>Save, go to your browser and refresh the page. What do you see?</p></li>
 </ul>
 <p><img class="border-less" src="floats.png" title="Using float: left; can you put more than one panel in the same row?"></p>
@@ -250,19 +250,19 @@ function relative(url) {
 <h1>Step 7: What if <strong>images are bigger than panels</strong>?</h1>
 <section id="activity-checklist-6" class="level2 check">
 <h2>Activity Checklist</h2>
-<p>Now you know how to change the <code class="lang-processing"><span class="hljs-variable">width</span></code> or <code class="lang-processing"><span class="hljs-variable">height</span></code> of your panels.</p>
+<p>Now you know how to change the <code>width</code> or <code>height</code> of your panels.</p>
 <p>What if you have an image that is too big for its panel? So big that it <em>overflows</em> into other panels?</p>
 <p>Well, there’s a CSS property for that.</p>
-<pre><code class="lang-http"><span class="hljs-attribute">overflow</span>: <span class="hljs-string">hidden;</span></code></pre>
+<pre><code>overflow: hidden;</code></pre>
 </section>
 <section id="challenge-5" class="level2 try">
 <h2>Challenge</h2>
 <ul>
-<li><p>Can you add <code class="lang-http"><span class="hljs-attribute">overflow</span>: <span class="hljs-string">hidden;</span></code> inside your <code class="lang-cs">section[<span class="hljs-keyword">class</span>=<span class="hljs-string">"panel"</span>]</code> CSS rule?</p></li>
+<li><p>Can you add <code>overflow: hidden;</code> inside your <code>section[class=&quot;panel&quot;]</code> CSS rule?</p></li>
 <li><p>Then, how about using these CSS properties to move your images inside your panels?</p></li>
-<li><code class="lang-fortran"><span class="hljs-keyword">position</span></code></li>
-<li><code class="lang-scss"><span class="hljs-attribute">top</span></code></li>
-<li><p><code class="lang-scss"><span class="hljs-attribute">left</span></code></p></li>
+<li><code>position</code></li>
+<li><code>top</code></li>
+<li><p><code>left</code></p></li>
 </ul>
 <p><img class="border-less" src="overflow.png" title="Using overflow: hidden; can you make your images not spill over other panels?"></p>
 </section>
@@ -297,27 +297,27 @@ function relative(url) {
 <h2>Activity Checklist</h2>
 <p>Have you noticed that your speech bubbles are missing something?</p>
 <p>Yes, that <strong>little arrow pointing at your character</strong>, which makes it clear who’s talking.</p>
-<pre><code class="lang-css"><span class="hljs-tag">p</span><span class="hljs-attr_selector">[class="bubble"]</span><span class="hljs-pseudo">:after</span>
-<span class="hljs-rules">{
-    <span class="hljs-rule"><span class="hljs-attribute">content</span>:<span class="hljs-value"> <span class="hljs-string">" "</span></span></span>;
-    <span class="hljs-rule"><span class="hljs-attribute">position</span>:<span class="hljs-value"> absolute</span></span>;
+<pre><code>p[class=&quot;bubble&quot;]:after
+{
+    content: &quot; &quot;;
+    position: absolute;
     
-    <span class="hljs-rule"><span class="hljs-attribute">border-width</span>:<span class="hljs-value"> <span class="hljs-number">30px</span></span></span>;
-    <span class="hljs-rule"><span class="hljs-attribute">border-style</span>:<span class="hljs-value"> solid</span></span>;
-}</span>
+    border-width: 30px;
+    border-style: solid;
+}
 
-<span class="hljs-tag">p</span><span class="hljs-attr_selector">[id="panel1-bubble1"]</span><span class="hljs-pseudo">:after</span> 
-<span class="hljs-rules">{
-    <span class="hljs-rule"><span class="hljs-attribute">top</span>:<span class="hljs-value"> <span class="hljs-number">100%</span></span></span>;
-    <span class="hljs-rule"><span class="hljs-attribute">left</span>:<span class="hljs-value"> <span class="hljs-number">30px</span></span></span>;
+p[id=&quot;panel1-bubble1&quot;]:after 
+{
+    top: 100%;
+    left: 30px;
         
-    <span class="hljs-rule"><span class="hljs-attribute">border-top-color</span>:<span class="hljs-value"> white</span></span>;
-    <span class="hljs-rule"><span class="hljs-attribute">border-left-color</span>:<span class="hljs-value"> red</span></span>;
-    <span class="hljs-rule"><span class="hljs-attribute">border-bottom-color</span>:<span class="hljs-value"> green</span></span>; 
-    <span class="hljs-rule"><span class="hljs-attribute">border-right-color</span>:<span class="hljs-value"> blue</span></span>; 
-}</span> </code></pre>
+    border-top-color: white;
+    border-left-color: red;
+    border-bottom-color: green; 
+    border-right-color: blue; 
+} </code></pre>
 <ul>
-<li><p>Copy-paste the code above into your HTML document. Where? Anywhere between the <code class="lang-xml"><span class="hljs-tag">&lt;<span class="hljs-title">style</span>&gt;</span><span class="css"></span></code> <em>opening tag</em> and the <code class="lang-apache"><span class="hljs-tag">&lt;/style&gt;</span></code> <em>closing tag</em>.</p></li>
+<li><p>Copy-paste the code above into your HTML document. Where? Anywhere between the <code>&lt;style&gt;</code> <em>opening tag</em> and the <code>&lt;/style&gt;</code> <em>closing tag</em>.</p></li>
 <li><p>Save, go to your browser and refresh the page. What do you see?</p></li>
 </ul>
 <p><img class="border-less" src="jewel.png" title="Right-click on your speech bubble to inspect it"></p>
@@ -325,24 +325,24 @@ function relative(url) {
 <ul>
 <li>Right-click on your speech bubble, then choose <em>Inspect Element</em> to see what is going on.</li>
 </ul>
-<p>That “jewel” is, technically speaking, an empty element with a very fat border: <code class="lang-cpp"><span class="hljs-number">30</span>px</code>.</p>
-<p>The top border is <code>white</code>, just like the rest of your speech bubble. The left border is <code class="lang-processing"><span class="hljs-built_in">red</span></code>, the bottom border is <code class="lang-processing"><span class="hljs-built_in">green</span></code> and the right border is <code class="lang-processing"><span class="hljs-built_in">blue</span></code>.</p>
+<p>That “jewel” is, technically speaking, an empty element with a very fat border: <code>30px</code>.</p>
+<p>The top border is <code>white</code>, just like the rest of your speech bubble. The left border is <code>red</code>, the bottom border is <code>green</code> and the right border is <code>blue</code>.</p>
 </section>
 <section id="challenge-7" class="level2 try">
 <h2>Challenge</h2>
 <ul>
-<li>Can you turn the left, right and bottom borders to <code class="lang-scss"><span class="hljs-value">transparent</span></code>?</li>
+<li>Can you turn the left, right and bottom borders to <code>transparent</code>?</li>
 </ul>
 <p>That leaves you only with the top white border, which looks like an <strong>arrow pointing down</strong>!</p>
 <ul>
-<li>Now, can you add arrows to your other speech bubbles? Experiment with <code class="lang-scss"><span class="hljs-attribute">top</span></code> and <code class="lang-scss"><span class="hljs-attribute">left</span></code> values to move your arrows around, and switch <code class="lang-dos">border-<span class="hljs-built_in">color</span></code> values on (<code>white</code>) and off (<code class="lang-scss"><span class="hljs-value">transparent</span></code>) to make your arrows point in the directions you want.</li>
+<li>Now, can you add arrows to your other speech bubbles? Experiment with <code>top</code> and <code>left</code> values to move your arrows around, and switch <code>border-color</code> values on (<code>white</code>) and off (<code>transparent</code>) to make your arrows point in the directions you want.</li>
 </ul>
 <!-- FOOT NOTES -->
 
 </section>
 </section>
 <section class="footnotes">
-<hr>
+<hr />
 <ol>
 <li id="fn1"><p><strong>HTML</strong> stands for <em><strong>H</strong>yper<strong>T</strong>ext <strong>M</strong>arkup <strong>L</strong>anguage</em>, which is the language that every website in the World “speaks”. To make a website, you teach your computer how to “translate” your ideas into HTML.<a href="#fnref1">↩</a></p></li>
 <li id="fn2"><p><strong>What’s a browser?</strong> A web browser is a special app that knows how to interpret text files written in HTML. The most popular browsers are Internet Explorer, Google Chrome and Mozilla Firefox.<a href="#fnref2">↩</a></p></li>
@@ -353,4 +353,4 @@ function relative(url) {
 </ol>
 </section>
 </div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div><div class="author"><p><strong>Author:</strong></p><p>Matteo Menapace</p>
-</div></div></div></div></div><script src="../../assets/vendor.min.js"></script><script src="../../assets/script.min.js"></script></body></html>
+</div></div></div></div></div><div class="intro-question modal fade"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title">Hi there!</h4></div><div class="modal-body"><p>Seems like this is your first time here. Would you like a tour?</p></div><div class="modal-footer"><button class="btn btn-success">Yes!</button><button data-dismiss="modal" class="btn btn-danger">No thanks</button></div></div></div></div><script src="../../assets/vendor.min.js"></script><script src="../../assets/script.min.js"></script></body></html>

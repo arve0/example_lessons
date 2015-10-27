@@ -17,13 +17,14 @@ function relative(url) {
 <h2>Activity Checklist</h2>
 <ul>
 <li><p>As you probably already know, a dictionary allows you to look up a word, and see it’s meaning. In Python, a dictionary is even more flexible that that - it allows you to map anything (called a <em>key</em>) to anything else! Here’s a dictionary that links text-speak words to their meaning:</p>
-<pre class="language-python"><code class="lang-smalltalk">textSpeakDictionary = {
-    <span class="hljs-comment">"lol"</span>   : <span class="hljs-comment">"laugh out loud"</span> ,
-    <span class="hljs-comment">"idk"</span>   : <span class="hljs-comment">"I don't know"</span>
+<pre><code><span class="hljs-variable">textSpeakDictionary =</span> {
+    <span class="hljs-string">"lol"</span>   : <span class="hljs-string">"laugh out loud"</span> ,
+    <span class="hljs-string">"idk"</span>   : <span class="hljs-string">"I don't know"</span>
 }</code></pre>
+
 <p>So, in the dictionary above, the key “lol” maps to the text “laugh out loud”, and the key “idk” maps to the text “I don’t know”. You should use a colon (<code>:</code>) to map the text-speak keys to their meanings, and put a comma between each dictionary entry.</p></li>
 <li><p>Getting information out of the dictionary is easy; you just need to add the key after the dictionary variable name, in square brackets. Here’s a short program that shows how this works:</p>
-<pre class="language-python"><code class="lang-bash">textSpeakDictionary = {
+<pre><code>textSpeakDictionary = {
     <span class="hljs-string">"lol"</span>   : <span class="hljs-string">"laugh out loud"</span> ,
     <span class="hljs-string">"idk"</span>   : <span class="hljs-string">"I don't know"</span>
 }
@@ -37,8 +38,9 @@ function relative(url) {
 <span class="hljs-comment">#the entry for the user's input</span>
 key = input(<span class="hljs-string">"\nWhat would you like to translate? : "</span>)
 <span class="hljs-built_in">print</span>( key , <span class="hljs-string">"="</span> , textSpeakDictionary[key] )</code></pre>
+
 <figure>
-<img src="textspeak-dictionary.png" alt="screenshot"><figcaption>screenshot</figcaption>
+<img src="textspeak-dictionary.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure>
 <p>This program prints 3 things: the entire dictionary, the dictionary entry for “lol” and finally the dictionary entry for whatever the user inputs.</p></li>
 </ul>
@@ -54,16 +56,16 @@ key = input(<span class="hljs-string">"\nWhat would you like to translate? : "</
 <h2>Activity Checklist</h2>
 <ul>
 <li><p>Run this program, which splits up a sentence into individual words, and then translates each word (if it exists in the dictionary):</p>
-<pre class="language-python"><code class="lang-livecodeserver">textSpeakDictionary = {
+<pre><code>textSpeakDictionary = {
     <span class="hljs-string">"lol"</span>   : <span class="hljs-string">"laugh out loud"</span> ,
     <span class="hljs-string">"idk"</span>   : <span class="hljs-string">"I don't know"</span>
 }
 
 <span class="hljs-comment">#get the sentence to translate</span>
-<span class="hljs-keyword">sentence</span> = input(<span class="hljs-string">"Enter a sentence to translate: "</span>).<span class="hljs-built_in">lower</span>()
+sentence = input(<span class="hljs-string">"Enter a sentence to translate: "</span>).<span class="hljs-built_in">lower</span>()
 
 <span class="hljs-comment">#this splits up the sentence into a list of words</span>
-wordsToTranslate = <span class="hljs-keyword">sentence</span>.<span class="hljs-built_in">split</span>()
+wordsToTranslate = sentence.<span class="hljs-built_in">split</span>()
 
 translatedSentence = <span class="hljs-string">""</span>
 
@@ -83,11 +85,12 @@ translatedSentence = <span class="hljs-string">""</span>
 <span class="hljs-comment">#print the translated sentence</span>
 print(<span class="hljs-string">"==&gt;"</span>)
 print(translatedSentence)</code></pre>
+
 <figure>
-<img src="textspeak-sentence.png" alt="screenshot"><figcaption>screenshot</figcaption>
+<img src="textspeak-sentence.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure>
 <p>Each word is taken in turn, and the program checks whether the word to translate is in the dictionary. If it is, then the translated text added to the <code>translatedSentence</code> variable, which is printed at the end of the program. If the word isn’t in the dictionary, then just the original word is added to the <code>translatedSentence</code> variable.</p>
-<p>Notice that whenever a word is added to <code>translatedSentence</code>, a space is also added (<code class="lang-1c">+ <span class="hljs-string">" "</span></code>). What do you think would happen if this space wasn’t added?</p></li>
+<p>Notice that whenever a word is added to <code>translatedSentence</code>, a space is also added (<code>+ &quot; &quot;</code>). What do you think would happen if this space wasn’t added?</p></li>
 </ul>
 </section>
 <section id="challenge-adding-translations" class="level2 challenge">
@@ -104,7 +107,7 @@ print(translatedSentence)</code></pre>
 <li>Try out the program above, with a number of different sentences, to test that your program works.</li>
 </ul>
 <figure>
-<img src="textspeak-test.png" alt="screenshot"><figcaption>screenshot</figcaption>
+<img src="textspeak-test.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure>
 <ul>
 <li>Did you (or your friends) do anything to break your program? If so, can you fix any problems?</li>
@@ -117,7 +120,7 @@ print(translatedSentence)</code></pre>
 <h2>Activity Checklist</h2>
 <ul>
 <li><p>Just like with your ‘compliment generator’ program, it would be nice to allow the user to add and remove words from the dictionary. You can do this, by creating a menu system:</p>
-<pre class="language-python"><code class="lang-python"><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">displayMenu</span><span class="hljs-params">()</span>:</span>
+<pre><code><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">displayMenu</span><span class="hljs-params">()</span>:</span>
     print(<span class="hljs-string">"txt spk cnvtr"</span>)
     print(<span class="hljs-string">"="</span> * <span class="hljs-number">13</span>)
     print(<span class="hljs-string">"Menu:"</span>)
@@ -208,18 +211,21 @@ displayMenu()
 
     <span class="hljs-keyword">else</span>:
         print(<span class="hljs-string">"Invalid menu choice!"</span>)</code></pre>
+
 <figure>
-<img src="textspeak-menu.png" alt="screenshot"><figcaption>screenshot</figcaption>
+<img src="textspeak-menu.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure>
 <p>Although this is a loooong program, you’ve seen most of this code before in other programs. The new bits are just the code to add an item to the dictionary:</p>
-<pre class="language-python"><code class="lang-stylus">txtToAdd = <span class="hljs-function"><span class="hljs-title">input</span><span class="hljs-params">(<span class="hljs-string">"Enter the text-speak to add to the dictionary: "</span>)</span></span>
+<pre><code>txtToAdd = <span class="hljs-function"><span class="hljs-title">input</span><span class="hljs-params">(<span class="hljs-string">"Enter the text-speak to add to the dictionary: "</span>)</span></span>
 meaning = <span class="hljs-function"><span class="hljs-title">input</span><span class="hljs-params">(<span class="hljs-string">"What does this mean?: "</span>)</span></span>
 <span class="hljs-hexcolor">#add</span> the new translation to the dictionary
 textSpeakDictionary[txtToAdd] = meaning</code></pre>
+
 <p>…and the code to remove an item:</p>
-<pre class="language-python"><code class="lang-stylus">txtToDelete = <span class="hljs-function"><span class="hljs-title">input</span><span class="hljs-params">(<span class="hljs-string">"Enter the text-speak to delete from the dictionary: "</span>)</span></span>
+<pre><code>txtToDelete = <span class="hljs-function"><span class="hljs-title">input</span><span class="hljs-params">(<span class="hljs-string">"Enter the text-speak to delete from the dictionary: "</span>)</span></span>
 <span class="hljs-id">#delete</span> the translation from the dictionary
 <span class="hljs-tag">del</span> textSpeakDictionary[txtToDelete]</code></pre>
+
 <p>The code for each of the menu options is also in it’s own function, to make the code much easier to read.</p></li>
 </ul>
 </section>
@@ -232,13 +238,15 @@ textSpeakDictionary[txtToAdd] = meaning</code></pre>
 <ul>
 <li>you can only add dictionary keys that don’t already exist?</li>
 </ul>
-<pre class="language-python"><code class="lang-stylus"><span class="hljs-keyword">if</span> itemToAdd not <span class="hljs-keyword">in</span> textSpeakDictionary:
+<pre><code><span class="hljs-keyword">if</span> itemToAdd not <span class="hljs-keyword">in</span> textSpeakDictionary:
     <span class="hljs-hexcolor">#Add</span> your <span class="hljs-tag">code</span> here!</code></pre>
+
 <ul>
 <li>you can only delete keys if they already exist in the dictionary?</li>
 </ul>
-<pre class="language-python"><code class="lang-stylus"><span class="hljs-keyword">if</span> itemToDelete not <span class="hljs-keyword">in</span> textSpeakDictionary:
+<pre><code><span class="hljs-keyword">if</span> itemToDelete not <span class="hljs-keyword">in</span> textSpeakDictionary:
     <span class="hljs-hexcolor">#Add</span> your <span class="hljs-tag">code</span> here!</code></pre>
+
 </section>
 <section id="save-your-project-2" class="level2 save">
 <h2>Save Your Project</h2>
@@ -251,13 +259,14 @@ textSpeakDictionary[txtToAdd] = meaning</code></pre>
 <ul>
 <li><p>You’ve already done lots of testing to improve your program, but there’s one more thing that you can fix, to make your program even better. Look what happens when you test your program with the following sentence:</p>
 <figure>
-<img src="textspeak-punctuation.png" alt="screenshot"><figcaption>screenshot</figcaption>
+<img src="textspeak-punctuation.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure>
 <p>It doesn’t get translated properly. Try it out for yourself.</p></li>
 <li><p>Why doesn’t your program convert the ‘lol’ in this sentence? It’s because your program splits up the sentence into words, like this:</p>
-<pre class="language-python"><code class="lang-applescript"><span class="hljs-property">words</span> = [ <span class="hljs-string">"hello"</span> , <span class="hljs-string">"lol!"</span> ]</code></pre>
-<p>It then looks up the key <code class="lang-1c"><span class="hljs-string">"lol!"</span></code> in your dictionary (with the exclaimation mark), and can’t find a translation for it, because <code class="lang-1c"><span class="hljs-string">"lol!"</span></code> doesn’t exist! One simple way to avoid this problem is to remove some punctuation from the sentence before it is translated. Add this code to your <code class="lang-stylus"><span class="hljs-function"><span class="hljs-title">convertSentence</span><span class="hljs-params">()</span></span></code> function:</p>
-<pre class="language-python"><code class="lang-stylus">def <span class="hljs-function"><span class="hljs-title">convertSentence</span><span class="hljs-params">()</span></span>:
+<pre><code><span class="hljs-property">words</span> = [ <span class="hljs-string">"hello"</span> , <span class="hljs-string">"lol!"</span> ]</code></pre>
+
+<p>It then looks up the key <code>&quot;lol!&quot;</code> in your dictionary (with the exclaimation mark), and can’t find a translation for it, because <code>&quot;lol!&quot;</code> doesn’t exist! One simple way to avoid this problem is to remove some punctuation from the sentence before it is translated. Add this code to your <code>convertSentence()</code> function:</p>
+<pre><code>def <span class="hljs-function"><span class="hljs-title">convertSentence</span><span class="hljs-params">()</span></span>:
     sentence = <span class="hljs-function"><span class="hljs-title">input</span><span class="hljs-params">(<span class="hljs-string">"Enter a sentence to translate: "</span>)</span></span>.<span class="hljs-function"><span class="hljs-title">lower</span><span class="hljs-params">()</span></span>
     translatedSentence = <span class="hljs-string">""</span>
 
@@ -268,15 +277,16 @@ textSpeakDictionary[txtToAdd] = meaning</code></pre>
     <span class="hljs-id">#this</span> splits up the sentence into <span class="hljs-tag">a</span> list of words
     listOfWords = sentence.<span class="hljs-function"><span class="hljs-title">split</span><span class="hljs-params">()</span></span>
     ...</code></pre>
-<p>This extra code loops through each of the punctuation marks <code class="lang-erlang-repl">?<span class="hljs-exclamation_mark">!</span>.,</code> in turn, and replaces them in the sentence with… nothing! This removes the punctuation from the sentence.</p></li>
-<li><p>After adding in this code to take out the punctuation, try translating <code class="lang-1c"><span class="hljs-string">"hello, lol!"</span></code> again, to check whether you’ve solved the problem.</p></li>
+
+<p>This extra code loops through each of the punctuation marks <code>?!.,</code> in turn, and replaces them in the sentence with… nothing! This removes the punctuation from the sentence.</p></li>
+<li><p>After adding in this code to take out the punctuation, try translating <code>&quot;hello, lol!&quot;</code> again, to check whether you’ve solved the problem.</p></li>
 </ul>
 </section>
 <section id="challenge-distant-planets" class="level2 challenge">
 <h2>Challenge: Distant planets</h2>
 <p>Make a program to give the user information about any topic you like. For example planets, and their distances from the Earth. You can store this data in a dictionary that links planets and distances.</p>
 <figure>
-<img src="textspeak-planets.png" alt="screenshot"><figcaption>screenshot</figcaption>
+<img src="textspeak-planets.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure>
 </section>
 <section id="save-your-project-3" class="level2 save">
@@ -286,21 +296,23 @@ textSpeakDictionary[txtToAdd] = meaning</code></pre>
 <h2>Challenge: Password protection</h2>
 <p>Create a password-protection program, that asks the user for their name and password, and checks a dictionary to see if they’ve entered the correct details.</p>
 <figure>
-<img src="textspeak-password.png" alt="screenshot"><figcaption>screenshot</figcaption>
+<img src="textspeak-password.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure>
 <p>Your program will need to check that the user’s name exists in the dictionary, <em>and</em> that the correct password for that user has been entered. You can use this code to help you:</p>
-<pre class="language-python"><code class="lang-stylus"><span class="hljs-id">#check</span> that the name exists, and that the password is correct
+<pre><code><span class="hljs-id">#check</span> that the name exists, and that the password is correct
 <span class="hljs-keyword">if</span> name <span class="hljs-keyword">in</span> passwordDictionary and password == passwordDictionary[name]:
     <span class="hljs-hexcolor">#add</span> <span class="hljs-tag">code</span> here!</code></pre>
+
 <p>Make sure that your program works, by testing what happens when the user enters valid and invalid names and passwords.</p>
 <p>If you feel like it, you could also:</p>
 <ul>
 <li><p>add this login code to one of the programs you’ve already created, so that the program can only be used by your friends.</p></li>
 <li><p>only allow the user 3 attempts to login…, adding 1 to <code>loginAttempts</code> whenever access is denied.</p></li>
 </ul>
-<pre class="language-python"><code class="lang-cpp">loginAttempts = <span class="hljs-number">0</span>
-<span class="hljs-keyword">while</span> loginAttempts &lt; <span class="hljs-number">3</span>:
-    <span class="hljs-preprocessor">#login code goes here!</span></code></pre>
+<pre><code>loginAttempts = <span class="hljs-number">0</span>
+while loginAttempts &lt; <span class="hljs-number">3</span>:
+    <span class="hljs-id">#login</span> <span class="hljs-tag">code</span> goes here!</code></pre>
+
 <ul>
 <li>You could even use what you’ve learnt about dictionaries to create a program for storing your friend’s email addresses, or translating text from one language to another. You could even password-protect this program to make it secure!</li>
 </ul>
@@ -309,4 +321,4 @@ textSpeakDictionary[txtToAdd] = meaning</code></pre>
 <h2>Save Your Project</h2>
 </section>
 </section>
-</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><script src="../../../assets/vendor.min.js"></script><script src="../../../assets/script.min.js"></script></body></html>
+</div></div><div class="col-xs-12"><div id="footer" class="clearfix"><div class="license"><p><strong>License:</strong></p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a></div></div></div></div></div><div class="intro-question modal fade"><div class="modal-dialog"><div class="modal-content"><div class="modal-header"><button type="button" data-dismiss="modal" aria-label="Close" class="close"><span aria-hidden="true">&times;</span></button><h4 class="modal-title">Hi there!</h4></div><div class="modal-body"><p>Seems like this is your first time here. Would you like a tour?</p></div><div class="modal-footer"><button class="btn btn-success">Yes!</button><button data-dismiss="modal" class="btn btn-danger">No thanks</button></div></div></div></div><script src="../../../assets/vendor.min.js"></script><script src="../../../assets/script.min.js"></script></body></html>
