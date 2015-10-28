@@ -48,13 +48,16 @@ function relative(url) {
 </ul>
 <pre><code><span class="hljs-keyword">if</span> answer == <span class="hljs-string">"4"</span>:
     <span class="hljs-keyword">...</span></code></pre>
+
 <p>and <em>not</em>:</p>
 <pre><code><span class="hljs-keyword">if</span> answer == <span class="hljs-number">4</span>:
     <span class="hljs-keyword">...</span></code></pre>
+
 <p>As an alternative, it is also possible to cast the player’s answer to a number, and then compare the two numbers:</p>
 <pre><code>answer = int(answer)
 <span class="hljs-keyword">if</span> answer == <span class="hljs-number">4</span>:
     <span class="hljs-keyword">...</span></code></pre>
+
 <ul>
 <li><p>Each <code>if</code>/<code>else</code>/<code>elif</code> statement should end with a colon.</p></li>
 <li><p>The body of each <code>if</code>/<code>else</code>/<code>elif</code> statement should be uniformly indented. It is recommended that the Tab key is used for this, as it makes indentation mistakes easier to spot. For example, the following program will not run:</p></li>
@@ -64,6 +67,7 @@ function relative(url) {
   <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"---------"</span>)</span></span>
     <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">" :) "</span>)</span></span>
  )</code></pre>
+
 <ul>
 <li>Children should remember the difference between <code>=</code> (used for variable assignment) and <code>==</code> (used for checking equality).</li>
 </ul>

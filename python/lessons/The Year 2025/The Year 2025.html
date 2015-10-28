@@ -17,6 +17,7 @@ function relative(url) {
 <ul>
 <li><p>It’s not just text that you can print in Python, you can also print numbers to the screen. For example, if 8 of your friends each gave you £2 for a sponsored silence, you can use this program to see how much money you raised:</p>
 <pre><code><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-number">8</span>*<span class="hljs-number">2</span>)</span></span></code></pre>
+
 <p>The star <code>*</code> in the program above is a multiply sign, so the program should print the answer to 8 x 2.</p></li>
 <li><p>Run the program above, and you should see the answer:</p>
 <figure>
@@ -69,6 +70,7 @@ function relative(url) {
 born = <span class="hljs-function"><span class="hljs-title">input</span><span class="hljs-params">()</span></span>
 born = <span class="hljs-function"><span class="hljs-title">int</span><span class="hljs-params">(born)</span></span>
 <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">( <span class="hljs-number">2025</span> - born )</span></span></code></pre>
+
 <p>This program waits for you to type in the year you were born, and press enter. You should then see how old you’ll be in the year 2025:</p>
 <figure>
 <img src="2025-varProg.png" alt="screenshot" /><figcaption>screenshot</figcaption>
@@ -80,10 +82,12 @@ born = <span class="hljs-function"><span class="hljs-title">int</span><span clas
 <p>Notice that the variable (the box) has been named “born”, as it helps you remember what you’re storing inside it!</p>
 <p>The line…</p>
 <pre><code><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">( <span class="hljs-number">2025</span> - born )</span></span></code></pre>
+
 <p>…takes whatever number has been stored in the <code>born</code> variable away from 2025.</p>
 <p>Anything that is typed in from the keyboard is always stored as text, so you also have to use the <code>int()</code> function to turn the user’s input into a whole number (which in programming is called an <em>integer</em>).</p></li>
 <li><p>You can make your program much easier to understand, by adding a helpful message for the user, so they know what you’re showing them. Change the last line of your program to:</p>
-<pre><code><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">( <span class="hljs-string">"In 2025 you will be"</span> , <span class="hljs-number">2025</span> - born , <span class="hljs-string">"years old!"</span> )</span></span></code></pre></li>
+<pre><code><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">( <span class="hljs-string">"In 2025 you will be"</span> , <span class="hljs-number">2025</span> - born , <span class="hljs-string">"years old!"</span> )</span></span></code></pre>
+</li>
 <li><p>Try running your program again, to see how this change looks.</p>
 <figure>
 <img src="2025-print.png" alt="screenshot" /><figcaption>screenshot</figcaption>

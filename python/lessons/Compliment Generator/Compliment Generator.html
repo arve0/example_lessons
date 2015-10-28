@@ -18,6 +18,7 @@ function relative(url) {
 <ul>
 <li><p>In your projects so far, you’ve used a variable to store a single piece of data, such as a name or a score. But what if you want to store lots of data? In Python, you can use a <em>list</em> to store lots of data in 1 variable:</p>
 <pre><code><span class="hljs-setting">bigPlanets = <span class="hljs-value">[ <span class="hljs-string">"jupiter"</span> , <span class="hljs-string">"saturn"</span> , <span class="hljs-string">"uranus"</span> , <span class="hljs-string">"neptune"</span>]</span></span></code></pre>
+
 <p>This list of text is also known as an <em>array</em> of text. To access items in the list, you just need to know the position of the item. Run this program to give yourself a better idea of how lists work:</p>
 <pre><code>bigPlanets = [ <span class="hljs-string">"jupiter"</span> , <span class="hljs-string">"saturn"</span> , <span class="hljs-string">"uranus"</span> , <span class="hljs-string">"neptune"</span>]
 <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">( bigPlanets )</span></span>
@@ -25,6 +26,7 @@ function relative(url) {
 <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">( bigPlanets[<span class="hljs-number">1</span>] )</span></span>
 <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">( bigPlanets[<span class="hljs-number">2</span>] )</span></span>
 <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">( bigPlanets[<span class="hljs-number">3</span>] )</span></span></code></pre>
+
 <figure>
 <img src="compliment-planets.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure>
@@ -43,6 +45,7 @@ compliments = [ <span class="hljs-string">"Great job on that thing you did. Real
 <span class="hljs-comment">#print a random item in the 'compliments' list</span>
 <span class="hljs-built_in">print</span>(choice(compliments))
 <span class="hljs-built_in">print</span>(<span class="hljs-string">"You're welcome!"</span>)</code></pre>
+
 <figure>
 <img src="compliment-list.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure></li>
@@ -61,6 +64,7 @@ name = input(<span class="hljs-string">"What is your name?: "</span>)
 <span class="hljs-comment">#get a random item from both lists, and add them to the compliment</span>
 <span class="hljs-built_in">print</span>( name , <span class="hljs-string">"you are"</span> , choice(adjectives) , <span class="hljs-string">"at"</span> , choice(hobbies) )
 <span class="hljs-built_in">print</span>( <span class="hljs-string">"You're welcome!"</span> )</code></pre>
+
 <figure>
 <img src="compliment-2lists.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure></li>
@@ -123,6 +127,7 @@ Menu
     <span class="hljs-keyword">else</span>:
 
         print(<span class="hljs-string">"Please choose a valid option!"</span>)</code></pre>
+
 <figure>
 <img src="compliment-loop.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure>
@@ -197,6 +202,7 @@ Menu
     <span class="hljs-keyword">else</span>:
 
         print(<span class="hljs-string">"Please choose a valid option!"</span>)</code></pre>
+
 <p>As you can see, you can use <code>append()</code> to add to a list, and <code>remove()</code> to remove an item. Run this program, and personalise the hobbies in the list to suit you. Ask the program for compliments until you’re in a good mood!</p></li>
 <li><p>When testing the program above, did you run into any problems? At the moment, your compliment generator crashes if you try and remove a compliment that isn’t in the list:</p>
 <figure>
@@ -212,6 +218,7 @@ Menu
             hobbies.remove(itemToDelete)
         <span class="hljs-keyword">else</span>:
             print(<span class="hljs-string">"Hobby not in list!"</span>)</code></pre>
+
 <p>Now run the program and try to delete a hobby that isn’t in the list:</p>
 <figure>
 <img src="compliment-errorfix.png" alt="screenshot" /><figcaption>screenshot</figcaption>
@@ -230,6 +237,7 @@ Menu
 <p>Can you fix this problem, so that a hobby can only be added if it isn’t already in the list:</p>
 <pre><code><span class="hljs-keyword">if</span> itemToAdd not <span class="hljs-keyword">in</span> hobbies:
     <span class="hljs-hexcolor">#add</span> <span class="hljs-tag">code</span> here...</code></pre>
+
 </section>
 <section id="save-your-project-4" class="level2 save">
 <h2>Save Your Project</h2>

@@ -41,6 +41,7 @@ function relative(url) {
 </ul>
 Inside <code>&lt;img&gt;</code> tag we have the <code>src</code> and <code>alt</code> attributes:
 <pre><code>&lt;img <span class="hljs-variable">src=</span><span class="hljs-string">"kitten.jpg"</span> <span class="hljs-variable">alt=</span><span class="hljs-string">"This is a kitten."</span> /&gt;</code></pre>
+
 <ul>
 <li>Try changing <code>src</code> to something else. Save the document and refresh in the browser.</li>
 </ul>
@@ -48,7 +49,8 @@ Inside <code>&lt;img&gt;</code> tag we have the <code>src</code> and <code>alt</
 <ul>
 <li>Change it back to <code>src</code> so we can keep looking at the kitten.</li>
 <li>Now remove the second quote (<code>&quot;</code>) from the <code>alt</code> attribute of this image: the one after the text, so you end up with this:
-<pre><code>&lt;img <span class="hljs-variable">src=</span><span class="hljs-string">"kitten.jpg"</span> <span class="hljs-variable">alt=</span><span class="hljs-string">"This is a kitten. /&gt;</span></code></pre></li>
+<pre><code>&lt;img <span class="hljs-variable">src=</span><span class="hljs-string">"kitten.jpg"</span> <span class="hljs-variable">alt=</span><span class="hljs-string">"This is a kitten. /&gt;</span></code></pre>
+</li>
 <li>Save it and refresh in the browser.</li>
 </ul>
 <p>The next tag disappeared. Why? The browser will think that everything after <code>alt=&quot;</code> and before the next quote (<code>&quot;</code>) is the additional text for this image, including the end of the image tag and the next opening tag.</p>
@@ -72,16 +74,20 @@ Inside <code>&lt;img&gt;</code> tag we have the <code>src</code> and <code>alt</
 <p><strong>Are you done? Great! Let’s now link the two pages you have created together.</strong></p>
 <p>When we’ve been linking to parts of the same page, we could just point links to a specific id within a page, like this:</p>
 <pre><code>&lt;<span class="hljs-operator">a</span> href=<span class="hljs-string">"#kitten"</span>&gt;Click <span class="hljs-built_in">to</span> see <span class="hljs-operator">a</span> kitten&lt;/<span class="hljs-operator">a</span>&gt;</code></pre>
+
 <p>Which then took you to something like this:</p>
 <pre><code>&lt;<span class="hljs-tag">div</span> id=<span class="hljs-string">"kitten"</span>&gt;
     &lt;<span class="hljs-tag">img</span> src=<span class="hljs-string">"kitten.jpg"</span> alt=<span class="hljs-string">"This is a kitten."</span> /&gt;
 &lt;/div&gt;</code></pre>
+
 <p>To link to another page, we don’t need to include the hash symbol (<code>#</code>), but instead we need to say which file we would like the link to take us to.</p>
 <p>So to link from <code>about_me_page_2.html</code> to <code>about_me.html</code> write it like this:</p>
 <pre><code>&lt;<span class="hljs-operator">a</span> href=<span class="hljs-string">"about_me.html"</span>&gt;Go <span class="hljs-built_in">to</span> About Me page&lt;/<span class="hljs-operator">a</span>&gt;</code></pre>
+
 <p>You can change the link text to something else, like the page title if you have changed it.</p>
 <p>To link back from <code>about_me.html</code> to <code>about_me_page_2.html</code> you would have to write it like so:</p>
 <pre><code>&lt;<span class="hljs-operator">a</span> href=<span class="hljs-string">"about_me_page_2.html"</span>&gt;Go <span class="hljs-built_in">to</span> my <span class="hljs-keyword">second</span> page&lt;/<span class="hljs-operator">a</span>&gt;</code></pre>
+
 <p>Congratulations! You have made your own website.</p>
 </section>
 <section id="putting-your-website-on-the-web-extra-activity" class="level1 activity">

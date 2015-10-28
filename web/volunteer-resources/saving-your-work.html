@@ -39,6 +39,7 @@ function relative(url) {
 \- page.html
 <span class="hljs-string">|</span>
 \ kitty.jpg</code></pre>
+
 <p>Let’s tidy it up a bit more. What if later we want to include more images? Let’s put them in their own directory so it’s easier to find them.</p>
 <pre><code class="hljs">my_kitty_site
 <span class="hljs-string">|</span>
@@ -48,6 +49,7 @@ function relative(url) {
   \ kitty.jpg
   <span class="hljs-string">|</span>
   \ kitty_and_puppy.jpg</code></pre>
+
 <p>Now when we open up the page in the browser, the image doesn’t show up! This is because the browser can’t find it. Let’s help it by adding what we call a path – a route through the directories it has to take to find the files, starting at the page. In our case we would have to go into the images directory before we get to the picture, like this: <code>&lt;img src=&quot;images/kitty.jpg&quot; alt=&quot;A kitty playing with some wool.&quot;&gt;</code></p>
 <p>The images/ bit before the name of the kitty image file tells the browser to go into the images directory first. Save, refresh, and the kitty is back.</p>
 </section>
@@ -66,6 +68,7 @@ function relative(url) {
   \ kitty.jpg
   <span class="hljs-string">|</span>
   \ kitty_and_puppy.jpg</code></pre>
+
 <p>Again, when we open up the page.html our images don’t work. This is because the browser looks for files in relation to the page you’re looking at. When we said: <code>&lt;img src=&quot;images/kitty.jpg&quot; alt=&quot;A kitty playing with some wool.&quot;&gt;</code></p>
 <p>We meant: “from page.html go into the directory called images where you will find kitty.jpg”. But there are no images inside the pages directory, where page.html lives! What we wanted to say was: “from page.html go one directory up, then go into the directory called images where you will find kitty.jpg”. So how can we say it? <code>&lt;img src=&quot;../images/kitty.jpg&quot; alt=&quot;A kitty playing with some wool.&quot;&gt;</code></p>
 <p>The value of the whole src attribute can then be broken down into these parts:</p>

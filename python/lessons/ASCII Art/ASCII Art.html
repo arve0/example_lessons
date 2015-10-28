@@ -23,6 +23,7 @@ function relative(url) {
 </ul></li>
 <li><p>Click <code>File → New Window</code>, and type the following into the window that appears:</p>
 <pre><code><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"Hello, how are you?"</span>)</span></span></code></pre>
+
 <p>This program will print some text to the screen. Notice that the text you want to print is surrounded by speech marks (<code>&quot;</code>). Here’s an image showing what you need to do:</p>
 <figure>
 <img src="ascii-hello.png" alt="screenshot" /><figcaption>screenshot</figcaption>
@@ -68,13 +69,15 @@ function relative(url) {
 <p>To make this masterpiece, you can type the following into the IDLE editor and run the program:</p>
 <pre><code><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"A picture of a dog..."</span>)</span></span>
 <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">" 0____  "</span>)</span></span>
-<span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"  ||||  "</span>)</span></span></code></pre></li>
+<span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"  ||||  "</span>)</span></span></code></pre>
+</li>
 <li><p>If you prefer, you can use 3 single quotes (<code>'''</code>) instead of speech marks, which allows you to print multiple lines of text with 1 print statement. Like this:</p>
 <pre><code>print(<span class="hljs-string">'''
 A picture of a dog...
  0____
   ||||
 '''</span>)</code></pre>
+
 <p>If you run this program, you’ll see it prints the same dog as before.</p></li>
 </ul>
 </section>
@@ -99,12 +102,14 @@ A picture of a dog...
 <ul>
 <li><p>Python can also do calculations using text! What do you get if you multiply <code>&quot;hello&quot;</code> by 5? Let’s ask Python, by running this program:</p>
 <pre><code><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"hello"</span> * <span class="hljs-number">5</span>)</span></span></code></pre>
+
 <p>The star <code>*</code> in the program above is a multiply sign. Run the program above, and you should see the answer:</p>
 <figure>
 <img src="ascii-textcalc.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure></li>
 <li><p>You can make the printed text above easier to read, by putting a space after the word <code>&quot;hello&quot;</code> in your program:</p>
 <pre><code><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"hello "</span> * <span class="hljs-number">5</span>)</span></span></code></pre>
+
 <p>Run this program and you’ll see that the output is a little easier to read than before.</p></li>
 <li><p>If <code>&quot;hello &quot;</code> multiplied by 5 is <code>&quot;hello hello hello hello hello &quot;</code>, then what is <code>&quot;hello&quot; - 7</code>? Does this calculation even make sense?</p>
 <figure>
@@ -113,6 +118,7 @@ A picture of a dog...
 <p>Oops, you’ve broken it! Instead of an answer, we get an error message. It looks like that calculation doesn’t make sense in Python!</p></li>
 <li><p>How about addition? What answer do you think <code>&quot;hello &quot; +  &quot;world</code>&quot; would give? Try it out, by running the following program:</p>
 <pre><code><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"hello "</span> + <span class="hljs-string">"world"</span>)</span></span></code></pre>
+
 <figure>
 <img src="ascii-textadd.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure>
@@ -128,6 +134,7 @@ A picture of a dog...
 <pre><code><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"ha "</span>*<span class="hljs-number">4</span>)</span></span>
 <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"ba"</span> + <span class="hljs-string">"na"</span>*<span class="hljs-number">2</span>)</span></span>
 <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"He"</span> + <span class="hljs-string">"l"</span>*<span class="hljs-number">2</span> + <span class="hljs-string">"o"</span> + <span class="hljs-string">"!"</span>*<span class="hljs-number">10</span>)</span></span></code></pre>
+
 <p>Can you make up any words of your own?</p>
 </section>
 <section id="save-your-project-5" class="level2 save">
@@ -143,10 +150,12 @@ A picture of a dog...
 <pre><code><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"##############################"</span>)</span></span>
 <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"##############################"</span>)</span></span>
 <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"##############################"</span>)</span></span></code></pre>
+
 <p>Or you could save time and draw it the easy way, like this:</p>
 <pre><code><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"#"</span> * <span class="hljs-number">30</span>)</span></span>
 <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"#"</span> * <span class="hljs-number">30</span>)</span></span>
 <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"#"</span> * <span class="hljs-number">30</span>)</span></span></code></pre>
+
 <p>Both give you exactly the same rectangle printed to the screen:</p>
 <figure>
 <img src="ascii-rect.png" alt="screenshot" /><figcaption>screenshot</figcaption>
@@ -154,6 +163,7 @@ A picture of a dog...
 <li><p>You could even use calculations to make interesting patterns, like this wave:</p>
 <pre><code><span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"/\  "</span>*<span class="hljs-number">10</span>)</span></span>
 <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"  \/"</span>*<span class="hljs-number">10</span>)</span></span></code></pre>
+
 <figure>
 <img src="ascii-wave.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure></li>

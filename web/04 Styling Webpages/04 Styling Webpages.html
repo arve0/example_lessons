@@ -26,6 +26,7 @@ All our styles will go between these two elements. Simplez. In general, css code
 <pre><code><span class="hljs-tag">selector</span> <span class="hljs-rules">{
     <span class="hljs-rule"><span class="hljs-attribute">property</span>:<span class="hljs-value"> value</span></span>;
 <span class="hljs-rule">}</span></span></code></pre>
+
 <ul>
 <li>Can you find the ‘{‘ and ‘}’ keys on your keyboard?</li>
 <li>How about ‘:’ and ‘;’?</li>
@@ -40,11 +41,12 @@ All our styles will go between these two elements. Simplez. In general, css code
 <pre><code><span class="hljs-tag">h1</span> <span class="hljs-rules">{
     <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> red</span></span>;
 <span class="hljs-rule">}</span></span></code></pre>
+
 <section id="save-your-file-and-view-it-in-your-browser" class="level2 save">
 <h2><strong>SAVE</strong> your file and <strong>VIEW</strong> it in your browser</h2>
 <p>The text is now red, w00t! There are different ways of saying the values for the color. There are 16 basic color names, they are aqua, black, blue, fuchsia, gray, green, lime, maroon, navy, olive, purple, red, silver, teal, white, and yellow.</p>
 <ul>
-<li><p>Try changing the color to something else! Most browsers support an additional 130 color names, a full alphabetical list of which is found at <a href="http://www.w3.org/TR/css3-color/#svg-color" class="uri">http://www.w3.org/TR/css3-color/#svg-color</a> - is your favourite colour in the list?</p></li>
+<li><p>Try changing the color to something else! Most browsers support an additional 130 color names, a full alphabetical list of which is found at <a href="http://www.w3.org/TR/css3-color/#svg-color">http://www.w3.org/TR/css3-color/#svg-color</a> - is your favourite colour in the list?</p></li>
 <li>But we can use even more colors by using <strong>hexidecimal code</strong> instead of color name. A hexcode is a # followed by 6 digits, the digits can be 0-9 or the letters A, B, C, D, E, F. Using hexcode we can use more than 16 million colours!</li>
 <li><p>At Code Club, our favourite colour is <code>#58AB57</code>. Can you guess what colour it is? Why don’t you try changing some text to that colour and view it in a browser to see.</p></li>
 </ul>
@@ -62,6 +64,7 @@ All our styles will go between these two elements. Simplez. In general, css code
 <pre><code><span class="hljs-tag">span</span> <span class="hljs-rules">{
     <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> orange</span></span>;
 <span class="hljs-rule">}</span></span></code></pre>
+
 <section id="save-your-file-and-view-it-in-your-browser-2" class="level2 save">
 <h2><strong>SAVE</strong> your file and <strong>VIEW</strong> it in your browser</h2>
 </section>
@@ -72,16 +75,20 @@ All our styles will go between these two elements. Simplez. In general, css code
 <pre><code><span class="hljs-tag">body</span> <span class="hljs-rules">{
     <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> <span class="hljs-hexcolor">#D2FAFC</span></span></span>;
 <span class="hljs-rule">}</span></span></code></pre>
+
 <p>This will make the entire background light blue. You can choose any colour you like from a list at <a href="http://www.colourpicker.com">www.colourpicker.com</a> which generates the number you need which you can copy and paste into your code.</p>
 <p>Now try:</p>
 <pre><code><span class="hljs-tag">h1</span> <span class="hljs-rules">{
     <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> black</span></span>;
 <span class="hljs-rule">}</span></span></code></pre>
+
 <p>Since we already had a <code>h1</code> declaration in there, we could just put in the background-color with the color, no need to write it all out again.</p>
 <pre><code><span class="hljs-tag">h1</span> <span class="hljs-rules">{
     <span class="hljs-rule"><span class="hljs-attribute">background-color</span>:<span class="hljs-value"> black</span></span>;
     <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> red</span></span>;
 <span class="hljs-rule">}</span></span></code></pre>
+
+
 <section id="now-save-your-file-and-see-what-it-looks-like." class="level2 save">
 <h2>Now <strong>SAVE</strong> your file and see what it looks like.</h2>
 </section>
@@ -93,6 +100,7 @@ All our styles will go between these two elements. Simplez. In general, css code
     <span class="hljs-rule"><span class="hljs-attribute">color</span>:<span class="hljs-value"> red</span></span>;
     <span class="hljs-rule"><span class="hljs-attribute">font-size</span>:<span class="hljs-value"> <span class="hljs-number">72px</span></span></span>;
 <span class="hljs-rule">}</span></span></code></pre>
+
 <p>Now try making the heading capital letters only by using <code>text-transform:uppercase;</code> We can also make it underlined by using <code>text-decoration:underline;</code></p>
 </section>
 <section id="now-save-your-file-and-see-what-it-looks-like.-1" class="level2 save">
@@ -112,6 +120,7 @@ All our styles will go between these two elements. Simplez. In general, css code
 <span class="hljs-rule">}</span></span></code></pre>
 <p>Did you notice that everything in the page went to the centre when we put ‘text-align: center’ in the body section? That’s because everything inside the body element inherits the style. This happens whenever one element is inside another, like here:</p>
 <pre><code><span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Have you seen Felix? <span class="hljs-tag">&lt;<span class="hljs-title">em</span>&gt;</span>Please<span class="hljs-tag">&lt;/<span class="hljs-title">em</span>&gt;</span> contact his owner<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span></code></pre>
+
 <p>The ‘Please’ will have the style of the <code>&lt;p&gt;</code> element with the style of the <code>&lt;em&gt;</code> element added on. This is why the stylesheets are called <strong>cascading</strong> - the styles cascade from elements into all the ones inside them. Be careful, though, because some styles are not <em>inherited</em>. We will find out about these later.</p>
 <section id="now-save-your-file-and-view-it-in-a-browser" class="level2 save">
 <h2>Now <strong>SAVE</strong> your file and view it in a browser</h2>

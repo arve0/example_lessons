@@ -43,13 +43,15 @@ btn = Button(<span class="hljs-built_in">window</span>,text=<span class="hljs-st
 btn.pack()
 
 <span class="hljs-built_in">window</span>.mainloop()</code></pre>
+
 <p>If you run this program, you can see a main window, which has a text label, a text entry box and a button inside.</p>
 <figure>
 <img src="gui-widgets.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure>
 <p>Each widget is created and stored in a variable, and then packed into the main window. Notice that when creating a widget, you have to say which window it should appear in, and can also say what text is displayed, like this:</p>
 <pre><code><span class="hljs-id">#a</span> <span class="hljs-tag">label</span>
-lbl = <span class="hljs-function"><span class="hljs-title">Label</span><span class="hljs-params">(window,text=<span class="hljs-string">"A Label"</span>)</span></span></code></pre></li>
+lbl = <span class="hljs-function"><span class="hljs-title">Label</span><span class="hljs-params">(window,text=<span class="hljs-string">"A Label"</span>)</span></span></code></pre>
+</li>
 <li><p>You can now add some more widgets for your Pokedex:</p>
 <pre><code>from tkinter <span class="hljs-built_in">import</span> *
 
@@ -76,6 +78,7 @@ lblNameText.pack()
 lblNameValue.pack()
 
 window.mainloop()</code></pre>
+
 <figure>
 <img src="gui-more-widgets.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure>
@@ -109,6 +112,7 @@ window.mainloop()</code></pre>
 window = <span class="hljs-function"><span class="hljs-title">Tk</span><span class="hljs-params">()</span></span>
 window.<span class="hljs-function"><span class="hljs-title">config</span><span class="hljs-params">(bg=<span class="hljs-string">"#e0e0ff"</span>)</span></span>
 window.<span class="hljs-function"><span class="hljs-title">title</span><span class="hljs-params">(<span class="hljs-string">"Pokedex"</span>)</span></span></code></pre>
+
 <figure>
 <img src="gui-window-bg.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure>
@@ -120,6 +124,7 @@ lblNameText.<span class="hljs-function"><span class="hljs-title">pack</span><spa
 lblNameValue = <span class="hljs-function"><span class="hljs-title">Label</span><span class="hljs-params">(window,text=<span class="hljs-string">"???"</span>)</span></span>
 lblNameValue.<span class="hljs-function"><span class="hljs-title">config</span><span class="hljs-params">(bg=<span class="hljs-string">"#e0e0ff"</span>, fg=<span class="hljs-string">"#111111"</span>)</span></span>
 lblNameValue.<span class="hljs-function"><span class="hljs-title">pack</span><span class="hljs-params">()</span></span></code></pre>
+
 <figure>
 <img src="gui-colour.png" alt="screenshot" /><figcaption>screenshot</figcaption>
 </figure>
@@ -128,6 +133,7 @@ lblNameValue.<span class="hljs-function"><span class="hljs-title">pack</span><sp
 <pre><code><span class="hljs-variable">smallFont =</span> [<span class="hljs-string">"Helvetica"</span> , <span class="hljs-number">14</span>]
 <span class="hljs-variable">mediumFont =</span> [<span class="hljs-string">"Helvetica"</span> , <span class="hljs-number">18</span>]
 <span class="hljs-variable">bigFont =</span> [<span class="hljs-string">"Helvetica"</span> , <span class="hljs-number">30</span>]</code></pre>
+
 <p>You can now choose the font of each widget, like this:</p>
 <pre><code><span class="hljs-id">#labels</span> <span class="hljs-keyword">for</span> the pokemon name
 lblNameText = <span class="hljs-function"><span class="hljs-title">Label</span><span class="hljs-params">(window,text=<span class="hljs-string">"Name:"</span>)</span></span>
@@ -136,6 +142,7 @@ lblNameText.<span class="hljs-function"><span class="hljs-title">pack</span><spa
 lblNameValue = <span class="hljs-function"><span class="hljs-title">Label</span><span class="hljs-params">(window,text=<span class="hljs-string">"???"</span>)</span></span>
 lblNameValue.<span class="hljs-function"><span class="hljs-title">config</span><span class="hljs-params">(bg=<span class="hljs-string">"#e0e0ff"</span>, fg=<span class="hljs-string">"#111111"</span>, font=bigFont)</span></span>
 lblNameValue.<span class="hljs-function"><span class="hljs-title">pack</span><span class="hljs-params">()</span></span></code></pre>
+
 <p>All that’s been added to the <code>.config()</code> is the <code>font=mediumFont</code> and <code>font=bigFont</code> bits.</p>
 <figure>
 <img src="gui-font.png" alt="screenshot" /><figcaption>screenshot</figcaption>
@@ -164,7 +171,8 @@ lblNameValue.<span class="hljs-function"><span class="hljs-title">pack</span><sp
 <h2>Activity Checklist</h2>
 <ul>
 <li><p>First, make sure that you have a file called <code>pokeapi.py</code> saved in the same place as your Pokedex GUI program. Ask your club leader if you can’t find the file. This file contains a function called <code>getPokemonData()</code>, that gets all data for a particular Pokemon. To use this function, you just have to import it from the <code>pokeapi.py</code> file, by adding this code to the top of your program:</p>
-<pre><code><span class="hljs-keyword">from</span> pokeapi <span class="hljs-keyword">import</span> *</code></pre></li>
+<pre><code><span class="hljs-keyword">from</span> pokeapi <span class="hljs-keyword">import</span> *</code></pre>
+</li>
 <li><p>Let’s create a new function called <code>showPokemonData()</code>, that will use the <code>getPokemonData()</code> function you’ve just imported. This function will get data for a chosen Pokemon number, and put the data into the GUI labels. Put this code near the top of your program:</p>
 <pre><code><span class="hljs-id">#function</span> to <span class="hljs-attribute">display</span> data <span class="hljs-keyword">for</span> <span class="hljs-tag">a</span> pokemon number
 def <span class="hljs-function"><span class="hljs-title">showPokemonData</span><span class="hljs-params">()</span></span>:
@@ -177,10 +185,12 @@ def <span class="hljs-function"><span class="hljs-title">showPokemonData</span><
     <span class="hljs-id">#get</span> the data from the dictionary and add it to the labels
     lblNameValue.<span class="hljs-function"><span class="hljs-title">configure</span><span class="hljs-params">(text = pokemonDictionary[<span class="hljs-string">"name"</span>])</span></span>
     lblHPValue.<span class="hljs-function"><span class="hljs-title">configure</span><span class="hljs-params">(text = pokemonDictionary[<span class="hljs-string">"hp"</span>])</span></span></code></pre>
+
 <p>Don’t worry about how the <code>getPokemonData()</code> function works. All you need to know is that the function <em>returns</em> (gives you) a dictionary. It’s then used within the <code>showPokemonData()</code> function to display the data in the <code>name</code> and <code>hp</code> labels.</p></li>
 <li><p>Now that you have the functions you need, you can add the command to the button:</p>
 <pre><code><span class="hljs-id">#a</span> <span class="hljs-tag">button</span> that will get the info <span class="hljs-keyword">for</span> <span class="hljs-tag">a</span> pokemon
 btnGetInfo = <span class="hljs-function"><span class="hljs-title">Button</span><span class="hljs-params">(window,text=<span class="hljs-string">"Get Data!"</span>, command=showPokemonData)</span></span></code></pre>
+
 <p>Now try typing a number into the text entry box and see what happens:</p>
 <figure>
 <img src="gui-command.png" alt="screenshot" /><figcaption>screenshot</figcaption>
@@ -192,6 +202,7 @@ btnGetInfo = <span class="hljs-function"><span class="hljs-title">Button</span><
     pokemonNumber = randint(<span class="hljs-number">1</span>,<span class="hljs-number">718</span>)
 
     <span class="hljs-comment">#(the rest of the function stays the same...)</span></code></pre>
+
 <p>Remember to import the <code>random</code> module at the top of your program (<code>from random import *</code>). You can then score points against a friend, by seeing who has the highest number for a particular skill.</p></li>
 </ul>
 </section>
@@ -234,7 +245,8 @@ btnGetInfo = <span class="hljs-function"><span class="hljs-title">Button</span><
 <pre><code><span class="hljs-id">#label</span> <span class="hljs-keyword">for</span> the pokemon image
 lblImage = tkinter.<span class="hljs-function"><span class="hljs-title">Label</span><span class="hljs-params">(window)</span></span>
 lblImage.<span class="hljs-function"><span class="hljs-title">config</span><span class="hljs-params">(bg=<span class="hljs-string">"#e0e0ff"</span>, fg=<span class="hljs-string">"#111111"</span>)</span></span>
-lblImage.<span class="hljs-function"><span class="hljs-title">pack</span><span class="hljs-params">()</span></span></code></pre></li>
+lblImage.<span class="hljs-function"><span class="hljs-title">pack</span><span class="hljs-params">()</span></span></code></pre>
+</li>
 <li><p>You can now modify the <code>showPokemonData()</code> function to also show the image:</p>
 <pre><code><span class="hljs-id">#function</span> to <span class="hljs-attribute">display</span> data <span class="hljs-keyword">for</span> <span class="hljs-tag">a</span> pokemon number
 def <span class="hljs-function"><span class="hljs-title">showPokemonData</span><span class="hljs-params">()</span></span>:
@@ -254,7 +266,8 @@ def <span class="hljs-function"><span class="hljs-title">showPokemonData</span><
 
     <span class="hljs-hexcolor">#add</span> the image and add it to <span class="hljs-tag">a</span> <span class="hljs-tag">label</span>
     lblImage.<span class="hljs-function"><span class="hljs-title">configure</span><span class="hljs-params">(image=pokemonImage)</span></span>
-    lblImage<span class="hljs-class">.image</span> = pokemonImage</code></pre></li>
+    lblImage<span class="hljs-class">.image</span> = pokemonImage</code></pre>
+</li>
 <li><p>When you run your program and click “Get Pokemon!” you should also see an image!</p>
 <figure>
 <img src="gui-pokedex-image.png" alt="screenshot" /><figcaption>screenshot</figcaption>

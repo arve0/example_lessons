@@ -16,6 +16,7 @@ function relative(url) {
 <pre><code class="hljs">_<span class="hljs-string">|_|_</span>
 _<span class="hljs-string">|_|_</span>
  <span class="hljs-string">| |</span></code></pre>
+
 <p>We could use the turtle commands to draw it, but today we’re going to learn about the Tk Canvas.</p>
 <section id="activity-checklist" class="level2 check">
 <h2>Activity Checklist</h2>
@@ -37,6 +38,7 @@ main = <span class="hljs-type">Tk</span>()
 <span class="hljs-built_in">c</span>.create_line(<span class="hljs-number">0</span>, <span class="hljs-number">400</span>, <span class="hljs-number">600</span>, <span class="hljs-number">400</span>)
 
 mainloop()</code></pre>
+
 <ul>
 <li>Save and Run your program, and it will draw a grid !</li>
 </ul>
@@ -64,6 +66,7 @@ mainloop()</code></pre>
  <span class="hljs-keyword">...</span>|
     V
   down</code></pre>
+
 <p>Here point <code>A</code> is at 200 across, 200 down. Point <code>B</code> is at 400 across, 200 down. Point <code>C</code> is at 200 across, 400 down. Point <code>D</code> is at 400 across, 400 down.</p>
 <p>Each of the commands <code>c.create_line(across1,down1,across2,down2)</code> draws a line across the screen, and the four numbers act as positions. If we wanted to draw a line from A to D, we would do <code>c.create_line(200, 200, 400, 400)</code>.</p>
 <pre><code class="hljs"><span class="hljs-number">0</span>       <span class="hljs-number">200</span>      <span class="hljs-number">400</span>      <span class="hljs-number">600</span>   <span class="hljs-keyword">...</span>
@@ -87,12 +90,14 @@ mainloop()</code></pre>
  <span class="hljs-keyword">...</span> |
      V
    down</code></pre>
+
 <p>We want to draw lines from A to C, B to D, M to O, and N to P.</p>
 <pre><code>c.create_line(<span class="hljs-number">200</span>, <span class="hljs-number">0</span>, <span class="hljs-number">200</span>, <span class="hljs-number">600</span>) <span class="hljs-comment"># A to C</span>
 c.create_line(<span class="hljs-number">400</span>, <span class="hljs-number">0</span>, <span class="hljs-number">400</span>, <span class="hljs-number">600</span>) <span class="hljs-comment"># B to D</span>
 
 c.create_line(<span class="hljs-number">0</span>, <span class="hljs-number">200</span>, <span class="hljs-number">600</span>, <span class="hljs-number">200</span>) <span class="hljs-comment"># M to O</span>
 c.create_line(<span class="hljs-number">0</span>, <span class="hljs-number">400</span>, <span class="hljs-number">600</span>, <span class="hljs-number">400</span>) <span class="hljs-comment"># N to P</span></code></pre>
+
 <p>In code, across is often called <code>x</code>, and down is often called <code>y</code>. This grid system is quite like the co-ordinates you’ve learned in mathematics, but we start from the top-left hand side.</p>
 </section>
 </section>
@@ -123,6 +128,7 @@ c.create_line(<span class="hljs-number">0</span>, <span class="hljs-number">400<
 c.bind(<span class="hljs-string">"&lt;Button-1&gt;"</span>, click)
 
 mainloop()</code></pre>
+
 <ul>
 <li>Run your code, and click on the grid, what happens? You should see a circle in the centre of the grid.</li>
 <li>Let’s edit the code, so it will draw where you click. For this we’ll need to take the mouse position, and work out which grid square it is in, and change the <code>click</code> function</li>
@@ -152,6 +158,7 @@ c.create_line(<span class="hljs-number">0</span>, <span class="hljs-number">400<
 c.bind(<span class="hljs-string">"&lt;Button-1&gt;"</span>, click)
 
 mainloop()</code></pre>
+
 <p><code>int(c.canvasx(event.x)/200)</code> takes the mouse position, <code>event.x</code> turns it into the canvas position, <code>c.canvas(event.x)</code> and then divides it by 200, and rounds it down, so we get a number 0, 1 or 2 to tell us how far across the mouse is.</p>
 <ul>
 <li>Run the code, click in the grid squares, each one should fill in with a circle! The code <code>c.create_oval(across*200,down*200,(across+1)*200,(down+1)*200)</code> turns ‘Along 1, Down 2’ into positions on the grid, like Along 200, Down 400.</li>
@@ -205,6 +212,7 @@ shape = <span class="hljs-string">"O"</span>
 c.bind(<span class="hljs-string">"&lt;Button-1&gt;"</span>, click)
 
 mainloop()</code></pre>
+
 <ul>
 <li>Run your program, try click on a grid, it should draw a O, click elsewhere it should draw an X We’ve used a new feature of python, <code>global</code> to let us change the variable <code>shape</code> in the function <code>click</code>. If you change variables defined outside of a function, then you have to use <code>global</code>.</li>
 <li>What happens if you click on the same square twice? This is because our code doesn’t keep track of what has been drawn, or where players have moved. We will have write some more code to fix this.</li>
@@ -363,6 +371,7 @@ grid = [
 c.bind(<span class="hljs-string">"&lt;Button-1&gt;"</span>, click)
 
 mainloop()</code></pre>
+
 <ul>
 <li>Try playing the game and winning, can you make any more moves? We have four checks in <code>winner</code>
 <ul>

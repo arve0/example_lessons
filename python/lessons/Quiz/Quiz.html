@@ -23,6 +23,7 @@ answer = <span class="hljs-function"><span class="hljs-title">input</span><span 
     <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">" :) "</span>)</span></span>
 
 <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"Thank you for playing!"</span>)</span></span></code></pre>
+
 <p>When writing this program, you’ll need to add a colon (<code>:</code>) to the end of the line <code>if answer == &quot;variable&quot;:</code>, and indent the line below it (move it to the right), by pressing the Tab key (to the left of the ‘Q’ key on the keyboard).</p></li>
 <li><p>Once you’ve written the program above, try it out twice - once getting the question right, and once getting it wrong. Notice that you don’t see a smiley face unless you get the answer right.</p>
 <figure>
@@ -40,6 +41,7 @@ answer = <span class="hljs-function"><span class="hljs-title">input</span><span 
     <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">" :( "</span>)</span></span>
 
 <span class="hljs-function"><span class="hljs-title">print</span><span class="hljs-params">(<span class="hljs-string">"Thank you for playing!"</span>)</span></span></code></pre>
+
 <p>Try out this new program, and you can see that unless you enter the correct answer, a sad face is printed.</p>
 <figure>
 <img src="quiz-if-else.png" alt="screenshot" /><figcaption>screenshot</figcaption>
@@ -70,7 +72,8 @@ answer = <span class="hljs-function"><span class="hljs-title">input</span><span 
 <p>This happens because Python is very strict when it compares the player’s answer to the correct answer. To Python, “V” isn’t the same as “v”, and so if your player uses any capital letters in your answer, Python thinks the answer’s wrong!</p>
 <p>Test this out in your game, to see if the same thing happens.</p></li>
 <li><p>To fix this problem, all you need to do is convert whatever the player inputs into lower case, so that there are no capital letters in the player’s answer. Make this change to the line where the player inputs their answer:</p>
-<pre><code>answer = <span class="hljs-function"><span class="hljs-title">input</span><span class="hljs-params">()</span></span>.<span class="hljs-function"><span class="hljs-title">lower</span><span class="hljs-params">()</span></span></code></pre></li>
+<pre><code>answer = <span class="hljs-function"><span class="hljs-title">input</span><span class="hljs-params">()</span></span>.<span class="hljs-function"><span class="hljs-title">lower</span><span class="hljs-params">()</span></span></code></pre>
+</li>
 <li><p>Now test your quiz again. Have you fixed the problem?</p>
 <figure>
 <img src="quiz-test-lower.png" alt="screenshot" /><figcaption>screenshot</figcaption>
@@ -110,6 +113,7 @@ answer = input().lower()
     print(<span class="hljs-string">" Don't be silly! :( "</span>)
 <span class="hljs-keyword">else</span>:
     print(<span class="hljs-string">" You didn't choose a, b or c :( "</span>)</code></pre>
+
 <p><code>elif</code> is short for “else if”. So in the program above, the player sees one of 4 messages, depending on what they entered for their answer.</p></li>
 <li><p>Add the code above to your quiz, so that you have a multiple choice question.</p></li>
 <li><p>Test this new question 4 times, so that you see each of the 4 messages.</p>
